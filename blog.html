@@ -217,6 +217,23 @@ figure:has(.more[open]) blockquote{display:none}
 .bl-c[hidden]{display:none}
 @media(max-width:1000px){.bl-g{grid-template-columns:1fr 1fr}.bl-feat{grid-template-columns:1fr}}
 @media(max-width:700px){.bl-g{grid-template-columns:1fr}.bl-fv,.bl-ft{padding:24px}.bl-fn b{font-size:24px}}
+/*mob*/
+header{background:#FFFFFF!important}
+@media(max-width:700px){
+.hero-h span,h1 span{white-space:normal!important}
+h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
+.prog-ic{display:none!important}
+.g2>.card>div:first-child[style*="height: 190px"]{height:auto!important;padding:20px 20px 64px}
+.g2>.card>div:first-child>div[style*="max-width: 70%"]{position:static!important;max-width:none!important}
+.co-near{display:block!important;line-height:1.5;border-radius:18px!important;padding:12px 16px!important}
+.co-near>*{display:inline!important}
+.co-roles{grid-template-columns:1fr!important}
+.co-facts>div{padding:14px 16px!important}
+.co-facts b{font-size:26px!important}
+.bl-g,.ar-cta,.tl-g{grid-template-columns:1fr!important}
+.ar-stats{grid-template-columns:1fr 1fr!important}
+}
+@media(min-width:701px) and (max-width:1000px){.co-roles{grid-template-columns:1fr 1fr!important}}
 </style>
 
 </head>
