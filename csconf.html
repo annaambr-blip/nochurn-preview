@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS Conf 2026 — nochurn</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--c:#06B6D4;--c-btn:#0891B2;--c-dk:#0E7490;--c-t:#ECFEFF;--c-t2:#CFFAFE;--ink:#0F172A;--ink2:#334155;--mut:#64748B;--line:#E2E8F0;--soft:#F8FAFC;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:96px}
+html,body{overflow-x:clip}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-variant-numeric:tabular-nums}
+.h2{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.lab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.sec{padding-top:112px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.link{font-weight:600;color:var(--c-dk);display:inline-flex;align-items:center;gap:6px}
+.link .ar{transition:transform .3s var(--ease)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1;border:0;cursor:pointer;transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);white-space:nowrap}
+.btn .ar{display:inline-block;transition:transform .3s var(--ease)}
+.btn-p{background:var(--c-btn);color:#FFFFFF;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 6px 16px -8px rgba(8,145,178,.6)}
+.btn-s{background:#FFFFFF;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
+/* cards */
+.card{background:#FFFFFF;border:1.5px solid var(--line);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.card-c{background:var(--c-t);border:1.5px solid var(--c-t2);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 12px;line-height:1}
+.tag-c{background:#FFFFFF;color:var(--c-dk);box-shadow:inset 0 0 0 1px var(--c-t2)}
+.tag-i{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c);display:inline-block}
+.btn-b{background:#F1E3CF;color:#5C4126;box-shadow:inset 0 0 0 1.5px #E6D2B4}
+.card-b{background:#FBF5EC;border:1.5px solid #EFE2CF;border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag-b{background:#FFFFFF;color:#7A5A30;box-shadow:inset 0 0 0 1px #EFE2CF}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:1px}
+.live{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:1px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);animation:pl 2s var(--ease) infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
+.circ{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .25s var(--ease),color .25s var(--ease)}
+/* nav */
+.nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a{position:relative;padding:6px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--c);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav .nd{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;vertical-align:2px}
+.dd{position:relative}
+.nav .dd>a{display:inline-flex;align-items:center}
+.chev{margin-left:5px;opacity:.55;transition:transform .2s}
+.dd-m{position:absolute;top:100%;left:-18px;min-width:290px;padding:10px;background:#FFFFFF;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 40px -24px rgba(15,23,42,.3);display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:40}
+.dd:hover .dd-m,.dd:focus-within .dd-m{opacity:1;visibility:visible;transform:none}
+.dd:hover .chev{transform:rotate(180deg)}
+.nav .dd-m a{padding:10px 12px;border-radius:12px;display:flex;flex-direction:column;gap:2px}
+.nav .dd-m a::after{display:none}
+.nav .dd-m a:hover{background:#F0FDFF}
+.dd-m b{font-weight:600;color:var(--ink);font-size:15px}
+.dd-m span{font-size:13px;color:var(--mut)}
+@media(max-width:1000px){.nav-t:checked ~ .nav .dd{width:100%}.nav-t:checked ~ .nav .dd-m{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 6px 14px;min-width:0}.nav-t:checked ~ .nav .dd-m a{padding:8px 0}.nav-t:checked ~ .nav .dd-m b{font-size:16px}.chev{display:none}}
+.nav-t{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:46px;height:46px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);align-items:center;justify-content:center;cursor:pointer}
+/* hover only on real pointers */
+@media(hover:hover){
+.btn-p:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -10px rgba(8,145,178,.7)}
+.btn-b:hover{background:#E9D5B7;transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px #D6B48C,0 10px 20px -12px rgba(122,90,48,.5)}
+.card-b:hover{transform:translateY(-4px);border-color:#D6B48C;box-shadow:0 20px 40px -24px rgba(122,90,48,.35)}
+.card-b:hover .circ{transform:rotate(45deg);background:#D6B48C;color:#FFFFFF}
+.btn-s:hover{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--c-dk);transform:translateY(-1px)}
+.btn:hover .ar,.link:hover .ar{transform:translateX(4px)}
+.card:hover,.card-c:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
+.card:hover .circ,.card-c:hover .circ{transform:rotate(45deg);background:var(--c);color:#FFFFFF}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.row:hover{background:var(--soft)}
+.row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
+}
+.mq{}
+.mq-t{display:flex;flex-wrap:wrap;gap:18px 44px}
+.mq-t span{transition:color .2s}
+@media(hover:hover){.mq-t span:hover{color:#0E7490}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
+@media(max-width:1000px){
+.nav{display:none}.burger{display:flex}
+.nav-t:checked ~ .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#FFFFFF;padding:12px 20px 24px;border-bottom:1px solid var(--line);z-index:20;font-size:18px;box-shadow:0 20px 30px -20px rgba(15,23,42,.2)}
+.nav-t:checked ~ .nav a{padding:12px 0;width:100%}
+}
+@media(max-width:700px){
+.w{padding-left:20px;padding-right:20px}
+.sec{padding-top:72px}
+.hdr-cta{display:none !important}
+.g2{grid-template-columns:1fr !important}
+.ill{display:none}
+.hero-ring{display:none}
+.conf-ring{display:none}
+.stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
+.mq-t{gap:12px 24px;font-size:19px !important}
+.hero-cta .btn{flex:1 1 100%}
+.dir{min-height:0 !important}
+.hero-h{font-size:52px !important}
+.ev-date{font-size:28px !important}
+.biz{padding:24px !important}.conf{padding-top:48px !important;padding-bottom:48px !important}
+.conf-date{width:96px !important;height:96px !important}
+.conf-date b{font-size:42px !important}
+}
+</style>
+<style>
+
+.more{margin-top:4px}
+.more summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#0E7490;padding:6px 0}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.more[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.more[open] summary{font-size:0}.more[open] summary::before{content:"Свернуть";font-size:14px}
+.more-b p{margin:0 0 12px;font-size:16px;line-height:1.6;color:#334155}
+figure:has(.more[open]) blockquote{display:none}
+
+.hero-col{position:absolute;right:20px;top:20px;width:460px;height:460px;z-index:-1}
+.col-ring{position:absolute;inset:30px;border-radius:50%;border:40px solid #ECFEFF}
+.col-hrt{position:absolute;left:186px;top:190px}
+.col-av{position:absolute;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 6px 20px rgba(15,23,42,.10);background:#E0F2FE;animation:flt 6s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes flt{50%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.col-av{animation:none}}
+@media(max-width:1180px){.hero-col{display:none}}
+.av-stack{display:inline-flex}
+.av-stack img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-left:-12px;background:#E0F2FE}
+.av-stack img:first-child{margin-left:0}
+.av-stack img,.av-more{width:48px;height:48px}
+.av-more{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:3px solid #fff;margin-left:-12px;background:#0891B2;color:#fff;font:700 13px 'Manrope',sans-serif}
+@media(max-width:700px){.av-stack img:nth-child(n+8){display:none}.av-stack img,.av-more{width:42px;height:42px}}
+.hrt-w{white-space:nowrap}
+@media(max-width:700px){.hrt{width:40px!important;height:40px!important;vertical-align:-4px!important;margin-left:2px!important}}
+.wall{columns:3 320px;column-gap:16px}
+.wall>.card,.wall>.card-c{break-inside:avoid;margin-bottom:16px;display:block}
+.wall b{font-weight:600;background:linear-gradient(transparent 60%,#CFFAFE 60%);padding:0 2px}
+@media(max-width:700px){.wall{columns:1}}
+</style><style>
+.hrt{animation:hb 2.4s var(--ease) infinite;transform-origin:center}
+@keyframes hb{0%,60%,100%{transform:scale(1)}20%{transform:scale(1.14)}40%{transform:scale(.96)}}
+.fr{position:absolute;opacity:0;pointer-events:none}
+.fbar{display:flex;flex-wrap:wrap;gap:8px}
+.fbar label{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--line);font-size:14px;font-weight:600;color:#334155;cursor:pointer;transition:all .2s;background:#FFFFFF}
+.fbar label .n{font-size:12px;color:#94A3B8;font-weight:600}
+@media(hover:hover){.fbar label:hover{box-shadow:inset 0 0 0 1.5px var(--c)}}
+#f-sys:checked ~ .wall figure:not(.t-sys){display:none}
+#f-sys:checked ~ .fbar label[for="f-sys"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-sys:checked ~ .fbar label[for="f-sys"] .n{color:#CFFAFE}
+#f-prac:checked ~ .wall figure:not(.t-prac){display:none}
+#f-prac:checked ~ .fbar label[for="f-prac"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-prac:checked ~ .fbar label[for="f-prac"] .n{color:#CFFAFE}
+#f-lead:checked ~ .wall figure:not(.t-lead){display:none}
+#f-lead:checked ~ .fbar label[for="f-lead"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-lead:checked ~ .fbar label[for="f-lead"] .n{color:#CFFAFE}
+#f-zero:checked ~ .wall figure:not(.t-zero){display:none}
+#f-zero:checked ~ .fbar label[for="f-zero"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-zero:checked ~ .fbar label[for="f-zero"] .n{color:#CFFAFE}
+#f-nosaas:checked ~ .wall figure:not(.t-nosaas){display:none}
+#f-nosaas:checked ~ .fbar label[for="f-nosaas"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-nosaas:checked ~ .fbar label[for="f-nosaas"] .n{color:#CFFAFE}
+#f-comm:checked ~ .wall figure:not(.t-comm){display:none}
+#f-comm:checked ~ .fbar label[for="f-comm"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-comm:checked ~ .fbar label[for="f-comm"] .n{color:#CFFAFE}
+#f-all:checked ~ .fbar label[for="f-all"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-all:checked ~ .fbar label[for="f-all"] .n{color:#CFFAFE}
+.ab-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:center}
+.ab-duo{display:flex;align-items:center}
+.ab-duo img{width:200px;height:200px;border-radius:50%;object-fit:cover;background:#E0F2FE}
+.ab-duo img+img{margin-left:-36px;margin-top:120px}
+.ab-big{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px;padding-top:28px;border-top:1px solid #E2E8F0}
+.ab-big .h{font-size:clamp(36px,4vw,56px);letter-spacing:-.05em}
+.ab-big span{font-size:14px;color:#64748B}
+.ab-p{display:grid;grid-template-columns:360px minmax(0,1fr);gap:40px 72px;align-items:start;padding-top:40px;border-top:1px solid #E2E8F0}
+.ab-side{position:sticky;top:110px}
+.ab-ph{width:150px;height:150px;border-radius:50%;object-fit:cover;margin:8px;display:block;background:#E0F2FE}
+.ab-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px;padding:18px 0;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0}
+.ab-main{display:flex;flex-direction:column;gap:36px}
+.ab-g{padding-bottom:4px}
+.ab-main .chk{font-size:16px;line-height:1.6}
+.ab-a{color:#0E7490;font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#A5F3FC}
+.ab-talks{display:flex;flex-direction:column}
+.ab-talk{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid #EEF2F6;font-size:15px;line-height:1.5;color:#475569}
+.ab-talk b{color:#0F172A;font-weight:600}
+.ab-y{font:700 14px 'Manrope',sans-serif;color:#0891B2}
+.ab-life{background:#FAF6F0;border-radius:20px;padding:22px 24px}
+.ab-rev{padding:36px 40px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+@media(max-width:1000px){.ab-hero{grid-template-columns:1fr}.ab-duo img{width:132px;height:132px}.ab-duo img+img{margin-top:70px}.ab-p{grid-template-columns:1fr}.ab-side{position:static}.ab-big{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.ab-ph{width:112px;height:112px}.ab-talk{grid-template-columns:1fr;gap:2px}.ab-rev{padding:26px}.ab-stats .h{font-size:22px!important}}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#334155}
+.chk::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:3px;background:#CFFAFE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%230891B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.cf-hero{background:#ECFEFF;border-bottom:1px solid #CFFAFE;position:relative;overflow:hidden}
+.cf-hero::after{content:"";position:absolute;right:-180px;bottom:-260px;width:620px;height:620px;border-radius:50%;border:80px solid rgba(165,243,252,.55);pointer-events:none}
+.cf-hero-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px 64px;align-items:center;padding-top:72px;padding-bottom:80px}
+.cf-cal{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:20px;font-size:14px;color:#64748B}
+.cf-cal a{color:#0E7490;font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#A5F3FC}
+.cf-stack{display:flex;margin-bottom:24px}
+.cf-stack img,.cf-more{width:84px;height:84px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px #ECFEFF;margin-left:-16px;background:#CFFAFE}
+.cf-stack img:first-child{margin-left:0}
+.cf-more{display:inline-flex;align-items:center;justify-content:center;background:#FFFFFF;border:2px dashed #67E8F9;color:#0891B2;font:700 18px 'Manrope',sans-serif}
+.cf-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cf-facts>div{background:#FFFFFF;border:1px solid #CFFAFE;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:4px}
+.cf-facts b{font-size:24px;letter-spacing:-.03em}
+.cf-facts span{font-size:14px;color:#64748B}
+.pg{border-top:1px solid #E2E8F0}
+.pg-r{display:grid;grid-template-columns:130px minmax(0,1fr) 300px;gap:24px;padding:20px 0;border-bottom:1px solid #E2E8F0;align-items:baseline}
+.pg-t{font:700 15px 'Manrope',sans-serif;color:#0891B2;font-variant-numeric:tabular-nums}
+.pg-x{font-size:19px;line-height:1.3;letter-spacing:-.015em}
+.pg-s{display:flex;flex-direction:column;gap:2px;font-size:14px;color:#64748B}
+.pg-s b{color:#0F172A;font-weight:600}
+.pg-tbd .pg-x,.pg-tbd .pg-s b{color:#94A3B8}
+.pg-qa{background:#ECFEFF;border-radius:16px;border-bottom:0;margin-top:8px;padding:20px 16px}
+.cf-survey{margin-top:24px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;padding:24px 28px;border-radius:20px;border:1.5px dashed #A5F3FC;background:#FFFFFF}
+.sk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sk-ph{width:76px;height:76px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #FFFFFF,0 0 0 5px #A5F3FC}
+.sk-ini{display:flex;align-items:center;justify-content:center;background:#ECFEFF;color:#0E7490;font:700 22px 'Manrope',sans-serif}
+.who-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px 40px;align-items:start}
+.wh-list{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.wh{padding:20px 0;border-top:1px solid #E2E8F0}
+.au-r{display:grid;grid-template-columns:140px minmax(0,1fr) 42px;gap:12px;align-items:center;font-size:14px;color:#334155;padding:6px 0}
+.au-b{height:10px;border-radius:5px;background:#E2E8F0;overflow:hidden}
+.au-b i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#06B6D4,#0891B2)}
+.au-r b{font:700 14px 'Manrope',sans-serif;text-align:right}
+.cf-mission{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px 56px;align-items:center;background:linear-gradient(135deg,#0891B2,#0E7490);border-radius:28px;padding:52px;position:relative;overflow:hidden}
+.cf-mission::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;border:50px solid rgba(255,255,255,.08)}
+.cf-mstats{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;z-index:1}
+.arc{display:flex;flex-direction:column;gap:14px}
+.arc-y{border:1px solid #E2E8F0;border-radius:24px;background:#FFFFFF;overflow:hidden}
+.arc-y summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto 34px;gap:16px;align-items:center;padding:24px 28px}
+.arc-y summary::-webkit-details-marker{display:none}
+.arc-th{display:block;font-size:15px;color:#0891B2;font-weight:600;margin-top:4px}
+.arc-m{font-size:14px;color:#64748B;text-align:right}
+.arc-y .pl{width:34px;height:34px;border-radius:50%;background:#F8FAFC;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.arc-y[open] .pl{transform:rotate(45deg);background:#CFFAFE}
+.arc-b{padding:0 28px 28px}
+.tk{display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid #EEF2F6;font-size:15px;line-height:1.4}
+.tk b{display:block;font-weight:600;color:#0F172A}
+.tk span span{font-size:13px;color:#64748B}
+.tk-p{width:34px;height:34px;border-radius:50%;background:#ECFEFF;color:#0891B2;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+@media(hover:hover){.tk:hover .tk-p{background:#0891B2;color:#FFFFFF}.tk:hover b{color:#0E7490}}
+.cf-final{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between;background:#ECFEFF;border:1px solid #CFFAFE;border-radius:28px;padding:48px}
+@media(max-width:1000px){.cf-hero-in,.who-grid,.cf-mission{grid-template-columns:1fr}.sk-grid{grid-template-columns:1fr 1fr}.pg-r{grid-template-columns:110px minmax(0,1fr);}.pg-s{grid-column:2}.arc-m{display:none}.arc-y summary{grid-template-columns:minmax(0,1fr) 34px}}
+@media(max-width:700px){.sk-grid,.wh-list{grid-template-columns:1fr}.pg-r{grid-template-columns:1fr;gap:6px}.pg-s{grid-column:1}.cf-stack img,.cf-more{width:62px;height:62px}.cf-mission,.cf-final{padding:28px 22px}.au-r{grid-template-columns:110px minmax(0,1fr) 38px}.cf-hero-in{padding-top:48px;padding-bottom:56px}}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;font-family:'Manrope',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pl{width:32px;height:32px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:none;transition:transform .3s var(--ease),background .25s}
+.faq details[open] summary .pl{transform:rotate(45deg);background:#CFFAFE}
+.faq .ans{padding:0 4px 22px;font-size:16px;line-height:1.6;color:#475569;max-width:70ch}
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header style="border-bottom: 1px solid #EEF2F6; background: rgba(255,255,255,.92); position: sticky; top: 0; z-index: 30">
+<div class="w" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px">
+<a href="index.html" aria-label="nochurn — на главную" class="h" style="font-size: 26px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</a>
+<input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
+<nav class="nav" aria-label="Основное меню">
+<div class="dd"><a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="sprint.html"><b>Спринт по Customer Success</b><span>2 недели · старт 2 февраля 2027</span></a><a href="https://nochurn.ru/intensive"><b>Полный курс по Customer Success</b><span>Старт в 2027 году</span></a></div></div>
+<a href="consulting.html"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
+<a href="csconf.html">Конференция</a>
+<a href="index.html#jobs">Таланты</a>
+<a href="index.html#knowledge">Знания</a>
+<div class="dd"><a href="about.html">О нас<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="about.html"><b>Кто мы</b><span>Аня и Марина</span></a><a href="reviews.html"><b>Отзывы</b><span>Доска любви выпускников</span></a></div></div>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm hdr-cta">Связаться <span class="ar">→</span></a>
+<label for="nav-t" class="burger" aria-label="Меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></label>
+</div>
+</div>
+</header>
+
+<section class="cf-hero">
+<div class="w cf-hero-in">
+<div style="min-width: 0">
+<div class="lab" style="color: #0891B2; margin-bottom: 18px"><span class="live"></span>3 декабря 2026 · 17:00 МСК · онлайн · бесплатно</div>
+<h1 class="h" style="font-size: clamp(56px, 8.4vw, 128px); line-height: .9; letter-spacing: -.06em">CS Conf 2026</h1>
+<div class="h" style="font-size: clamp(26px, 3.2vw, 44px); letter-spacing: -.035em; color: #0891B2; margin-top: 16px">Продукт. Метрики. ИИ.</div>
+<p style="margin: 22px 0 0; font-size: 18px; line-height: 1.6; color: #334155; max-width: 54ch">Третья ежегодная онлайн-конференция по Customer Success. Регистрация не нужна: все собираемся в чате конференции в Telegram, там публикуем детали и ссылки на эфир.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px"><a href="#chat" rel="nofollow" class="js-chat btn btn-p">Перейти в чат конференции <span class="ar">↗</span></a><a href="#program" class="btn btn-s" style="background: #FFFFFF">Программа ↓</a></div>
+<div class="cf-cal"><span>Добавить в календарь:</span><a class="js-cal" data-cal="g" href="#program" rel="nofollow">Google Календарь</a><a class="js-cal" data-cal="i" href="#program" rel="nofollow">Apple Календарь и Outlook</a></div>
+</div>
+<div class="cf-side">
+<div class="cf-stack"><img src="img/marina.jpg" alt=""><img src="img/anna.jpg" alt=""><img src="img/sp1.jpg" alt=""><img src="img/sp2.jpg" alt=""><img src="img/sp3.jpg" alt=""><span class="cf-more">+1</span></div>
+<div class="cf-facts"><div><b class="h">3 декабря</b><span>17:00–20:30 МСК</span></div><div><b class="h">Онлайн</b><span>эфир в Zoom</span></div><div><b class="h">Бесплатно</b><span>без регистрации</span></div><div><b class="h">6 докладов</b><span>5 спикеров</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>О чём конференция</div>
+<div class="sec-head"><h2 class="h2">Три темы года</h2><span style="font-size: 16px; line-height: 1.55; color: #475569; max-width: 44ch">В этом году идём глубже и опираемся на главные тренды индустрии.</span></div>
+<div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px"><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 52px; height: 52px; border-radius: 16px; background: #CFFAFE; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span><div class="h" style="font-size: 28px; letter-spacing: -.03em">Продукт</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Customer Success всё теснее работает с продуктом, а в продуктовых командах уже появляются CS-роли. Разберём, как выстраивать это взаимодействие.</div></div><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 52px; height: 52px; border-radius: 16px; background: #CFFAFE; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div class="h" style="font-size: 28px; letter-spacing: -.03em">Метрики</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Какие цифры действительно работают, а какие только красиво смотрятся в отчётах.</div></div><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 52px; height: 52px; border-radius: 16px; background: #CFFAFE; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span><div class="h" style="font-size: 28px; letter-spacing: -.03em">ИИ</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Что уже сегодня меняется в работе CS-команд и где ИИ правда помогает, а где пока нет.</div></div></div>
+</section>
+
+<section id="program" class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Программа · 3 декабря</div>
+<div class="sec-head"><h2 class="h2">Программа конференции</h2><a href="#chat" rel="nofollow" class="js-chat btn btn-s btn-sm">Вопросы спикерам — в чат <span class="ar">↗</span></a></div>
+<div class="pg"><div class="pg-r"><span class="pg-t">17:00–17:10</span><span class="h pg-x">Открытие конференции</span><span class="pg-s"><b>Марина Вострикова и Анна Амброзевич</b><span>сооснователи nochurn</span></span></div><div class="pg-r"><span class="pg-t">17:10–17:25</span><span class="h pg-x">Customer Success в России 2026: первые результаты исследования</span><span class="pg-s"><b>Марина Вострикова и Анна Амброзевич</b><span>сооснователи nochurn</span></span></div><div class="pg-r"><span class="pg-t">17:25–17:45</span><span class="h pg-x">AI-first Customer Success: как построить организацию вокруг сигналов, людей и AI-агентов</span><span class="pg-s"><b>Екатерина Лазаревская</b><span>VP of Customer Success, TaxDome</span></span></div><div class="pg-r"><span class="pg-t">17:45–18:05</span><span class="h pg-x">Health Score, который сам ставит задачи: ИИ-сборка живого to-do для команды CS и её эффект на churn и contraction</span><span class="pg-s"><b>Алла Пругер</b><span>коммерческий лидер сегмента, Kaiten</span></span></div><div class="pg-r"><span class="pg-t">18:05–18:25</span><span class="h pg-x">Success-led: как будет устроена продуктовая компания в эпоху ИИ</span><span class="pg-s"><b>Анна Амброзевич</b><span>сооснователь nochurn</span></span></div><div class="pg-r"><span class="pg-t">18:25–18:45</span><span class="h pg-x">AI-driven Customer Success: что нельзя автоматизировать в отношениях с клиентом?</span><span class="pg-s"><b>Виктория Швейцар</b><span>Success Lead, Synder</span></span></div><div class="pg-r pg-tbd"><span class="pg-t">18:45–19:05</span><span class="h pg-x">Тема уточняется</span><span class="pg-s"><b>Спикер уточняется</b></span></div><div class="pg-r pg-tbd"><span class="pg-t">19:05–19:25</span><span class="h pg-x">Тема уточняется</span><span class="pg-s"><b>Спикер уточняется</b></span></div><div class="pg-r pg-qa"><span class="pg-t">19:25–20:30</span><span class="h pg-x">Ответы на вопросы участников</span><span class="pg-s"><b>Спикеры конференции</b></span></div></div>
+<p style="font-size: 14px; line-height: 1.6; color: #64748B; margin: 18px 0 0; max-width: 80ch">На каждый доклад 20 минут: 15 минут на тему и 5 минут на вопросы. Программа предварительная, время докладов может сдвинуться. Изменения публикуем в чате конференции.</p>
+<div class="cf-survey"><div style="min-width: 0"><div class="h" style="font-size: 22px; letter-spacing: -.02em">Исследование «Customer Success в России 2026»</div><div style="font-size: 15px; line-height: 1.55; color: #475569; margin-top: 6px">Первые цифры покажем на конференции. Ответьте на опрос до 2 декабря, чтобы ваш опыт попал в отчёт.</div></div><a href="https://forms.yandex.ru/u/6aec34976d2d73a63e8dd784/" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="flex: none">Пройти опрос <span class="ar">↗</span></a></div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Спикеры</div>
+<h2 class="h2" style="margin-bottom: 32px">Кто выступает</h2>
+<div class="sk-grid"><div class="card sk" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><img src="img/marina.jpg" alt="Марина Вострикова" class="sk-ph"><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Марина Вострикова</div><div style="font-size: 14px; color: #0E7490; font-weight: 600; margin-top: 4px">сооснователь nochurn</div></div><div style="font-size: 14px; line-height: 1.55; color: #64748B">Ментор и консультант по клиентскому опыту, поддержке и Customer Success, автор книги «Про бизнес и сервис»</div></div><div class="card sk" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><img src="img/anna.jpg" alt="Анна Амброзевич" class="sk-ph"><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Анна Амброзевич</div><div style="font-size: 14px; color: #0E7490; font-weight: 600; margin-top: 4px">сооснователь nochurn</div></div><div style="font-size: 14px; line-height: 1.55; color: #64748B">15+ лет в MarTech: Otto Group, PepsiCo, PMI, Alibaba; ex-Chief Customer Officer в IT-консалтинге</div></div><div class="card sk" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><span class="sk-ph sk-ini">ЕЛ</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Екатерина Лазаревская</div><div style="font-size: 14px; color: #0E7490; font-weight: 600; margin-top: 4px">VP of Customer Success, TaxDome</div></div><div style="font-size: 14px; line-height: 1.55; color: #64748B">17+ лет в клиентском сервисе: от специалиста поддержки до VP в международной SaaS-компании; в TaxDome отвечает за поддержку, онбординг, развитие и удержание клиентов</div></div><div class="card sk" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><span class="sk-ph sk-ini">АП</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Алла Пругер</div><div style="font-size: 14px; color: #0E7490; font-weight: 600; margin-top: 4px">коммерческий лидер сегмента, Kaiten</div></div><div style="font-size: 14px; line-height: 1.55; color: #64748B">20+ лет в коммерции и клиентских отношениях, 7+ лет управляет клиентскими направлениями в ИТ; портфель клиентов более 1 млрд ₽ в год</div></div><div class="card sk" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><span class="sk-ph sk-ini">ВШ</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Виктория Швейцар</div><div style="font-size: 14px; color: #0E7490; font-weight: 600; margin-top: 4px">Success Lead, Synder</div></div><div style="font-size: 14px; line-height: 1.55; color: #64748B">6+ лет в Customer Success и CX в международных B2B SaaS-компаниях (US, UK, EU, Nordics); практикующий психолог</div></div><div class="card sk sk-soon" style="padding: 26px; display: flex; flex-direction: column; gap: 12px; justify-content: center; align-items: flex-start"><span class="sk-ph sk-ini" style="background: #FFFFFF; border: 2px dashed #67E8F9; color: #0891B2">+1</span><div class="h" style="font-size: 21px; letter-spacing: -.02em">Ещё один спикер</div><div style="font-size: 14px; line-height: 1.55; color: #64748B">Объявим в чате конференции</div></div></div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Для кого</div>
+<div class="sec-head"><h2 class="h2" style="max-width: 18ch">Для всех, кто работает с клиентами</h2><span style="font-size: 16px; line-height: 1.55; color: #475569; max-width: 46ch">Customer Success давно вышел за рамки одного отдела: в путь клиента вовлечены продукт, продажи, поддержка и руководство.</span></div>
+<div class="who-grid">
+<div class="wh-list"><div class="wh"><div class="h" style="font-size: 18px; letter-spacing: -.015em">Руководители и специалисты CS</div><div style="font-size: 14px; line-height: 1.55; color: #64748B; margin-top: 6px">Кейсы коллег, метрики, которые работают, health score и ИИ в ежедневной работе команды.</div></div><div class="wh"><div class="h" style="font-size: 18px; letter-spacing: -.015em">Фаундеры и CEO B2B- и SaaS-компаний</div><div style="font-size: 14px; line-height: 1.55; color: #64748B; margin-top: 6px">Зачем бизнесу Customer Success, как он влияет на удержание и выручку и когда пора строить отдел.</div></div><div class="wh"><div class="h" style="font-size: 18px; letter-spacing: -.015em">Те, кто только задумывается об отделе CS</div><div style="font-size: 14px; line-height: 1.55; color: #64748B; margin-top: 6px">С чего начать, какие роли нужны и каких ошибок избежать.</div></div><div class="wh"><div class="h" style="font-size: 18px; letter-spacing: -.015em">Аккаунт-менеджеры и KAM</div><div style="font-size: 14px; line-height: 1.55; color: #64748B; margin-top: 6px">Как перейти от ведения клиента к управлению его результатом, удержанием и ростом выручки.</div></div><div class="wh"><div class="h" style="font-size: 18px; letter-spacing: -.015em">Продакт-менеджеры и продуктовые маркетологи</div><div style="font-size: 14px; line-height: 1.55; color: #64748B; margin-top: 6px">Как превращать сигналы клиентов в продуктовые решения и выстроить работу CS и продукта.</div></div><div class="wh"><div class="h" style="font-size: 18px; letter-spacing: -.015em">Операционные директора и лидеры трансформации</div><div style="font-size: 14px; line-height: 1.55; color: #64748B; margin-top: 6px">Где ИИ и автоматизация в работе с клиентами дают эффект, а где нет.</div></div></div>
+<div class="card" style="padding: 28px; background: #F8FAFC">
+<div class="lab" style="margin-bottom: 6px">Кто был в 2025</div>
+<div style="font-size: 14px; color: #64748B; margin-bottom: 18px">По опросу участников, 240 ответов</div>
+<div class="au-r"><span>Customer Success</span><span class="au-b"><i style="width: 99%"></i></span><b>33%</b></div><div class="au-r"><span>Поддержка</span><span class="au-b"><i style="width: 72%"></i></span><b>24%</b></div><div class="au-r"><span>CX</span><span class="au-b"><i style="width: 63%"></i></span><b>21%</b></div><div class="au-r"><span>Аккаунт-менеджмент</span><span class="au-b"><i style="width: 45%"></i></span><b>15%</b></div><div class="au-r"><span>Продукт</span><span class="au-b"><i style="width: 39%"></i></span><b>13%</b></div><div class="au-r"><span>Продажи</span><span class="au-b"><i style="width: 30%"></i></span><b>10%</b></div>
+<div style="font-size: 14px; line-height: 1.55; color: #475569; margin-top: 18px">А также руководители поддержки, CX и контакт-центров, аналитики и все, кто работает на стыке CX, Support и Success.</div>
+</div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="cf-mission">
+<div style="min-width: 0"><div class="lab" style="color: #A5F3FC; margin-bottom: 14px">Наша миссия</div><h2 class="h2" style="color: #FFFFFF">Зачем мы делаем конференцию</h2><p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #E0F7FA; max-width: 56ch">Развивать индустрию Customer Success и профессиональное сообщество: делиться опытом, обсуждать тренды и инструменты, знакомиться и находить партнёров. Участие остаётся бесплатным, все доклады основаны на реальных кейсах.</p></div>
+<div class="cf-mstats"><div><div class="h" style="font-size: clamp(40px, 4.4vw, 60px); letter-spacing: -.05em; color: #FFFFFF">2</div><div style="font-size: 14px; line-height: 1.45; color: #CFFAFE; margin-top: 6px">конференции позади: 2024 и 2025</div></div><div><div class="h" style="font-size: clamp(40px, 4.4vw, 60px); letter-spacing: -.05em; color: #FFFFFF">1200+</div><div style="font-size: 14px; line-height: 1.45; color: #CFFAFE; margin-top: 6px">участников в чате конференции</div></div><div><div class="h" style="font-size: clamp(40px, 4.4vw, 60px); letter-spacing: -.05em; color: #FFFFFF">21</div><div style="font-size: 14px; line-height: 1.45; color: #CFFAFE; margin-top: 6px">выступление: 20 докладов и воркшоп</div></div><div><div class="h" style="font-size: clamp(40px, 4.4vw, 60px); letter-spacing: -.05em; color: #FFFFFF">200+</div><div style="font-size: 14px; line-height: 1.45; color: #CFFAFE; margin-top: 6px">ответов спикеров на вопросы</div></div></div>
+</div>
+</section>
+
+<section id="archive" class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Прошлые конференции</div>
+<div class="sec-head"><h2 class="h2">Записи, спикеры и программа</h2><span style="font-size: 15px; color: #64748B">Нажмите на тему, чтобы открыть видео</span></div>
+<div class="arc">
+<details class="arc-y" open><summary><span><span class="h" style="font-size: 28px; letter-spacing: -.03em">CS Conf 2025</span><span class="arc-th">«Люди. Кейсы. Будущее»</span></span><span class="arc-m">3–4 декабря · 2 дня · 13 докладов · 12 спикеров · 1000+ в чате</span><span class="pl" aria-hidden="true">+</span></summary>
+<div class="arc-b"><div class="lab" style="margin: 22px 0 6px">3 декабря · Кейсы и будущее</div><a href="https://www.youtube.com/watch?v=67Chg4f4sTg" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Рынок и тренды Customer Success 2026</b><span>Анна Амброзевич</span></span></a><a href="https://www.youtube.com/watch?v=f0XafWM_UIs" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>CSM в высокорегулируемой среде: как работать с клиентами, которые боятся рисков больше, чем хотят фич</b><span>Анастасия Позднякова</span></span></a><a href="https://www.youtube.com/watch?v=7zYzT2HP8Sw" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Как снизить отток через коммуникацию с клиентом</b><span>Евгений Стрекаловский</span></span></a><a href="https://www.youtube.com/watch?v=Qy4kqPfwdyE" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Из заботы — в стратегию роста: как Customer Success превращает понимание клиента в выручку</b><span>Анна Патокина</span></span></a><a href="https://www.youtube.com/watch?v=nYwbmt0Mg3o" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Практический путь внедрения Customer Health Score</b><span>Анастасия Бойцова</span></span></a><a href="https://www.youtube.com/watch?v=uC33OO4fnN4" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>AI и ретеншен: когда нейросеть понимает клиента лучше, чем менеджер</b><span>Родион Захаров</span></span></a><a href="https://www.youtube.com/watch?v=PL1io7gqxa4" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Customer Success без большой команды: как увеличить успех через комьюнити</b><span>Анна Шефель</span></span></a><a href="https://www.youtube.com/watch?v=kfIXeVA768M" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Итоги первого дня</b><span>Марина Вострикова и Анна Амброзевич</span></span></a><div class="lab" style="margin: 22px 0 6px">4 декабря · Люди</div><a href="https://www.youtube.com/watch?v=p9EeU3pD-Hc" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Рынок 2026 глазами HR: куда движется CS и что нужно людям и компаниям</b><span>Георг Ламберт</span></span></a><a href="https://www.youtube.com/watch?v=UiEaqyvCd4Y" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Управленческая карьера в B2B Customer Success</b><span>Алла Ошлянац</span></span></a><a href="https://www.youtube.com/watch?v=b3BXBt6NRkQ" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>CS без шаблонов: как мы пересобрали портрет CSM на основе опыта команды и ожиданий клиентов</b><span>Тамара Коженова</span></span></a><a href="https://www.youtube.com/watch?v=tV7jWIwIO1c" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Карта компетенций и навыков CS-руководителя на личном примере</b><span>Анна Амброзевич</span></span></a><a href="https://www.youtube.com/watch?v=rBRaxRyK-mg" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Про Customer Success команды</b><span>Марина Вострикова</span></span></a><a href="https://www.youtube.com/watch?v=Us-O4lhva3Q" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Найм в Customer Success: баланс эмпатии и эффективности</b><span>Диана Филина</span></span></a><a href="https://www.youtube.com/watch?v=PD5-AfHU8ao" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Итоги второго дня</b><span>Марина Вострикова и Анна Амброзевич</span></span></a><div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px"><a href="https://www.youtube.com/playlist?list=PLLu3X9bd3Z88p70rL4E-aGMdXvfzZ0gvf" target="_blank" rel="noopener" class="btn btn-s btn-sm">YouTube <span class="ar">↗</span></a><a href="https://vkvideo.ru/playlist/-43331683_7" target="_blank" rel="noopener" class="btn btn-s btn-sm">VK Видео <span class="ar">↗</span></a><a href="https://rutube.ru/channel/70966814/" target="_blank" rel="noopener" class="btn btn-s btn-sm">RuTube <span class="ar">↗</span></a><a href="https://disk.yandex.ru/d/Q8l3hFm_VEO5UQ" target="_blank" rel="noopener" class="btn btn-s btn-sm">Презентации спикеров <span class="ar">↗</span></a></div></div></details>
+<details class="arc-y"><summary><span><span class="h" style="font-size: 28px; letter-spacing: -.03em">CS Conf 2024</span><span class="arc-th">Первая конференция по CS на русском</span></span><span class="arc-m">Декабрь 2024 · 2 дня · 7 докладов · воркшоп · 600+ слушателей</span><span class="pl" aria-hidden="true">+</span></summary>
+<div class="arc-b"><a href="https://www.youtube.com/watch?v=0JEfRDNOCuI" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Рынок и тренды Customer Success</b></span></a><a href="https://www.youtube.com/watch?v=x5AMcVgcNM4" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Успех в B2B Customer Success: три ключевых компонента</b></span></a><a href="https://www.youtube.com/watch?v=h0hjPniv0vc" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Создаём CS. Руководство для новичков</b></span></a><a href="https://www.youtube.com/watch?v=TyuINHIdtPI" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>CS и продажи: синергия или вражда?</b></span></a><a href="https://www.youtube.com/watch?v=lPN3-MSTOoE" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Под капотом TEAMLY: как мы построили процесс Adoption для High-touch</b></span></a><a href="https://www.youtube.com/watch?v=r61MoeiU1UY" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Запуск онлайн-курса для клиентов: повысили эффективность CS в три раза</b></span></a><a href="https://www.youtube.com/watch?v=y_Uy4sHwPi0" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Как мы стали BI-аналитиками в Customer Success и ускорили работу в пять раз</b></span></a><a href="https://www.youtube.com/watch?v=hsZGV8FSgt4" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Воркшоп «Эффективный менеджмент в Customer Success»</b></span></a><a href="https://www.youtube.com/watch?v=YLgS1NFNAcU" target="_blank" rel="noopener" class="tk"><span class="tk-p"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span><b>Итоги конференции</b></span></a><div style="font-size: 14px; line-height: 1.6; color: #64748B; margin-top: 18px"><b style="color: #0F172A; font-weight: 600">Спикеры:</b> Анна Амброзевич, Марина Вострикова, Алла Ошлянац (HRTech), Рузанна Альхамова (PONY EXPRESS), Ксения Клименко (Getmatch), Ирина Пахомова (JVO), Бэлла Чупашова (TEAMLY), Андрей Тыщенко (Gravity Field)</div><div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px"><a href="https://www.youtube.com/playlist?list=PLLu3X9bd3Z88MgB5dmLaWl71WsGlbWTwg" target="_blank" rel="noopener" class="btn btn-s btn-sm">YouTube <span class="ar">↗</span></a><a href="https://vkvideo.ru/playlist/-43331683_6" target="_blank" rel="noopener" class="btn btn-s btn-sm">VK Видео <span class="ar">↗</span></a></div></div></details>
+</div>
+</section>
+
+<section class="w sec rv">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 56px">
+<div style="flex: 1 1 280px; min-width: 0"><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Вопросы</div><h2 class="h2">Частые вопросы</h2></div>
+<div class="faq" style="flex: 2 1 520px; min-width: 0; border-top: 1px solid #E2E8F0"><details><summary>Когда пройдёт Customer Success Conf 2026?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">3 декабря 2026 года, с 17:00 до 20:30 по Москве, онлайн.</div></details><details><summary>Сколько стоит участие?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Участие бесплатное.</div></details><details><summary>Нужна ли регистрация?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Нет. Все участники собираются в чате конференции в Telegram, там публикуем детали и ссылки на эфир.</div></details><details><summary>Где проходит трансляция?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Онлайн в Zoom. Ссылку на эфир публикуем в чате конференции в Telegram.</div></details><details><summary>Сколько длится каждый доклад?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">20 минут: 15 минут на тему и 5 минут на вопросы участников. С 19:25 до 20:30 спикеры отвечают на вопросы участников.</div></details><details><summary>Где посмотреть записи прошлых конференций?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Записи CS Conf 2024 и 2025 доступны на YouTube и VK Видео, записи 2025 года — также на RuTube. Ссылки — в разделе с прошлыми конференциями.</div></details></div>
+</div>
+</section>
+
+<section id="chat" class="w sec rv" style="padding-bottom: 112px">
+<div class="cf-final">
+<div style="min-width: 0"><div class="h" style="font-size: clamp(30px, 3.6vw, 48px); line-height: 1.02; letter-spacing: -.04em">Встречаемся 3 декабря на CS Conf 2026</div><div style="font-size: 17px; line-height: 1.55; color: #334155; margin-top: 12px; max-width: 54ch">С 17:00 до 20:30 МСК, онлайн и бесплатно. Программа, вопросы спикерам и ссылка на эфир — в Telegram-чате конференции.</div><div class="cf-cal"><span>Добавить в календарь:</span><a class="js-cal" data-cal="g" href="#program" rel="nofollow">Google Календарь</a><a class="js-cal" data-cal="i" href="#program" rel="nofollow">Apple Календарь и Outlook</a></div></div>
+<a href="#chat" rel="nofollow" class="js-chat btn btn-p">Перейти в чат конференции <span class="ar">↗</span></a>
+</div>
+</section>
+
+
+<footer style="background: #F8FAFC; border-top: 1px solid #E2E8F0">
+<div class="w" style="padding-top: 64px; padding-bottom: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; margin-bottom: 48px">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<a href="index.html" aria-label="nochurn — на главную" class="h" style="font-size: 30px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</a>
+<div style="font-size: 15px; line-height: 1.5; color: #64748B; max-width: 30ch">Обучение и консалтинг по Customer Success для B2B и SaaS</div>
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="align-self: flex-start">Связаться <span class="ar">→</span></a>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500; color: #334155"><a href="#">Написать на почту</a></div>
+</div>
+<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 32px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="https://nochurn.ru/intensive" target="_blank" rel="noopener" style="color: #64748B">Полный курс</a><a href="sprint.html" style="color: #64748B">Спринт по CS</a><a href="#" style="color: #64748B">Расписание стартов</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Компаниям</span><a href="consulting.html#formats" style="color: #64748B">Корпоративное обучение</a><a href="consulting.html" style="color: #64748B">Диагностика CS</a><a href="consulting.html#strategy" style="color: #64748B">Стратегическая сессия</a><a href="consulting.html" style="color: #64748B">Консалтинг</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Конференция</span><a href="csconf.html" style="color: #64748B">CS Conf 2026</a><a href="#" style="color: #64748B">Архив конференций</a><a href="#" style="color: #64748B">Исследование CS в России</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="https://nochurn.ru/blog" target="_blank" rel="noopener" style="color: #64748B">Статьи</a><a href="https://nochurn.ru/glossary" target="_blank" rel="noopener" style="color: #64748B">Глоссарий</a><a href="https://nochurn.ru/customersuccess" target="_blank" rel="noopener" style="color: #64748B">Что такое Customer Success</a><a href="https://www.youtube.com/@vostrikova-service" target="_blank" rel="noopener" style="color: #64748B">Подкаст «Бизнес и сервис»</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Сообщество</span><a href="https://t.me/cstalents" target="_blank" rel="noopener" style="color: #64748B">Таланты Customer Success</a><a href="https://t.me/bizservis" target="_blank" rel="noopener" style="color: #64748B">Канал «Бизнес и сервис»</a><a href="https://t.me/customersuccessru" target="_blank" rel="noopener" style="color: #64748B">Канал «Customer Success»</a></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 22px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #64748B">
+<span>© nochurn · ИП Лютова Дарья Викторовна · ИНН 645122866084</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 18px"><a href="https://nochurn.ru/sveden" target="_blank" rel="noopener">Сведения об образовательной организации</a><a href="https://nochurn.ru/reestr" target="_blank" rel="noopener">Документы</a><a href="https://disk.yandex.ru/i/dDICeHrHloPhVg" target="_blank" rel="noopener">Оферта</a><a href="https://disk.yandex.ru/i/9h6tFPfLPvVYVg" target="_blank" rel="noopener">Политика конфиденциальности</a><a href="https://disk.yandex.ru/i/hX7w1Bgw--oBew" target="_blank" rel="noopener">Согласие на обработку данных</a></span>
+</div>
+</div>
+</footer>
+<script>
+(function(){
+  var k='eUkyTnhjT0RiWVEwYkVjdis=';
+  function url(){return 'https://telegram.me/'+atob(k).split('').reverse().join('');}
+  document.querySelectorAll('.js-chat').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.open(url(),'_blank','noopener');});});
+  var c={g:'OTIlOEIlMEQlOEIlMEQlREIlMEQlMEIlMEQlMTglMUQlOEIlMEQlRkIlMEQlRUIlMEQlKzJCJTBEJSswQiUwRCVBQiUwRCVCQiUwRCVCOCUxRCUxOCUxRCUxOCUxRCU4MiUrbW9vWj1ub2l0YWNvbCZ5STJOeGNPRGJZUTBiRWN2QjIlRjIlZW0udEYyJUYyJUEzJXNwdHRoK0EzJThCJTBEJThCJTBEJTY4JTFEJURCJTBEJTVCJTBEJTA4JTFEJTVCJTBEJTQ4JTFEJURCJTBEJUVCJTBEJUFCJTBEJSsyOCUxRCUwQiUwRCU3QSUwRCVBMCU2MjAyLWZub2NzY0QzJW5naWFwbWFjX210dTYyJXJhZG5lbGFjRDMlbXVpZGVtX210dTYyJXJhZG5lbGFjLWVsZ29vZ0QzJWVjcnVvc19tdHVGMyVmbm9jc2NGMiV1ci5ucnVoY29uRjIlRjIlQTMlc3B0dGgrQTMlMEIlMEQlQ0IlMEQlQ0IlMEQlMEIlMEQlMDglMUQlM0IlMEQlRUIlMEQlMDglMUQlRjklMEQlQTAlMS5ISk5lYkFXZ3RXMGJhRVFSSzBsMDRKVm9lQWFXY3FEMyVkd3BGMyUwMTAzOTU5MjE3OEYyJWpGMiVzdS5tb296LmJldzYwc3VGMiVGMiVBMyVzcHR0aCtBMyVtb29aKzJCJTBEJSswOCUxRCU4QiUwRCU0OCUxRCVEQSUwRCVBMCVBMCUuRUIlMEQlREIlMEQlMjglMUQlMEIlMEQlQkIlMEQlRkIlMEQlMTglMUQlNUIlMEQlMUIlMEQlK0MyJURCJTBEJTlCJTBEJTBCJTBEJUJCJTBEJURCJTBEJUVCJTBEJSs0OSUwOCUyRSUrQkIlMkMlODklMEQlODklMEQlKy44QiUwRCVBQiUwRCU4QiUwRCUwOCUxRCUyOCUxRCU1QiUwRCVDOSUwRCUrLjI4JTFEJUFCJTBEJTM4JTFEJTRCJTBEJUVCJTBEJTA4JTFEJUY5JTBEJUJBJTJDJSs2MjAyK2Zub0Mrc3NlY2N1UytyZW1vdHN1Qz1zbGlhdGVkJndvY3NvTUYyJWVwb3J1RT16dGMmWjAwMDM3MVQzMDIxNjIwMkYyJVowMDAwNDFUMzAyMTYyMDI9c2V0YWQmNjIwMitmbm9DK3NzZWNjdVMrcmVtb3RzdUM9dHhldCZFVEFMUE1FVD1ub2l0Y2E/cmVkbmVyL3JhZG5lbGFjL21vYy5lbGdvb2cucmFkbmVsYWMvLzpzcHR0aA==',i:'c2NpLmNpc2FiL2NpbGJ1cC9tb2MuZWxnb29nLnJhZG5lbGFjLnB1b3JnMDQlNjVkMzRmNjliOWQ4MTQ4OTVjYmQ1NmRhODdlYWMzNmU5YWY3ZmFlMTZjZDM4NGNlMDcwOWU4OGQ1ZjJmMTc1Ny9sYWNpL3JhZG5lbGFjL21vYy5lbGdvb2cucmFkbmVsYWMvLzpsYWNiZXc='};
+  function curl(x){return atob(c[x]).split('').reverse().join('');}
+  document.querySelectorAll('.js-cal').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var x=a.getAttribute('data-cal'),u=curl(x);if(x==='g'){window.open(u,'_blank','noopener');}else{window.location.href=u;}});});
+})();
+</script>
+
+</div>
+
+<script>document.documentElement.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});</script>
+</body>
+</html>
