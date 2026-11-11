@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отзывы выпускников — nochurn</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--c:#06B6D4;--c-btn:#0891B2;--c-dk:#0E7490;--c-t:#ECFEFF;--c-t2:#CFFAFE;--ink:#0F172A;--ink2:#334155;--mut:#64748B;--line:#E2E8F0;--soft:#F8FAFC;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-variant-numeric:tabular-nums}
+.h2{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.lab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.sec{padding-top:112px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.link{font-weight:600;color:var(--c-dk);display:inline-flex;align-items:center;gap:6px}
+.link .ar{transition:transform .3s var(--ease)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1;border:0;cursor:pointer;transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);white-space:nowrap}
+.btn .ar{display:inline-block;transition:transform .3s var(--ease)}
+.btn-p{background:var(--c-btn);color:#FFFFFF;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 6px 16px -8px rgba(8,145,178,.6)}
+.btn-s{background:#FFFFFF;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
+/* cards */
+.card{background:#FFFFFF;border:1.5px solid var(--line);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.card-c{background:var(--c-t);border:1.5px solid var(--c-t2);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 12px;line-height:1}
+.tag-c{background:#FFFFFF;color:var(--c-dk);box-shadow:inset 0 0 0 1px var(--c-t2)}
+.tag-i{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c);display:inline-block}
+.btn-b{background:#F1E3CF;color:#5C4126;box-shadow:inset 0 0 0 1.5px #E6D2B4}
+.card-b{background:#FBF5EC;border:1.5px solid #EFE2CF;border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag-b{background:#FFFFFF;color:#7A5A30;box-shadow:inset 0 0 0 1px #EFE2CF}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:1px}
+.live{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:1px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);animation:pl 2s var(--ease) infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
+.circ{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .25s var(--ease),color .25s var(--ease)}
+/* nav */
+.nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a{position:relative;padding:6px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--c);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav .nd{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;vertical-align:2px}
+.nav-t{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:46px;height:46px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);align-items:center;justify-content:center;cursor:pointer}
+/* hover only on real pointers */
+@media(hover:hover){
+.btn-p:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -10px rgba(8,145,178,.7)}
+.btn-b:hover{background:#E9D5B7;transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px #D6B48C,0 10px 20px -12px rgba(122,90,48,.5)}
+.card-b:hover{transform:translateY(-4px);border-color:#D6B48C;box-shadow:0 20px 40px -24px rgba(122,90,48,.35)}
+.card-b:hover .circ{transform:rotate(45deg);background:#D6B48C;color:#FFFFFF}
+.btn-s:hover{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--c-dk);transform:translateY(-1px)}
+.btn:hover .ar,.link:hover .ar{transform:translateX(4px)}
+.card:hover,.card-c:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
+.card:hover .circ,.card-c:hover .circ{transform:rotate(45deg);background:var(--c);color:#FFFFFF}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.row:hover{background:var(--soft)}
+.row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
+}
+.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-t{display:flex;gap:56px;width:max-content;animation:mq 32s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
+@media(max-width:1000px){
+.nav{display:none}.burger{display:flex}
+.nav-t:checked ~ .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#FFFFFF;padding:12px 20px 24px;border-bottom:1px solid var(--line);z-index:20;font-size:18px;box-shadow:0 20px 30px -20px rgba(15,23,42,.2)}
+.nav-t:checked ~ .nav a{padding:12px 0;width:100%}
+}
+@media(max-width:700px){
+.w{padding-left:20px;padding-right:20px}
+.sec{padding-top:72px}
+.hdr-cta{display:none !important}
+.g2{grid-template-columns:1fr !important}
+.ill{display:none}
+.hero-ring{display:none}
+.conf-ring{display:none}
+.stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
+.mq{-webkit-mask-image:none;mask-image:none}.mq-t{animation:none;flex-wrap:wrap;width:auto;gap:14px 28px;font-size:20px !important}.mq-t .dup{display:none}
+.hero-cta .btn{flex:1 1 100%}
+.dir{min-height:0 !important}
+.hero-h{font-size:52px !important}
+.ev-date{font-size:28px !important}
+.biz{padding:24px !important}.conf{padding-top:48px !important;padding-bottom:48px !important}
+.conf-date{width:96px !important;height:96px !important}
+.conf-date b{font-size:42px !important}
+}
+</style>
+<style>
+.wall{columns:3 320px;column-gap:16px}
+.wall>.card,.wall>.card-c{break-inside:avoid;margin-bottom:16px;display:block}
+.wall b{font-weight:600;background:linear-gradient(transparent 60%,#CFFAFE 60%);padding:0 2px}
+@media(max-width:700px){.wall{columns:1}}
+</style>
+</head>
+<body>
+
+<div>
+<!-- HEADER -->
+<header style="border-bottom: 1px solid #EEF2F6; background: rgba(255,255,255,.92); position: sticky; top: 0; z-index: 30">
+<div class="w" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px">
+<a href="#" aria-label="nochurn — на главную" class="h" style="font-size: 26px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</a>
+<input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
+<nav class="nav" aria-label="Основное меню">
+<a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение</a>
+<a href="index.html#biz"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
+<a href="index.html#conf">Конференция</a>
+<a href="index.html#jobs">Вакансии</a>
+<a href="index.html#knowledge">Знания</a>
+<a href="index.html#about">О нас</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="#" class="btn btn-p btn-sm hdr-cta">Обсудить задачу <span class="ar">→</span></a>
+<label for="nav-t" class="burger" aria-label="Меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></label>
+</div>
+</div>
+</header>
+
+<section class="w" style="padding-top: 56px; position: relative; z-index: 0">
+<div class="hero-ring" aria-hidden="true" style="position: absolute; right: -120px; top: -60px; width: 420px; height: 420px; z-index: -1"><div style="position: absolute; inset: 0; border-radius: 50%; border: 54px solid #ECFEFF"></div><div style="position: absolute; left: 210px; top: 12px; width: 92px; height: 92px; border-radius: 50%; background: #A5F3FC"></div></div>
+<a href="index.html#edu" class="link" style="font-size: 14px; margin-bottom: 24px">← Системный курс по Customer Success</a>
+<div class="lab" style="margin-top: 20px; margin-bottom: 16px"><span class="ldot" style="background: #06B6D4"></span>Доска любви</div>
+<h1 class="h" style="font-size: clamp(44px, 6vw, 80px); line-height: .95; letter-spacing: -.05em; max-width: 12ch">Что говорят <span style="background: linear-gradient(transparent 58%, #A5F3FC 58%, #A5F3FC 90%, transparent 90%); padding: 0 6px; margin-left: -6px">выпускники</span></h1>
+<p style="margin: 24px 0 0; font-size: 19px; line-height: 1.55; color: #334155; max-width: 46ch">Отзывы участников Системного курса по Customer Success — руководителей CS, поддержки и продаж.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px"><span class="tag tag-c">100+ выпускников</span><span class="tag tag-i">17 отзывов</span><span class="tag tag-i">Финтабло · Giftery · VK · Melbicom</span></div>
+</section>
+
+<section class="w" style="padding-top: 56px">
+<div class="wall">
+<figure class="card" style="margin: 0 0 16px; padding: 28px">
+<svg aria-hidden="true" width="30" height="24" viewBox="0 0 28 22" style="margin-bottom: 14px"><path d="M0 22V12C0 5 4 1 11 0l1 4C8 5 6 8 6 11h5v11zm16 0V12c0-7 4-11 11-12l1 4c-4 1-6 4-6 7h5v11z" fill="#06B6D4"></path></svg>
+<blockquote style="margin: 0"><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Мне понравилось, я думал, что я знаю теорию, но в итоге понял, что было много незакрытых вопросов и так системно у меня не было в голове. <b>Ты вроде знаешь это всё, но когда мы это всё разбирали на примерах, в голове реально мысли совсем по-другому стали идти сейчас.</b></p><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Частично уже получилось что-то применить, но я понимаю, что надо будет возвращаться и ещё пересматривать, потому что не всё отложилось.</p></blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #E2E8F0"><span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 50%; background: #E0F2FE; color: #0E7490; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; flex: none">АВ</span><span><span style="display: block; font-weight: 600; font-size: 15px">Алексей Васильев</span><span style="font-size: 14px; color: #64748B">Директор департамента успеха клиентов, Финтабло</span></span></figcaption>
+</figure>
+<figure class="card-c" style="margin: 0 0 16px; padding: 28px">
+<svg aria-hidden="true" width="30" height="24" viewBox="0 0 28 22" style="margin-bottom: 14px"><path d="M0 22V12C0 5 4 1 11 0l1 4C8 5 6 8 6 11h5v11zm16 0V12c0-7 4-11 11-12l1 4c-4 1-6 4-6 7h5v11z" fill="#D6B48C"></path></svg>
+<blockquote style="margin: 0"><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Пришёл на курс с конкретной задачей: пересобрать структуру коммерческого отдела и научиться говорить с коллегой из клиентского сервиса на языке Customer Success.</p><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Уже на середине интенсива получил ответы на большинство вопросов.</p><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A"><b>Теперь я точно знаю, какой специалист мне нужен в команду, и что среди текущих сотрудников такой роли нет.</b> Достиг своей цели: говорю с коллегами на одном языке, понимаю, какие шаги нужно сделать, чтобы компания перешла на новый уровень.</p></blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #E2E8F0"><span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 50%; background: #F6EEE3; color: #7A5A30; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; flex: none">АЮ</span><span><span style="display: block; font-weight: 600; font-size: 15px">Антон Юрченко</span><span style="font-size: 14px; color: #64748B">Chief Sales Officer, Giftery</span></span></figcaption>
+</figure>
+<figure class="card" style="margin: 0 0 16px; padding: 28px">
+<svg aria-hidden="true" width="30" height="24" viewBox="0 0 28 22" style="margin-bottom: 14px"><path d="M0 22V12C0 5 4 1 11 0l1 4C8 5 6 8 6 11h5v11zm16 0V12c0-7 4-11 11-12l1 4c-4 1-6 4-6 7h5v11z" fill="#06B6D4"></path></svg>
+<blockquote style="margin: 0"><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Это ёмкий, очень хорошо структурированный курс, ориентированный на практику. Идеальный вариант в моём случае, когда есть амбициозная задача выстроить отдел CS с нуля.</p><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A"><b>Вы помогли сложить в голове систему координат, и теперь у меня есть понимание, с чего можно начать.</b></p><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Отмечу ещё, что к встречам я подключалась в десять вечера (я из Иркутска), но для меня настолько важно было принимать участие онлайн, быть частью нашей прекрасной группы, что это не стало препятствием.</p></blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #E2E8F0"><span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 50%; background: #E0F2FE; color: #0E7490; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; flex: none">МК</span><span><span style="display: block; font-weight: 600; font-size: 15px">Марьяна Капустина</span><span style="font-size: 14px; color: #64748B">Руководитель отдела поддержки биллинга, Melbicom</span></span></figcaption>
+</figure>
+<figure class="card" style="margin: 0 0 16px; padding: 28px">
+<svg aria-hidden="true" width="30" height="24" viewBox="0 0 28 22" style="margin-bottom: 14px"><path d="M0 22V12C0 5 4 1 11 0l1 4C8 5 6 8 6 11h5v11zm16 0V12c0-7 4-11 11-12l1 4c-4 1-6 4-6 7h5v11z" fill="#D6B48C"></path></svg>
+<blockquote style="margin: 0"><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Сейчас я ухожу не с тем, что мне нужно менять свою экспертизу, а тем, что у меня классный трек по коммьюнити + CSM.</p><p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: #0F172A">Я взяла, мне кажется, максимум от всех курсов, которые я проходила вот сейчас. <b>И это самый классный курс с точки зрения методологии, уровня коммуникации и нагрузки.</b> Я не почувствовала перегрузку или что я не успевала.</p></blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #E2E8F0"><span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 50%; background: #F6EEE3; color: #7A5A30; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; flex: none">АШ</span><span><span style="display: block; font-weight: 600; font-size: 15px">Анна Шефель</span><span style="font-size: 14px; color: #64748B">ex-Head of community, VK, Акселератор авторов ВКонтакте</span></span></figcaption>
+</figure>
+</div>
+</section>
+
+<section class="w sec" style="padding-bottom: 112px">
+<div class="card-c" style="padding: 36px 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
+<div><div class="lab" style="margin-bottom: 10px">Следующий поток</div><div class="h" style="font-size: clamp(26px, 3vw, 36px); line-height: 1.1">Системный курс по Customer Success</div></div>
+<a href="#" class="btn btn-p">Оставить предзапись <span class="ar">→</span></a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #F8FAFC; border-top: 1px solid #E2E8F0">
+<div class="w" style="padding-top: 64px; padding-bottom: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; margin-bottom: 48px">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 30px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</div>
+<div style="font-size: 15px; line-height: 1.5; color: #64748B; max-width: 30ch">Обучение и консалтинг по Customer Success для B2B и SaaS</div>
+<a href="#" class="btn btn-p btn-sm" style="align-self: flex-start">Обсудить задачу <span class="ar">→</span></a>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500; color: #334155"><a href="#">Telegram Ани · @annaambr</a><a href="#">Telegram Марины · @tigerms</a><a href="#">Написать на почту</a></div>
+</div>
+<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 32px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="#" style="color: #64748B">Полный курс</a><a href="#" style="color: #64748B">Спринт по CS</a><a href="#" style="color: #64748B">Расписание стартов</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Компаниям</span><a href="#" style="color: #64748B">Корпоративное обучение</a><a href="#" style="color: #64748B">Диагностика CS</a><a href="#" style="color: #64748B">Стратегическая сессия</a><a href="#" style="color: #64748B">Консалтинг</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Конференция</span><a href="#" style="color: #64748B">CS Conf 2026</a><a href="#" style="color: #64748B">Архив конференций</a><a href="#" style="color: #64748B">Исследование CS в России</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="#" style="color: #64748B">Статьи</a><a href="#" style="color: #64748B">Глоссарий</a><a href="#" style="color: #64748B">Что такое Customer Success</a><a href="#" style="color: #64748B">Подкаст «Бизнес и сервис»</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Сообщество</span><a href="#" style="color: #64748B">Вакансии в CS</a><a href="#" style="color: #64748B">Разместить вакансию</a><a href="#" style="color: #64748B">Канал «Бизнес и сервис»</a><a href="#" style="color: #64748B">Канал Ани о CS</a></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 22px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #64748B">
+<span>© nochurn · [реквизиты ИП, ИНН]</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 18px"><a href="#">Сведения об образовательной организации</a><a href="#">Документы</a><a href="#">Оферта</a><a href="#">Политика конфиденциальности</a><a href="#">Согласие на обработку данных</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+<script>document.documentElement.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});</script>
+</body>
+</html>
