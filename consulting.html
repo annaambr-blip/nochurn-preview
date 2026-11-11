@@ -151,6 +151,21 @@ a{color:inherit;text-decoration:none}
 @media(max-width:1000px){.cs-hero,.cs-ss{grid-template-columns:1fr}.cs-edu{grid-template-columns:1fr}.cs-who{grid-template-columns:1fr;gap:0}}
 @media(max-width:700px){.cs-ss{padding:28px 22px}.cs-step{grid-template-columns:48px minmax(0,1fr);gap:12px}.cs-n{font-size:22px}}
 .mq{overflow:visible!important;-webkit-mask-image:none!important;mask-image:none!important}.mq-t{animation:none!important;width:auto!important;flex-wrap:wrap;gap:18px 44px}.mq-t .dup{display:none}
+.cs-dark{background:#0B1220;color:#E2E8F0;position:relative;overflow:hidden}
+.cs-dark::before{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;border:56px solid rgba(214,180,140,.12);pointer-events:none}
+.cs-dark .h2{color:#FFFFFF}
+.cs-dark .lab{color:#D6B48C}
+.cs-dark p{color:#CBD5E1!important}
+.cs-dark .tag{background:rgba(255,255,255,.06)!important;color:#F1E4D1!important;box-shadow:inset 0 0 0 1px rgba(214,180,140,.35)}
+.cs-dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)}
+.cs-dark .card .lab{color:#D6B48C}
+.cs-dark .chk,.cs-dark .cs-ol{color:#E2E8F0}
+.cs-dark .chk::before{background-color:rgba(214,180,140,.18);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%23D6B48C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.cs-dark .cs-ol li::marker{color:#D6B48C}
+.cs-dark .card div[style*="color: #64748B"]{color:#94A3B8!important}
+.cs-dark .card b{color:#FFFFFF!important}
+.cs-dark .btn-p{background:#D6B48C;color:#0B1220;box-shadow:0 12px 30px -12px rgba(214,180,140,.6)}
+.cs-dark .btn-p:hover{background:#E4C7A2}
 </style>
 </head>
 <body>
@@ -177,7 +192,6 @@ a{color:inherit;text-decoration:none}
 </header>
 
 <section class="w" style="padding-top: 56px">
-<a href="index.html" class="link" style="font-size: 14px">← На главную</a>
 <div class="cs-hero">
 <div style="min-width: 0">
 <div class="lab" style="margin: 24px 0 16px"><span class="ldot" style="background: #D6B48C"></span>Компаниям</div>
@@ -262,7 +276,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <section id="strategy" class="w sec rv">
-<div class="cs-ss">
+<div class="cs-ss cs-dark">
 <div style="min-width: 0">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Для команд от 2 до 15 человек</div>
 <h2 class="h2">Стратегическая сессия для бизнеса и команды</h2>
