@@ -200,6 +200,10 @@ a{color:inherit;text-decoration:none}
 .pr-head{display:flex;align-items:flex-end;gap:20px}
 .pr-big{font:800 clamp(56px,6vw,84px) 'Manrope',sans-serif;letter-spacing:-.06em;line-height:.8;color:#E3CDAF}
 @media(max-width:900px){.pr-grid{grid-template-columns:1fr}}
+.btn-p.hdr-cta{background:#0F172A;box-shadow:0 12px 26px -14px rgba(15,23,42,.6)}
+.link{color:#0F172A}
+.pr-c .link{color:#0F172A}
+/*gap*/.sec{padding-top:56px!important}@media(max-width:700px){.sec{padding-top:44px!important}}
 </style>
 </head>
 <body>
@@ -211,11 +215,11 @@ a{color:inherit;text-decoration:none}
 <a href="index.html" aria-label="nochurn — на главную" class="h" style="font-size: 26px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</a>
 <input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
 <nav class="nav" aria-label="Основное меню">
-<div class="dd"><a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="sprint.html"><b>Спринт по Customer Success</b><span>2 недели · старт 2 февраля 2027</span></a><a href="https://nochurn.ru/intensive"><b>Полный курс по Customer Success</b><span>Старт в 2027 году</span></a></div></div>
+<div class="dd"><a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="sprint.html"><b>Спринт по Customer Success</b><span>2 недели · старт 2 февраля 2027</span></a><a href="course.html"><b>Полный курс по Customer Success</b><span>Старт в 2027 году</span></a></div></div>
 <a href="consulting.html"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
 <a href="csconf.html">Конференция</a>
 <a href="index.html#jobs">Таланты</a>
-<a href="index.html#knowledge">Знания</a>
+<div class="dd"><a href="glossary.html">Знания<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="glossary.html"><b>Глоссарий</b><span>Термины и метрики Customer Success</span></a><a href="https://nochurn.ru/customersuccess"><b>Что такое Customer Success</b><span>Объясняем простыми словами</span></a><a href="https://nochurn.ru/blog"><b>Блог</b><span>Статьи и исследования</span></a></div></div>
 <div class="dd"><a href="about.html">О нас<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="about.html"><b>Кто мы</b><span>Аня и Марина</span></a><a href="reviews.html"><b>Отзывы</b><span>Доска любви выпускников</span></a></div></div>
 </nav>
 <div style="display: flex; align-items: center; gap: 10px">
@@ -245,7 +249,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <section id="formats" class="w sec rv"><div class="fm-lux">
-<div class="sec-head"><div class="pr-head"><span class="pr-big">01</span><div><div class="lab" style="margin-bottom: 8px; color: #B08A5E">Направление</div><h2 class="h2">Консалтинг</h2></div></div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-s btn-sm">Подобрать формат <span class="ar">→</span></a></div>
+<div class="sec-head"><div class="pr-head"><span class="pr-big">01</span><div><div class="lab" style="margin-bottom: 8px; color: #B08A5E">Направление</div><h2 class="h2">Консалтинг</h2></div></div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm">Подобрать формат <span class="ar">→</span></a></div>
 <div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px"><div class="card fm-card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
 <span class="fm-num">01</span><div class="h" style="font-size: 24px; letter-spacing: -.025em">Аудит и диагностика CS-функции</div>
 <div style="font-size: 16px; line-height: 1.55; color: #334155">Оцениваем зрелость, находим слабые места, предлагаем план развития.</div>
@@ -285,15 +289,16 @@ a{color:inherit;text-decoration:none}
 <div class="h" style="font-size: 26px; letter-spacing: -.03em">Под задачи компании</div>
 <div style="font-size: 15px; line-height: 1.55; color: #475569">Персональная программа под цели бизнеса, уровень команды и этап развития. Учитываем:</div>
 <div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Текущие процессы и структура компании</span></div><div class="chk"><span>Уровень зрелости Customer Success</span></div><div class="chk"><span>Задачи руководителей и команд</span></div><div class="chk"><span>Сегменты клиентов и специфика продукта</span></div><div class="chk"><span>Цели по удержанию и клиентскому опыту</span></div></div>
-<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="align-self: flex-start; margin-top: auto">Обсудить программу <span class="ar">→</span></a>
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="align-self: flex-start; margin-top: auto">Обсудить <span class="ar">→</span></a>
 </div>
 </div>
 </section>
 
 <section id="strategy" class="w sec rv">
+<div class="pr-head" style="margin-bottom: 28px"><span class="pr-big">03</span><div><div class="lab" style="margin-bottom: 8px; color: #B08A5E">Направление · команды от 2 до 15 человек</div><h2 class="h2">Стратегическая сессия</h2></div></div>
 <div class="cs-ss">
 <div style="min-width: 0">
-<div class="pr-head"><span class="pr-big">03</span><div><div class="lab" style="margin-bottom: 8px; color: #B08A5E">Направление · команды от 2 до 15 человек</div><h2 class="h2">Стратегическая сессия</h2></div></div>
+
 <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #334155; max-width: 46ch">Два дня по 8 часов, онлайн или офлайн. Команда синхронизируется, находит, что мешает росту, и уходит со стратегией и дорожной картой на год.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px"><span class="tag" style="background: #FFFFFF; color: #0F172A">2 дня × 8 часов</span><span class="tag" style="background: #FFFFFF; color: #0F172A">Онлайн или офлайн</span><span class="tag" style="background: #FFFFFF; color: #0F172A">Стратегия на год</span></div>
 <div style="margin-top: 18px"><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p">Связаться <span class="ar">→</span></a></div>
@@ -308,7 +313,10 @@ a{color:inherit;text-decoration:none}
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Ещё форматы</div>
 <div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px"><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><div class="h" style="font-size: 20px; letter-spacing: -.02em">Лекция или воркшоп для компании</div><div style="font-size: 15px; line-height: 1.55; color: #475569">Об удержании клиентов и Customer Success для вашей команды: под ваш продукт, задачи и уровень сотрудников. Онлайн или офлайн.</div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="link" style="margin-top: auto; font-size: 14px">Оставить заявку <span class="ar">→</span></a></div><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><div class="h" style="font-size: 20px; letter-spacing: -.02em">Менторинг для руководителей</div><div style="font-size: 15px; line-height: 1.55; color: #475569">Индивидуальная работа с Мариной: как вырасти в роли, найти новые смыслы в развитии или сменить вектор.</div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="link" style="margin-top: auto; font-size: 14px">Связаться <span class="ar">→</span></a></div><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><div class="h" style="font-size: 20px; letter-spacing: -.02em">Подкаст «Бизнес и сервис»</div><div style="font-size: 15px; line-height: 1.55; color: #475569">Экспертный выпуск о бизнесе и сервисе в подкасте Марины или запись совместного эфира.</div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="link" style="margin-top: auto; font-size: 14px">Предложить тему <span class="ar">→</span></a></div></div>
 
-<a href="sprint.html" class="ed-sprint" style="margin-top: 16px">
+</section>
+
+<section class="w sec rv">
+<a href="sprint.html" class="ed-sprint">
 <div style="min-width: 0"><span class="tag tag-c" style="background: #FFFFFF">Для команды</span><div class="h" style="font-size: 24px; letter-spacing: -.025em; margin-top: 12px">Спринт по Customer Success для вашей команды</div><div style="font-size: 15px; line-height: 1.55; color: #334155; margin-top: 6px; max-width: 70ch">Закрытая группа до 10 человек на кейсах компании или участие сотрудников в открытом спринте 2–16 февраля 2027: жизненный цикл, отток, метрики и ИИ.</div></div>
 <span class="btn btn-p btn-sm" style="flex: none">Подробнее о спринте <span class="ar">→</span></span>
 </a>
@@ -326,7 +334,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </section>
 
-<section class="w sec rv" style="padding-bottom: 112px">
+<section class="w sec rv" style="padding-bottom: 80px">
 <div class="card-c" style="background: #FAF6F0; border-color: #EFE4D4; padding: 44px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
 <div style="min-width: 0; max-width: 620px"><div class="h" style="font-size: clamp(28px, 3.2vw, 42px); line-height: 1.05; letter-spacing: -.035em">Расскажите о задаче команды</div><div style="font-size: 16px; line-height: 1.55; color: #334155; margin-top: 12px">Созвонимся на 30 минут, разберёмся в ситуации и предложим формат. Это бесплатно.</div></div>
 <a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p">Связаться <span class="ar">→</span></a>
@@ -344,10 +352,10 @@ a{color:inherit;text-decoration:none}
 <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500; color: #334155"><a href="#">Написать на почту</a></div>
 </div>
 <div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 32px; font-size: 14px">
-<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="https://nochurn.ru/intensive" target="_blank" rel="noopener" style="color: #64748B">Полный курс</a><a href="sprint.html" style="color: #64748B">Спринт по CS</a><a href="#" style="color: #64748B">Расписание стартов</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="course.html" style="color: #64748B">Полный курс</a><a href="sprint.html" style="color: #64748B">Спринт по CS</a><a href="#" style="color: #64748B">Расписание стартов</a></div>
 <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Компаниям</span><a href="consulting.html#formats" style="color: #64748B">Корпоративное обучение</a><a href="consulting.html" style="color: #64748B">Диагностика CS</a><a href="consulting.html#strategy" style="color: #64748B">Стратегическая сессия</a><a href="consulting.html" style="color: #64748B">Консалтинг</a></div>
 <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Конференция</span><a href="csconf.html" style="color: #64748B">CS Conf 2026</a><a href="#" style="color: #64748B">Архив конференций</a><a href="#" style="color: #64748B">Исследование CS в России</a></div>
-<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="https://nochurn.ru/blog" target="_blank" rel="noopener" style="color: #64748B">Статьи</a><a href="https://nochurn.ru/glossary" target="_blank" rel="noopener" style="color: #64748B">Глоссарий</a><a href="https://nochurn.ru/customersuccess" target="_blank" rel="noopener" style="color: #64748B">Что такое Customer Success</a><a href="https://www.youtube.com/@vostrikova-service" target="_blank" rel="noopener" style="color: #64748B">Подкаст «Бизнес и сервис»</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="https://nochurn.ru/blog" target="_blank" rel="noopener" style="color: #64748B">Статьи</a><a href="glossary.html" style="color: #64748B">Глоссарий</a><a href="https://nochurn.ru/customersuccess" target="_blank" rel="noopener" style="color: #64748B">Что такое Customer Success</a><a href="https://www.youtube.com/@vostrikova-service" target="_blank" rel="noopener" style="color: #64748B">Подкаст «Бизнес и сервис»</a></div>
 <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Сообщество</span><a href="https://t.me/cstalents" target="_blank" rel="noopener" style="color: #64748B">Таланты Customer Success</a><a href="https://t.me/bizservis" target="_blank" rel="noopener" style="color: #64748B">Канал «Бизнес и сервис»</a><a href="https://t.me/customersuccessru" target="_blank" rel="noopener" style="color: #64748B">Канал «Customer Success»</a></div>
 </div>
 </div>
