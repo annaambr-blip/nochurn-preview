@@ -170,7 +170,7 @@ a{color:inherit;text-decoration:none}
 .pf::before{content:"";position:absolute;left:24px;right:24px;top:24px;height:2px;background:linear-gradient(90deg,#E8D5BC,#D6B48C)}
 .pf-s{position:relative}
 .pf-n{width:50px;height:50px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 0 0 2px #D6B48C,0 0 0 6px #FFFFFF;display:flex;align-items:center;justify-content:center;font:800 18px 'Manrope',sans-serif;color:#B08A5E;position:relative}
-.pf-s:last-child .pf-n{background:#D6B48C;color:#FFFFFF}
+
 .fm-dark{border-radius:28px;padding:48px}
 .fm-dark .h2{color:#FFFFFF}
 .fm-dark .card .h{color:#FFFFFF}
@@ -180,6 +180,19 @@ a{color:inherit;text-decoration:none}
 .btn-p:not(.hdr-cta){background:#0F172A;box-shadow:0 12px 26px -14px rgba(15,23,42,.6)}
 .btn-p:not(.hdr-cta):hover{background:#1E293B}
 @media(max-width:1000px){.pf{grid-template-columns:1fr;gap:0}.pf::before{left:24px;right:auto;top:24px;bottom:24px;width:2px;height:auto;background:#E8D5BC}.pf-s{display:grid;grid-template-columns:50px 1fr;column-gap:18px;padding-bottom:24px}.pf-s .h{margin-top:12px!important}.pf-s>div:last-child{grid-column:2}.fm-dark{padding:28px 20px}}
+.fm-lux .h2{color:#0F172A}
+.fm-card{position:relative;border-top:3px solid #D6B48C!important}
+.fm-num{position:absolute;top:-1px;right:28px;background:#0F172A;color:#E4C7A2;font:800 13px 'Manrope',sans-serif;letter-spacing:.04em;padding:8px 10px 7px;border-radius:0 0 10px 10px}
+.fm-lux .tag,.fm-chip{background:#FFFFFF!important;color:#8A6A44!important;box-shadow:inset 0 0 0 1px #E3CDAF;text-transform:none;letter-spacing:0;font-size:13px}
+.fm-lux .chk::before,.ed-grid .chk::before,.cs-ss .chk::before{background-color:#F6EEE3;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%23B08A5E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.ed-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+.ed-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ed-t{border:1px solid #EEF2F6;border-radius:14px;padding:14px;font-size:14px;font-weight:600;line-height:1.35;color:#0F172A;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,background .2s}
+.ed-t span{font:800 12px 'Manrope',sans-serif;color:#B08A5E;letter-spacing:.04em}
+@media(hover:hover){.ed-t:hover{border-color:#E3CDAF;background:#FFFCF8}}
+.ed-sprint{margin-top:16px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;padding:28px 32px;border-radius:24px;background:#ECFEFF;border:1px solid #CFFAFE}
+@media(max-width:1000px){.ed-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.ed-tiles{grid-template-columns:1fr 1fr}.fm-num{right:20px}}
 </style>
 </head>
 <body>
@@ -216,29 +229,29 @@ a{color:inherit;text-decoration:none}
 </div>
 </section>
 
-<section id="formats" class="w sec rv"><div class="cs-dark fm-dark">
+<section id="formats" class="w sec rv"><div class="fm-lux">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Консалтинг</div>
 <div class="sec-head"><h2 class="h2">Форматы работы</h2><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-s btn-sm">Подобрать формат <span class="ar">→</span></a></div>
-<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px"><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<div class="h" style="font-size: 24px; letter-spacing: -.025em">Аудит и диагностика CS-функции</div>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px"><div class="card fm-card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span class="fm-num">01</span><div class="h" style="font-size: 24px; letter-spacing: -.025em">Аудит и диагностика CS-функции</div>
 <div style="font-size: 16px; line-height: 1.55; color: #334155">Оцениваем зрелость, находим слабые места, предлагаем план развития.</div>
 <span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">Срок называем после первой встречи</span>
 <div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Интервью с ключевыми участниками</span></div><div class="chk"><span>Анализ процессов, инструментов, ролей и метрик</span></div><div class="chk"><span>Отчёт с приоритетами: быстрые победы и долгосрочные шаги</span></div></div>
 <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; line-height: 1.55; color: #64748B"><b style="color: #0F172A; font-weight: 600">Кому:</b> Компаниям, где CS уже есть, но непонятно, работает ли он; новым руководителям CS; фаундерам, которым нужен взгляд со стороны</div>
-</div><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<div class="h" style="font-size: 24px; letter-spacing: -.025em">Запуск Customer Success с нуля</div>
+</div><div class="card fm-card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span class="fm-num">02</span><div class="h" style="font-size: 24px; letter-spacing: -.025em">Запуск Customer Success с нуля</div>
 <div style="font-size: 16px; line-height: 1.55; color: #334155">Готовая модель старта за один-три месяца: от стратегии до первых процессов.</div>
 <span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">30, 50 или 70 часов в месяц · 1–3 месяца</span>
 <div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Роль CS в бизнес-модели, структура и процессы</span></div><div class="chk"><span>Регулярные процессы: QBR, путь клиента</span></div><div class="chk"><span>Первый дашборд, метрики и сценарии действий (playbooks)</span></div></div>
 <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; line-height: 1.55; color: #64748B"><b style="color: #0F172A; font-weight: 600">Кому:</b> SaaS на стадии роста, стартапам после product-market fit, компаниям, где CS пока на уровне поддержки или продаж</div>
-</div><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<div class="h" style="font-size: 24px; letter-spacing: -.025em">Консультации и сопровождение</div>
+</div><div class="card fm-card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span class="fm-num">03</span><div class="h" style="font-size: 24px; letter-spacing: -.025em">Консультации и сопровождение</div>
 <div style="font-size: 16px; line-height: 1.55; color: #334155">Гибкий формат для внедрения изменений и развития команды.</div>
 <span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">10, 20 или 40 часов в месяц или пакеты</span>
 <div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Настройка процессов, автоматизации и найма</span></div><div class="chk"><span>Глубокие сессии: от оттока до здоровья клиента и адвокатов бренда</span></div><div class="chk"><span>Гипотезы, эксперименты и работа с продажами, продуктом, аналитикой</span></div></div>
 <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; line-height: 1.55; color: #64748B"><b style="color: #0F172A; font-weight: 600">Кому:</b> Компаниям после аудита, при найме нового руководителя, при выходе в новый сегмент</div>
-</div><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<div class="h" style="font-size: 24px; letter-spacing: -.025em">Оценка и развитие команды CS</div>
+</div><div class="card fm-card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span class="fm-num">04</span><div class="h" style="font-size: 24px; letter-spacing: -.025em">Оценка и развитие команды CS</div>
 <div style="font-size: 16px; line-height: 1.55; color: #334155">Понимаем, кто в команде чего стоит и что нужно усиливать.</div>
 <span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">1 неделя на анализ + 1 неделя на выводы и план</span>
 <div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Ассессмент CSM: уровень, компетенции, потенциал</span></div><div class="chk"><span>Пробелы в найме, развитии и ролях</span></div><div class="chk"><span>Карты компетенций и личные планы развития</span></div></div>
@@ -248,8 +261,6 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <section class="w sec rv">
-<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Кому помогаем</div>
-<div class="sec-head"><h2 class="h2" style="max-width: 22ch">Под вашу модель продаж и сопровождения</h2></div>
 <div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px"><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 14px; background: #FAF6F0; display: flex; align-items: center; justify-content: center; flex: none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><div class="h" style="font-size: 22px; letter-spacing: -.02em">ИТ-вендорам и интеграторам</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Клиенты на проектах и лицензиях, продление раз в год, решение принимают несколько людей. Выстраиваем сопровождение после внедрения, работу с ЛПР и подготовку продления заранее, а не за месяц до конца контракта.</div></div><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 14px; background: #FAF6F0; display: flex; align-items: center; justify-content: center; flex: none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg></span><div class="h" style="font-size: 22px; letter-spacing: -.02em">SaaS-компаниям</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Подписка, сотни клиентов, отток виден поздно. Сегментируем базу, делим клиентов на high-touch и low-touch, настраиваем онбординг, health score и сигналы оттока.</div></div><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 14px; background: #FAF6F0; display: flex; align-items: center; justify-content: center; flex: none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><div class="h" style="font-size: 22px; letter-spacing: -.02em">B2B-сервисам</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Телеком, финтех, агентства, сервисы для бизнеса. Отделяем Customer Success от продаж и поддержки, договариваемся, кто за что отвечает, и считаем, сколько выручки приносит текущая база.</div></div></div>
 <div class="cs-who"><div class="lab" style="padding-top: 22px">Для кого</div><div><div style="padding: 22px 0; border-top: 1px solid #E2E8F0"><div class="h" style="font-size: 19px; letter-spacing: -.015em">Руководителям продаж и коммерческим директорам</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">у которых рост держится на новых сделках, а текущие клиенты уходят или не растут</div></div><div style="padding: 22px 0; border-top: 1px solid #E2E8F0"><div class="h" style="font-size: 19px; letter-spacing: -.015em">Руководителям аккаунтинга и KAM</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">которые ведут крупных клиентов и хотят видеть риск ухода за полгода, а не на переговорах о продлении</div></div><div style="padding: 22px 0; border-top: 1px solid #E2E8F0"><div class="h" style="font-size: 19px; letter-spacing: -.015em">Руководителям CS и клиентского сервиса</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">которые строят или перестраивают функцию</div></div></div></div>
 </section>
@@ -261,31 +272,28 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <section class="w sec rv">
-<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Корпоративное обучение</div>
-<h2 class="h2" style="margin-bottom: 32px">Обучаем команды CS, сервиса, продаж и аккаунтинга</h2>
-<div class="cs-edu">
-<div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<div class="h" style="font-size: 24px; letter-spacing: -.025em">Готовые программы</div>
-<div style="font-size: 15px; line-height: 1.55; color: #475569">Для команд Customer Success, клиентского сервиса, CX, продаж, аккаунтинга и продуктовых направлений.</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Стратегия Customer Success</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Жизненный цикл клиентов</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Работа с оттоком</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Клиентская аналитика и метрики</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Автоматизация процессов CS</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Онбординг и работа с клиентами</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Кросс-командное взаимодействие</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Клиентская культура в компании</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Развитие CS на разных этапах роста</span></div>
-<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; color: #64748B"><b style="color: #0F172A; font-weight: 600">Форматы:</b> практические сессии, воркшопы, интенсивы</div>
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Корпоративное обучение</div>
+<div class="sec-head"><h2 class="h2" style="max-width: 20ch">Обучаем команды CS, сервиса, продаж и аккаунтинга</h2><div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag fm-chip">Практические сессии</span><span class="tag fm-chip">Воркшопы</span><span class="tag fm-chip">Интенсивы</span></div></div>
+<div class="ed-grid">
+<div class="card fm-card" style="padding: 32px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 22px"><div class="h" style="font-size: 26px; letter-spacing: -.03em">Готовые программы</div><span style="font-size: 14px; color: #64748B">9 тем · собираем под вашу команду</span></div>
+<div class="ed-tiles"><div class="ed-t"><span>01</span>Стратегия Customer Success</div><div class="ed-t"><span>02</span>Жизненный цикл клиентов</div><div class="ed-t"><span>03</span>Работа с оттоком</div><div class="ed-t"><span>04</span>Клиентская аналитика и метрики</div><div class="ed-t"><span>05</span>Автоматизация процессов CS</div><div class="ed-t"><span>06</span>Онбординг и работа с клиентами</div><div class="ed-t"><span>07</span>Кросс-командное взаимодействие</div><div class="ed-t"><span>08</span>Клиентская культура в компании</div><div class="ed-t"><span>09</span>Развитие CS на разных этапах роста</div></div>
 </div>
-<div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<div class="h" style="font-size: 24px; letter-spacing: -.025em">Обучение под задачи компании</div>
-<div style="font-size: 15px; line-height: 1.55; color: #475569">Программа под цели бизнеса, уровень команды и этап развития. Адаптируем под:</div>
-<div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Текущие процессы и структура компании</span></div><div class="chk"><span>Уровень зрелости Customer Success</span></div><div class="chk"><span>Задачи руководителей и команд</span></div><div class="chk"><span>Сегменты клиентов и специфика продукта</span></div><div class="chk"><span>Цели по удержанию, развитию и клиентскому опыту</span></div></div>
+<div class="card" style="padding: 32px; display: flex; flex-direction: column; gap: 16px; background: #FAF6F0; border-color: #EFE4D4">
+<div class="h" style="font-size: 26px; letter-spacing: -.03em">Под задачи компании</div>
+<div style="font-size: 15px; line-height: 1.55; color: #475569">Персональная программа под цели бизнеса, уровень команды и этап развития. Учитываем:</div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Текущие процессы и структура компании</span></div><div class="chk"><span>Уровень зрелости Customer Success</span></div><div class="chk"><span>Задачи руководителей и команд</span></div><div class="chk"><span>Сегменты клиентов и специфика продукта</span></div><div class="chk"><span>Цели по удержанию и клиентскому опыту</span></div></div>
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="align-self: flex-start; margin-top: auto">Обсудить программу <span class="ar">→</span></a>
 </div>
-<a href="sprint.html" class="card-c" style="padding: 30px; display: flex; flex-direction: column; gap: 14px">
-<span class="tag tag-c" style="align-self: flex-start; background: #FFFFFF">Для команды</span>
-<div class="h" style="font-size: 24px; letter-spacing: -.025em">Спринт по Customer Success</div>
-<div style="font-size: 15px; line-height: 1.55; color: #334155">Закрытая группа до 10 человек на кейсах вашей компании или участие сотрудников в открытом спринте 2–16 февраля 2027: жизненный цикл, отток, метрики и ИИ.</div>
-<span class="btn btn-p btn-sm" style="align-self: flex-start; margin-top: auto">Подробнее о спринте <span class="ar">→</span></span>
+</div>
+<a href="sprint.html" class="ed-sprint">
+<div style="min-width: 0"><span class="tag tag-c" style="background: #FFFFFF">Для команды</span><div class="h" style="font-size: 24px; letter-spacing: -.025em; margin-top: 12px">Спринт по Customer Success для вашей команды</div><div style="font-size: 15px; line-height: 1.55; color: #334155; margin-top: 6px; max-width: 70ch">Закрытая группа до 10 человек на кейсах компании или участие сотрудников в открытом спринте 2–16 февраля 2027: жизненный цикл, отток, метрики и ИИ.</div></div>
+<span class="btn btn-p btn-sm" style="flex: none">Подробнее о спринте <span class="ar">→</span></span>
 </a>
-</div>
 </section>
 
 <section id="strategy" class="w sec rv">
-<div class="cs-ss cs-dark">
+<div class="cs-ss">
 <div style="min-width: 0">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Для команд от 2 до 15 человек</div>
 <h2 class="h2">Стратегическая сессия для бизнеса и команды</h2>
@@ -319,7 +327,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <section class="w sec rv" style="padding-bottom: 112px">
-<div class="card-c" style="padding: 44px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
+<div class="card-c" style="background: #FAF6F0; border-color: #EFE4D4; padding: 44px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
 <div style="min-width: 0; max-width: 620px"><div class="h" style="font-size: clamp(28px, 3.2vw, 42px); line-height: 1.05; letter-spacing: -.035em">Расскажите о задаче команды</div><div style="font-size: 16px; line-height: 1.55; color: #334155; margin-top: 12px">Созвонимся на 30 минут, разберёмся в ситуации и предложим формат. Это бесплатно.</div></div>
 <a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p">Связаться <span class="ar">→</span></a>
 </div>
