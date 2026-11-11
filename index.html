@@ -33,6 +33,13 @@ a{color:inherit;text-decoration:none}
 .tag-c{background:#FFFFFF;color:var(--c-dk);box-shadow:inset 0 0 0 1px var(--c-t2)}
 .tag-i{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--c);display:inline-block}
+.btn-b{background:#F1E3CF;color:#5C4126;box-shadow:inset 0 0 0 1.5px #E6D2B4}
+.card-b{background:#FBF5EC;border:1.5px solid #EFE2CF;border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag-b{background:#FFFFFF;color:#7A5A30;box-shadow:inset 0 0 0 1px #EFE2CF}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:1px}
+.live{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:1px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);animation:pl 2s var(--ease) infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
 .circ{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .25s var(--ease),color .25s var(--ease)}
 /* nav */
 .nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
@@ -44,13 +51,16 @@ a{color:inherit;text-decoration:none}
 /* hover only on real pointers */
 @media(hover:hover){
 .btn-p:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -10px rgba(8,145,178,.7)}
+.btn-b:hover{background:#E9D5B7;transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px #D9B88F,0 10px 20px -12px rgba(122,90,48,.5)}
+.card-b:hover{transform:translateY(-4px);border-color:#D9B88F;box-shadow:0 20px 40px -24px rgba(122,90,48,.35)}
+.card-b:hover .circ{transform:rotate(45deg);background:#D9B88F;color:#FFFFFF}
 .btn-s:hover{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--c-dk);transform:translateY(-1px)}
 .btn:hover .ar,.link:hover .ar{transform:translateX(4px)}
 .card:hover,.card-c:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
 .card:hover .circ,.card-c:hover .circ{transform:rotate(45deg);background:var(--c);color:#FFFFFF}
 .nav a:hover{color:var(--ink)}
 .nav a:hover::after{transform:scaleX(1)}
-.row:hover{background:var(--soft)}
+.row:hover{background:rgba(255,255,255,.7)}
 .row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none !important}}
@@ -86,7 +96,7 @@ a{color:inherit;text-decoration:none}
 <input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
 <nav class="nav" aria-label="Основное меню">
 <a href="#edu"><span class="nd" style="background: #06B6D4"></span>Обучение</a>
-<a href="#biz"><span class="nd" style="background: #0F172A"></span>Компаниям</a>
+<a href="#biz"><span class="nd" style="background: #D9B88F"></span>Компаниям</a>
 <a href="#conf">Конференция</a>
 <a href="#jobs">Вакансии</a>
 <a href="#knowledge">Знания</a>
@@ -108,11 +118,11 @@ a{color:inherit;text-decoration:none}
 <p style="margin: 28px 0 36px; font-size: 19px; line-height: 1.55; color: #334155; max-width: 30ch">Обучаем специалистов и помогаем компаниям удерживать клиентов.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#edu" class="btn btn-p">Выбрать обучение <span class="ar">→</span></a>
-<a href="#biz" class="btn btn-s">Для компаний</a>
+<a href="#biz" class="btn btn-b">Для компаний <span class="ar">→</span></a>
 </div>
 </div>
 <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<div class="lab">Ближайшие события</div>
+<div class="lab"><span class="live"></span>Ближайшие события</div>
 <a href="#edu" class="card-c" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="tag tag-c"><span class="dot"></span>Обучение</span><span style="font-size: 14px; color: #64748B">2 недели · онлайн</span></div>
 <div class="h" style="font-size: 18px; letter-spacing: -.02em">Спринт по Customer Success</div>
@@ -121,7 +131,7 @@ a{color:inherit;text-decoration:none}
 <a href="#conf" class="card" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; border-color: #0891B2">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="tag tag-c"><span class="dot"></span>Конференция</span><span style="font-size: 14px; color: #64748B">онлайн · бесплатно</span></div>
 <div class="h" style="font-size: 18px; letter-spacing: -.02em">CS Conf 2026</div>
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap"><span class="h ev-date" style="font-size: 30px; letter-spacing: -.04em; color: #0E7490">3 декабря</span><span class="btn btn-s btn-sm">Подробнее <span class="ar">→</span></span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap"><span class="h ev-date" style="font-size: 30px; letter-spacing: -.04em; color: #0E7490">3 декабря</span><span class="btn btn-b btn-sm">Подробнее <span class="ar">→</span></span></div>
 </a>
 </div>
 </div>
@@ -135,8 +145,8 @@ a{color:inherit;text-decoration:none}
 <span class="circ" style="background: #FFFFFF; color: #0E7490; align-self: flex-end">↗</span>
 <span><span class="h" style="display: block; font-size: 28px; line-height: 1.1">Обучение специалистов</span><span style="display: block; font-size: 16px; line-height: 1.5; color: #334155; margin-top: 10px">Курс и спринт для тех, кто строит и развивает Customer Success</span></span>
 </a>
-<a href="#biz" class="card dir" style="padding: 28px; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
-<span class="circ" style="background: #F8FAFC; color: #0F172A; align-self: flex-end">↗</span>
+<a href="#biz" class="card-b dir" style="padding: 28px; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<span class="circ" style="background: #FFFFFF; color: #7A5A30; align-self: flex-end">↗</span>
 <span><span class="h" style="display: block; font-size: 28px; line-height: 1.1">Решения для компаний</span><span style="display: block; font-size: 16px; line-height: 1.5; color: #334155; margin-top: 10px">Корпоративное обучение и консалтинг: от стратегии до внедрения</span></span>
 </a>
 <a href="#conf" class="card dir" style="padding: 28px; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
@@ -148,7 +158,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- PROGRAMS -->
 <section id="edu" class="w sec">
-<div class="lab" style="margin-bottom: 18px">Программы обучения</div>
+<div class="lab" style="margin-bottom: 18px"><span class="ldot" style="background: #06B6D4"></span>Программы обучения</div>
 <div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
 
 <div class="card" style="padding: 32px; display: flex; flex-direction: column; gap: 20px; border-color: #A5ECF6">
@@ -188,18 +198,18 @@ a{color:inherit;text-decoration:none}
 
 <!-- BUSINESS -->
 <section id="biz" class="w sec">
-<div class="card biz" style="padding: 40px; display: flex; flex-wrap: wrap; gap: 32px 56px">
+<div class="card-b biz" style="padding: 40px; display: flex; flex-wrap: wrap; gap: 32px 56px">
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<div class="lab">Компаниям</div>
+<div class="lab" style="color: #7A5A30"><span class="ldot" style="background: #D9B88F"></span>Компаниям</div>
 <h2 class="h2">Помогаем компаниям выстроить Customer Success</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #334155">От диагностики до внедрения CS-функции.</p>
-<a href="#" class="btn btn-p" style="align-self: flex-start; margin-top: auto">Обсудить задачу <span class="ar">→</span></a>
+<a href="#" class="btn btn-b" style="align-self: flex-start; margin-top: auto">Обсудить задачу <span class="ar">→</span></a>
 </div>
 <div style="flex: 1.5 1 420px; min-width: 0; display: flex; flex-direction: column">
-<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #E2E8F0; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #0891B2; width: 24px">01</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Корпоративное обучение</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
-<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #E2E8F0; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #0891B2; width: 24px">02</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Диагностика Customer Success</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
-<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #E2E8F0; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #0891B2; width: 24px">03</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Стратегическая сессия</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
-<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #0891B2; width: 24px">04</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Консалтинг и сопровождение</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
+<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #EFE2CF; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #B08A5C; width: 24px">01</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Корпоративное обучение</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
+<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #EFE2CF; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #B08A5C; width: 24px">02</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Диагностика Customer Success</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
+<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #EFE2CF; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #B08A5C; width: 24px">03</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Стратегическая сессия</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
+<a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #EFE2CF; border-bottom: 1px solid #EFE2CF; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #B08A5C; width: 24px">04</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Консалтинг и сопровождение</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
 </div>
 </div>
 </section>
@@ -227,7 +237,7 @@ a{color:inherit;text-decoration:none}
 <div style="font-size: 15px; line-height: 1.5; color: #64748B">20+ лет в клиентском сервисе, экс-директор сервиса Битрикс24</div>
 </div>
 <div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 12px">
-<div role="img" aria-label="Фото Ани Амброзевич" style="width: 88px; height: 88px; border-radius: 50%; background: #F1F5F9; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #0F172A; margin: 4px 0 8px 4px"></div>
+<div role="img" aria-label="Фото Ани Амброзевич" style="width: 88px; height: 88px; border-radius: 50%; background: #FBF5EC; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #D9B88F; margin: 4px 0 8px 4px"></div>
 <div class="h" style="font-size: 22px; letter-spacing: -.025em">Аня Амброзевич</div>
 <div style="font-size: 15px; line-height: 1.5; color: #64748B">15+ лет в MarTech и CX, экс-CCO · PepsiCo, Alibaba</div>
 </div>
@@ -240,7 +250,7 @@ a{color:inherit;text-decoration:none}
 <div class="card conf" style="padding: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px 40px; border-color: #A5ECF6">
 <div class="conf-date" style="background: #06B6D4; color: #FFFFFF; border-radius: 24px; width: 136px; height: 136px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex: none; line-height: 1; box-shadow: 0 16px 32px -16px rgba(6,182,212,.7)"><b class="h" style="font-size: 60px; letter-spacing: -.05em">3</b><span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; margin-top: 4px">ДЕКАБРЯ</span></div>
 <div style="flex: 999 1 340px; min-width: 0">
-<div class="lab" style="color: #0E7490">Ежегодная конференция · онлайн · бесплатно</div>
+<div class="lab" style="color: #0E7490"><span class="live"></span>Ежегодная конференция · онлайн · бесплатно</div>
 <div class="h" style="font-size: clamp(36px, 4.4vw, 58px); line-height: 1; margin-top: 8px">CS Conf 2026</div>
 <div style="font-size: 18px; font-weight: 500; color: #334155; margin-top: 8px">Продукт. Метрики. ИИ.</div>
 <div style="display: flex; align-items: center; gap: 14px; margin-top: 20px; flex-wrap: wrap">
@@ -248,7 +258,7 @@ a{color:inherit;text-decoration:none}
 <span style="font-size: 14px; color: #64748B">Спикеры — практики CS из [компании]</span>
 </div>
 </div>
-<a href="#" class="btn btn-p">Все подробности <span class="ar">→</span></a>
+<a href="#" class="btn btn-b">Все подробности <span class="ar">→</span></a>
 </div>
 </section>
 
