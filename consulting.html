@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Консалтинг и корпоративное обучение — nochurn</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--c:#06B6D4;--c-btn:#0891B2;--c-dk:#0E7490;--c-t:#ECFEFF;--c-t2:#CFFAFE;--ink:#0F172A;--ink2:#334155;--mut:#64748B;--line:#E2E8F0;--soft:#F8FAFC;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:96px}
+html,body{overflow-x:clip}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-variant-numeric:tabular-nums}
+.h2{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.lab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.sec{padding-top:112px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.link{font-weight:600;color:var(--c-dk);display:inline-flex;align-items:center;gap:6px}
+.link .ar{transition:transform .3s var(--ease)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1;border:0;cursor:pointer;transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);white-space:nowrap}
+.btn .ar{display:inline-block;transition:transform .3s var(--ease)}
+.btn-p{background:var(--c-btn);color:#FFFFFF;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 6px 16px -8px rgba(8,145,178,.6)}
+.btn-s{background:#FFFFFF;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
+/* cards */
+.card{background:#FFFFFF;border:1.5px solid var(--line);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.card-c{background:var(--c-t);border:1.5px solid var(--c-t2);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 12px;line-height:1}
+.tag-c{background:#FFFFFF;color:var(--c-dk);box-shadow:inset 0 0 0 1px var(--c-t2)}
+.tag-i{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c);display:inline-block}
+.btn-b{background:#F1E3CF;color:#5C4126;box-shadow:inset 0 0 0 1.5px #E6D2B4}
+.card-b{background:#FBF5EC;border:1.5px solid #EFE2CF;border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag-b{background:#FFFFFF;color:#7A5A30;box-shadow:inset 0 0 0 1px #EFE2CF}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:1px}
+.live{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:1px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);animation:pl 2s var(--ease) infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
+.circ{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .25s var(--ease),color .25s var(--ease)}
+/* nav */
+.nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a{position:relative;padding:6px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--c);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav .nd{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;vertical-align:2px}
+.dd{position:relative}
+.nav .dd>a{display:inline-flex;align-items:center}
+.chev{margin-left:5px;opacity:.55;transition:transform .2s}
+.dd-m{position:absolute;top:100%;left:-18px;min-width:290px;padding:10px;background:#FFFFFF;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 40px -24px rgba(15,23,42,.3);display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:40}
+.dd:hover .dd-m,.dd:focus-within .dd-m{opacity:1;visibility:visible;transform:none}
+.dd:hover .chev{transform:rotate(180deg)}
+.nav .dd-m a{padding:10px 12px;border-radius:12px;display:flex;flex-direction:column;gap:2px}
+.nav .dd-m a::after{display:none}
+.nav .dd-m a:hover{background:#F0FDFF}
+.dd-m b{font-weight:600;color:var(--ink);font-size:15px}
+.dd-m span{font-size:13px;color:var(--mut)}
+@media(max-width:1000px){.nav-t:checked ~ .nav .dd{width:100%}.nav-t:checked ~ .nav .dd-m{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 6px 14px;min-width:0}.nav-t:checked ~ .nav .dd-m a{padding:8px 0}.nav-t:checked ~ .nav .dd-m b{font-size:16px}.chev{display:none}}
+.nav-t{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:46px;height:46px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);align-items:center;justify-content:center;cursor:pointer}
+/* hover only on real pointers */
+@media(hover:hover){
+.btn-p:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -10px rgba(8,145,178,.7)}
+.btn-b:hover{background:#E9D5B7;transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px #D6B48C,0 10px 20px -12px rgba(122,90,48,.5)}
+.card-b:hover{transform:translateY(-4px);border-color:#D6B48C;box-shadow:0 20px 40px -24px rgba(122,90,48,.35)}
+.card-b:hover .circ{transform:rotate(45deg);background:#D6B48C;color:#FFFFFF}
+.btn-s:hover{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--c-dk);transform:translateY(-1px)}
+.btn:hover .ar,.link:hover .ar{transform:translateX(4px)}
+.card:hover,.card-c:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
+.card:hover .circ,.card-c:hover .circ{transform:rotate(45deg);background:var(--c);color:#FFFFFF}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.row:hover{background:var(--soft)}
+.row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
+}
+.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-t{display:flex;gap:56px;width:max-content;animation:mq 32s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
+@media(max-width:1000px){
+.nav{display:none}.burger{display:flex}
+.nav-t:checked ~ .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#FFFFFF;padding:12px 20px 24px;border-bottom:1px solid var(--line);z-index:20;font-size:18px;box-shadow:0 20px 30px -20px rgba(15,23,42,.2)}
+.nav-t:checked ~ .nav a{padding:12px 0;width:100%}
+}
+@media(max-width:700px){
+.w{padding-left:20px;padding-right:20px}
+.sec{padding-top:72px}
+.hdr-cta{display:none !important}
+.g2{grid-template-columns:1fr !important}
+.ill{display:none}
+.hero-ring{display:none}
+.conf-ring{display:none}
+.stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
+.mq{-webkit-mask-image:none;mask-image:none}.mq-t{animation:none;flex-wrap:wrap;width:auto;gap:14px 28px;font-size:20px !important}.mq-t .dup{display:none}
+.hero-cta .btn{flex:1 1 100%}
+.dir{min-height:0 !important}
+.hero-h{font-size:52px !important}
+.ev-date{font-size:28px !important}
+.biz{padding:24px !important}.conf{padding-top:48px !important;padding-bottom:48px !important}
+.conf-date{width:96px !important;height:96px !important}
+.conf-date b{font-size:42px !important}
+}
+</style>
+<style>
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;font-family:'Manrope',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pl{width:32px;height:32px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:none;transition:transform .3s var(--ease),background .25s}
+.faq details[open] summary .pl{transform:rotate(45deg);background:#CFFAFE}
+.faq .ans{padding:0 4px 22px;font-size:16px;line-height:1.6;color:#475569;max-width:70ch}
+@media(max-width:700px){.sp-ph{width:76px!important;height:76px!important}.sp-st{font-size:20px!important}}
+.cv-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px 56px;align-items:center}
+.cv-card{position:relative;border:1px solid #E2E8F0;border-radius:24px;padding:18px;background:#FFFFFF;box-shadow:0 30px 60px -40px rgba(15,23,42,.35);overflow:hidden}
+.cv-grid{display:grid;grid-template-columns:118px repeat(4,minmax(0,1fr));gap:3px}
+.cv-corner{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#94A3B8;align-self:center}
+.cv-h{border-radius:10px 10px 4px 4px;color:#FFFFFF;padding:9px 6px;text-align:center;display:flex;flex-direction:column;gap:1px}
+.cv-h b{font:700 13px 'Manrope',sans-serif}.cv-h span{font-size:10px;opacity:.85}
+.cv-l{padding:10px 8px 10px 0;border-top:1px solid #EEF2F6;display:flex;flex-direction:column;gap:2px}
+.cv-l b{font-size:12px;font-weight:600;color:#0F172A;line-height:1.25}.cv-l span{font-size:10px;color:#94A3B8;line-height:1.3}
+.cv-c{min-height:62px;border-radius:4px;padding:12px 8px;display:flex;flex-direction:column;gap:6px}
+.cv-c i{display:block;height:6px;border-radius:3px;background:#CBD5E1;opacity:.55}
+.cv-blur{filter:blur(2.5px);opacity:.7}
+.cv-fade{position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(transparent,#FFFFFF 70%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}
+.cv-lock{display:inline-flex;align-items:center;gap:8px;background:#0891B2;color:#FFFFFF;font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px}
+@media(max-width:900px){.cv-wrap{grid-template-columns:1fr}.cv-grid{grid-template-columns:76px repeat(4,minmax(0,1fr))}.cv-h span{display:none}.cv-h b{font-size:10px}.cv-l b{font-size:10px}.cv-l span{display:none}.cv-c{min-height:44px;padding:8px 5px}}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#334155}
+.chk::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:1px;background:#CFFAFE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%230E7490' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.inp{font-family:inherit;font-size:16px;height:52px;padding:0 16px;border:1.5px solid var(--line);border-radius:14px;background:#FFFFFF;width:100%;transition:border-color .2s}
+.inp:focus{outline:none;border-color:var(--c)}
+@media(max-width:700px){.tl-row{grid-template-columns:1fr !important;gap:8px !important}.price-hl{transform:none !important}}
+.cs-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px 64px;align-items:center}
+.cs-start{display:flex;gap:14px;padding:14px 0;border-top:1px solid #EFE4D4;font-size:14px;line-height:1.5;color:#64748B}
+.cs-start:first-of-type{border-top:0;padding-top:0}
+.cs-start span{width:30px;height:30px;border-radius:50%;background:#FFFFFF;color:#B08A5E;font:700 14px 'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:inset 0 0 0 1.5px #E8D5BC}
+.cs-start b{display:block;color:#0F172A;font-weight:600;font-size:15px}
+.cs-who{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;margin-top:40px}
+.cs-step{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px;padding:26px 0;border-top:1px solid #E2E8F0}
+.cs-n{font:800 28px 'Manrope',sans-serif;letter-spacing:-.04em;color:#D6B48C}
+.cs-edu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cs-ss{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 56px;background:#FAF6F0;border-radius:28px;padding:48px}
+.cs-ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5;color:#334155}
+.cs-ol li::marker{color:#B08A5E;font-weight:700}
+@media(max-width:1000px){.cs-hero,.cs-ss{grid-template-columns:1fr}.cs-edu{grid-template-columns:1fr}.cs-who{grid-template-columns:1fr;gap:0}}
+@media(max-width:700px){.cs-ss{padding:28px 22px}.cs-step{grid-template-columns:48px minmax(0,1fr);gap:12px}.cs-n{font-size:22px}}
+.mq{overflow:visible!important;-webkit-mask-image:none!important;mask-image:none!important}.mq-t{animation:none!important;width:auto!important;flex-wrap:wrap;gap:18px 44px}.mq-t .dup{display:none}
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header style="border-bottom: 1px solid #EEF2F6; background: rgba(255,255,255,.92); position: sticky; top: 0; z-index: 30">
+<div class="w" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px">
+<a href="#" aria-label="nochurn — на главную" class="h" style="font-size: 26px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</a>
+<input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
+<nav class="nav" aria-label="Основное меню">
+<div class="dd"><a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="sprint.html"><b>Спринт по Customer Success</b><span>2 недели · старт 2 февраля 2027</span></a><a href="https://nochurn.ru/intensive"><b>Полный курс по Customer Success</b><span>Старт в 2027 году</span></a></div></div>
+<a href="consulting.html"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
+<a href="index.html#conf">Конференция</a>
+<a href="index.html#jobs">Таланты</a>
+<a href="index.html#knowledge">Знания</a>
+<div class="dd"><a href="about.html">О нас<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="about.html"><b>Кто мы</b><span>Аня и Марина</span></a><a href="reviews.html"><b>Отзывы</b><span>Доска любви выпускников</span></a></div></div>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm hdr-cta">Связаться <span class="ar">→</span></a>
+<label for="nav-t" class="burger" aria-label="Меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></label>
+</div>
+</div>
+</header>
+
+<section class="w" style="padding-top: 56px">
+<a href="index.html" class="link" style="font-size: 14px">← На главную</a>
+<div class="cs-hero">
+<div style="min-width: 0">
+<div class="lab" style="margin: 24px 0 16px"><span class="ldot" style="background: #D6B48C"></span>Компаниям</div>
+<h1 class="h" style="font-size: clamp(40px, 5.4vw, 72px); line-height: .98; letter-spacing: -.05em">Консалтинг и корпоративное обучение по <span style="background: linear-gradient(transparent 58%, #A5F3FC 58%, #A5F3FC 90%, transparent 90%); padding: 0 6px; margin-left: -6px">Customer Success</span></h1>
+<p style="margin: 24px 0 0; font-size: 19px; line-height: 1.6; color: #334155; max-width: 54ch">Помогаем ИТ, SaaS и B2B-компаниям внедрить Customer Success: от аудита клиентской базы и ролей в команде до процессов, метрик и обучения.</p>
+<div class="hero-cta" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px"><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p">Связаться <span class="ar">→</span></a><a href="#formats" class="btn btn-s">Форматы работы</a></div>
+</div>
+<div class="card" style="padding: 28px; background: #FAF6F0; border-color: #EFE4D4">
+<div class="lab" style="margin-bottom: 18px">Как начинаем</div>
+<div class="cs-start"><span>1</span><div><b>Знакомство · 30 минут, бесплатно</b>Обсуждаем задачу и решаем, какой формат нужен</div></div>
+<div class="cs-start"><span>2</span><div><b>Аудит</b>Смотрим базу, команду, процессы и метрики</div></div>
+<div class="cs-start"><span>3</span><div><b>План и внедрение</b>Приоритеты, быстрые победы и сопровождение</div></div>
+</div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Внедрение Customer Success</div>
+<div class="sec-head"><h2 class="h2" style="max-width: 18ch">Под вашу модель продаж и сопровождения</h2><span style="font-size: 16px; line-height: 1.55; color: #475569; max-width: 50ch">Customer Success — система, при которой компания помогает клиенту получить результат от продукта, а выручка с базы растёт как следствие: продления, расширение контракта, рекомендации.</span></div>
+<div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px"><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 14px; background: #FAF6F0; display: flex; align-items: center; justify-content: center; flex: none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><div class="h" style="font-size: 22px; letter-spacing: -.02em">ИТ-вендорам и интеграторам</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Клиенты на проектах и лицензиях, продление раз в год, решение принимают несколько людей. Выстраиваем сопровождение после внедрения, работу с ЛПР и подготовку продления заранее, а не за месяц до конца контракта.</div></div><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 14px; background: #FAF6F0; display: flex; align-items: center; justify-content: center; flex: none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg></span><div class="h" style="font-size: 22px; letter-spacing: -.02em">SaaS-компаниям</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Подписка, сотни клиентов, отток виден поздно. Сегментируем базу, делим клиентов на high-touch и low-touch, настраиваем онбординг, health score и сигналы оттока.</div></div><div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 14px; background: #FAF6F0; display: flex; align-items: center; justify-content: center; flex: none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><div class="h" style="font-size: 22px; letter-spacing: -.02em">B2B-сервисам</div><div style="font-size: 15px; line-height: 1.6; color: #475569">Телеком, финтех, агентства, сервисы для бизнеса. Отделяем Customer Success от продаж и поддержки, договариваемся, кто за что отвечает, и считаем, сколько выручки приносит текущая база.</div></div></div>
+<div class="cs-who"><div class="lab" style="padding-top: 22px">Для кого</div><div><div style="padding: 22px 0; border-top: 1px solid #E2E8F0"><div class="h" style="font-size: 19px; letter-spacing: -.015em">Руководителям продаж и коммерческим директорам</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">у которых рост держится на новых сделках, а текущие клиенты уходят или не растут</div></div><div style="padding: 22px 0; border-top: 1px solid #E2E8F0"><div class="h" style="font-size: 19px; letter-spacing: -.015em">Руководителям аккаунтинга и KAM</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">которые ведут крупных клиентов и хотят видеть риск ухода за полгода, а не на переговорах о продлении</div></div><div style="padding: 22px 0; border-top: 1px solid #E2E8F0"><div class="h" style="font-size: 19px; letter-spacing: -.015em">Руководителям CS и клиентского сервиса</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">которые строят или перестраивают функцию</div></div></div></div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Процесс</div>
+<h2 class="h2" style="margin-bottom: 28px">Как проходит внедрение</h2>
+<div><div class="cs-step"><span class="cs-n">01</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Аудит клиентской базы и модели сопровождения</div><div style="font-size: 15px; line-height: 1.6; color: #475569; margin-top: 6px">Кто ваши клиенты, сколько выручки они приносят, где и почему уходят, кто их ведёт после продажи. Интервью с командой и клиентами, разбор CRM и метрик.</div></div></div><div class="cs-step"><span class="cs-n">02</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Роли и ответственность</div><div style="font-size: 15px; line-height: 1.6; color: #475569; margin-top: 6px">Кто отвечает за результат клиента, кто за продление и допродажи: CSM, аккаунт-менеджер, KAM, продажи, поддержка. Как передавать клиента из продаж без потерь.</div></div></div><div class="cs-step"><span class="cs-n">03</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Процессы жизненного цикла</div><div style="font-size: 15px; line-height: 1.6; color: #475569; margin-top: 6px">Онбординг, регулярные встречи с клиентом и QBR, сигналы риска, работа с оттоком, подготовка продления и расширения контракта.</div></div></div><div class="cs-step"><span class="cs-n">04</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Метрики</div><div style="font-size: 15px; line-height: 1.6; color: #475569; margin-top: 6px">Отток клиентов и выручки, удержание выручки (GRR и NRR), health score, время до первой ценности. Первый дашборд и понятный порядок, кто и когда на него смотрит.</div></div></div><div class="cs-step"><span class="cs-n">05</span><div><div class="h" style="font-size: 21px; letter-spacing: -.02em">Обучение команды и сопровождение</div><div style="font-size: 15px; line-height: 1.6; color: #475569; margin-top: 6px">Воркшопы на ваших кейсах, сопровождение 10, 20 или 40 часов в месяц, пока процессы не заработают без нас.</div></div></div></div>
+</section>
+
+<section id="formats" class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Консалтинг</div>
+<div class="sec-head"><h2 class="h2">Форматы работы</h2><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-s btn-sm">Подобрать формат <span class="ar">→</span></a></div>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px"><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 24px; letter-spacing: -.025em">Аудит и диагностика CS-функции</div>
+<div style="font-size: 16px; line-height: 1.55; color: #334155">Оцениваем зрелость, находим слабые места, предлагаем план развития.</div>
+<span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">Срок называем после первой встречи</span>
+<div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Интервью с ключевыми участниками</span></div><div class="chk"><span>Анализ процессов, инструментов, ролей и метрик</span></div><div class="chk"><span>Отчёт с приоритетами: быстрые победы и долгосрочные шаги</span></div></div>
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; line-height: 1.55; color: #64748B"><b style="color: #0F172A; font-weight: 600">Кому:</b> Компаниям, где CS уже есть, но непонятно, работает ли он; новым руководителям CS; фаундерам, которым нужен взгляд со стороны</div>
+</div><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 24px; letter-spacing: -.025em">Запуск Customer Success с нуля</div>
+<div style="font-size: 16px; line-height: 1.55; color: #334155">Готовая модель старта за один-три месяца: от стратегии до первых процессов.</div>
+<span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">30, 50 или 70 часов в месяц · 1–3 месяца</span>
+<div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Роль CS в бизнес-модели, структура и процессы</span></div><div class="chk"><span>Регулярные процессы: QBR, путь клиента</span></div><div class="chk"><span>Первый дашборд, метрики и сценарии действий (playbooks)</span></div></div>
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; line-height: 1.55; color: #64748B"><b style="color: #0F172A; font-weight: 600">Кому:</b> SaaS на стадии роста, стартапам после product-market fit, компаниям, где CS пока на уровне поддержки или продаж</div>
+</div><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 24px; letter-spacing: -.025em">Консультации и сопровождение</div>
+<div style="font-size: 16px; line-height: 1.55; color: #334155">Гибкий формат для внедрения изменений и развития команды.</div>
+<span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">10, 20 или 40 часов в месяц или пакеты</span>
+<div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Настройка процессов, автоматизации и найма</span></div><div class="chk"><span>Глубокие сессии: от оттока до здоровья клиента и адвокатов бренда</span></div><div class="chk"><span>Гипотезы, эксперименты и работа с продажами, продуктом, аналитикой</span></div></div>
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; line-height: 1.55; color: #64748B"><b style="color: #0F172A; font-weight: 600">Кому:</b> Компаниям после аудита, при найме нового руководителя, при выходе в новый сегмент</div>
+</div><div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 24px; letter-spacing: -.025em">Оценка и развитие команды CS</div>
+<div style="font-size: 16px; line-height: 1.55; color: #334155">Понимаем, кто в команде чего стоит и что нужно усиливать.</div>
+<span class="tag tag-i" style="align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 13px">1 неделя на анализ + 1 неделя на выводы и план</span>
+<div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Ассессмент CSM: уровень, компетенции, потенциал</span></div><div class="chk"><span>Пробелы в найме, развитии и ролях</span></div><div class="chk"><span>Карты компетенций и личные планы развития</span></div></div>
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; line-height: 1.55; color: #64748B"><b style="color: #0F172A; font-weight: 600">Кому:</b> Руководителям команд от 3 человек, которые хотят понять, кто может расти</div>
+</div></div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Корпоративное обучение</div>
+<h2 class="h2" style="margin-bottom: 32px">Обучаем команды CS, сервиса, продаж и аккаунтинга</h2>
+<div class="cs-edu">
+<div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 24px; letter-spacing: -.025em">Готовые программы</div>
+<div style="font-size: 15px; line-height: 1.55; color: #475569">Для команд Customer Success, клиентского сервиса, CX, продаж, аккаунтинга и продуктовых направлений.</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Стратегия Customer Success</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Жизненный цикл клиентов</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Работа с оттоком</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Клиентская аналитика и метрики</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Автоматизация процессов CS</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Онбординг и работа с клиентами</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Кросс-командное взаимодействие</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Клиентская культура в компании</span><span class="tag tag-i" style="text-transform: none; letter-spacing: 0; font-size: 13px">Развитие CS на разных этапах роста</span></div>
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 14px; color: #64748B"><b style="color: #0F172A; font-weight: 600">Форматы:</b> практические сессии, воркшопы, интенсивы</div>
+</div>
+<div class="card" style="padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 24px; letter-spacing: -.025em">Обучение под задачи компании</div>
+<div style="font-size: 15px; line-height: 1.55; color: #475569">Программа под цели бизнеса, уровень команды и этап развития. Адаптируем под:</div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Текущие процессы и структура компании</span></div><div class="chk"><span>Уровень зрелости Customer Success</span></div><div class="chk"><span>Задачи руководителей и команд</span></div><div class="chk"><span>Сегменты клиентов и специфика продукта</span></div><div class="chk"><span>Цели по удержанию, развитию и клиентскому опыту</span></div></div>
+</div>
+<a href="sprint.html" class="card-c" style="padding: 30px; display: flex; flex-direction: column; gap: 14px">
+<span class="tag tag-c" style="align-self: flex-start; background: #FFFFFF">Для команды</span>
+<div class="h" style="font-size: 24px; letter-spacing: -.025em">Спринт по Customer Success</div>
+<div style="font-size: 15px; line-height: 1.55; color: #334155">Закрытая группа до 10 человек на кейсах вашей компании или участие сотрудников в открытом спринте 2–16 февраля 2027: жизненный цикл, отток, метрики и ИИ.</div>
+<span class="btn btn-p btn-sm" style="align-self: flex-start; margin-top: auto">Подробнее о спринте <span class="ar">→</span></span>
+</a>
+</div>
+</section>
+
+<section id="strategy" class="w sec rv">
+<div class="cs-ss">
+<div style="min-width: 0">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Для команд от 2 до 15 человек</div>
+<h2 class="h2">Стратегическая сессия для бизнеса и команды</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #334155; max-width: 46ch">Два дня по 8 часов, онлайн или офлайн. Команда синхронизируется, находит, что мешает росту, и уходит со стратегией и дорожной картой на год.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px"><span class="tag" style="background: #FFFFFF; color: #0F172A">2 дня × 8 часов</span><span class="tag" style="background: #FFFFFF; color: #0F172A">Онлайн или офлайн</span><span class="tag" style="background: #FFFFFF; color: #0F172A">Стратегия на год</span></div>
+<p style="margin: 24px 0 0; font-size: 15px; line-height: 1.55; color: #64748B">Сначала созвонимся и обсудим, нужна ли вашей компании стратегическая сессия или задачу можно решить по-другому.</p>
+<div style="margin-top: 18px"><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p">Связаться <span class="ar">→</span></a></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div class="card" style="padding: 24px"><div class="lab" style="margin-bottom: 12px">Кому подойдёт</div><div style="display: flex; flex-direction: column; gap: 10px"><div class="chk"><span>Команда недавно собралась, и люди притираются друг к другу</span></div><div class="chk"><span>Команда работает давно, но не понимает, что мешает расти</span></div><div class="chk"><span>Бизнес построен на сервисе, выручка зависит от того, как вы помогаете клиентам</span></div><div class="chk"><span>Нужна стратегия ради результата, а не для галочки</span></div></div></div>
+<div class="card" style="padding: 24px"><div class="lab" style="margin-bottom: 12px">Как проходит</div><ol class="cs-ol"><li>Каждый участник готовит материалы по своей части бизнеса</li><li>Собираем общую картину — точку А</li><li>Формулируем стратегическую задачу и амбиции — точку Б</li><li>Находим ограничения, которые мешают кратному росту</li><li>Ищем самые короткие пути к цели</li><li>Собираем стратегию и дорожную карту</li></ol><div style="font-size: 14px; color: #64748B; margin-top: 12px"><b style="color: #0F172A; font-weight: 600">Разбираем:</b> продукт и продажи, команду, юнит-экономику и трекшн-карту.</div></div>
+</div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Ещё форматы</div>
+<div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px"><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><div class="h" style="font-size: 20px; letter-spacing: -.02em">Лекция или воркшоп для компании</div><div style="font-size: 15px; line-height: 1.55; color: #475569">Об удержании клиентов и Customer Success для вашей команды: под ваш продукт, задачи и уровень сотрудников. Онлайн или офлайн.</div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="link" style="margin-top: auto; font-size: 14px">Оставить заявку <span class="ar">→</span></a></div><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><div class="h" style="font-size: 20px; letter-spacing: -.02em">Менторинг для руководителей</div><div style="font-size: 15px; line-height: 1.55; color: #475569">Индивидуальная работа с Мариной: как вырасти в роли, найти новые смыслы в развитии или сменить вектор.</div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="link" style="margin-top: auto; font-size: 14px">Связаться <span class="ar">→</span></a></div><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 12px"><div class="h" style="font-size: 20px; letter-spacing: -.02em">Подкаст «Бизнес и сервис»</div><div style="font-size: 15px; line-height: 1.55; color: #475569">Экспертный выпуск о бизнесе и сервисе в подкасте Марины или запись совместного эфира.</div><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="link" style="margin-top: auto; font-size: 14px">Предложить тему <span class="ar">→</span></a></div></div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin: 0 0 20px">У нас учатся сотрудники компаний</div>
+<div class="mq"><div class="mq-t" style="font-family: 'Manrope', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -.03em; color: #94A3B8"><span>Avito</span><span>iSpring</span><span>VK</span><span>cloud.ru</span><span>TEAMLY</span><span>getmatch</span><span>Финтабло</span><span>TravelLine</span><span>Pony Express</span><span>Mobifitness</span><span>Yasno</span><span>Mailfit</span><span>Melbicom</span><span>Giftery</span><span>SAMOSALE</span><span>DevSoft AM</span><span>Doczilla</span><span>JVO</span><span>Mindbox</span><span>UX Feedback</span><span>Hegai</span></div></div>
+</section>
+
+<section class="w sec rv">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 56px">
+<div style="flex: 1 1 280px; min-width: 0"><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Вопросы</div><h2 class="h2">Частые вопросы о внедрении</h2><p style="font-size: 16px; color: #64748B; line-height: 1.55; margin: 16px 0 0">Не нашли ответ? Напишите нам — первая встреча бесплатно.</p><div style="margin-top: 18px"><a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-s btn-sm">Связаться <span class="ar">→</span></a></div></div>
+<div class="faq" style="flex: 2 1 520px; min-width: 0; border-top: 1px solid #E2E8F0"><details><summary>С чего начать внедрение Customer Success в компании?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">С аудита: какие клиенты приносят выручку, где они уходят и кто отвечает за них после продажи. Без этого CS превращается в ещё один отдел поддержки или допродаж. Аудит заканчивается отчётом с приоритетами: что исправить сразу и что делать дальше.</div></details><details><summary>Чем Customer Success отличается от аккаунт-менеджмента и работы KAM?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Аккаунт-менеджер и KAM отвечают за коммерцию: продление, условия, допродажи. Customer Success отвечает за то, чтобы клиент получил результат от продукта. Когда клиент получает результат, продление и расширение даются легче. Во многих ИТ-компаниях эти роли совмещены — помогаем разделить или правильно соединить их.</div></details><details><summary>Нужен ли Customer Success ИТ-интегратору или вендору, если продажи проектные?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Да, если у вас есть продления лицензий, поддержка, повторные проекты или сервисные контракты. В проектном бизнесе клиент чаще уходит после внедрения, когда команда проекта переключается на новых клиентов. CS закрывает этот разрыв.</div></details><details><summary>Сколько длится внедрение Customer Success?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Срок аудита зависит от размера базы и команды, его называем после первой встречи (30 минут, бесплатно). Запуск CS с нуля — один-три месяца с фиксированной программой (30, 50 или 70 часов в месяц). Сопровождение после запуска — 10, 20 или 40 часов в месяц.</div></details><details><summary>Как понять, что Customer Success окупается?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">По выручке с текущей базы: доля продлений, отток выручки, NRR, сумма расширений. Эти метрики фиксируем на старте, чтобы через квартал сравнить с исходной точкой.</div></details><details><summary>Можно ли обучить отдел продаж или аккаунтинга методам Customer Success?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Да. Проводим корпоративное обучение и закрытый спринт для команды на кейсах вашей компании: жизненный цикл клиента, отток, метрики, работа с ключевыми клиентами.</div></details></div>
+</div>
+</section>
+
+<section class="w sec rv" style="padding-bottom: 112px">
+<div class="card-c" style="padding: 44px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
+<div style="min-width: 0; max-width: 620px"><div class="h" style="font-size: clamp(28px, 3.2vw, 42px); line-height: 1.05; letter-spacing: -.035em">Расскажите о задаче команды</div><div style="font-size: 16px; line-height: 1.55; color: #334155; margin-top: 12px">Созвонимся на 30 минут, разберёмся в ситуации и предложим формат. Это бесплатно.</div></div>
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p">Связаться <span class="ar">→</span></a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #F8FAFC; border-top: 1px solid #E2E8F0">
+<div class="w" style="padding-top: 64px; padding-bottom: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; margin-bottom: 48px">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 30px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</div>
+<div style="font-size: 15px; line-height: 1.5; color: #64748B; max-width: 30ch">Обучение и консалтинг по Customer Success для B2B и SaaS</div>
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="align-self: flex-start">Связаться <span class="ar">→</span></a>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500; color: #334155"><a href="#">Написать на почту</a></div>
+</div>
+<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 32px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="https://nochurn.ru/intensive" target="_blank" rel="noopener" style="color: #64748B">Полный курс</a><a href="sprint.html" style="color: #64748B">Спринт по CS</a><a href="#" style="color: #64748B">Расписание стартов</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Компаниям</span><a href="consulting.html#formats" style="color: #64748B">Корпоративное обучение</a><a href="consulting.html" style="color: #64748B">Диагностика CS</a><a href="consulting.html#strategy" style="color: #64748B">Стратегическая сессия</a><a href="consulting.html" style="color: #64748B">Консалтинг</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Конференция</span><a href="https://nochurn.ru/csconf" target="_blank" rel="noopener" style="color: #64748B">CS Conf 2026</a><a href="#" style="color: #64748B">Архив конференций</a><a href="#" style="color: #64748B">Исследование CS в России</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="https://nochurn.ru/blog" target="_blank" rel="noopener" style="color: #64748B">Статьи</a><a href="https://nochurn.ru/glossary" target="_blank" rel="noopener" style="color: #64748B">Глоссарий</a><a href="https://nochurn.ru/customersuccess" target="_blank" rel="noopener" style="color: #64748B">Что такое Customer Success</a><a href="https://www.youtube.com/@vostrikova-service" target="_blank" rel="noopener" style="color: #64748B">Подкаст «Бизнес и сервис»</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Сообщество</span><a href="https://t.me/cstalents" target="_blank" rel="noopener" style="color: #64748B">Таланты Customer Success</a><a href="https://t.me/bizservis" target="_blank" rel="noopener" style="color: #64748B">Канал «Бизнес и сервис»</a><a href="https://t.me/customersuccessru" target="_blank" rel="noopener" style="color: #64748B">Канал «Customer Success»</a></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 22px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #64748B">
+<span>© nochurn · ИП Лютова Дарья Викторовна · ИНН 645122866084</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 18px"><a href="https://nochurn.ru/sveden" target="_blank" rel="noopener">Сведения об образовательной организации</a><a href="https://nochurn.ru/reestr" target="_blank" rel="noopener">Документы</a><a href="https://disk.yandex.ru/i/dDICeHrHloPhVg" target="_blank" rel="noopener">Оферта</a><a href="https://disk.yandex.ru/i/9h6tFPfLPvVYVg" target="_blank" rel="noopener">Политика конфиденциальности</a><a href="https://disk.yandex.ru/i/hX7w1Bgw--oBew" target="_blank" rel="noopener">Согласие на обработку данных</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+<script>document.documentElement.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});</script>
+</body>
+</html>
