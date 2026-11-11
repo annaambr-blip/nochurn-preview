@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Спринт по Customer Success — nochurn</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--c:#06B6D4;--c-btn:#0891B2;--c-dk:#0E7490;--c-t:#ECFEFF;--c-t2:#CFFAFE;--ink:#0F172A;--ink2:#334155;--mut:#64748B;--line:#E2E8F0;--soft:#F8FAFC;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-variant-numeric:tabular-nums}
+.h2{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.lab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.sec{padding-top:112px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.link{font-weight:600;color:var(--c-dk);display:inline-flex;align-items:center;gap:6px}
+.link .ar{transition:transform .3s var(--ease)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1;border:0;cursor:pointer;transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);white-space:nowrap}
+.btn .ar{display:inline-block;transition:transform .3s var(--ease)}
+.btn-p{background:var(--c-btn);color:#FFFFFF;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 6px 16px -8px rgba(8,145,178,.6)}
+.btn-s{background:#FFFFFF;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
+/* cards */
+.card{background:#FFFFFF;border:1.5px solid var(--line);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.card-c{background:var(--c-t);border:1.5px solid var(--c-t2);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 12px;line-height:1}
+.tag-c{background:#FFFFFF;color:var(--c-dk);box-shadow:inset 0 0 0 1px var(--c-t2)}
+.tag-i{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c);display:inline-block}
+.btn-b{background:#F1E3CF;color:#5C4126;box-shadow:inset 0 0 0 1.5px #E6D2B4}
+.card-b{background:#FBF5EC;border:1.5px solid #EFE2CF;border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag-b{background:#FFFFFF;color:#7A5A30;box-shadow:inset 0 0 0 1px #EFE2CF}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:1px}
+.live{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:1px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);animation:pl 2s var(--ease) infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
+.circ{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .25s var(--ease),color .25s var(--ease)}
+/* nav */
+.nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a{position:relative;padding:6px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--c);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav .nd{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;vertical-align:2px}
+.nav-t{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:46px;height:46px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);align-items:center;justify-content:center;cursor:pointer}
+/* hover only on real pointers */
+@media(hover:hover){
+.btn-p:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -10px rgba(8,145,178,.7)}
+.btn-b:hover{background:#E9D5B7;transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px #D6B48C,0 10px 20px -12px rgba(122,90,48,.5)}
+.card-b:hover{transform:translateY(-4px);border-color:#D6B48C;box-shadow:0 20px 40px -24px rgba(122,90,48,.35)}
+.card-b:hover .circ{transform:rotate(45deg);background:#D6B48C;color:#FFFFFF}
+.btn-s:hover{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--c-dk);transform:translateY(-1px)}
+.btn:hover .ar,.link:hover .ar{transform:translateX(4px)}
+.card:hover,.card-c:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
+.card:hover .circ,.card-c:hover .circ{transform:rotate(45deg);background:var(--c);color:#FFFFFF}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.row:hover{background:var(--soft)}
+.row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
+}
+.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-t{display:flex;gap:56px;width:max-content;animation:mq 32s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
+@media(max-width:1000px){
+.nav{display:none}.burger{display:flex}
+.nav-t:checked ~ .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#FFFFFF;padding:12px 20px 24px;border-bottom:1px solid var(--line);z-index:20;font-size:18px;box-shadow:0 20px 30px -20px rgba(15,23,42,.2)}
+.nav-t:checked ~ .nav a{padding:12px 0;width:100%}
+}
+@media(max-width:700px){
+.w{padding-left:20px;padding-right:20px}
+.sec{padding-top:72px}
+.hdr-cta{display:none !important}
+.g2{grid-template-columns:1fr !important}
+.ill{display:none}
+.hero-ring{display:none}
+.conf-ring{display:none}
+.stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
+.mq{-webkit-mask-image:none;mask-image:none}.mq-t{animation:none;flex-wrap:wrap;width:auto;gap:14px 28px;font-size:20px !important}.mq-t .dup{display:none}
+.hero-cta .btn{flex:1 1 100%}
+.dir{min-height:0 !important}
+.hero-h{font-size:52px !important}
+.ev-date{font-size:28px !important}
+.biz{padding:24px !important}.conf{padding-top:48px !important;padding-bottom:48px !important}
+.conf-date{width:96px !important;height:96px !important}
+.conf-date b{font-size:42px !important}
+}
+</style>
+<style>
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;font-family:'Manrope',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pl{width:32px;height:32px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:none;transition:transform .3s var(--ease),background .25s}
+.faq details[open] summary .pl{transform:rotate(45deg);background:#CFFAFE}
+.faq .ans{padding:0 4px 22px;font-size:16px;line-height:1.6;color:#475569;max-width:70ch}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#334155}
+.chk::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:1px;background:#CFFAFE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%230E7490' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.inp{font-family:inherit;font-size:16px;height:52px;padding:0 16px;border:1.5px solid var(--line);border-radius:14px;background:#FFFFFF;width:100%;transition:border-color .2s}
+.inp:focus{outline:none;border-color:var(--c)}
+@media(max-width:700px){.tl-row{grid-template-columns:1fr !important;gap:8px !important}.price-hl{transform:none !important}}
+</style>
+</head>
+<body>
+
+<div>
+<!-- HEADER -->
+<header style="border-bottom: 1px solid #EEF2F6; background: rgba(255,255,255,.92); position: sticky; top: 0; z-index: 30">
+<div class="w" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px">
+<a href="#" aria-label="nochurn — на главную" class="h" style="font-size: 26px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</a>
+<input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
+<nav class="nav" aria-label="Основное меню">
+<a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение</a>
+<a href="index.html#biz"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
+<a href="index.html#conf">Конференция</a>
+<a href="index.html#jobs">Вакансии</a>
+<a href="index.html#knowledge">Знания</a>
+<a href="index.html#about">О нас</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="#" class="btn btn-p btn-sm hdr-cta">Обсудить задачу <span class="ar">→</span></a>
+<label for="nav-t" class="burger" aria-label="Меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></label>
+</div>
+</div>
+</header>
+<section class="w" style="padding-top: 40px; position: relative; z-index: 0">
+<div class="hero-ring" aria-hidden="true" style="position: absolute; right: -80px; top: 0; width: 520px; height: 520px; z-index: -1"><div style="position: absolute; inset: 0; border-radius: 50%; border: 64px solid #ECFEFF"></div><div style="position: absolute; left: 260px; top: 16px; width: 114px; height: 114px; border-radius: 50%; background: #A5F3FC"></div></div>
+<a href="index.html" class="link" style="font-size: 14px">← На главную</a>
+<div style="display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: center; margin-top: 24px">
+<div style="flex: 999 1 520px; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px"><span class="tag tag-c"><span class="live" style="margin-right: 6px"></span>Идёт предзапись</span><span class="tag tag-i">Онлайн-спринт · 2 недели</span></div>
+<h1 class="h hero-h" style="font-size: clamp(48px, 6.4vw, 88px); line-height: .94; letter-spacing: -.05em">Спринт по<br><span style="background: linear-gradient(transparent 58%, #A5F3FC 58%, #A5F3FC 90%, transparent 90%); padding: 0 6px; margin-left: -6px">Customer Success</span></h1>
+<p style="margin: 24px 0 0; font-size: 19px; line-height: 1.55; color: #334155; max-width: 44ch">Четыре ключевые темы полного курса за две недели: жизненный цикл клиента, отток, метрики и ИИ. Для руководителей CS в B2B SaaS и AI-native.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 28px 0 32px; max-width: 620px">
+<div><div class="h" style="font-size: 22px">2–16 февраля</div><div style="font-size: 14px; color: #64748B">2027</div></div>
+<div><div class="h" style="font-size: 22px">вт и чт</div><div style="font-size: 14px; color: #64748B">17:00 по Москве</div></div>
+<div><div class="h" style="font-size: 22px">4 модуля</div><div style="font-size: 14px; color: #64748B">+ практикум, ~8 часов</div></div>
+</div>
+<div class="hero-cta" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+<a href="#price" class="btn btn-p">Записаться на спринт <span class="ar">→</span></a>
+<a href="#program" class="btn btn-s">Программа</a>
+<span style="font-size: 15px; color: #64748B; margin-left: 8px">от <b class="h" style="font-size: 20px; color: #0F172A">39 000 ₽</b></span>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0">
+<div class="card" style="padding: 24px; background: #F8FAFC; border-color: #E2E8F0">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px"><span class="lab">Ваш результат</span><span class="tag tag-c">Canvas</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="display: flex; align-items: center; gap: 14px; background: #FFFFFF; border: 1.5px solid #A5F3FC; border-radius: 16px; padding: 14px 16px; margin-left: 0px; box-shadow: 0 10px 24px -18px rgba(15,23,42,.35)"><span style="width: 32px; height: 32px; border-radius: 10px; background: #CFFAFE; color: #0E7490; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none">01</span><span class="h" style="font-size: 16px; letter-spacing: -.01em">Жизненный цикл клиента</span></div><div style="display: flex; align-items: center; gap: 14px; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 14px 16px; margin-left: 14px; box-shadow: 0 10px 24px -18px rgba(15,23,42,.35)"><span style="width: 32px; height: 32px; border-radius: 10px; background: #F6EEE3; color: #7A5A30; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none">02</span><span class="h" style="font-size: 16px; letter-spacing: -.01em">Отток · Churn notes</span></div><div style="display: flex; align-items: center; gap: 14px; background: #FFFFFF; border: 1.5px solid #A5F3FC; border-radius: 16px; padding: 14px 16px; margin-left: 28px; box-shadow: 0 10px 24px -18px rgba(15,23,42,.35)"><span style="width: 32px; height: 32px; border-radius: 10px; background: #CFFAFE; color: #0E7490; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none">03</span><span class="h" style="font-size: 16px; letter-spacing: -.01em">Метрики и дашборд</span></div><div style="display: flex; align-items: center; gap: 14px; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 14px 16px; margin-left: 42px; box-shadow: 0 10px 24px -18px rgba(15,23,42,.35)"><span style="width: 32px; height: 32px; border-radius: 10px; background: #F6EEE3; color: #7A5A30; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none">04</span><span class="h" style="font-size: 16px; letter-spacing: -.01em">ИИ-сценарии для команды</span></div></div>
+<div style="display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 14px; color: #475569"><span style="display: flex"><img src="img/anna.jpg" alt="" width="32" height="32" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"><span style="margin-left: -8px; display: flex"><img src="img/marina.jpg" alt="" width="32" height="32" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"></span></span>Разбор вашего Canvas на практикуме</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Зачем спринт</div>
+<h2 class="h2" style="max-width: 20ch">Бюджеты на привлечение режут первыми. Удерживать базу — задача CS</h2>
+<div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 36px">
+<div class="card" style="padding: 26px"><div style="font-size: 13px; font-weight: 600; color: #94A3B8; margin-bottom: 10px">Сейчас</div><div class="h" style="font-size: 20px; line-height: 1.25">Жизненный цикл клиента нигде не описан</div></div>
+<div class="card" style="padding: 26px"><div style="font-size: 13px; font-weight: 600; color: #94A3B8; margin-bottom: 10px">Сейчас</div><div class="h" style="font-size: 20px; line-height: 1.25">Об оттоке узнают, когда клиент уже ушёл</div></div>
+<div class="card" style="padding: 26px"><div style="font-size: 13px; font-weight: 600; color: #94A3B8; margin-bottom: 10px">Сейчас</div><div class="h" style="font-size: 20px; line-height: 1.25">Метрики разбросаны по разным таблицам</div></div>
+</div>
+<div class="card-c" style="padding: 32px; margin-top: 16px">
+<div class="lab" style="color: #0E7490; margin-bottom: 18px">После спринта</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 28px">
+<div class="chk">Видно, на каком этапе каждый клиент</div><div class="chk">Риск ухода заметен до продления</div><div class="chk">Метрики собраны в одном дашборде</div><div class="chk">ИИ работает по понятным сценариям</div>
+</div>
+</div>
+</section>
+
+<section id="program" class="w sec rv">
+<div class="sec-head"><div><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Программа</div><h2 class="h2">4 модуля и практикум</h2></div><span style="font-size: 15px; color: #64748B">Каждый модуль добавляет слой в ваш Canvas</span></div>
+<div class="tl-row" style="display: grid; grid-template-columns: 160px minmax(0, 1fr) 220px; gap: 24px; align-items: center; padding: 26px 0; border-top: 1px solid #E2E8F0">
+<div><div class="h" style="font-size: 22px">2 февраля</div><div style="font-size: 14px; color: #64748B">вторник</div></div>
+<div><div class="h" style="font-size: 22px; letter-spacing: -.02em">Жизненный цикл клиента</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">Adoption, Retention, Expansion, Advocacy: цели, инструменты и метрики каждого этапа.</div></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="display: flex"><img src="img/anna.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"></span><span style="font-size: 14px; color: #334155">Анна Амброзевич</span></div>
+</div>
+<div class="tl-row" style="display: grid; grid-template-columns: 160px minmax(0, 1fr) 220px; gap: 24px; align-items: center; padding: 26px 0; border-top: 1px solid #E2E8F0">
+<div><div class="h" style="font-size: 22px">4 февраля</div><div style="font-size: 14px; color: #64748B">четверг</div></div>
+<div><div class="h" style="font-size: 22px; letter-spacing: -.02em">Отток клиентов</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">Категории и сигналы оттока, системный подход, аналитика в 10+ разрезах, шаблон Churn notes.</div></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="display: flex"><img src="img/anna.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"></span><span style="font-size: 14px; color: #334155">Анна Амброзевич</span></div>
+</div>
+<div class="tl-row" style="display: grid; grid-template-columns: 160px minmax(0, 1fr) 220px; gap: 24px; align-items: center; padding: 26px 0; border-top: 1px solid #E2E8F0">
+<div><div class="h" style="font-size: 22px">9 февраля</div><div style="font-size: 14px; color: #64748B">вторник</div></div>
+<div><div class="h" style="font-size: 22px; letter-spacing: -.02em">Метрики и аналитика</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">Бизнес-метрики и метрики жизненного цикла, расчёты, частые ошибки, дашборд.</div></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="display: flex"><img src="img/marina.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"></span><span style="font-size: 14px; color: #334155">Марина Вострикова</span></div>
+</div>
+<div class="tl-row" style="display: grid; grid-template-columns: 160px minmax(0, 1fr) 220px; gap: 24px; align-items: center; padding: 26px 0; border-top: 1px solid #E2E8F0">
+<div><div class="h" style="font-size: 22px">11 февраля</div><div style="font-size: 14px; color: #64748B">четверг</div></div>
+<div><div class="h" style="font-size: 22px; letter-spacing: -.02em">ИИ в Customer Success</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 6px">Где ИИ помогает команде: практические кейсы, возможности и ограничения.</div></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="display: flex"><img src="img/marina.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"></span><span style="font-size: 14px; color: #334155">Марина Вострикова</span></div>
+</div>
+<div class="tl-row" style="display: grid; grid-template-columns: 160px minmax(0, 1fr) 220px; gap: 24px; align-items: center; padding: 26px 24px; margin: 12px -24px 0; background: #ECFEFF; border-radius: 20px">
+<div><div class="h" style="font-size: 22px">16 февраля</div><div style="font-size: 14px; color: #64748B">вторник · 2 часа</div></div>
+<div><div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><span class="h" style="font-size: 22px; letter-spacing: -.02em">Практикум «Свой Canvas»</span><span class="tag tag-c">в тарифе с практикумом</span></div><div style="font-size: 15px; line-height: 1.55; color: #475569; margin-top: 6px">Показываете свою систему удержания целиком и получаете разбор.</div></div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="display: flex"><img src="img/anna.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"><span style="margin-left: -10px; display: flex"><img src="img/marina.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"></span></span><span style="font-size: 14px; color: #334155">Анна и Марина</span></div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Для кого</div>
+<h2 class="h2">Кому подойдёт спринт</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 32px">
+<div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px"><span style="width: 44px; height: 44px; border-radius: 12px; background: #CFFAFE; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1-4 4-6 8-6s7 2 8 6"></path></svg></span><div class="h" style="font-size: 18px; line-height: 1.3; letter-spacing: -.015em">Руководителям CS и клиентского сервиса, которые строят или перестраивают отдел</div></div>
+<div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px"><span style="width: 44px; height: 44px; border-radius: 12px; background: #F6EEE3; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A97A45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v12H3z"></path><path d="M8 7V5h8v2"></path></svg></span><div class="h" style="font-size: 18px; line-height: 1.3; letter-spacing: -.015em">Аккаунт-менеджерам и менеджерам по работе с клиентами</div></div>
+<div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px"><span style="width: 44px; height: 44px; border-radius: 12px; background: #CFFAFE; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z"></path></svg></span><div class="h" style="font-size: 18px; line-height: 1.3; letter-spacing: -.015em">Основателям и руководителям SaaS и AI-native компаний</div></div>
+<div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px"><span style="width: 44px; height: 44px; border-radius: 12px; background: #F1F5F9; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div class="h" style="font-size: 18px; line-height: 1.3; letter-spacing: -.015em">Тем, кому шесть недель полного курса пока не подходят</div></div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Спикеры</div>
+<h2 class="h2">Ведут практики</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 32px">
+<div class="card" style="padding: 28px; display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start">
+<img src="img/anna.jpg" alt="Анна Амброзевич" width="112" height="112" style="width: 112px; height: 112px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #D6B48C; margin: 4px; flex: none">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div class="h" style="font-size: 22px; letter-spacing: -.02em">Анна Амброзевич</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="tag tag-i">Жизненный цикл</span><span class="tag tag-i">Отток</span></div>
+<div style="font-size: 15px; line-height: 1.55; color: #475569">15+ лет в MarTech и CX, экс-CCO в IT-консалтинге. Помогает выстраивать системную работу с клиентами.</div>
+<a href="#" class="link" style="font-size: 14px">Telegram-канал @customersuccessru <span class="ar">→</span></a>
+</div>
+</div>
+<div class="card" style="padding: 28px; display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start">
+<img src="img/marina.jpg" alt="Марина Вострикова" width="112" height="112" style="width: 112px; height: 112px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #06B6D4; margin: 4px; flex: none">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div class="h" style="font-size: 22px; letter-spacing: -.02em">Марина Вострикова</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="tag tag-i">Метрики</span><span class="tag tag-i">ИИ</span></div>
+<div style="font-size: 15px; line-height: 1.55; color: #475569">20+ лет в клиентском сервисе, экс-директор сервиса Битрикс24. Помогает со стратегией и бизнес-эффективностью.</div>
+<a href="#" class="link" style="font-size: 14px">Telegram-канал @bizservis <span class="ar">→</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Формат</div>
+<h2 class="h2">Как проходит спринт</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 32px">
+<div class="card" style="padding: 24px"><div class="h" style="font-size: 18px">Живые эфиры</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 8px">Все модули онлайн, вопросы спикерам по ходу.</div></div>
+<div class="card" style="padding: 24px"><div class="h" style="font-size: 18px">Шаблоны</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 8px">Canvas, Churn notes и шаблон дашборда остаются у вас.</div></div>
+<div class="card" style="padding: 24px"><div class="h" style="font-size: 18px">Записи</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 8px">Если пропустили эфир — посмотрите в записи.</div></div>
+<div class="card" style="padding: 24px"><div class="h" style="font-size: 18px">Практикум</div><div style="font-size: 15px; line-height: 1.55; color: #64748B; margin-top: 8px">Два часа разбора вашего Canvas с Анной и Мариной.</div></div>
+</div>
+</section>
+
+<section id="price" class="w sec rv">
+<div class="sec-head"><div><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Тарифы</div><h2 class="h2">Стоимость участия</h2></div><span style="font-size: 15px; color: #64748B">Оплата как физлицо или по договору и счёту для компании</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: stretch">
+<div class="card" style="position: relative; padding: 32px 28px; display: flex; flex-direction: column; gap: 18px; ">
+
+<div class="lab"><span class="ldot" style="background: #06B6D4"></span>Спринт</div>
+<div><span class="h" style="font-size: 40px; letter-spacing: -.04em">39 000 ₽</span><div style="font-size: 14px; color: #64748B; margin-top: 4px">≈ 6 часов</div></div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 18px; border-top: 1px solid #E2E8F0"><div class="chk">4 модуля в прямом эфире</div><div class="chk">Шаблоны Canvas, Churn notes, дашборд</div><div class="chk">Записи и материалы на 6 месяцев</div></div>
+
+<a href="#apply" class="btn btn-p" style="margin-top: auto">Записаться <span class="ar">→</span></a>
+</div>
+<div class="card price-hl" style="position: relative; padding: 32px 28px; display: flex; flex-direction: column; gap: 18px; border: 2px solid #06B6D4;">
+<span class="tag" style="background: #0891B2; color: #FFFFFF; position: absolute; top: -13px; left: 28px">Рекомендуем</span>
+<div class="lab"><span class="ldot" style="background: #06B6D4"></span>Спринт + практикум</div>
+<div><span class="h" style="font-size: 40px; letter-spacing: -.04em">54 000 ₽</span><div style="font-size: 14px; color: #64748B; margin-top: 4px">≈ 8 часов</div></div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 18px; border-top: 1px solid #E2E8F0"><div class="chk">Всё из тарифа «Спринт»</div><div class="chk">Разбор вашего Canvas на практикуме</div><div class="chk">Записи на 12 месяцев</div><div class="chk">Электронный сертификат</div></div>
+
+<a href="#apply" class="btn btn-p" style="margin-top: auto">Записаться с практикумом <span class="ar">→</span></a>
+</div>
+<div class="card" style="position: relative; padding: 32px 28px; display: flex; flex-direction: column; gap: 18px; ">
+
+<div class="lab"><span class="ldot" style="background: #D6B48C"></span>Команда</div>
+<div><span class="h" style="font-size: 40px; letter-spacing: -.04em">от 250 000 ₽</span><div style="font-size: 14px; color: #64748B; margin-top: 4px">даты по согласованию</div></div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 18px; border-top: 1px solid #E2E8F0"><div class="chk">Спринт для одной компании на её кейсах</div><div class="chk">Стратегическая сессия с командой</div><div class="chk">Закрытая группа до 10 человек</div></div>
+
+<a href="#apply" class="btn btn-s" style="margin-top: auto">Обсудить в Telegram <span class="ar">→</span></a>
+</div>
+</div>
+<div style="display: flex; gap: 14px; align-items: center; margin-top: 20px; padding: 18px 22px; border-radius: 16px; background: #F8FAFC; font-size: 15px; color: #334155"><span style="width: 10px; height: 10px; border-radius: 50%; background: #D6B48C; flex: none"></span>Стоимость спринта засчитывается, если вы перейдёте на 6-й поток полного курса — старт 11 октября 2027.</div>
+</section>
+
+<section class="w sec rv">
+<div class="sec-head"><div><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Отзывы</div><h2 class="h2">Что говорят выпускники</h2></div><a href="reviews.html" class="link">Все отзывы <span class="ar">→</span></a></div>
+<div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px"><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 16px"><div style="font-size: 16px; line-height: 1.55">«Ты вроде знаешь это всё, но когда мы это всё разбирали на примерах, в голове реально мысли совсем по-другому стали идти.»</div><div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; background: #CFFAFE; color: #0E7490; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex: none">АВ</span><span><span style="display: block; font-weight: 600; font-size: 14px">Алексей Васильев</span><span style="font-size: 13px; color: #64748B">Директор департамента успеха клиентов, Финтабло</span></span></div></div><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 16px"><div style="font-size: 16px; line-height: 1.55">«Теперь я точно знаю, какой специалист мне нужен в команду. Говорю с коллегами на одном языке и понимаю, какие шаги нужно сделать.»</div><div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; background: #F6EEE3; color: #7A5A30; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex: none">АЮ</span><span><span style="display: block; font-weight: 600; font-size: 14px">Антон Юрченко</span><span style="font-size: 13px; color: #64748B">Chief Sales Officer, Giftery</span></span></div></div><div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 16px"><div style="font-size: 16px; line-height: 1.55">«Вы помогли сложить в голове систему координат, и теперь у меня есть понимание, с чего можно начать.»</div><div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; background: #CFFAFE; color: #0E7490; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex: none">МК</span><span><span style="display: block; font-weight: 600; font-size: 14px">Марьяна Капустина</span><span style="font-size: 13px; color: #64748B">Руководитель отдела поддержки биллинга, Melbicom</span></span></div></div></div>
+</section>
+
+<section class="w sec rv">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 56px">
+<div style="flex: 1 1 280px; min-width: 0"><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Вопросы</div><h2 class="h2">Частые вопросы</h2><p style="font-size: 16px; color: #64748B; line-height: 1.55; margin: 16px 0 0">Не нашли ответ? Напишите в Telegram <a href="#" style="color: #0E7490; font-weight: 600">@annaambr</a></p></div>
+<div class="faq" style="flex: 2 1 520px; min-width: 0; border-top: 1px solid #E2E8F0"><details><summary>Чем спринт отличается от полного курса?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Спринт — это четыре ключевых модуля полного курса за две недели. В полном курсе добавляется разбор каждого этапа жизненного цикла, стратегия, процессы, команда, защита кейса и диплом.</div></details><details><summary>Как проходят встречи?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Онлайн по вторникам и четвергам в 17:00 по Москве. Модули — 2, 4, 9 и 11 февраля, практикум — 16 февраля.</div></details><details><summary>Будут ли записи?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Да: 6 месяцев доступа в тарифе «Спринт» и 12 месяцев в тарифе «Спринт + практикум».</div></details><details><summary>Что такое Canvas?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Схема работы с клиентами вашей компании на одном листе: жизненный цикл, отток, метрики и сценарии ИИ.</div></details><details><summary>Можно оплатить от компании?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Да, по договору и счёту на юрлицо.</div></details><details><summary>Подойдёт ли, если у нас не SaaS?<span class="pl" aria-hidden="true">+</span></summary><div class="ans">Да, если у вас B2B и повторяющиеся отношения с клиентами: подписка, договор на обслуживание или регулярные закупки.</div></details></div>
+</div>
+</section>
+
+<section id="apply" class="w sec rv" style="padding-bottom: 112px">
+<div class="card-c" style="position: relative; overflow: hidden; padding: 44px; display: flex; flex-wrap: wrap; gap: 36px 56px">
+<div class="conf-ring" aria-hidden="true" style="position: absolute; left: -90px; bottom: -110px; width: 300px; height: 300px"><div style="position: absolute; inset: 0; border-radius: 50%; border: 44px solid #CFFAFE"></div><div style="position: absolute; left: 150px; top: 9px; width: 66px; height: 66px; border-radius: 50%; background: #A5F3FC"></div></div>
+<div style="position: relative; flex: 1 1 300px; min-width: 0">
+<div class="lab" style="color: #0E7490; margin-bottom: 14px"><span class="live"></span>Идёт предзапись</div>
+<h2 class="h2">Записаться на спринт</h2>
+<p style="font-size: 16px; line-height: 1.55; color: #334155; margin: 16px 0 0">После заявки пришлём ссылку на оплату или договор и счёт для компании.</p>
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 24px; font-size: 15px"><span class="h" style="font-size: 20px">2–16 февраля 2027</span><span style="color: #64748B">вт и чт · 17:00 МСК · онлайн</span></div>
+</div>
+<form style="position: relative; flex: 1.4 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Имя<input class="inp" type="text"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Email<input class="inp" type="email"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Telegram<input class="inp" type="text" placeholder="@username"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Тариф<select class="inp"><option>Спринт + практикум — 54 000 ₽</option><option>Спринт — 39 000 ₽</option><option>Команда — от 250 000 ₽</option></select></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Оплата<select class="inp"><option>Как физлицо</option><option>Безналичная, от компании</option></select></label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #475569; margin-top: 4px"><input type="checkbox" style="width: 18px; height: 18px; margin: 1px 0 0; accent-color: #0891B2"><span>Согласен(на) на обработку персональных данных и с <a href="#" style="color: #0E7490">политикой конфиденциальности</a></span></label>
+<button type="submit" class="btn btn-p" style="align-self: flex-start; margin-top: 6px">Отправить заявку <span class="ar">→</span></button>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #F8FAFC; border-top: 1px solid #E2E8F0">
+<div class="w" style="padding-top: 64px; padding-bottom: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; margin-bottom: 48px">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div class="h" style="font-size: 30px; letter-spacing: -.05em; display: flex; align-items: center">n<svg aria-hidden="true" viewBox="0 0 100 100" style="width: .58em; height: .58em; margin: .12em .02em 0; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#0F172A" stroke-width="14"></circle><circle cx="61" cy="14" r="13" fill="#06B6D4"></circle></svg>churn</div>
+<div style="font-size: 15px; line-height: 1.5; color: #64748B; max-width: 30ch">Обучение и консалтинг по Customer Success для B2B и SaaS</div>
+<a href="#" class="btn btn-p btn-sm" style="align-self: flex-start">Обсудить задачу <span class="ar">→</span></a>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500; color: #334155"><a href="#">Telegram Ани · @annaambr</a><a href="#">Telegram Марины · @tigerms</a><a href="#">Написать на почту</a></div>
+</div>
+<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 32px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="#" style="color: #64748B">Полный курс</a><a href="#" style="color: #64748B">Спринт по CS</a><a href="#" style="color: #64748B">Расписание стартов</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Компаниям</span><a href="#" style="color: #64748B">Корпоративное обучение</a><a href="#" style="color: #64748B">Диагностика CS</a><a href="#" style="color: #64748B">Стратегическая сессия</a><a href="#" style="color: #64748B">Консалтинг</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Конференция</span><a href="#" style="color: #64748B">CS Conf 2026</a><a href="#" style="color: #64748B">Архив конференций</a><a href="#" style="color: #64748B">Исследование CS в России</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="#" style="color: #64748B">Статьи</a><a href="#" style="color: #64748B">Глоссарий</a><a href="#" style="color: #64748B">Что такое Customer Success</a><a href="#" style="color: #64748B">Подкаст «Бизнес и сервис»</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Сообщество</span><a href="#" style="color: #64748B">Вакансии в CS</a><a href="#" style="color: #64748B">Разместить вакансию</a><a href="#" style="color: #64748B">Канал «Бизнес и сервис»</a><a href="#" style="color: #64748B">Канал Ани о CS</a></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 22px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #64748B">
+<span>© nochurn · [реквизиты ИП, ИНН]</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 18px"><a href="#">Сведения об образовательной организации</a><a href="#">Документы</a><a href="#">Оферта</a><a href="#">Политика конфиденциальности</a><a href="#">Согласие на обработку данных</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+<script>document.documentElement.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});</script>
+</body>
+</html>
