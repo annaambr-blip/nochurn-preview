@@ -117,6 +117,20 @@ a{color:inherit;text-decoration:none}
 .faq details[open] summary .pl{transform:rotate(45deg);background:#CFFAFE}
 .faq .ans{padding:0 4px 22px;font-size:16px;line-height:1.6;color:#475569;max-width:70ch}
 @media(max-width:700px){.sp-ph{width:76px!important;height:76px!important}.sp-st{font-size:20px!important}}
+.cv-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px 56px;align-items:center}
+.cv-card{position:relative;border:1px solid #E2E8F0;border-radius:24px;padding:18px;background:#FFFFFF;box-shadow:0 30px 60px -40px rgba(15,23,42,.35);overflow:hidden}
+.cv-grid{display:grid;grid-template-columns:118px repeat(4,minmax(0,1fr));gap:3px}
+.cv-corner{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#94A3B8;align-self:center}
+.cv-h{border-radius:10px 10px 4px 4px;color:#FFFFFF;padding:9px 6px;text-align:center;display:flex;flex-direction:column;gap:1px}
+.cv-h b{font:700 13px 'Manrope',sans-serif}.cv-h span{font-size:10px;opacity:.85}
+.cv-l{padding:10px 8px 10px 0;border-top:1px solid #EEF2F6;display:flex;flex-direction:column;gap:2px}
+.cv-l b{font-size:12px;font-weight:600;color:#0F172A;line-height:1.25}.cv-l span{font-size:10px;color:#94A3B8;line-height:1.3}
+.cv-c{min-height:62px;border-radius:4px;padding:12px 8px;display:flex;flex-direction:column;gap:6px}
+.cv-c i{display:block;height:6px;border-radius:3px;background:#CBD5E1;opacity:.55}
+.cv-blur{filter:blur(2.5px);opacity:.7}
+.cv-fade{position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(transparent,#FFFFFF 70%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}
+.cv-lock{display:inline-flex;align-items:center;gap:8px;background:#0891B2;color:#FFFFFF;font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px}
+@media(max-width:900px){.cv-wrap{grid-template-columns:1fr}.cv-grid{grid-template-columns:76px repeat(4,minmax(0,1fr))}.cv-h span{display:none}.cv-h b{font-size:10px}.cv-l b{font-size:10px}.cv-l span{display:none}.cv-c{min-height:44px;padding:8px 5px}}
 .chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#334155}
 .chk::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:1px;background:#CFFAFE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%230E7490' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
 .inp{font-family:inherit;font-size:16px;height:52px;padding:0 16px;border:1.5px solid var(--line);border-radius:14px;background:#FFFFFF;width:100%;transition:border-color .2s}
@@ -216,6 +230,18 @@ a{color:inherit;text-decoration:none}
 <div><div class="h" style="font-size: 22px">16 февраля</div><div style="font-size: 14px; color: #64748B">вторник · 2 часа</div></div>
 <div><div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><span class="h" style="font-size: 22px; letter-spacing: -.02em">Практикум «Свой Canvas»</span><span class="tag tag-c">в тарифе с практикумом</span></div><div style="font-size: 15px; line-height: 1.55; color: #475569; margin-top: 6px">Показываете свою систему удержания целиком и получаете разбор.</div></div>
 <div style="display: flex; align-items: center; gap: 10px"><span style="display: flex"><img src="img/anna.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"><span style="margin-left: -10px; display: flex"><img src="img/marina.jpg" alt="" width="36" height="36" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #FFFFFF; flex: none"></span></span><span style="font-size: 14px; color: #334155">Анна и Марина</span></div>
+</div>
+</section>
+
+<section class="w sec rv">
+<div class="cv-wrap">
+<div class="cv-txt">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #D6B48C"></span>Ваш результат</div>
+<h2 class="h2" style="max-width: 14ch">Customer Success Canvas</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #475569; max-width: 42ch">Одна карта всей работы с клиентами: четыре этапа жизненного цикла и слои — от сегментов и целей до процессов и метрик. Каждый модуль спринта добавляет в неё новый слой.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 22px"><div class="chk">Шаблон Canvas и пример заполнения для B2B SaaS</div><div class="chk">Заполняете под свой продукт по ходу спринта</div><div class="chk">На практикуме разбираем ваш Canvas вместе</div></div>
+</div>
+<div class="cv-card"><div class="cv-grid"><div class="cv-corner">Слои</div><div class="cv-h" style="background:#22C3DE"><b>1 Adoption</b><span>Внедрение</span></div><div class="cv-h" style="background:#06B6D4"><b>2 Retention</b><span>Удержание</span></div><div class="cv-h" style="background:#0891B2"><b>3 Expansion</b><span>Масштабирование</span></div><div class="cv-h" style="background:#0E7490"><b>4 Advocacy</b><span>Лояльность</span></div><div class="cv-l"><b>Клиенты и сегменты</b><span>Кто на этапе</span></div><div class="cv-c" style="background:#FAF6F0"><i style="width:78%"></i><i style="width:55%"></i></div><div class="cv-c" style="background:#FAF6F0"><i style="width:64%"></i><i style="width:82%"></i></div><div class="cv-c" style="background:#FAF6F0"><i style="width:88%"></i><i style="width:40%"></i></div><div class="cv-c" style="background:#FAF6F0"><i style="width:60%"></i><i style="width:70%"></i></div><div class="cv-l"><b>Цель этапа</b><span>Какой результат клиента ведём</span></div><div class="cv-c" style="background:#F3FBFD"><i style="width:64%"></i><i style="width:82%"></i></div><div class="cv-c" style="background:#F3FBFD"><i style="width:88%"></i><i style="width:40%"></i></div><div class="cv-c" style="background:#F3FBFD"><i style="width:60%"></i><i style="width:70%"></i></div><div class="cv-c" style="background:#F3FBFD"><i style="width:78%"></i><i style="width:55%"></i></div><div class="cv-l"><b>Риски этапа</b><span>Что может помешать клиенту</span></div><div class="cv-c" style="background:#FAF6F0"><i style="width:88%"></i><i style="width:40%"></i></div><div class="cv-c" style="background:#FAF6F0"><i style="width:60%"></i><i style="width:70%"></i></div><div class="cv-c" style="background:#FAF6F0"><i style="width:78%"></i><i style="width:55%"></i></div><div class="cv-c" style="background:#FAF6F0"><i style="width:64%"></i><i style="width:82%"></i></div><div class="cv-l cv-blur"><b>Задачи этапа</b></div><div class="cv-c cv-blur" style="background:#F3FBFD"><i style="width:60%"></i><i style="width:70%"></i></div><div class="cv-c cv-blur" style="background:#F3FBFD"><i style="width:78%"></i><i style="width:55%"></i></div><div class="cv-c cv-blur" style="background:#F3FBFD"><i style="width:64%"></i><i style="width:82%"></i></div><div class="cv-c cv-blur" style="background:#F3FBFD"><i style="width:88%"></i><i style="width:40%"></i></div><div class="cv-l cv-blur"><b>Процессы и инструменты</b></div><div class="cv-c cv-blur" style="background:#FAF6F0"><i style="width:78%"></i><i style="width:55%"></i></div><div class="cv-c cv-blur" style="background:#FAF6F0"><i style="width:64%"></i><i style="width:82%"></i></div><div class="cv-c cv-blur" style="background:#FAF6F0"><i style="width:88%"></i><i style="width:40%"></i></div><div class="cv-c cv-blur" style="background:#FAF6F0"><i style="width:60%"></i><i style="width:70%"></i></div></div><div class="cv-fade"><span class="cv-lock"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Полная версия — участникам спринта</span></div></div>
 </div>
 </section>
 
