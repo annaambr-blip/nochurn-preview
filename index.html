@@ -10,11 +10,12 @@
 <style>
 :root{--c:#0284C7;--c-btn:#0284C7;--c-dk:#0284C7;--c-t:#F0F9FF;--c-t2:#E0F2FE;--ink:#0F172A;--ink2:#334155;--mut:#64748B;--line:#E2E8F0;--soft:#F8FAFC;--ease:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box}
+html,body{overflow-x:clip}
 body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .w{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
-.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0}
-.h2{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-variant-numeric:tabular-nums}
+.h2{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
 .lab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
 .sec{padding-top:112px}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
@@ -63,7 +64,13 @@ a{color:inherit;text-decoration:none}
 .row:hover{background:var(--soft)}
 .row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none !important}}
+.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-t{display:flex;gap:56px;width:max-content;animation:mq 32s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
 @media(max-width:1000px){
 .nav{display:none}.burger{display:flex}
 .nav-t:checked ~ .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#FFFFFF;padding:12px 20px 24px;border-bottom:1px solid var(--line);z-index:20;font-size:18px;box-shadow:0 20px 30px -20px rgba(15,23,42,.2)}
@@ -75,11 +82,13 @@ a{color:inherit;text-decoration:none}
 .hdr-cta{display:none !important}
 .g2{grid-template-columns:1fr !important}
 .ill{display:none}
+.hero-ring{display:none}
+.stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
 .hero-cta .btn{flex:1 1 100%}
 .dir{min-height:0 !important}
 .hero-h{font-size:52px !important}
 .ev-date{font-size:28px !important}
-.conf,.biz{padding:24px !important}
+.biz{padding:24px !important}.conf{padding-top:48px !important;padding-bottom:48px !important}
 .conf-date{width:96px !important;height:96px !important}
 .conf-date b{font-size:42px !important}
 }
@@ -111,7 +120,8 @@ a{color:inherit;text-decoration:none}
 </header>
 
 <!-- HERO -->
-<section class="w" style="padding-top: 72px">
+<section class="w" style="padding-top: 72px; position: relative; z-index: 0">
+<div class="hero-ring" aria-hidden="true" style="position: absolute; left: 34%; top: 10px; width: 520px; height: 520px; border-radius: 50%; border: 64px solid #F0F9FF; z-index: -1"></div>
 <div style="display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: center">
 <div style="flex: 999 1 500px; min-width: 0">
 <div class="lab" style="margin-bottom: 24px">Обучение · Консалтинг · Сообщество · Исследования</div>
@@ -132,14 +142,14 @@ a{color:inherit;text-decoration:none}
 <a href="#conf" class="card" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; border-color: #0284C7">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="tag tag-c"><span class="dot"></span>Конференция</span><span style="font-size: 14px; color: #64748B">онлайн · бесплатно</span></div>
 <div class="h" style="font-size: 18px; letter-spacing: -.02em">CS Conf 2026</div>
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap"><span class="h ev-date" style="font-size: 30px; letter-spacing: -.04em; color: #0284C7">3 декабря</span><span class="btn btn-s btn-sm">Подробнее <span class="ar">→</span></span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap"><span class="h ev-date" style="font-size: 30px; letter-spacing: -.04em; color: #0284C7">3 декабря</span><span class="btn btn-s btn-sm">Программа <span class="ar">→</span></span></div>
 </a>
 </div>
 </div>
 </section>
 
 <!-- DIRECTIONS -->
-<section class="w sec" style="padding-top: 96px">
+<section class="w sec rv" style="padding-top: 96px">
 <div class="sec-head"><h2 class="h2">Что мы делаем</h2></div>
 <div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
 <a href="#edu" class="card dir" style="padding: 28px; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px">
@@ -158,7 +168,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- PROGRAMS -->
-<section id="edu" class="w sec">
+<section id="edu" class="w sec rv">
 <div class="lab" style="margin-bottom: 18px"><span class="ldot" style="background: #0284C7"></span>Программы обучения</div>
 <div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
 
@@ -174,7 +184,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid #E2E8F0; margin-top: auto">
 <span class="h" style="font-size: 24px">[цена] ₽</span>
-<a href="#" class="btn btn-p">Подробнее о спринте <span class="ar">→</span></a>
+<a href="#" class="btn btn-p">Программа спринта <span class="ar">→</span></a>
 </div>
 </div>
 
@@ -191,20 +201,20 @@ a{color:inherit;text-decoration:none}
 </div>
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid #E2E8F0; margin-top: auto">
 <span class="h" style="font-size: 24px">[цена] ₽</span>
-<a href="#" class="btn btn-p">Подробнее о курсе <span class="ar">→</span></a>
+<a href="#" class="btn btn-p">Программа курса <span class="ar">→</span></a>
 </div>
 </div>
 </div>
 </section>
 
 <!-- BUSINESS -->
-<section id="biz" class="w sec">
+<section id="biz" class="w sec rv">
 <div class="card biz" style="padding: 40px; display: flex; flex-wrap: wrap; gap: 32px 56px">
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <div class="lab"><span class="ldot" style="background: #D6B48C"></span>Компаниям</div>
 <h2 class="h2">Помогаем компаниям выстроить Customer Success</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #334155">От диагностики до внедрения CS-функции.</p>
-<a href="#" class="btn btn-p" style="align-self: flex-start; margin-top: auto">Обсудить задачу <span class="ar">→</span></a>
+<a href="#" class="btn btn-p" style="align-self: flex-start; margin-top: auto">Обсудить задачу команды <span class="ar">→</span></a>
 </div>
 <div style="flex: 1.5 1 420px; min-width: 0; display: flex; flex-direction: column">
 <a href="#" class="row" style="display: flex; align-items: center; gap: 16px; padding: 20px 12px; border-top: 1px solid #E2E8F0; transition: background .25s"><span style="font-size: 13px; font-weight: 600; color: #94A3B8; width: 24px">01</span><span class="h" style="flex: 1 1 auto; font-size: 21px; letter-spacing: -.02em">Корпоративное обучение</span><span class="ar" style="font-size: 18px; color: #94A3B8; transition: transform .3s, color .3s">→</span></a>
@@ -215,16 +225,35 @@ a{color:inherit;text-decoration:none}
 </div>
 </section>
 
-<!-- ALUMNI -->
-<section class="w sec" style="padding-top: 72px">
-<div class="lab" style="margin-bottom: 20px">У нас учились сотрудники компаний</div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 44px; font-family: 'Manrope', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -.03em; color: #94A3B8">
-<span>Avito</span><span>iSpring</span><span>TEAMLY</span><span>getmatch</span><span>Финтабло</span><span>Pony Express</span><span>Doczilla</span><span>Giftery</span>
+<!-- TRUST -->
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 8px">Нам доверяют</div>
+<div class="stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 32px">
+<div style="padding: 24px 0; border-top: 2px solid #0F172A"><div class="h" style="font-size: clamp(40px, 4.4vw, 56px); letter-spacing: -.05em; line-height: 1">[X]+</div><div style="font-size: 15px; color: #64748B; margin-top: 8px">выпускников программ</div></div><div style="padding: 24px 0; border-top: 2px solid #0F172A"><div class="h" style="font-size: clamp(40px, 4.4vw, 56px); letter-spacing: -.05em; line-height: 1">[Y]+</div><div style="font-size: 15px; color: #64748B; margin-top: 8px">компаний обучили сотрудников</div></div><div style="padding: 24px 0; border-top: 2px solid #0F172A"><div class="h" style="font-size: clamp(40px, 4.4vw, 56px); letter-spacing: -.05em; line-height: 1">35+</div><div style="font-size: 15px; color: #64748B; margin-top: 8px">лет опыта на двоих</div></div><div style="padding: 24px 0; border-top: 2px solid #0F172A"><div class="h" style="font-size: clamp(40px, 4.4vw, 56px); letter-spacing: -.05em; line-height: 1">[Z]</div><div style="font-size: 15px; color: #64748B; margin-top: 8px">потоков спринта и курса</div></div>
+</div>
+<div class="lab" style="margin: 48px 0 20px">У нас учились сотрудники компаний</div>
+<div class="mq"><div class="mq-t" style="font-family: 'Manrope', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -.03em; color: #94A3B8"><span>Avito</span><span>iSpring</span><span>TEAMLY</span><span>getmatch</span><span>Финтабло</span><span>Pony Express</span><span>Yasno</span><span>Doczilla</span><span>JVO</span><span>Giftery</span><span>Avito</span><span>iSpring</span><span>TEAMLY</span><span>getmatch</span><span>Финтабло</span><span>Pony Express</span><span>Yasno</span><span>Doczilla</span><span>JVO</span><span>Giftery</span></div></div>
+<div class="g3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 48px">
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<svg aria-hidden="true" width="28" height="22" viewBox="0 0 28 22"><path d="M0 22V12C0 5 4 1 11 0l1 4C8 5 6 8 6 11h5v11zm16 0V12c0-7 4-11 11-12l1 4c-4 1-6 4-6 7h5v11z" fill="#BAE6FD"></path></svg>
+<div style="font-size: 17px; line-height: 1.55; color: #0F172A">[Отзыв выпускника: что изменилось в работе после программы — 2–3 предложения]</div>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span role="img" aria-label="Фото выпускника" style="width: 44px; height: 44px; border-radius: 50%; background: #F1F5F9; flex: none"></span><span><span style="display: block; font-weight: 600; font-size: 15px">[Имя Фамилия]</span><span style="font-size: 14px; color: #64748B">[Роль, компания]</span></span></div>
+</div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<svg aria-hidden="true" width="28" height="22" viewBox="0 0 28 22"><path d="M0 22V12C0 5 4 1 11 0l1 4C8 5 6 8 6 11h5v11zm16 0V12c0-7 4-11 11-12l1 4c-4 1-6 4-6 7h5v11z" fill="#EADBC5"></path></svg>
+<div style="font-size: 17px; line-height: 1.55; color: #0F172A">[Отзыв выпускника: что изменилось в работе после программы — 2–3 предложения]</div>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span role="img" aria-label="Фото выпускника" style="width: 44px; height: 44px; border-radius: 50%; background: #F1F5F9; flex: none"></span><span><span style="display: block; font-weight: 600; font-size: 15px">[Имя Фамилия]</span><span style="font-size: 14px; color: #64748B">[Роль, компания]</span></span></div>
+</div>
+<div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<svg aria-hidden="true" width="28" height="22" viewBox="0 0 28 22"><path d="M0 22V12C0 5 4 1 11 0l1 4C8 5 6 8 6 11h5v11zm16 0V12c0-7 4-11 11-12l1 4c-4 1-6 4-6 7h5v11z" fill="#BAE6FD"></path></svg>
+<div style="font-size: 17px; line-height: 1.55; color: #0F172A">[Отзыв выпускника: что изменилось в работе после программы — 2–3 предложения]</div>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span role="img" aria-label="Фото выпускника" style="width: 44px; height: 44px; border-radius: 50%; background: #F1F5F9; flex: none"></span><span><span style="display: block; font-weight: 600; font-size: 15px">[Имя Фамилия]</span><span style="font-size: 14px; color: #64748B">[Роль, компания]</span></span></div>
+</div>
 </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="w sec">
+<section id="about" class="w sec rv">
 <div style="display: flex; flex-wrap: wrap; gap: 32px 48px">
 <div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <h2 class="h2">О нас</h2>
@@ -233,12 +262,12 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="g2" style="flex: 2 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
 <div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 12px">
-<div role="img" aria-label="Фото Марины Востриковой" style="width: 88px; height: 88px; border-radius: 50%; background: #F0F9FF; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #0284C7; margin: 4px 0 8px 4px"></div>
+<img src="img/marina.jpg" alt="Марина Вострикова" width="112" height="112" style="width: 112px; height: 112px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #0284C7; margin: 4px 0 8px 4px; display: block">
 <div class="h" style="font-size: 22px; letter-spacing: -.025em">Марина Вострикова</div>
 <div style="font-size: 15px; line-height: 1.5; color: #64748B">20+ лет в клиентском сервисе, экс-директор сервиса Битрикс24</div>
 </div>
 <div class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 12px">
-<div role="img" aria-label="Фото Ани Амброзевич" style="width: 88px; height: 88px; border-radius: 50%; background: #FBF5EC; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #D6B48C; margin: 4px 0 8px 4px"></div>
+<img src="img/anna.jpg" alt="Аня Амброзевич" width="112" height="112" style="width: 112px; height: 112px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px #FFFFFF, 0 0 0 6px #D6B48C; margin: 4px 0 8px 4px; display: block">
 <div class="h" style="font-size: 22px; letter-spacing: -.025em">Аня Амброзевич</div>
 <div style="font-size: 15px; line-height: 1.5; color: #64748B">15+ лет в MarTech и CX, экс-CCO · PepsiCo, Alibaba</div>
 </div>
@@ -247,8 +276,9 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- CONFERENCE -->
-<section id="conf" class="w sec">
-<div class="card conf" style="padding: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px 48px; border-color: #BAE6FD">
+<section id="conf" class="sec rv">
+<div style="background: #F0F9FF; border-top: 1px solid #E0F2FE; border-bottom: 1px solid #E0F2FE">
+<div class="w conf" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px 48px">
 <div style="flex: 999 1 380px; min-width: 0">
 <div class="lab" style="color: #0284C7"><span class="live"></span>Ежегодная конференция</div>
 <div class="h" style="font-size: clamp(36px, 4.4vw, 58px); line-height: 1; margin-top: 10px">CS Conf 2026</div>
@@ -256,15 +286,16 @@ a{color:inherit;text-decoration:none}
 <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px"><span class="tag tag-c">3 декабря · 17:00 МСК</span><span class="tag tag-i">Онлайн</span><span class="tag tag-i">Бесплатно</span></div>
 </div>
 <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
-<div style="display: flex; padding-left: 4px"><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #E0F2FE; box-shadow: 0 0 0 4px #FFFFFF; margin-left: 0; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #F3E6D3; box-shadow: 0 0 0 4px #FFFFFF; margin-left: -16px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #BAE6FD; box-shadow: 0 0 0 4px #FFFFFF; margin-left: -16px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #E2E8F0; box-shadow: 0 0 0 4px #FFFFFF; margin-left: -16px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #EADBC5; box-shadow: 0 0 0 4px #FFFFFF; margin-left: -16px; flex: none"></span></div>
+<div style="display: flex; padding-left: 4px"><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #E0F2FE; box-shadow: 0 0 0 4px #F0F9FF; margin-left: 0; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #F3E6D3; box-shadow: 0 0 0 4px #F0F9FF; margin-left: -16px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #BAE6FD; box-shadow: 0 0 0 4px #F0F9FF; margin-left: -16px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #E2E8F0; box-shadow: 0 0 0 4px #F0F9FF; margin-left: -16px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 72px; height: 72px; border-radius: 50%; background: #EADBC5; box-shadow: 0 0 0 4px #F0F9FF; margin-left: -16px; flex: none"></span></div>
 <span style="font-size: 14px; color: #64748B">Спикеры — практики CS из [компании]</span>
 <a href="#" class="btn btn-p">Программа и спикеры <span class="ar">→</span></a>
+</div>
 </div>
 </div>
 </section>
 
 <!-- KNOWLEDGE -->
-<section id="knowledge" class="w sec">
+<section id="knowledge" class="w sec rv">
 <div class="sec-head"><h2 class="h2">Пишем о Customer Success</h2><a href="#" class="link">Все материалы <span class="ar">→</span></a></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
 <a href="#" class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px; min-height: 180px"><span class="tag tag-c" style="align-self: flex-start">Исследование</span><span class="h" style="font-size: 20px; line-height: 1.25; letter-spacing: -.02em">Customer Success в России 2026</span><span style="font-size: 14px; color: #64748B; margin-top: auto">Первые результаты — 3 декабря</span></a>
@@ -274,7 +305,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- JOBS -->
-<section id="jobs" class="w sec" style="padding-bottom: 112px">
+<section id="jobs" class="w sec rv" style="padding-bottom: 112px">
 <div class="card-c" style="padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between">
 <div class="h" style="font-size: 26px; letter-spacing: -.03em">Вакансии в Customer Success</div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px">
@@ -311,5 +342,6 @@ a{color:inherit;text-decoration:none}
 
 </div>
 
+<script>document.documentElement.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});</script>
 </body>
 </html>
