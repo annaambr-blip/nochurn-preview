@@ -64,10 +64,10 @@ a{color:inherit;text-decoration:none}
 .row:hover{background:var(--soft)}
 .row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
 }
-.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.mq-t{display:flex;gap:56px;width:max-content;animation:mq 32s linear infinite}
-.mq:hover .mq-t{animation-play-state:paused}
-@keyframes mq{to{transform:translateX(-50%)}}
+.mq{}
+.mq-t{display:flex;flex-wrap:wrap;gap:18px 44px}
+.mq-t span{transition:color .2s}
+@media(hover:hover){.mq-t span:hover{color:#0E7490}}
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
@@ -85,7 +85,7 @@ a{color:inherit;text-decoration:none}
 .hero-ring{display:none}
 .conf-ring{display:none}
 .stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
-.mq{-webkit-mask-image:none;mask-image:none}.mq-t{animation:none;flex-wrap:wrap;width:auto;gap:14px 28px;font-size:20px !important}.mq-t .dup{display:none}
+.mq-t{gap:12px 24px;font-size:19px !important}
 .hero-cta .btn{flex:1 1 100%}
 .dir{min-height:0 !important}
 .hero-h{font-size:52px !important}
@@ -170,7 +170,7 @@ figure:has(.more[open]) blockquote{display:none}
 <div class="lab" style="margin-top: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px"><svg aria-hidden="true" class="hrt" width="16" height="16" viewBox="0 0 24 24" style=""><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z" fill="#06B6D4"></path></svg>Доска любви</div>
 <h1 class="h" style="font-size: clamp(44px, 6vw, 80px); line-height: .95; letter-spacing: -.05em; max-width: 14ch">Мы любим наших учеников. И это <span class="hrt-w"><span style="background: linear-gradient(transparent 58%, #A5F3FC 58%, #A5F3FC 90%, transparent 90%); padding: 0 6px; margin-left: -6px">взаимно</span><svg aria-hidden="true" class="hrt" width="64" height="64" viewBox="0 0 24 24" style="vertical-align: -6px; margin-left: 6px"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z" fill="#06B6D4"></path></svg></span></h1>
 <p style="margin: 24px 0 0; font-size: 19px; line-height: 1.6; color: #334155; max-width: 52ch">Каждый поток — это люди, которые приходят со своими задачами и уходят с системой в голове. Мы гордимся каждым из них. Здесь собраны их слова о Системном курсе по Customer Success — честно, как есть.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px"><span class="tag tag-c">100+ выпускников</span><span class="tag tag-i">17 отзывов</span><span class="tag tag-i">TEAMLY · cloud.ru · TravelLine · Pony Express</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px"><span class="tag tag-c">100+ выпускников</span></div>
 </section>
 
 <section class="w" style="padding-top: 64px">
@@ -297,7 +297,7 @@ figure:has(.more[open]) blockquote{display:none}
 
 <section class="w sec" style="padding-bottom: 112px">
 <div class="lab" style="margin-bottom: 20px">У нас учились сотрудники компаний</div>
-<div class="mq"><div class="mq-t" style="font-family: 'Manrope', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -.03em; color: #94A3B8"><span>Avito</span><span>iSpring</span><span>TEAMLY</span><span>cloud.ru</span><span>getmatch</span><span>Финтабло</span><span>Pony Express</span><span>TravelLine</span><span>Mobifitness</span><span>Yasno</span><span>Mailfit</span><span>Melbicom</span><span>Doczilla</span><span>Giftery</span><span>JVO</span><span>SAMOSALE</span><span class="dup" aria-hidden="true">Avito</span><span class="dup" aria-hidden="true">iSpring</span><span class="dup" aria-hidden="true">TEAMLY</span><span class="dup" aria-hidden="true">cloud.ru</span><span class="dup" aria-hidden="true">getmatch</span><span class="dup" aria-hidden="true">Финтабло</span><span class="dup" aria-hidden="true">Pony Express</span><span class="dup" aria-hidden="true">TravelLine</span><span class="dup" aria-hidden="true">Mobifitness</span><span class="dup" aria-hidden="true">Yasno</span><span class="dup" aria-hidden="true">Mailfit</span><span class="dup" aria-hidden="true">Melbicom</span><span class="dup" aria-hidden="true">Doczilla</span><span class="dup" aria-hidden="true">Giftery</span><span class="dup" aria-hidden="true">JVO</span><span class="dup" aria-hidden="true">SAMOSALE</span></div></div>
+<div class="mq"><div class="mq-t" style="font-family: 'Manrope', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -.03em; color: #94A3B8"><span>Avito</span><span>iSpring</span><span>VK</span><span>cloud.ru</span><span>TEAMLY</span><span>getmatch</span><span>Финтабло</span><span>TravelLine</span><span>Pony Express</span><span>Mobifitness</span><span>Yasno</span><span>Mailfit</span><span>Melbicom</span><span>Giftery</span><span>SAMOSALE</span><span>DevSoft AM</span><span>Doczilla</span><span>JVO</span></div></div>
 </section>
 
 <!-- FOOTER -->
