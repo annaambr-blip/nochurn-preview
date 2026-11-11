@@ -190,7 +190,7 @@ a{color:inherit;text-decoration:none}
 .ed-t{border:1px solid #EEF2F6;border-radius:14px;padding:14px;font-size:14px;font-weight:600;line-height:1.35;color:#0F172A;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,background .2s}
 .ed-t span{font:800 12px 'Manrope',sans-serif;color:#B08A5E;letter-spacing:.04em}
 @media(hover:hover){.ed-t:hover{border-color:#E3CDAF;background:#FFFCF8}}
-.ed-sprint{margin-top:16px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;padding:28px 32px;border-radius:24px;background:#ECFEFF;border:1px solid #CFFAFE}
+.ed-sprint{margin-top:16px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;padding:28px 32px;border-radius:24px;background:#FFFFFF;border:1px solid #EFE4D4;border-top:3px solid #D6B48C}
 @media(max-width:1000px){.ed-grid{grid-template-columns:1fr}}
 @media(max-width:700px){.ed-tiles{grid-template-columns:1fr 1fr}.fm-num{right:20px}}
 .pr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px}
@@ -203,7 +203,13 @@ a{color:inherit;text-decoration:none}
 .btn-p.hdr-cta{background:#0F172A;box-shadow:0 12px 26px -14px rgba(15,23,42,.6)}
 .link{color:#0F172A}
 .pr-c .link{color:#0F172A}
-/*gap*/.sec{padding-top:56px!important}@media(max-width:700px){.sec{padding-top:44px!important}}
+/*gap*/.sec{padding-top:72px!important}@media(max-width:700px){.sec{padding-top:52px!important}}
+.cs-about{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px 56px;align-items:center;padding:44px;border-radius:28px;border:1px solid #EFE4D4}
+.cs-ab-ph{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cs-ab-ph>div{display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.45;color:#64748B}
+.cs-ab-ph img{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:8px 8px 10px}
+.cs-ab-ph b{font:700 18px 'Manrope',sans-serif;color:#0F172A;letter-spacing:-.015em}
+@media(max-width:900px){.cs-about{grid-template-columns:1fr;padding:28px 22px}}
 </style>
 </head>
 <body>
@@ -317,9 +323,16 @@ a{color:inherit;text-decoration:none}
 
 <section class="w sec rv">
 <a href="sprint.html" class="ed-sprint">
-<div style="min-width: 0"><span class="tag tag-c" style="background: #FFFFFF">Для команды</span><div class="h" style="font-size: 24px; letter-spacing: -.025em; margin-top: 12px">Спринт по Customer Success для вашей команды</div><div style="font-size: 15px; line-height: 1.55; color: #334155; margin-top: 6px; max-width: 70ch">Закрытая группа до 10 человек на кейсах компании или участие сотрудников в открытом спринте 2–16 февраля 2027: жизненный цикл, отток, метрики и ИИ.</div></div>
+<div style="min-width: 0"><span class="tag fm-chip">Для команды</span><div class="h" style="font-size: 24px; letter-spacing: -.025em; margin-top: 12px">Спринт по Customer Success для вашей команды</div><div style="font-size: 15px; line-height: 1.55; color: #334155; margin-top: 6px; max-width: 70ch">Закрытая группа до 10 человек на кейсах компании или участие сотрудников в открытом спринте 2–16 февраля 2027: жизненный цикл, отток, метрики и ИИ.</div></div>
 <span class="btn btn-p btn-sm" style="flex: none">Подробнее о спринте <span class="ar">→</span></span>
 </a>
+</section>
+
+<section class="w sec rv">
+<div class="cs-about">
+<div style="min-width: 0"><div class="lab" style="margin-bottom: 14px; color: #B08A5E"><span class="ldot" style="background: #D6B48C"></span>Кто мы</div><h2 class="h2">Марина Вострикова и Анна Амброзевич</h2><p style="margin: 16px 0 0; font-size: 17px; line-height: 1.6; color: #475569; max-width: 52ch">Сооснователи nochurn. 35+ лет на двоих строили клиентский сервис и Customer Success в больших компаниях: Битрикс24, Яндекс, Otto Group, PepsiCo, Alibaba. Консультировали Авито, ВсеИнструменты.ру, Гифтери и enterprise-клиентов в России, СНГ и Восточной Европе.</p><a href="about.html" class="btn btn-p btn-sm" style="margin-top: 22px">Подробнее о нас <span class="ar">→</span></a></div>
+<div class="cs-ab-ph"><div><img src="img/marina.jpg" alt="Марина Вострикова" style="box-shadow: 0 0 0 5px #FFFFFF, 0 0 0 7px #D6B48C"><b>Марина Вострикова</b><span>20+ лет в клиентском сервисе, экс-директор сервиса Битрикс24</span></div><div><img src="img/anna.jpg" alt="Анна Амброзевич" style="box-shadow: 0 0 0 5px #FFFFFF, 0 0 0 7px #D6B48C"><b>Анна Амброзевич</b><span>15+ лет в MarTech, экс-Chief Customer Officer в IT-консалтинге</span></div></div>
+</div>
 </section>
 
 <section class="w sec rv">
