@@ -326,6 +326,17 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 .pt-qa .pt-c{background:#ECFEFF;border-color:#A5F3FC}
 @media(max-width:800px){.tp-g{grid-template-columns:1fr}.tp-c{min-height:0}.tp-w{padding-top:28px}
 .pt-r{grid-template-columns:1fr;gap:6px;padding-left:22px}.pt-r::before{left:5px;top:20px}.pt-r::after{left:0;top:10px}.pt-t{text-align:left;padding:4px 0 0;font-size:18px}.pt-c{margin-left:0}.pt-tag{margin-left:0}}
+
+.cf-tk-btn{width:100%;margin-top:22px}
+.tx{border-top:1.5px solid #0F172A}
+.tx-r{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,320px);align-items:center;gap:24px;padding:22px 0;border-bottom:1.5px solid #0F172A;transition:background .3s}
+.tx-n{font:800 14px 'Manrope',sans-serif;letter-spacing:.12em;color:#0891B2;align-self:start;padding-top:18px}
+.tx-w{font-size:clamp(64px,11vw,168px);line-height:.9;letter-spacing:-.06em;color:#0F172A;transition:color .3s,-webkit-text-stroke .3s}
+.tx-r:nth-child(2) .tx-w{color:transparent;-webkit-text-stroke:2px #0F172A}
+.tx-r:nth-child(3) .tx-w{background:linear-gradient(transparent 62%,#A5F3FC 62%,#A5F3FC 92%,transparent 92%);justify-self:start;padding:0 8px;margin-left:-8px}
+.tx-r:hover .tx-w{color:#0891B2;-webkit-text-stroke:0}
+.tx-d{font-size:17px;line-height:1.5;color:#475569}
+@media(max-width:800px){.tx-r{grid-template-columns:40px minmax(0,1fr);gap:4px 12px}.tx-n{padding-top:10px}.tx-d{grid-column:2;font-size:15px}.tx-r:nth-child(2) .tx-w{-webkit-text-stroke:1.5px #0F172A}}
 </style>
 </head>
 <body>
@@ -358,7 +369,6 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <h1 class="h" style="font-size: clamp(44px, 6.2vw, 92px); line-height: .95; letter-spacing: -.055em; white-space: nowrap">CS Conf 2026</h1>
 <div class="h" style="font-size: clamp(26px, 3.2vw, 44px); letter-spacing: -.035em; color: #0891B2; margin-top: 16px">Продукт. Метрики. ИИ.</div>
 <p style="margin: 22px 0 0; font-size: 18px; line-height: 1.6; color: #334155; max-width: 46ch">Доклады практиков и живые ответы на вопросы. Без регистрации — всё в Telegram-чате.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px"><a href="#chat" rel="nofollow" class="js-chat btn btn-p">Перейти в чат конференции <span class="ar">↗</span></a><a href="#program" class="btn btn-s" style="background: #FFFFFF">Программа ↓</a></div>
 </div>
 <div class="cf-tk">
 <div class="cf-tk-top"><span class="cf-tk-l">Билет · бесплатно</span><span class="cf-tk-l">CS Conf 2026</span></div>
@@ -367,6 +377,7 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <div class="cf-cd" id="cf-cd"><div><b id="cd-d">—</b><span>дней</span></div><div><b id="cd-h">—</b><span>часов</span></div><div><b id="cd-m">—</b><span>минут</span></div></div>
 <div class="cf-tk-cut"></div>
 <div class="cf-tk-bot"><div class="cf-stack"><img src="img/marina.jpg" alt=""><img src="img/anna.jpg" alt=""><img src="img/sp1.jpg" alt=""><img src="img/sp2.jpg" alt=""><img src="img/sp3.jpg" alt=""><span class="cf-more">+2</span></div><div class="cf-tk-cal"><span>В календарь:</span><a class="js-cal" data-cal="g" href="#program" rel="nofollow">Google</a><a class="js-cal" data-cal="i" href="#program" rel="nofollow">Apple / Outlook</a></div></div>
+<a href="#chat" rel="nofollow" class="js-chat btn btn-p cf-tk-btn">Перейти в чат конференции <span class="ar">↗</span></a>
 </div>
 </div>
 </section>
@@ -375,7 +386,7 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <section class="w sec rv">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>О чём конференция</div>
 <div class="sec-head"><h2 class="h2">Три темы года</h2></div>
-<div class="tp-g"><div class="tp-c" style="background:#ECFEFF"><div class="tp-top"><span class="tp-n">01</span><span class="tp-ic"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span></div><div class="tp-w h">Продукт</div><div class="tp-d">Как выстраивать работу CS и продукта.</div></div><div class="tp-c" style="background:#CFFAFE"><div class="tp-top"><span class="tp-n">02</span><span class="tp-ic"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span></div><div class="tp-w h">Метрики</div><div class="tp-d">Какие цифры работают, а какие только красиво выглядят в отчётах.</div></div><div class="tp-c" style="background:#A5F3FC"><div class="tp-top"><span class="tp-n">03</span><span class="tp-ic"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span></div><div class="tp-w h">ИИ</div><div class="tp-d">Где ИИ уже помогает CS-командам, а где пока нет.</div></div></div>
+<div class="tx"><div class="tx-r"><span class="tx-n">01</span><span class="tx-w h">Продукт</span><span class="tx-d">Как выстраивать работу CS и продукта</span></div><div class="tx-r"><span class="tx-n">02</span><span class="tx-w h">Метрики</span><span class="tx-d">Какие цифры работают, а какие только красиво выглядят в отчётах</span></div><div class="tx-r"><span class="tx-n">03</span><span class="tx-w h">ИИ</span><span class="tx-d">Где ИИ уже помогает CS-командам, а где пока нет</span></div></div>
 </section>
 
 <section id="program" class="w sec rv">
