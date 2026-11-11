@@ -267,6 +267,26 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 .ar-stats{grid-template-columns:1fr 1fr!important}
 }
 @media(min-width:701px) and (max-width:1000px){.co-roles{grid-template-columns:1fr 1fr!important}}
+
+.cf-tk{position:relative;background:#0891B2;color:#FFFFFF;border-radius:28px;padding:28px 30px;box-shadow:0 30px 60px -30px rgba(8,145,178,.7);overflow:hidden}
+.cf-tk-top{display:flex;justify-content:space-between;gap:12px}
+.cf-tk-l{font:700 12px 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#CFFAFE}
+.cf-tk-date{font-size:clamp(44px,4.6vw,64px);line-height:1;letter-spacing:-.05em;margin-top:22px;color:#FFFFFF}
+.cf-tk-sub{font-size:15px;color:#CFFAFE;margin-top:10px}
+.cf-cd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:24px}
+.cf-cd div{background:rgba(255,255,255,.14);border-radius:16px;padding:14px 12px;text-align:center}
+.cf-cd b{display:block;font:800 34px/1 'Manrope',sans-serif;letter-spacing:-.04em;color:#FFFFFF}
+.cf-cd span{display:block;font-size:12px;color:#CFFAFE;margin-top:6px}
+.cf-tk-cut{position:relative;height:0;border-top:2px dashed rgba(255,255,255,.35);margin:26px -30px 22px}
+.cf-tk-cut::before,.cf-tk-cut::after{content:"";position:absolute;top:-15px;width:28px;height:28px;border-radius:50%;background:#ECFEFF}
+.cf-tk-cut::before{left:-14px}.cf-tk-cut::after{right:-14px}
+.cf-tk-bot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.cf-tk .cf-stack img{border-color:#0891B2!important;box-shadow:0 0 0 2px #0891B2}
+.cf-tk .cf-more{background:#FFFFFF!important;color:#0891B2!important;border-color:#0891B2!important}
+.cf-tk-cal{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;color:#CFFAFE}
+.cf-tk-cal a{color:#FFFFFF;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){.cf-tk{padding:24px 22px}.cf-tk-cut{margin:22px -22px 18px}.cf-cd b{font-size:28px}}
+.cf-tk .cf-stack{margin-bottom:0}.cf-tk .cf-stack img,.cf-tk .cf-more{width:44px!important;height:44px!important;margin-left:-10px;font-size:14px}.cf-tk .cf-stack img:first-child{margin-left:0}
 </style>
 </head>
 <body>
@@ -295,19 +315,23 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <section class="cf-hero">
 <div class="w cf-hero-in">
 <div style="min-width: 0">
-<div class="lab" style="color: #0891B2; margin-bottom: 18px"><span class="live"></span>3 декабря 2026 · 17:00 МСК · онлайн · бесплатно</div>
+<div class="lab" style="color: #0891B2; margin-bottom: 18px"><span class="live"></span>Третья ежегодная · онлайн</div>
 <h1 class="h" style="font-size: clamp(44px, 6.2vw, 92px); line-height: .95; letter-spacing: -.055em; white-space: nowrap">CS Conf 2026</h1>
 <div class="h" style="font-size: clamp(26px, 3.2vw, 44px); letter-spacing: -.035em; color: #0891B2; margin-top: 16px">Продукт. Метрики. ИИ.</div>
-<p style="margin: 22px 0 0; font-size: 18px; line-height: 1.6; color: #334155; max-width: 54ch">Третья ежегодная конференция по Customer Success. Без регистрации — всё в Telegram-чате конференции.</p>
+<p style="margin: 22px 0 0; font-size: 18px; line-height: 1.6; color: #334155; max-width: 46ch">7 спикеров, 8 докладов и живые ответы на вопросы. Без регистрации — всё в Telegram-чате.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px"><a href="#chat" rel="nofollow" class="js-chat btn btn-p">Перейти в чат конференции <span class="ar">↗</span></a><a href="#program" class="btn btn-s" style="background: #FFFFFF">Программа ↓</a></div>
-<div class="cf-cal"><span>Добавить в календарь:</span><a class="js-cal" data-cal="g" href="#program" rel="nofollow">Google Календарь</a><a class="js-cal" data-cal="i" href="#program" rel="nofollow">Apple Календарь и Outlook</a></div>
 </div>
-<div class="cf-side">
-<div class="cf-stack"><img src="img/marina.jpg" alt=""><img src="img/anna.jpg" alt=""><img src="img/sp1.jpg" alt=""><img src="img/sp2.jpg" alt=""><img src="img/sp3.jpg" alt=""><span class="cf-more">+2</span></div>
-<div class="cf-facts"><div><b class="h">3 декабря</b><span>17:00–20:30 МСК</span></div><div><b class="h">Онлайн</b><span>эфир в Zoom</span></div><div><b class="h">Бесплатно</b><span>без регистрации</span></div><div><b class="h">7 спикеров</b><span>8 докладов и ответы на вопросы</span></div></div>
+<div class="cf-tk">
+<div class="cf-tk-top"><span class="cf-tk-l">Билет · бесплатно</span><span class="cf-tk-l">CS Conf 2026</span></div>
+<div class="cf-tk-date h">3 декабря</div>
+<div class="cf-tk-sub">четверг · 17:00–20:30 МСК · Zoom</div>
+<div class="cf-cd" id="cf-cd"><div><b id="cd-d">—</b><span>дней</span></div><div><b id="cd-h">—</b><span>часов</span></div><div><b id="cd-m">—</b><span>минут</span></div></div>
+<div class="cf-tk-cut"></div>
+<div class="cf-tk-bot"><div class="cf-stack"><img src="img/marina.jpg" alt=""><img src="img/anna.jpg" alt=""><img src="img/sp1.jpg" alt=""><img src="img/sp2.jpg" alt=""><img src="img/sp3.jpg" alt=""><span class="cf-more">+2</span></div><div class="cf-tk-cal"><span>В календарь:</span><a class="js-cal" data-cal="g" href="#program" rel="nofollow">Google</a><a class="js-cal" data-cal="i" href="#program" rel="nofollow">Apple / Outlook</a></div></div>
 </div>
 </div>
 </section>
+<script>(function(){var t=Date.UTC(2026,11,3,14,0,0);function u(){var d=t-Date.now();if(d<0){var e=document.getElementById('cf-cd');if(e)e.innerHTML='<div style="grid-column:1/-1"><b>Эфир идёт</b></div>';return}var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4);var f=function(i,v){var x=document.getElementById(i);if(x)x.textContent=v};f('cd-d',D);f('cd-h',H);f('cd-m',M)}u();setInterval(u,30000)})();</script>
 
 <section class="w sec rv">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>О чём конференция</div>
