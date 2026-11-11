@@ -17,7 +17,10 @@ a{color:#0891B2}a:hover{color:#101418}
 .e-arrow{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex:none}
 .e-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:1px}
 .e-nav{display:flex}
-@media(max-width:1000px){.e-nav{display:none}}
+.nav-t{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid #E3E6EA;align-items:center;justify-content:center;cursor:pointer;order:3}
+@media(max-width:1000px){.e-nav{display:none}.burger{display:flex}.nav-t:checked ~ .e-nav{display:flex;position:absolute;top:80px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#FFFFFF;padding:24px 20px;gap:20px;border-bottom:1px solid #EEF0F3;z-index:10;font-size:18px}}
+@media(max-width:560px){.hdr-cta{display:none !important}}
 </style>
 
 <style>@media(max-width:700px){.e-w{padding:0 20px !important} [style*="minmax(420px"],[style*="minmax(400px"]{grid-template-columns:1fr !important}}</style>
@@ -28,17 +31,19 @@ a{color:#0891B2}a:hover{color:#101418}
 
 <!-- HEADER -->
 <header style="background: #FFFFFF; border-bottom: 1px solid #EEF0F3">
-<div class="e-w" style="display: flex; justify-content: space-between; align-items: center; height: 80px; gap: 24px">
+<div class="e-w" style="position: relative; display: flex; justify-content: space-between; align-items: center; height: 80px; gap: 16px">
 <a href="#" aria-label="nochurn — на главную" style="display: flex; align-items: center; color: #101418; text-decoration: none; font-weight: 800; font-size: 26px; letter-spacing: -.05em; line-height: 1">nochurn<span style="color: #06B6D4">.</span></a>
+<input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
+<label for="nav-t" class="burger" aria-label="Меню"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#101418" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></label>
 <nav class="e-nav" aria-label="Основное меню" style="gap: 28px; font-size: 15px; font-weight: 600; align-items: center">
 <a href="#edu" style="color: #101418; text-decoration: none"><span aria-hidden="true" class="e-dot" style="background: #06B6D4"></span>Обучение <span aria-hidden="true" style="color: #9AA0AE">⌄</span></a>
-<a href="#" style="color: #101418; text-decoration: none"><span aria-hidden="true" class="e-dot" style="background: #F2704F"></span>Компаниям <span aria-hidden="true" style="color: #9AA0AE">⌄</span></a>
+<a href="#" style="color: #101418; text-decoration: none"><span aria-hidden="true" class="e-dot" style="background: #FFC53D"></span>Компаниям <span aria-hidden="true" style="color: #9AA0AE">⌄</span></a>
 <a href="#conf" style="color: #101418; text-decoration: none">Конференция</a>
 <a href="#jobs" style="color: #101418; text-decoration: none">Вакансии</a>
 <a href="#knowledge" style="color: #101418; text-decoration: none">Знания</a>
 <a href="#about" style="color: #101418; text-decoration: none">О нас</a>
 </nav>
-<a href="#" class="e-btn" style="background: #0891B2; color: #FFFFFF; min-height: 44px; font-size: 14px; border-radius: 12px">Обсудить задачу <span aria-hidden="true">↗</span></a>
+<a href="#" class="e-btn hdr-cta" style="background: #0891B2; color: #FFFFFF; min-height: 44px; font-size: 14px; border-radius: 12px; margin-left: auto">Обсудить задачу <span aria-hidden="true">↗</span></a>
 </div>
 </header>
 
@@ -55,20 +60,16 @@ a{color:#0891B2}a:hover{color:#101418}
 </div>
 </div>
 <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<a href="#edu" style="background: #E6F8FB; border-radius: 24px; padding: 28px 30px; text-decoration: none; color: #101418; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
-<div>
-<div style="font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #0E7490">ближайший старт</div>
-<div style="font-size: 26px; font-weight: 800; letter-spacing: -.03em; margin-top: 8px">CS Спринт</div>
-<div style="font-size: 52px; font-weight: 800; letter-spacing: -.05em; line-height: 1.02; color: #0891B2">2 февраля</div>
-</div>
-<span class="e-btn" style="background: #0891B2; color: #FFFFFF; min-height: 48px">Записаться</span>
+<div class="e-lab">ближайшие события</div>
+<a href="#edu" style="background: #E6F8FB; border-radius: 24px; padding: 24px 26px; text-decoration: none; color: #101418; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="e-tag" style="background: #FFFFFF; color: #0E7490">обучение</span><span style="font-size: 14px; color: #4A5060; font-weight: 600">2 недели · онлайн</span></div>
+<div style="font-size: 22px; font-weight: 800; letter-spacing: -.025em; margin-top: 8px">Customer Success Sprint</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap"><span style="font-size: 40px; font-weight: 800; letter-spacing: -.05em; line-height: 1.05; color: #0891B2">2 февраля</span><span class="e-btn" style="background: #0891B2; color: #FFFFFF; min-height: 44px; font-size: 14px">Записаться</span></div>
 </a>
-<a href="#conf" style="background: #FFEEE8; border-radius: 24px; padding: 22px 30px; text-decoration: none; color: #101418; display: flex; align-items: center; justify-content: space-between; gap: 16px">
-<div>
-<div style="font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #A13A1F">конференция · 3 декабря</div>
-<div style="font-size: 24px; font-weight: 800; letter-spacing: -.03em; margin-top: 4px">CS Conf 2026</div>
-</div>
-<span aria-hidden="true" class="e-arrow" style="background: #FFFFFF; color: #A13A1F">↗</span>
+<a href="#conf" style="background: #FFF5D6; border-radius: 24px; padding: 24px 26px; text-decoration: none; color: #101418; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="e-tag" style="background: #FFC53D; color: #101418">конференция</span><span style="font-size: 14px; color: #4A5060; font-weight: 600">онлайн · бесплатно</span></div>
+<div style="font-size: 22px; font-weight: 800; letter-spacing: -.025em; margin-top: 8px">CS Conf 2026</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap"><span style="font-size: 40px; font-weight: 800; letter-spacing: -.05em; line-height: 1.05; color: #8A6200">3 декабря</span><span class="e-btn" style="background: #FFC53D; color: #101418; min-height: 44px; font-size: 14px">Подробнее</span></div>
 </a>
 </div>
 </div>
@@ -85,9 +86,9 @@ a{color:#0891B2}a:hover{color:#101418}
 <span aria-hidden="true" class="e-arrow" style="background: #FFFFFF; color: #101418; align-self: flex-end">↗</span>
 <span><span style="display: block; font-size: 32px; font-weight: 800; letter-spacing: -.04em; line-height: 1.08">Решения для компаний</span><span style="display: block; font-size: 18px; color: #3A4050; margin-top: 12px">Корпоративное обучение и консалтинг: от стратегии до внедрения</span></span>
 </a>
-<a href="#conf" style="background: #FFEEE8; color: #101418; text-decoration: none; border-radius: 24px; padding: 30px; min-height: 240px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 20px">
-<span aria-hidden="true" class="e-arrow" style="background: #F2704F; color: #FFFFFF; align-self: flex-end">↗</span>
-<span><span style="display: block; font-size: 32px; font-weight: 800; letter-spacing: -.04em; line-height: 1.08">Ежегодная конференция</span><span style="display: block; font-size: 18px; color: #6B3A2C; margin-top: 12px">Практика, кейсы, тренды и сообщество профессионалов</span></span>
+<a href="#conf" style="background: #FFF5D6; color: #101418; text-decoration: none; border-radius: 24px; padding: 30px; min-height: 240px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 20px">
+<span aria-hidden="true" class="e-arrow" style="background: #FFC53D; color: #101418; align-self: flex-end">↗</span>
+<span><span style="display: block; font-size: 32px; font-weight: 800; letter-spacing: -.04em; line-height: 1.08">Ежегодная конференция</span><span style="display: block; font-size: 18px; color: #5E4A12; margin-top: 12px">Практика, кейсы, тренды и сообщество профессионалов</span></span>
 </a>
 </div>
 </section>
@@ -103,11 +104,11 @@ a{color:#0891B2}a:hover{color:#101418}
 </div>
 <div style="display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; flex: 1 1 auto">
 <div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 44px; font-weight: 800; letter-spacing: -.045em; line-height: 1">Полный курс</div>
-<div style="font-size: 19px; font-weight: 700">Customer Success от основ до системы</div>
+<div style="font-size: clamp(40px, 4.4vw, 56px); font-weight: 800; letter-spacing: -.05em; line-height: .98">Полный курс Customer Success</div>
+<div style="font-size: 19px; font-weight: 700">От основ до системы</div>
 <div style="font-size: 15px; color: #4A5060">Стратегия, процессы, метрики, удержание и рост клиентов.</div>
 </div>
-<svg aria-hidden="true" viewBox="0 0 180 150" style="width: 140px; height: 117px; flex: none"><path d="M10 140h40v-30h40v-30h40v-30h40v90z" fill="#A5ECF6"></path><path d="M150 50V8" stroke="#0891B2" stroke-width="4" stroke-linecap="round"></path><path d="M150 8l26 10-26 10z" fill="#F2704F"></path></svg>
+<svg aria-hidden="true" viewBox="0 0 180 150" style="width: 140px; height: 117px; flex: none"><path d="M10 140h40v-30h40v-30h40v-30h40v90z" fill="#A5ECF6"></path><path d="M150 50V8" stroke="#0891B2" stroke-width="4" stroke-linecap="round"></path><path d="M150 8l26 10-26 10z" fill="#FFC53D"></path></svg>
 </div>
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid #E8EAEE">
 <span style="font-size: 26px; font-weight: 800; letter-spacing: -.03em">[цена] ₽</span>
@@ -121,11 +122,11 @@ a{color:#0891B2}a:hover{color:#101418}
 </div>
 <div style="display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; flex: 1 1 auto">
 <div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 44px; font-weight: 800; letter-spacing: -.045em; line-height: 1">CS Спринт</div>
+<div style="font-size: clamp(40px, 4.4vw, 56px); font-weight: 800; letter-spacing: -.05em; line-height: .98">Customer Success Sprint</div>
 <div style="font-size: 19px; font-weight: 700">Две недели о клиентах, оттоке и ИИ</div>
 <div style="font-size: 15px; color: #4A5060">Интенсив с фокусом на практике. Вторник и четверг, 17:00 МСК.</div>
 </div>
-<svg aria-hidden="true" viewBox="0 0 170 150" style="width: 132px; height: 117px; flex: none"><circle cx="100" cy="88" r="52" fill="#FFFFFF" stroke="#0891B2" stroke-width="5"></circle><path d="M100 88V36a52 52 0 0144 26z" fill="#A5ECF6"></path><rect x="88" y="14" width="24" height="10" rx="4" fill="#F2704F"></rect><path d="M8 82h30M18 98h22M8 114h26" stroke="#A5ECF6" stroke-width="5" stroke-linecap="round"></path></svg>
+<svg aria-hidden="true" viewBox="0 0 170 150" style="width: 132px; height: 117px; flex: none"><circle cx="100" cy="88" r="52" fill="#FFFFFF" stroke="#0891B2" stroke-width="5"></circle><path d="M100 88V36a52 52 0 0144 26z" fill="#A5ECF6"></path><rect x="88" y="14" width="24" height="10" rx="4" fill="#FFC53D"></rect><path d="M8 82h30M18 98h22M8 114h26" stroke="#A5ECF6" stroke-width="5" stroke-linecap="round"></path></svg>
 </div>
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid #E8EAEE">
 <span style="font-size: 26px; font-weight: 800; letter-spacing: -.03em">[цена] ₽</span>
@@ -176,10 +177,10 @@ a{color:#0891B2}a:hover{color:#101418}
 <div style="font-size: 24px; font-weight: 800; letter-spacing: -.03em">Марина Вострикова</div>
 <div style="font-size: 15px; color: #3A4050">20+ лет в клиентском сервисе, экс-директор сервиса Битрикс24</div>
 </div>
-<div style="background: #FFEEE8; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<div role="img" aria-label="Фото Ани Амброзевич" style="width: 96px; height: 96px; border-radius: 50%; background: #FFFFFF; border: 5px solid #F2704F; box-sizing: border-box"></div>
+<div style="background: #FFF5D6; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div role="img" aria-label="Фото Ани Амброзевич" style="width: 96px; height: 96px; border-radius: 50%; background: #FFFFFF; border: 5px solid #FFC53D; box-sizing: border-box"></div>
 <div style="font-size: 24px; font-weight: 800; letter-spacing: -.03em">Аня Амброзевич</div>
-<div style="font-size: 15px; color: #6B3A2C">15+ лет в MarTech и CX, экс-CCO · PepsiCo, Alibaba</div>
+<div style="font-size: 15px; color: #5E4A12">15+ лет в MarTech и CX, экс-CCO · PepsiCo, Alibaba</div>
 </div>
 </div>
 </div>
@@ -187,15 +188,15 @@ a{color:#0891B2}a:hover{color:#101418}
 
 <!-- CONFERENCE -->
 <section id="conf" class="e-w" style="padding-bottom: 96px">
-<div style="background: #FFEEE8; border-radius: 32px; padding: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px 40px">
-<div style="background: #F2704F; color: #FFFFFF; border-radius: 24px; width: 140px; height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex: none; line-height: 1"><span style="font-size: 64px; font-weight: 800; letter-spacing: -.05em">3</span><span style="font-size: 16px; font-weight: 800; margin-top: 4px">ДЕКАБРЯ</span></div>
+<div style="background: #FFF5D6; border-radius: 32px; padding: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px 40px">
+<div style="background: #FFC53D; color: #101418; border-radius: 24px; width: 140px; height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex: none; line-height: 1"><span style="font-size: 64px; font-weight: 800; letter-spacing: -.05em">3</span><span style="font-size: 16px; font-weight: 800; margin-top: 4px">ДЕКАБРЯ</span></div>
 <div style="flex: 999 1 380px; min-width: 0">
-<div style="font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #A13A1F">ежегодная конференция · онлайн · бесплатно</div>
+<div style="font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #8A6200">ежегодная конференция · онлайн · бесплатно</div>
 <div style="font-size: clamp(38px, 4.8vw, 64px); font-weight: 800; letter-spacing: -.05em; line-height: 1; margin-top: 6px">CS Conf 2026</div>
 <div style="font-size: 20px; font-weight: 600; color: #4A5060; margin-top: 6px">Продукт. Метрики. ИИ.</div>
 <div style="display: flex; align-items: center; gap: 16px; margin-top: 22px; flex-wrap: wrap">
-<div style="display: flex"><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #F7CFC2; border: 3px solid #FFEEE8; margin-left: 0; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #A5ECF6; border: 3px solid #FFEEE8; margin-left: -14px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #F7CFC2; border: 3px solid #FFEEE8; margin-left: -14px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #A5ECF6; border: 3px solid #FFEEE8; margin-left: -14px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #A5ECF6; border: 3px solid #FFEEE8; margin-left: -14px; flex: none"></span></div>
-<span style="font-size: 15px; font-weight: 700; color: #6B3A2C">Спикеры — практики CS из [компании]</span>
+<div style="display: flex"><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #F5DE9A; border: 3px solid #FFF5D6; margin-left: 0; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #A5ECF6; border: 3px solid #FFF5D6; margin-left: -14px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #F5DE9A; border: 3px solid #FFF5D6; margin-left: -14px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #A5ECF6; border: 3px solid #FFF5D6; margin-left: -14px; flex: none"></span><span role="img" aria-label="Спикер" style="width: 56px; height: 56px; border-radius: 50%; background: #A5ECF6; border: 3px solid #FFF5D6; margin-left: -14px; flex: none"></span></div>
+<span style="font-size: 15px; font-weight: 700; color: #5E4A12">Спикеры — практики CS из [компании]</span>
 </div>
 </div>
 <a href="#" class="e-btn" style="background: #0891B2; color: #FFFFFF">Все подробности</a>
@@ -210,7 +211,7 @@ a{color:#0891B2}a:hover{color:#101418}
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
 <a href="#" style="border: 1px solid #E8EAEE; border-radius: 22px; padding: 24px; text-decoration: none; color: #101418; display: flex; flex-direction: column; gap: 14px; min-height: 170px; box-sizing: border-box"><span class="e-tag" style="background: #E6F8FB; color: #0E7490; align-self: flex-start">исследование</span><span style="font-size: 20px; font-weight: 800; letter-spacing: -.02em; line-height: 1.25">Customer Success в России 2026</span></a>
-<a href="#" style="border: 1px solid #E8EAEE; border-radius: 22px; padding: 24px; text-decoration: none; color: #101418; display: flex; flex-direction: column; gap: 14px; min-height: 170px; box-sizing: border-box"><span class="e-tag" style="background: #FFEEE8; color: #A13A1F; align-self: flex-start">статья</span><span style="font-size: 20px; font-weight: 800; letter-spacing: -.02em; line-height: 1.25">Как снизить отток в B2B SaaS</span></a>
+<a href="#" style="border: 1px solid #E8EAEE; border-radius: 22px; padding: 24px; text-decoration: none; color: #101418; display: flex; flex-direction: column; gap: 14px; min-height: 170px; box-sizing: border-box"><span class="e-tag" style="background: #FFF5D6; color: #8A6200; align-self: flex-start">статья</span><span style="font-size: 20px; font-weight: 800; letter-spacing: -.02em; line-height: 1.25">Как снизить отток в B2B SaaS</span></a>
 <a href="#" style="border: 1px solid #E8EAEE; border-radius: 22px; padding: 24px; text-decoration: none; color: #101418; display: flex; flex-direction: column; gap: 14px; min-height: 170px; box-sizing: border-box"><span class="e-tag" style="background: #E6F8FB; color: #0E7490; align-self: flex-start">глоссарий</span><span style="font-size: 20px; font-weight: 800; letter-spacing: -.02em; line-height: 1.25">Термины Customer Success</span></a>
 </div>
 </section>
