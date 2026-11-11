@@ -337,6 +337,33 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 .tx-r:hover .tx-w{color:#0891B2;-webkit-text-stroke:0}
 .tx-d{font-size:17px;line-height:1.5;color:#475569}
 @media(max-width:800px){.tx-r{grid-template-columns:40px minmax(0,1fr);gap:4px 12px}.tx-n{padding-top:10px}.tx-d{grid-column:2;font-size:15px}.tx-r:nth-child(2) .tx-w{-webkit-text-stroke:1.5px #0F172A}}
+
+.cf-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.cf-meta span{font:600 15px 'Inter',sans-serif;color:#0F172A;background:#FFFFFF;border:1.5px solid #CFFAFE;border-radius:999px;padding:9px 16px}
+.tx-r:nth-child(2) .tx-w,.tx-r:nth-child(3) .tx-w{color:#0F172A;-webkit-text-stroke:0;background:none;padding:0;margin:0}
+.tx-r:hover .tx-w{color:#0F172A}
+.tx-win{justify-self:start;position:relative;border:2px solid #0F172A;border-radius:26px;padding:42px 34px 18px;background:#FFFFFF;box-shadow:10px 10px 0 #A5F3FC;transition:transform .3s,box-shadow .3s}
+.tx-p:hover .tx-win{transform:translate(-4px,-4px);box-shadow:14px 14px 0 #67E8F9}
+.tx-dots{position:absolute;top:14px;left:18px;display:flex;gap:7px}
+.tx-dots i{width:11px;height:11px;border-radius:50%;background:#E2E8F0}.tx-dots i:first-child{background:#06B6D4}
+.tx-win .tx-w{font-size:clamp(52px,8.4vw,128px)!important}
+.tx-cur{position:absolute;right:-14px;bottom:-12px}
+.tx-chart{justify-self:start;position:relative;padding:0 10px}
+.tx-bars{position:absolute;left:0;right:0;bottom:8%;top:0;display:flex;align-items:flex-end;gap:6%;z-index:0;padding:0 4%}
+.tx-bars i{flex:1;background:#CFFAFE;border-radius:10px 10px 0 0;transform-origin:bottom;transition:transform .5s}
+.tx-bars i:last-child{background:#67E8F9}
+.tx-m:hover .tx-bars i{transform:scaleY(1.12)}
+.tx-chart .tx-w{position:relative;z-index:1;color:transparent!important;-webkit-text-stroke:2px #0F172A!important}
+.tx-kpi{position:absolute;right:-6px;top:-6px;z-index:2;font:800 14px 'Manrope',sans-serif;color:#FFFFFF;background:#0891B2;border-radius:999px;padding:6px 12px;transform:rotate(4deg)}
+.tx-ai{justify-self:start;position:relative;display:inline-flex;align-items:flex-end}
+.tx-ai .tx-w{background:linear-gradient(90deg,#0E7490,#06B6D4,#67E8F9,#0891B2,#0E7490)!important;background-size:250% 100%!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;animation:txg 5s linear infinite;padding-right:4px!important}
+@keyframes txg{to{background-position:-250% 0}}
+.tx-caret{width:.08em;min-width:6px;height:.72em;background:#06B6D4;margin:0 0 .1em 8px;font-size:clamp(64px,11vw,168px);animation:txc 1s steps(1) infinite}
+@keyframes txc{50%{opacity:0}}
+.tx-spark{position:absolute;top:-2px;right:-38px;font-size:34px;color:#06B6D4;animation:txs 3s ease-in-out infinite}
+@keyframes txs{50%{transform:scale(1.3) rotate(20deg);opacity:.6}}
+@media(max-width:800px){.tx-win{padding:30px 18px 10px;border-radius:18px;box-shadow:6px 6px 0 #A5F3FC}.tx-dots{top:10px;left:12px}.tx-dots i{width:8px;height:8px}.tx-cur svg{width:24px;height:24px}.tx-kpi{font-size:11px}.tx-spark{right:-26px;font-size:22px}.tx-chart .tx-w{-webkit-text-stroke:1.5px #0F172A!important}}
+@media(prefers-reduced-motion:reduce){.tx-ai .tx-w,.tx-caret,.tx-spark{animation:none}}
 </style>
 </head>
 <body>
@@ -365,10 +392,10 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <section class="cf-hero">
 <div class="w cf-hero-in">
 <div style="min-width: 0">
-<div class="lab" style="color: #0891B2; margin-bottom: 18px"><span class="live"></span>Третья ежегодная · онлайн</div>
+<div class="lab" style="color: #0891B2; margin-bottom: 18px"><span class="live"></span>Главная конференция по Customer Success</div>
 <h1 class="h" style="font-size: clamp(44px, 6.2vw, 92px); line-height: .95; letter-spacing: -.055em; white-space: nowrap">CS Conf 2026</h1>
 <div class="h" style="font-size: clamp(26px, 3.2vw, 44px); letter-spacing: -.035em; color: #0891B2; margin-top: 16px">Продукт. Метрики. ИИ.</div>
-<p style="margin: 22px 0 0; font-size: 18px; line-height: 1.6; color: #334155; max-width: 46ch">Доклады практиков и живые ответы на вопросы. Без регистрации — всё в Telegram-чате.</p>
+<div class="cf-meta"><span>Онлайн</span><span>Бесплатно</span><span>Третий год</span></div>
 </div>
 <div class="cf-tk">
 <div class="cf-tk-top"><span class="cf-tk-l">Билет · бесплатно</span><span class="cf-tk-l">CS Conf 2026</span></div>
@@ -386,7 +413,7 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <section class="w sec rv">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>О чём конференция</div>
 <div class="sec-head"><h2 class="h2">Три темы года</h2></div>
-<div class="tx"><div class="tx-r"><span class="tx-n">01</span><span class="tx-w h">Продукт</span><span class="tx-d">Как выстраивать работу CS и продукта</span></div><div class="tx-r"><span class="tx-n">02</span><span class="tx-w h">Метрики</span><span class="tx-d">Какие цифры работают, а какие только красиво выглядят в отчётах</span></div><div class="tx-r"><span class="tx-n">03</span><span class="tx-w h">ИИ</span><span class="tx-d">Где ИИ уже помогает CS-командам, а где пока нет</span></div></div>
+<div class="tx"><div class="tx-r tx-p"><span class="tx-n">01</span><span class="tx-win"><span class="tx-dots"><i></i><i></i><i></i></span><span class="tx-w h">Продукт</span><span class="tx-cur" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z" fill="#0F172A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="tx-d">Как выстраивать работу CS и продукта</span></div><div class="tx-r tx-m"><span class="tx-n">02</span><span class="tx-chart"><span class="tx-bars" aria-hidden="true"><i style="height:28%"></i><i style="height:40%"></i><i style="height:34%"></i><i style="height:52%"></i><i style="height:61%"></i><i style="height:74%"></i><i style="height:88%"></i></span><span class="tx-w h">Метрики</span><span class="tx-kpi">NRR 112%</span></span><span class="tx-d">Какие цифры работают, а какие только красиво выглядят в отчётах</span></div><div class="tx-r tx-a"><span class="tx-n">03</span><span class="tx-ai"><span class="tx-w h">ИИ</span><span class="tx-caret" aria-hidden="true"></span><span class="tx-spark" aria-hidden="true">✦</span></span><span class="tx-d">Где ИИ уже помогает CS-командам, а где пока нет</span></div></div>
 </section>
 
 <section id="program" class="w sec rv">
