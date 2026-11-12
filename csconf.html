@@ -400,6 +400,16 @@ html:has(.nav-t:checked),body:has(.nav-t:checked){overflow:hidden!important}
 .nav-t:checked ~ .nav .dd-m b{font-weight:500!important;color:#475569!important}
 }
 /*endmob*/
+
+.ty{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ty-c{border-radius:28px;background:#F0FDFF;border:1.5px solid #CFFAFE;padding:28px;display:flex;flex-direction:column;min-height:340px;transition:transform .3s,box-shadow .3s}
+.ty-c:hover{transform:translateY(-4px);box-shadow:0 24px 44px -30px rgba(8,145,178,.55)}
+.ty-top{display:flex;justify-content:space-between;align-items:flex-start}
+.ty-n{font:800 14px 'Manrope',sans-serif;letter-spacing:.1em;color:#0891B2}
+.ty-ill{width:120px;height:104px}
+.ty-w{font-size:clamp(44px,4.4vw,60px);line-height:1;letter-spacing:-.045em;color:#0F172A;margin-top:auto;padding-top:28px}
+.ty-d{font-size:16px;line-height:1.5;color:#334155;margin-top:12px;max-width:30ch}
+@media(max-width:900px){.ty{grid-template-columns:1fr}.ty-c{min-height:0}.ty-ill{width:96px;height:84px}}
 </style>
 </head>
 <body>
@@ -449,7 +459,7 @@ html:has(.nav-t:checked),body:has(.nav-t:checked){overflow:hidden!important}
 <section class="w sec rv">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>О чём конференция</div>
 <div class="sec-head"><h2 class="h2">Три темы года</h2></div>
-<div class="tx"><div class="tx-r tx-p"><span class="tx-n">01</span><span class="tx-win"><span class="tx-dots"><i></i><i></i><i></i></span><span class="tx-w h">Продукт</span><span class="tx-cur" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z" fill="#0F172A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="tx-d">Как выстраивать работу CS и продукта</span></div><div class="tx-r tx-m"><span class="tx-n">02</span><span class="tx-chart"><span class="tx-bars" aria-hidden="true"><i style="height:28%"></i><i style="height:40%"></i><i style="height:34%"></i><i style="height:52%"></i><i style="height:61%"></i><i style="height:74%"></i><i style="height:88%"></i></span><span class="tx-w h">Метрики</span></span><span class="tx-d">Какие цифры работают, а какие только красиво выглядят в отчётах</span></div><div class="tx-r tx-a"><span class="tx-n">03</span><span class="tx-ai"><span class="tx-w h">ИИ</span><span class="tx-caret" aria-hidden="true"></span><span class="tx-spark" aria-hidden="true">✦</span></span><span class="tx-d">Где ИИ уже помогает CS-командам, а где пока нет</span></div></div>
+<div class="ty"><div class="ty-c"><div class="ty-top"><span class="ty-n">01</span><svg class="ty-ill" viewBox="0 0 120 104" aria-hidden="true"><rect x="10" y="16" width="100" height="72" rx="12" fill="#FFFFFF" stroke="#0891B2" stroke-width="2.5"/><circle cx="22" cy="28" r="3" fill="#06B6D4"/><circle cx="32" cy="28" r="3" fill="#CFFAFE"/><circle cx="42" cy="28" r="3" fill="#CFFAFE"/><rect x="22" y="42" width="40" height="8" rx="4" fill="#A5F3FC"/><rect x="22" y="56" width="66" height="6" rx="3" fill="#E2E8F0"/><rect x="22" y="68" width="52" height="6" rx="3" fill="#E2E8F0"/></svg></div><div class="ty-w h">Продукт</div><div class="ty-d">Как выстраивать работу CS и продукта</div></div><div class="ty-c"><div class="ty-top"><span class="ty-n">02</span><svg class="ty-ill" viewBox="0 0 120 104" aria-hidden="true"><rect x="10" y="16" width="100" height="72" rx="12" fill="#FFFFFF" stroke="#0891B2" stroke-width="2.5"/><rect x="24" y="58" width="12" height="18" rx="3" fill="#CFFAFE"/><rect x="42" y="48" width="12" height="28" rx="3" fill="#A5F3FC"/><rect x="60" y="40" width="12" height="36" rx="3" fill="#67E8F9"/><rect x="78" y="28" width="12" height="48" rx="3" fill="#0891B2"/></svg></div><div class="ty-w h">Метрики</div><div class="ty-d">Какие цифры работают, а какие только красиво выглядят в отчётах</div></div><div class="ty-c"><div class="ty-top"><span class="ty-n">03</span><svg class="ty-ill" viewBox="0 0 120 104" aria-hidden="true"><rect x="10" y="16" width="100" height="72" rx="12" fill="#FFFFFF" stroke="#0891B2" stroke-width="2.5"/><path d="M60 30l4.5 12.5L77 47l-12.5 4.5L60 64l-4.5-12.5L43 47l12.5-4.5z" fill="#06B6D4"/><path d="M84 28l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#A5F3FC"/><path d="M34 58l1.6 4 4 1.6-4 1.6-1.6 4-1.6-4-4-1.6 4-1.6z" fill="#67E8F9"/></svg></div><div class="ty-w h">ИИ</div><div class="ty-d">Где ИИ уже помогает CS-командам, а где пока нет</div></div></div>
 </section>
 
 <section id="program" class="w sec rv">
