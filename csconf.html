@@ -249,24 +249,6 @@ figure:has(.more[open]) blockquote{display:none}
 .faq details[open] summary .pl{transform:rotate(45deg);background:#CFFAFE}
 .faq .ans{padding:0 4px 22px;font-size:16px;line-height:1.6;color:#475569;max-width:70ch}
 /*gap*/.sec{padding-top:72px!important}@media(max-width:700px){.sec{padding-top:52px!important}}
-/*mob*/
-header{background:#FFFFFF!important}
-footer{position:relative;z-index:5}
-@media(max-width:700px){
-.hero-h span,h1 span{white-space:normal!important}
-h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
-.prog-ic{display:none!important}
-.g2>.card>div:first-child[style*="height: 190px"]{height:auto!important;padding:20px 20px 64px}
-.g2>.card>div:first-child>div[style*="max-width: 70%"]{position:static!important;max-width:none!important}
-.co-near{display:block!important;line-height:1.5;border-radius:18px!important;padding:12px 16px!important}
-.co-near>*{display:inline!important}
-.co-roles{grid-template-columns:1fr!important}
-.co-facts>div{padding:14px 16px!important}
-.co-facts b{font-size:26px!important}
-.bl-g,.ar-cta,.tl-g{grid-template-columns:1fr!important}
-.ar-stats{grid-template-columns:1fr 1fr!important}
-}
-@media(min-width:701px) and (max-width:1000px){.co-roles{grid-template-columns:1fr 1fr!important}}
 
 .cf-tk{position:relative;background:#0891B2;color:#FFFFFF;border-radius:28px;padding:28px 30px;box-shadow:0 30px 60px -30px rgba(8,145,178,.7);overflow:hidden}
 .cf-tk-top{display:flex;justify-content:space-between;gap:12px}
@@ -364,6 +346,39 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 @keyframes txs{50%{transform:scale(1.3) rotate(20deg);opacity:.6}}
 @media(max-width:800px){.tx-win{padding:30px 18px 10px;border-radius:18px;box-shadow:6px 6px 0 #A5F3FC}.tx-dots{top:10px;left:12px}.tx-dots i{width:8px;height:8px}.tx-cur svg{width:24px;height:24px}.tx-kpi{font-size:11px}.tx-spark{right:-26px;font-size:22px}.tx-chart .tx-w{-webkit-text-stroke:1.5px #0F172A!important}}
 @media(prefers-reduced-motion:reduce){.tx-ai .tx-w,.tx-caret,.tx-spark{animation:none}}
+
+.tx{border-top:1px solid #E2E8F0}
+.tx-r{border-bottom:1px solid #E2E8F0;padding:28px 0;grid-template-columns:64px minmax(0,1fr) minmax(0,300px)}
+.tx-w{font-size:clamp(48px,7vw,104px)!important}
+.tx-win .tx-w{font-size:clamp(40px,5.8vw,88px)!important}
+.tx-win{border:1.5px solid #CFFAFE;border-radius:22px;padding:34px 28px 12px;background:#F8FEFF;box-shadow:none}
+.tx-p:hover .tx-win{transform:none;box-shadow:0 18px 36px -26px rgba(8,145,178,.5)}
+.tx-dots i{width:9px;height:9px}
+.tx-cur{display:none}
+.tx-bars i{background:#CFFAFE}.tx-bars i:last-child{background:#A5F3FC}.tx-bars{bottom:4%!important;top:8%!important}
+.tx-chart .tx-w{-webkit-text-stroke:1.5px #0F172A!important}
+.tx-spark{font-size:24px;right:-30px;top:4px}
+.tx-caret{display:none}
+@media(max-width:800px){.tx-r{grid-template-columns:40px minmax(0,1fr)}.tx-win{padding:26px 16px 8px}}
+/*mob*/
+header{background:#FFFFFF!important}
+footer{position:relative;z-index:5}
+@media(max-width:700px){
+.hero-h span,h1 span{white-space:normal!important}
+h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
+.prog-ic{display:none!important}
+.g2>.card>div:first-child[style*="height: 150px"]{height:auto!important;padding:20px!important}
+.g2>.card>div:first-child>div[style*="max-width: 70%"]{position:static!important;max-width:none!important}
+.co-near{display:block!important;line-height:1.5;border-radius:18px!important;padding:12px 16px!important}
+.co-near>*{display:inline!important}
+.co-roles{grid-template-columns:1fr!important}
+.co-facts>div{padding:14px 16px!important}
+.co-facts b{font-size:26px!important}
+.bl-g,.ar-cta,.tl-g{grid-template-columns:1fr!important}
+.ar-stats{grid-template-columns:1fr 1fr!important}
+}
+@media(min-width:701px) and (max-width:1000px){.co-roles{grid-template-columns:1fr 1fr!important}}
+/*endmob*/
 </style>
 </head>
 <body>
@@ -413,7 +428,7 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <section class="w sec rv">
 <div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>О чём конференция</div>
 <div class="sec-head"><h2 class="h2">Три темы года</h2></div>
-<div class="tx"><div class="tx-r tx-p"><span class="tx-n">01</span><span class="tx-win"><span class="tx-dots"><i></i><i></i><i></i></span><span class="tx-w h">Продукт</span><span class="tx-cur" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z" fill="#0F172A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="tx-d">Как выстраивать работу CS и продукта</span></div><div class="tx-r tx-m"><span class="tx-n">02</span><span class="tx-chart"><span class="tx-bars" aria-hidden="true"><i style="height:28%"></i><i style="height:40%"></i><i style="height:34%"></i><i style="height:52%"></i><i style="height:61%"></i><i style="height:74%"></i><i style="height:88%"></i></span><span class="tx-w h">Метрики</span><span class="tx-kpi">NRR 112%</span></span><span class="tx-d">Какие цифры работают, а какие только красиво выглядят в отчётах</span></div><div class="tx-r tx-a"><span class="tx-n">03</span><span class="tx-ai"><span class="tx-w h">ИИ</span><span class="tx-caret" aria-hidden="true"></span><span class="tx-spark" aria-hidden="true">✦</span></span><span class="tx-d">Где ИИ уже помогает CS-командам, а где пока нет</span></div></div>
+<div class="tx"><div class="tx-r tx-p"><span class="tx-n">01</span><span class="tx-win"><span class="tx-dots"><i></i><i></i><i></i></span><span class="tx-w h">Продукт</span><span class="tx-cur" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z" fill="#0F172A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="tx-d">Как выстраивать работу CS и продукта</span></div><div class="tx-r tx-m"><span class="tx-n">02</span><span class="tx-chart"><span class="tx-bars" aria-hidden="true"><i style="height:28%"></i><i style="height:40%"></i><i style="height:34%"></i><i style="height:52%"></i><i style="height:61%"></i><i style="height:74%"></i><i style="height:88%"></i></span><span class="tx-w h">Метрики</span></span><span class="tx-d">Какие цифры работают, а какие только красиво выглядят в отчётах</span></div><div class="tx-r tx-a"><span class="tx-n">03</span><span class="tx-ai"><span class="tx-w h">ИИ</span><span class="tx-caret" aria-hidden="true"></span><span class="tx-spark" aria-hidden="true">✦</span></span><span class="tx-d">Где ИИ уже помогает CS-командам, а где пока нет</span></div></div>
 </section>
 
 <section id="program" class="w sec rv">
