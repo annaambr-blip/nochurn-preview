@@ -213,6 +213,12 @@ a{color:inherit;text-decoration:none}
 /*mob*/
 header{background:#FFFFFF!important}
 footer{position:relative;z-index:5}
+.nav-conf{display:inline-flex!important;align-items:center;gap:8px;background:#ECFEFF;color:#0E7490!important;border-radius:999px;padding:8px 14px!important;font-weight:600}
+.nav-conf:hover{background:#CFFAFE}
+.nav-live{position:relative;width:8px;height:8px;border-radius:50%;background:#06B6D4;flex:none}
+.nav-live::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:#06B6D4;opacity:.35;animation:navp 1.8s ease-out infinite}
+@keyframes navp{from{transform:scale(.6);opacity:.5}to{transform:scale(1.8);opacity:0}}
+@media(prefers-reduced-motion:reduce){.nav-live::after{animation:none}}
 @media(max-width:700px){
 .hero-h span,h1 span{white-space:normal!important}
 h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
@@ -245,7 +251,7 @@ h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
 <div class="dd"><a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="sprint.html"><b>Спринт по Customer Success</b><span>2 недели · старт 2 февраля 2027</span></a><a href="course.html"><b>Полный курс по Customer Success</b><span>Старт в 2027 году</span></a></div></div>
 <a href="consulting.html"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
 <a href="talents.html">Таланты</a>
-<a href="csconf.html">Конференция</a>
+<a href="csconf.html" class="nav-conf"><span class="nav-live"></span>Конференция</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 10px">
 <a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm hdr-cta">Связаться <span class="ar">→</span></a>
