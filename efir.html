@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Эфиры и митапы — nochurn</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--c:#06B6D4;--c-btn:#0891B2;--c-dk:#0E7490;--c-t:#ECFEFF;--c-t2:#CFFAFE;--ink:#0F172A;--ink2:#334155;--mut:#64748B;--line:#E2E8F0;--soft:#F8FAFC;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:96px}
+html,body{overflow-x:clip}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-variant-numeric:tabular-nums}
+.h2{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.lab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.sec{padding-top:112px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.link{font-weight:600;color:var(--c-dk);display:inline-flex;align-items:center;gap:6px}
+.link .ar{transition:transform .3s var(--ease)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1;border:0;cursor:pointer;transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);white-space:nowrap}
+.btn .ar{display:inline-block;transition:transform .3s var(--ease)}
+.btn-p{background:var(--c-btn);color:#FFFFFF;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 6px 16px -8px rgba(8,145,178,.6)}
+.btn-s{background:#FFFFFF;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
+/* cards */
+.card{background:#FFFFFF;border:1.5px solid var(--line);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.card-c{background:var(--c-t);border:1.5px solid var(--c-t2);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 12px;line-height:1}
+.tag-c{background:#FFFFFF;color:var(--c-dk);box-shadow:inset 0 0 0 1px var(--c-t2)}
+.tag-i{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c);display:inline-block}
+.btn-b{background:#F1E3CF;color:#5C4126;box-shadow:inset 0 0 0 1.5px #E6D2B4}
+.card-b{background:#FBF5EC;border:1.5px solid #EFE2CF;border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag-b{background:#FFFFFF;color:#7A5A30;box-shadow:inset 0 0 0 1px #EFE2CF}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:1px}
+.live{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:1px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);animation:pl 2s var(--ease) infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
+.circ{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .25s var(--ease),color .25s var(--ease)}
+/* nav */
+.nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a{position:relative;padding:6px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--c);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav .nd{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;vertical-align:2px}
+.dd{position:relative}
+.nav .dd>a{display:inline-flex;align-items:center}
+.chev{margin-left:5px;opacity:.55;transition:transform .2s}
+.dd-m{position:absolute;top:100%;left:-18px;min-width:290px;padding:10px;background:#FFFFFF;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 40px -24px rgba(15,23,42,.3);display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:40}
+.dd:hover .dd-m,.dd:focus-within .dd-m{opacity:1;visibility:visible;transform:none}
+.dd:hover .chev{transform:rotate(180deg)}
+.nav .dd-m a{padding:10px 12px;border-radius:12px;display:flex;flex-direction:column;gap:2px}
+.nav .dd-m a::after{display:none}
+.nav .dd-m a:hover{background:#F0FDFF}
+.dd-m b{font-weight:600;color:var(--ink);font-size:15px}
+.dd-m span{font-size:13px;color:var(--mut)}
+@media(max-width:1000px){.nav-t:checked ~ .nav .dd{width:100%}.nav-t:checked ~ .nav .dd-m{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 6px 14px;min-width:0}.nav-t:checked ~ .nav .dd-m a{padding:8px 0}.nav-t:checked ~ .nav .dd-m b{font-size:16px}.chev{display:none}}
+.nav-t{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:46px;height:46px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);align-items:center;justify-content:center;cursor:pointer}
+/* hover only on real pointers */
+@media(hover:hover){
+.btn-p:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -10px rgba(8,145,178,.7)}
+.btn-b:hover{background:#E9D5B7;transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px #D6B48C,0 10px 20px -12px rgba(122,90,48,.5)}
+.card-b:hover{transform:translateY(-4px);border-color:#D6B48C;box-shadow:0 20px 40px -24px rgba(122,90,48,.35)}
+.card-b:hover .circ{transform:rotate(45deg);background:#D6B48C;color:#FFFFFF}
+.btn-s:hover{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--c-dk);transform:translateY(-1px)}
+.btn:hover .ar,.link:hover .ar{transform:translateX(4px)}
+.card:hover,.card-c:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
+.card:hover .circ,.card-c:hover .circ{transform:rotate(45deg);background:var(--c);color:#FFFFFF}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.row:hover{background:var(--soft)}
+.row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
+}
+.mq{}
+.mq-t{display:flex;flex-wrap:wrap;gap:18px 44px}
+.mq-t span{transition:color .2s}
+@media(hover:hover){.mq-t span:hover{color:#0E7490}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
+@media(max-width:1000px){
+.nav{display:none}.burger{display:flex}
+.nav-t:checked ~ .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#FFFFFF;padding:12px 20px 24px;border-bottom:1px solid var(--line);z-index:20;font-size:18px;box-shadow:0 20px 30px -20px rgba(15,23,42,.2)}
+.nav-t:checked ~ .nav a{padding:12px 0;width:100%}
+}
+@media(max-width:700px){
+.w{padding-left:20px;padding-right:20px}
+.sec{padding-top:72px}
+.hdr-cta{display:none !important}
+.g2{grid-template-columns:1fr !important}
+.ill{display:none}
+.hero-ring{display:none}
+.conf-ring{display:none}
+.stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
+.mq-t{gap:12px 24px;font-size:19px !important}
+.hero-cta .btn{flex:1 1 100%}
+.dir{min-height:0 !important}
+.hero-h{font-size:52px !important}
+.ev-date{font-size:28px !important}
+.biz{padding:24px !important}.conf{padding-top:48px !important;padding-bottom:48px !important}
+.conf-date{width:96px !important;height:96px !important}
+.conf-date b{font-size:42px !important}
+}
+</style>
+<style>
+
+.more{margin-top:4px}
+.more summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#0E7490;padding:6px 0}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.more[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.more[open] summary{font-size:0}.more[open] summary::before{content:"Свернуть";font-size:14px}
+.more-b p{margin:0 0 12px;font-size:16px;line-height:1.6;color:#334155}
+figure:has(.more[open]) blockquote{display:none}
+
+.hero-col{position:absolute;right:20px;top:20px;width:460px;height:460px;z-index:-1}
+.col-ring{position:absolute;inset:30px;border-radius:50%;border:40px solid #ECFEFF}
+.col-hrt{position:absolute;left:186px;top:190px}
+.col-av{position:absolute;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 6px 20px rgba(15,23,42,.10);background:#E0F2FE;animation:flt 6s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes flt{50%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.col-av{animation:none}}
+@media(max-width:1180px){.hero-col{display:none}}
+.av-stack{display:inline-flex}
+.av-stack img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-left:-12px;background:#E0F2FE}
+.av-stack img:first-child{margin-left:0}
+.av-stack img,.av-more{width:48px;height:48px}
+.av-more{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:3px solid #fff;margin-left:-12px;background:#0891B2;color:#fff;font:700 13px 'Manrope',sans-serif}
+@media(max-width:700px){.av-stack img:nth-child(n+8){display:none}.av-stack img,.av-more{width:42px;height:42px}}
+.hrt-w{white-space:nowrap}
+@media(max-width:700px){.hrt{width:40px!important;height:40px!important;vertical-align:-4px!important;margin-left:2px!important}}
+.wall{columns:3 320px;column-gap:16px}
+.wall>.card,.wall>.card-c{break-inside:avoid;margin-bottom:16px;display:block}
+.wall b{font-weight:600;background:linear-gradient(transparent 60%,#CFFAFE 60%);padding:0 2px}
+@media(max-width:700px){.wall{columns:1}}
+</style><style>
+.hrt{animation:hb 2.4s var(--ease) infinite;transform-origin:center}
+@keyframes hb{0%,60%,100%{transform:scale(1)}20%{transform:scale(1.14)}40%{transform:scale(.96)}}
+.fr{position:absolute;opacity:0;pointer-events:none}
+.fbar{display:flex;flex-wrap:wrap;gap:8px}
+.fbar label{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--line);font-size:14px;font-weight:600;color:#334155;cursor:pointer;transition:all .2s;background:#FFFFFF}
+.fbar label .n{font-size:12px;color:#94A3B8;font-weight:600}
+@media(hover:hover){.fbar label:hover{box-shadow:inset 0 0 0 1.5px var(--c)}}
+#f-sys:checked ~ .wall figure:not(.t-sys){display:none}
+#f-sys:checked ~ .fbar label[for="f-sys"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-sys:checked ~ .fbar label[for="f-sys"] .n{color:#CFFAFE}
+#f-prac:checked ~ .wall figure:not(.t-prac){display:none}
+#f-prac:checked ~ .fbar label[for="f-prac"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-prac:checked ~ .fbar label[for="f-prac"] .n{color:#CFFAFE}
+#f-lead:checked ~ .wall figure:not(.t-lead){display:none}
+#f-lead:checked ~ .fbar label[for="f-lead"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-lead:checked ~ .fbar label[for="f-lead"] .n{color:#CFFAFE}
+#f-zero:checked ~ .wall figure:not(.t-zero){display:none}
+#f-zero:checked ~ .fbar label[for="f-zero"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-zero:checked ~ .fbar label[for="f-zero"] .n{color:#CFFAFE}
+#f-nosaas:checked ~ .wall figure:not(.t-nosaas){display:none}
+#f-nosaas:checked ~ .fbar label[for="f-nosaas"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-nosaas:checked ~ .fbar label[for="f-nosaas"] .n{color:#CFFAFE}
+#f-comm:checked ~ .wall figure:not(.t-comm){display:none}
+#f-comm:checked ~ .fbar label[for="f-comm"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-comm:checked ~ .fbar label[for="f-comm"] .n{color:#CFFAFE}
+#f-all:checked ~ .fbar label[for="f-all"]{background:#0891B2;color:#FFFFFF;box-shadow:none}
+#f-all:checked ~ .fbar label[for="f-all"] .n{color:#CFFAFE}
+.ab-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:center}
+.ab-duo{display:flex;align-items:center}
+.ab-duo img{width:200px;height:200px;border-radius:50%;object-fit:cover;background:#E0F2FE}
+.ab-duo img+img{margin-left:-36px;margin-top:120px}
+.ab-big{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px;padding-top:28px;border-top:1px solid #E2E8F0}
+.ab-big .h{font-size:clamp(36px,4vw,56px);letter-spacing:-.05em}
+.ab-big span{font-size:14px;color:#64748B}
+.ab-p{display:grid;grid-template-columns:360px minmax(0,1fr);gap:40px 72px;align-items:start;padding-top:40px;border-top:1px solid #E2E8F0}
+.ab-side{position:sticky;top:110px}
+.ab-ph{width:150px;height:150px;border-radius:50%;object-fit:cover;margin:8px;display:block;background:#E0F2FE}
+.ab-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px;padding:18px 0;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0}
+.ab-main{display:flex;flex-direction:column;gap:36px}
+.ab-g{padding-bottom:4px}
+.ab-main .chk{font-size:16px;line-height:1.6}
+.ab-a{color:#0E7490;font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#A5F3FC}
+.ab-talks{display:flex;flex-direction:column}
+.ab-talk{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid #EEF2F6;font-size:15px;line-height:1.5;color:#475569}
+.ab-talk b{color:#0F172A;font-weight:600}
+.ab-y{font:700 14px 'Manrope',sans-serif;color:#0891B2}
+.ab-life{background:#FAF6F0;border-radius:20px;padding:22px 24px}
+.ab-rev{padding:36px 40px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+@media(max-width:1000px){.ab-hero{grid-template-columns:1fr}.ab-duo img{width:132px;height:132px}.ab-duo img+img{margin-top:70px}.ab-p{grid-template-columns:1fr}.ab-side{position:static}.ab-big{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.ab-ph{width:112px;height:112px}.ab-talk{grid-template-columns:1fr;gap:2px}.ab-rev{padding:26px}.ab-stats .h{font-size:22px!important}}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#334155}
+.chk::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:3px;background:#CFFAFE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%230891B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+/*gap*/.sec{padding-top:72px!important}@media(max-width:700px){.sec{padding-top:52px!important}}
+@media(hover:hover){@media(max-width:900px){@media(max-width:700px){/*mob*/
+/* brand: less template */
+.lab{text-transform:none!important;letter-spacing:0!important;font-size:14px!important;font-weight:600!important;color:#0F172A!important;display:inline-flex;align-items:center}
+.lab .ldot,.lab .live{width:22px!important;height:2px!important;border-radius:0!important;margin-right:12px!important;box-shadow:none!important;animation:none!important}
+.lab .live::before,.lab .live::after{display:none!important}
+.tag{text-transform:none!important;letter-spacing:0!important;font-size:13px!important;border-radius:8px!important}
+.btn{border-radius:14px!important}
+.btn-p{box-shadow:none!important}
+.btn-p:hover{transform:translateY(-1px)}
+header{background:#FFFFFF!important}
+footer{position:relative;z-index:5}
+.nav-conf{display:inline-flex!important;align-items:center;gap:8px;background:#ECFEFF;color:#0E7490!important;border-radius:999px;padding:8px 14px!important;font-weight:600}
+.nav-conf:hover{background:#CFFAFE}
+.nav-live{position:relative;width:8px;height:8px;border-radius:50%;background:#06B6D4;flex:none}
+.nav-live::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:#06B6D4;opacity:.35;animation:navp 1.8s ease-out infinite}
+@keyframes navp{from{transform:scale(.6);opacity:.5}to{transform:scale(1.8);opacity:0}}
+@media(prefers-reduced-motion:reduce){.nav-live::after{animation:none}}
+@media(max-width:700px){
+.hero-h span,h1 span{white-space:normal!important}
+h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
+.prog-ic{display:none!important}
+.g2>.card>div:first-child[style*="height: 150px"]{height:auto!important;padding:20px!important}
+.g2>.card>div:first-child>div[style*="max-width: 70%"]{position:static!important;max-width:none!important}
+.co-near{display:block!important;line-height:1.5;border-radius:18px!important;padding:12px 16px!important}
+.co-near>*{display:inline!important}
+.co-roles{grid-template-columns:1fr!important}
+.co-facts>div{padding:14px 16px!important}
+.co-facts b{font-size:26px!important}
+.bl-g,.ar-cta,.tl-g{grid-template-columns:1fr!important}
+.ar-stats{grid-template-columns:1fr 1fr!important}
+}
+@media(min-width:701px) and (max-width:1000px){.co-roles{grid-template-columns:1fr 1fr!important}}
+@media(max-width:1000px){
+.nav-t:checked ~ .nav{position:fixed!important;top:76px!important;bottom:0;left:0;right:0;overflow-y:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;flex-wrap:nowrap!important;padding-bottom:40px!important}
+html:has(.nav-t:checked),body:has(.nav-t:checked){overflow:hidden!important}
+.nav-t:checked ~ .nav .dd>a{font-weight:600;color:#0F172A}
+.nav-t:checked ~ .nav .dd-m{padding:0 0 4px 14px!important}
+.nav-t:checked ~ .nav .dd-m b{font-weight:500!important;color:#475569!important}
+}
+/*endmob*/
+</style><style>
+.pc-hero{padding-top:64px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:56px;align-items:center}
+.pc-cov{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;background:#ECFEFF}
+.pc-cov img{width:100%;height:100%;object-fit:cover;display:block}
+.pc-cov span{position:absolute;left:18px;bottom:18px;background:#FFFFFF;border-radius:999px;padding:9px 16px;font:600 14px Inter,sans-serif;color:#0F172A;display:inline-flex;gap:8px;align-items:center}
+.pc-cov span i{width:8px;height:8px;border-radius:50%;background:#06B6D4}
+.pc-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-size:15px;color:#64748B}
+.pc-meta b{color:#0F172A;font-weight:600}
+.pc-pl{display:flex;flex-wrap:wrap;gap:10px}
+.pc-pl a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;border:1.5px solid #E2E8F0;font:600 15px Inter,sans-serif;color:#0F172A;transition:border-color .2s,background .2s}
+.pc-pl a:hover{border-color:#A5F3FC;background:#F0FDFF}
+.pc-pl a .ar{color:#0891B2}
+.pc-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pc-c{display:flex;flex-direction:column;gap:14px;padding:26px;border-radius:24px;border:1.5px solid #E2E8F0;background:#FFFFFF;transition:border-color .2s,transform .2s}
+.pc-c:hover{border-color:#A5F3FC;transform:translateY(-2px)}
+.pc-c .tg{align-self:flex-start;font:600 13px Inter,sans-serif;border-radius:8px;padding:6px 10px;background:#ECFEFF;color:#0E7490}
+.pc-c b{font:800 20px/1.25 Manrope,sans-serif;letter-spacing:-.025em;color:#0F172A}
+.pc-c span.d{margin-top:auto;font-size:14px;color:#64748B;display:flex;justify-content:space-between}
+.pc-c span.d em{font-style:normal;color:#0891B2;font-weight:600}
+.pc-f{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pc-f button{font:600 14px Inter,sans-serif;border:1.5px solid #E2E8F0;background:#FFFFFF;color:#334155;border-radius:999px;padding:9px 16px;cursor:pointer}
+.pc-f button[aria-pressed="true"]{background:#0F172A;border-color:#0F172A;color:#FFFFFF}
+.pc-l{display:flex;flex-direction:column;border-top:1px solid #E2E8F0}
+.pc-r{display:grid;grid-template-columns:40px minmax(0,1fr) 24px;gap:16px;align-items:center;padding:16px 4px;border-bottom:1px solid #E2E8F0;transition:background .2s}
+.pc-r:hover{background:#F8FAFC}
+.pc-play{width:40px;height:40px;border-radius:50%;background:#ECFEFF;color:#0891B2;display:flex;align-items:center;justify-content:center}
+.pc-r:hover .pc-play{background:#0891B2;color:#FFFFFF}
+.pc-rt{display:flex;flex-direction:column;gap:4px;min-width:0}
+.pc-rt b{font:700 17px/1.35 Manrope,sans-serif;letter-spacing:-.015em;color:#0F172A}
+.pc-rt span{font-size:14px;color:#64748B}
+.pc-go{color:#94A3B8}
+@media(max-width:900px){.pc-hero{grid-template-columns:1fr;gap:32px}.pc-cov{max-width:340px}.pc-g{grid-template-columns:1fr}}
+@media(max-width:800px){.pc-x>div{grid-template-columns:1fr!important;padding:24px!important}}</style>
+<style>
+.ef-th{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:#ECFEFF}
+.ef-th img{width:100%;height:100%;object-fit:cover;display:block}
+.ef-pl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.94);color:#0891B2;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+a:hover .ef-pl{background:#0891B2;color:#FFFFFF;transform:translate(-50%,-50%) scale(1.06)}
+.ef-dur{position:absolute;right:10px;bottom:10px;background:rgba(15,23,42,.82);color:#FFFFFF;font:600 12px Inter,sans-serif;border-radius:6px;padding:4px 7px}
+.ef-tg{display:flex;gap:6px;flex-wrap:wrap}
+.ef-tg span{font:600 13px Inter,sans-serif;border-radius:8px;padding:6px 10px;background:#ECFEFF;color:#0E7490}
+.ef-tg span.n{background:#F1F5F9;color:#475569}
+.ef-feat{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding:24px;border-radius:28px;border:1.5px solid #E2E8F0;transition:border-color .2s}
+.ef-feat:hover{border-color:#A5F3FC}
+.ef-feat .ef-th{border-radius:20px}
+.ef-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px}
+.ef-c{display:flex;flex-direction:column;gap:14px}
+.ef-c b{font:800 19px/1.25 Manrope,sans-serif;letter-spacing:-.02em;color:#0F172A}
+.ef-c p{margin:0;font-size:15px;line-height:1.55;color:#475569}
+.ef-c .d{font-size:14px;color:#64748B}
+.ef-c:hover b{color:#0E7490}
+@media(max-width:900px){.ef-feat{grid-template-columns:1fr;gap:20px;padding:16px}.ef-g{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header style="border-bottom: 1px solid #EEF2F6; background: rgba(255,255,255,.92); position: sticky; top: 0; z-index: 30">
+<div class="w" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px">
+<a href="index.html" aria-label="nochurn — на главную" class="h" style="font-size: 26px; letter-spacing: -.05em; display: flex; align-items: center"><svg role="img" aria-label="nochurn" style="height: .82em; width: auto; display: block; overflow: visible" xmlns="http://www.w3.org/2000/svg" viewBox="-4.00 -74.00 393.00 81.00"><path d="M7.300000000000001 0.0V-49.400000000000006H18.6V-42.5H20.3Q21.6 -45.300000000000004 25.0 -47.800000000000004Q28.400000000000002 -50.300000000000004 35.300000000000004 -50.300000000000004Q41.0 -50.300000000000004 45.400000000000006 -47.7Q49.800000000000004 -45.1 52.25 -40.5Q54.7 -35.9 54.7 -29.6V0.0H43.2V-28.700000000000003Q43.2 -34.7 40.25 -37.650000000000006Q37.300000000000004 -40.6 31.900000000000002 -40.6Q25.8 -40.6 22.3 -36.55Q18.8 -32.5 18.8 -25.0V0.0Z" fill="currentColor"/><circle cx="89.00" cy="-26.00" r="23.20" fill="none" stroke="currentColor" stroke-width="7.54"/><circle cx="95.38" cy="-46.88" r="6.38" fill="#06B6D4"/><path d="M146.9 1.4000000000000001Q139.7 1.4000000000000001 133.89999999999998 -1.6Q128.1 -4.6000000000000005 124.75 -10.3Q121.4 -16.0 121.4 -24.0V-25.400000000000002Q121.4 -33.4 124.75 -39.1Q128.1 -44.800000000000004 133.89999999999998 -47.800000000000004Q139.7 -50.800000000000004 146.9 -50.800000000000004Q154.0 -50.800000000000004 159.05 -48.300000000000004Q164.1 -45.800000000000004 167.2 -41.45Q170.3 -37.1 171.2 -31.700000000000003L160.1 -29.400000000000002Q159.7 -32.5 158.2 -35.05Q156.7 -37.6 153.95 -39.1Q151.2 -40.6 147.2 -40.6Q143.1 -40.6 139.85 -38.85Q136.6 -37.1 134.75 -33.6Q132.9 -30.1 132.9 -25.200000000000003V-24.200000000000003Q132.9 -19.3 134.75 -15.850000000000001Q136.6 -12.4 139.85 -10.600000000000001Q143.1 -8.8 147.2 -8.8Q153.3 -8.8 156.45 -11.950000000000001Q159.6 -15.100000000000001 160.4 -20.1L171.5 -17.5Q170.3 -12.3 167.2 -8.0Q164.1 -3.7 159.05 -1.15Q154.0 1.4000000000000001 146.9 1.4000000000000001Z" fill="currentColor"/><path d="M179.20000000000002 0.0V-70.0H190.70000000000002V-42.900000000000006H192.4Q193.20000000000002 -44.6 195.0 -46.3Q196.8 -48.0 199.75 -49.1Q202.70000000000002 -50.2 207.20000000000002 -50.2Q212.9 -50.2 217.3 -47.650000000000006Q221.70000000000002 -45.1 224.15000000000003 -40.5Q226.60000000000002 -35.9 226.60000000000002 -29.6V0.0H215.10000000000002V-28.700000000000003Q215.10000000000002 -34.7 212.15000000000003 -37.650000000000006Q209.20000000000002 -40.6 203.8 -40.6Q197.70000000000002 -40.6 194.20000000000002 -36.55Q190.70000000000002 -32.5 190.70000000000002 -25.0V0.0Z" fill="currentColor"/><path d="M256.1 0.8Q250.4 0.8 246.0 -1.75Q241.6 -4.3 239.2 -8.950000000000001Q236.8 -13.600000000000001 236.8 -19.8V-49.400000000000006H248.20000000000002V-20.700000000000003Q248.20000000000002 -14.700000000000001 251.15000000000003 -11.8Q254.10000000000002 -8.9 259.5 -8.9Q265.6 -8.9 269.15 -12.900000000000002Q272.7 -16.900000000000002 272.7 -24.400000000000002V-49.400000000000006H284.1V0.0H272.9V-6.9H271.2Q269.9 -4.2 266.45 -1.7000000000000002Q263.0 0.8 256.1 0.8Z" fill="currentColor"/><path d="M295.2 0.0V-49.400000000000006H306.5V-43.7H308.2Q309.29999999999995 -46.800000000000004 311.9 -48.2Q314.5 -49.6 318.09999999999997 -49.6H324.09999999999997V-39.400000000000006H317.9Q312.9 -39.400000000000006 309.79999999999995 -36.75Q306.7 -34.1 306.7 -28.6V0.0Z" fill="currentColor"/><path d="M330.8 0.0V-49.400000000000006H342.1V-42.5H343.8Q345.1 -45.300000000000004 348.5 -47.800000000000004Q351.9 -50.300000000000004 358.8 -50.300000000000004Q364.5 -50.300000000000004 368.9 -47.7Q373.3 -45.1 375.75 -40.5Q378.2 -35.9 378.2 -29.6V0.0H366.7V-28.700000000000003Q366.7 -34.7 363.75 -37.650000000000006Q360.8 -40.6 355.4 -40.6Q349.3 -40.6 345.8 -36.55Q342.3 -32.5 342.3 -25.0V0.0Z" fill="currentColor"/></svg></a>
+<input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
+<nav class="nav" aria-label="Основное меню">
+<div class="dd"><a href="about.html">О нас<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="about.html"><b>Кто мы</b></a><a href="reviews.html"><b>Отзывы</b></a></div></div>
+<div class="dd"><a href="cs.html">Знания<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="cs.html"><b>Что такое Customer Success</b></a><a href="blog.html"><b>Статьи</b></a><a href="podcast.html"><b>Подкаст</b></a><a href="efir.html"><b>Эфиры</b></a><a href="glossary.html"><b>Глоссарий</b></a></div></div>
+<div class="dd"><a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="sprint.html"><b>Спринт</b></a><a href="course.html"><b>Полный курс</b></a></div></div>
+<a href="consulting.html"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
+<a href="talents.html">Таланты</a>
+<a href="csconf.html" class="nav-conf"><span class="nav-live"></span>Конференция</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm hdr-cta">Связаться <span class="ar">→</span></a>
+<label for="nav-t" class="burger" aria-label="Меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></label>
+</div>
+</div>
+</header>
+
+<section class="w" style="padding-top: 64px">
+<div class="lab" style="margin-bottom: 16px"><span class="ldot" style="background: #06B6D4"></span>Эфиры</div>
+<h1 class="h" style="font-size: clamp(42px, 5.6vw, 76px); line-height: .98; letter-spacing: -.05em; margin: 0">Эфиры и&nbsp;<span style="background: linear-gradient(transparent 58%, #A5F3FC 58%, #A5F3FC 90%, transparent 90%); padding: 0 6px; margin-left: -6px">митапы</span></h1>
+<p style="margin: 22px 0 0; font-size: 19px; line-height: 1.55; color: #334155; max-width: 54ch">Записи наших вебинаров и&nbsp;митапов по&nbsp;Customer Success: разборы с&nbsp;практиками, процессы, карьера и&nbsp;ИИ.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px"><a href="https://www.youtube.com/@vostrikova-service/videos" target="_blank" rel="noopener" class="btn btn-p">YouTube-канал <span class="ar">↗</span></a><a href="podcast.html" class="btn btn-s">Подкаст <span class="ar">→</span></a></div>
+</section>
+
+<section class="w sec rv">
+<div class="lab" style="margin-bottom: 18px"><span class="ldot" style="background: #06B6D4"></span>Новый эфир</div>
+<a class="ef-feat" href="https://www.youtube.com/watch?v=5PNV5P_COz4" target="_blank" rel="noopener"><div class="ef-th"><img src="https://i.ytimg.com/vi/5PNV5P_COz4/hqdefault.jpg" alt="" loading="lazy"><span class="ef-pl" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ef-dur">47 мин</span></div><div style="display: flex; flex-direction: column; gap: 16px"><div class="ef-tg"><span class="n">Вебинар</span><span>ИИ</span></div><div class="h" style="font-size: clamp(24px, 2.6vw, 32px); line-height: 1.12; letter-spacing: -.03em">ИИ в&nbsp;продажах и&nbsp;Customer Success: как&nbsp;увидеть полную картину по&nbsp;клиентам</div><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #475569">Антон Юрченко (Giftery), выпускник нашего курса, и&nbsp;Марина Вострикова&nbsp;— как&nbsp;с&nbsp;помощью ИИ собрать обращения, разговоры и&nbsp;сделки в&nbsp;одну картину по&nbsp;клиенту.</p><div style="font-size: 14px; color: #64748B">12 ноября 2026</div><span class="btn btn-p" style="align-self: flex-start">Смотреть запись <span class="ar">↗</span></span></div></a>
+</section>
+
+<section class="w sec rv">
+<h2 class="h" style="font-size: clamp(30px, 3.4vw, 44px); letter-spacing: -.04em; margin: 0 0 28px">Все записи</h2>
+<div class="ef-g"><a class="ef-c" href="https://www.youtube.com/watch?v=DccnXDX23io" target="_blank" rel="noopener"><div class="ef-th"><img src="https://i.ytimg.com/vi/DccnXDX23io/hqdefault.jpg" alt="" loading="lazy"><span class="ef-pl" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ef-dur">1 ч 7 мин</span></div><div class="ef-tg"><span class="n">Эфир</span><span>Маркетинг</span></div><b>Синергия маркетинга и&nbsp;Customer Success: как&nbsp;вместе выстраивать отношения с&nbsp;клиентами</b><p>Максим Колпаков, Chief Growth Officer Doczilla,&nbsp;— как&nbsp;маркетинг помогает CS удерживать клиентов и&nbsp;растить средний чек. С цифрами и&nbsp;примерами.</p><span class="d">15 апреля 2026</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=5Gr-TMV_8g8" target="_blank" rel="noopener"><div class="ef-th"><img src="https://i.ytimg.com/vi/5Gr-TMV_8g8/hqdefault.jpg" alt="" loading="lazy"><span class="ef-pl" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ef-dur">1 ч 50 мин</span></div><div class="ef-tg"><span class="n">Митап</span><span>Процессы</span></div><b>Customer Success Meetup #2: CS Ops</b><p>Процессы в&nbsp;Customer Success: как&nbsp;построить операционную систему CS с&nbsp;нуля, с&nbsp;чего начать и&nbsp;какие ошибки встречаются. Выступают Анна Амброзевич, Родион Захаров и&nbsp;другие.</p><span class="d">17 февраля 2026</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=1d75ns5hjD4" target="_blank" rel="noopener"><div class="ef-th"><img src="https://i.ytimg.com/vi/1d75ns5hjD4/hqdefault.jpg" alt="" loading="lazy"><span class="ef-pl" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ef-dur">1 ч 50 мин</span></div><div class="ef-tg"><span class="n">Митап</span><span>Карьера</span></div><b>Customer Success Meetup #1: Карьера в&nbsp;CS</b><p>Вход в&nbsp;профессию, рост и&nbsp;выход на&nbsp;зарубежные компании: как&nbsp;упаковать опыт и&nbsp;повысить отклик на&nbsp;роли CSM и&nbsp;смежные.</p><span class="d">10 сентября 2025</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=D22dumDcNE8" target="_blank" rel="noopener"><div class="ef-th"><img src="https://i.ytimg.com/vi/D22dumDcNE8/hqdefault.jpg" alt="" loading="lazy"><span class="ef-pl" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ef-dur">24 мин</span></div><div class="ef-tg"><span class="n">Эфир</span><span>Карьера</span></div><b>Азы Customer Success: как&nbsp;войти в&nbsp;профессию CSM</b><p>Марина Вострикова об&nbsp;основах профессии: что&nbsp;делает CSM и&nbsp;как&nbsp;сделать первые шаги в&nbsp;Customer Success.</p><span class="d">10 января 2025</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=58EFk0sQx3M" target="_blank" rel="noopener"><div class="ef-th"><img src="https://i.ytimg.com/vi/58EFk0sQx3M/hqdefault.jpg" alt="" loading="lazy"><span class="ef-pl" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="ef-dur">1 ч 3 мин</span></div><div class="ef-tg"><span class="n">Эфир</span><span>Основы</span></div><b>Карьера в&nbsp;Customer Success: роли CSM, рынок и&nbsp;чем CS не&nbsp;поддержка</b><p>CS как&nbsp;проводник между бизнесом и&nbsp;продуктом, роли CSM, CSO и&nbsp;CCO, ключевые компетенции и&nbsp;рост рынка.</p><span class="d">5 сентября 2024</span></a></div>
+</section>
+
+<section class="w sec rv" style="padding-bottom: 80px">
+<div class="card" style="padding: 32px 36px; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; background: #ECFEFF; border-color: #CFFAFE">
+<div style="flex: 1 1 420px; min-width: 0"><div class="h" style="font-size: clamp(24px, 2.6vw, 32px); letter-spacing: -.03em">Не&nbsp;пропустить следующий эфир</div><div style="font-size: 16px; line-height: 1.55; color: #475569; margin-top: 8px">Анонсы эфиров и&nbsp;митапов — в&nbsp;Telegram-каналах nochurn.</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://t.me/customersuccessru" target="_blank" rel="noopener" class="btn btn-p">Канал о&nbsp;CS <span class="ar">↗</span></a><a href="https://t.me/bizservis" target="_blank" rel="noopener" class="btn btn-s">Бизнес и&nbsp;сервис <span class="ar">↗</span></a></div>
+</div>
+</section>
+<footer style="background: #F8FAFC; border-top: 1px solid #E2E8F0">
+<div class="w" style="padding-top: 64px; padding-bottom: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; margin-bottom: 48px">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<a href="index.html" aria-label="nochurn — на главную" class="h" style="font-size: 30px; letter-spacing: -.05em; display: flex; align-items: center"><svg role="img" aria-label="nochurn" style="height: .82em; width: auto; display: block; overflow: visible" xmlns="http://www.w3.org/2000/svg" viewBox="-4.00 -74.00 393.00 81.00"><path d="M7.300000000000001 0.0V-49.400000000000006H18.6V-42.5H20.3Q21.6 -45.300000000000004 25.0 -47.800000000000004Q28.400000000000002 -50.300000000000004 35.300000000000004 -50.300000000000004Q41.0 -50.300000000000004 45.400000000000006 -47.7Q49.800000000000004 -45.1 52.25 -40.5Q54.7 -35.9 54.7 -29.6V0.0H43.2V-28.700000000000003Q43.2 -34.7 40.25 -37.650000000000006Q37.300000000000004 -40.6 31.900000000000002 -40.6Q25.8 -40.6 22.3 -36.55Q18.8 -32.5 18.8 -25.0V0.0Z" fill="currentColor"/><circle cx="89.00" cy="-26.00" r="23.20" fill="none" stroke="currentColor" stroke-width="7.54"/><circle cx="95.38" cy="-46.88" r="6.38" fill="#06B6D4"/><path d="M146.9 1.4000000000000001Q139.7 1.4000000000000001 133.89999999999998 -1.6Q128.1 -4.6000000000000005 124.75 -10.3Q121.4 -16.0 121.4 -24.0V-25.400000000000002Q121.4 -33.4 124.75 -39.1Q128.1 -44.800000000000004 133.89999999999998 -47.800000000000004Q139.7 -50.800000000000004 146.9 -50.800000000000004Q154.0 -50.800000000000004 159.05 -48.300000000000004Q164.1 -45.800000000000004 167.2 -41.45Q170.3 -37.1 171.2 -31.700000000000003L160.1 -29.400000000000002Q159.7 -32.5 158.2 -35.05Q156.7 -37.6 153.95 -39.1Q151.2 -40.6 147.2 -40.6Q143.1 -40.6 139.85 -38.85Q136.6 -37.1 134.75 -33.6Q132.9 -30.1 132.9 -25.200000000000003V-24.200000000000003Q132.9 -19.3 134.75 -15.850000000000001Q136.6 -12.4 139.85 -10.600000000000001Q143.1 -8.8 147.2 -8.8Q153.3 -8.8 156.45 -11.950000000000001Q159.6 -15.100000000000001 160.4 -20.1L171.5 -17.5Q170.3 -12.3 167.2 -8.0Q164.1 -3.7 159.05 -1.15Q154.0 1.4000000000000001 146.9 1.4000000000000001Z" fill="currentColor"/><path d="M179.20000000000002 0.0V-70.0H190.70000000000002V-42.900000000000006H192.4Q193.20000000000002 -44.6 195.0 -46.3Q196.8 -48.0 199.75 -49.1Q202.70000000000002 -50.2 207.20000000000002 -50.2Q212.9 -50.2 217.3 -47.650000000000006Q221.70000000000002 -45.1 224.15000000000003 -40.5Q226.60000000000002 -35.9 226.60000000000002 -29.6V0.0H215.10000000000002V-28.700000000000003Q215.10000000000002 -34.7 212.15000000000003 -37.650000000000006Q209.20000000000002 -40.6 203.8 -40.6Q197.70000000000002 -40.6 194.20000000000002 -36.55Q190.70000000000002 -32.5 190.70000000000002 -25.0V0.0Z" fill="currentColor"/><path d="M256.1 0.8Q250.4 0.8 246.0 -1.75Q241.6 -4.3 239.2 -8.950000000000001Q236.8 -13.600000000000001 236.8 -19.8V-49.400000000000006H248.20000000000002V-20.700000000000003Q248.20000000000002 -14.700000000000001 251.15000000000003 -11.8Q254.10000000000002 -8.9 259.5 -8.9Q265.6 -8.9 269.15 -12.900000000000002Q272.7 -16.900000000000002 272.7 -24.400000000000002V-49.400000000000006H284.1V0.0H272.9V-6.9H271.2Q269.9 -4.2 266.45 -1.7000000000000002Q263.0 0.8 256.1 0.8Z" fill="currentColor"/><path d="M295.2 0.0V-49.400000000000006H306.5V-43.7H308.2Q309.29999999999995 -46.800000000000004 311.9 -48.2Q314.5 -49.6 318.09999999999997 -49.6H324.09999999999997V-39.400000000000006H317.9Q312.9 -39.400000000000006 309.79999999999995 -36.75Q306.7 -34.1 306.7 -28.6V0.0Z" fill="currentColor"/><path d="M330.8 0.0V-49.400000000000006H342.1V-42.5H343.8Q345.1 -45.300000000000004 348.5 -47.800000000000004Q351.9 -50.300000000000004 358.8 -50.300000000000004Q364.5 -50.300000000000004 368.9 -47.7Q373.3 -45.1 375.75 -40.5Q378.2 -35.9 378.2 -29.6V0.0H366.7V-28.700000000000003Q366.7 -34.7 363.75 -37.650000000000006Q360.8 -40.6 355.4 -40.6Q349.3 -40.6 345.8 -36.55Q342.3 -32.5 342.3 -25.0V0.0Z" fill="currentColor"/></svg></a>
+<div style="font-size: 15px; line-height: 1.5; color: #64748B; max-width: 30ch">Обучение и консалтинг по Customer Success</div>
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="align-self: flex-start">Связаться <span class="ar">→</span></a>
+</div>
+<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 36px 28px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">О нас</span><a href="about.html" style="color: #64748B">Кто мы</a><a href="reviews.html" style="color: #64748B">Отзывы</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="cs.html" style="color: #64748B">Что такое Customer Success</a><a href="blog.html" style="color: #64748B">Статьи</a><a href="podcast.html" style="color: #64748B">Подкаст</a><a href="efir.html" style="color: #64748B">Эфиры</a><a href="glossary.html" style="color: #64748B">Глоссарий</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="course.html" style="color: #64748B">Полный курс по Customer Success</a><a href="sprint.html" style="color: #64748B">Спринт по Customer Success</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Компаниям</span><a href="consulting.html#formats" style="color: #64748B">Консалтинг</a><a href="consulting.html#edu" style="color: #64748B">Корпоративное обучение</a><a href="consulting.html#strategy" style="color: #64748B">Стратегическая сессия</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Таланты и каналы</span><a href="talents.html" style="color: #64748B">Таланты Customer Success</a><a href="https://t.me/bizservis" target="_blank" rel="noopener" style="color: #64748B">Канал «Бизнес и сервис»</a><a href="https://t.me/customersuccessru" target="_blank" rel="noopener" style="color: #64748B">Канал «Customer Success»</a><a href="https://www.youtube.com/@vostrikova-service" target="_blank" rel="noopener" style="color: #64748B">YouTube «Бизнес и сервис»</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Конференция</span><a href="csconf.html" style="color: #64748B">CS Conf 2026</a><a href="csconf.html#archive" style="color: #64748B">Архив конференций</a></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 22px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #64748B">
+<span>© nochurn · ИП Лютова Дарья Викторовна · ИНН 645122866084</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 18px"><a href="https://nochurn.ru/sveden" target="_blank" rel="noopener">Сведения об образовательной организации</a><a href="https://nochurn.ru/reestr" target="_blank" rel="noopener">Документы</a><a href="https://disk.yandex.ru/i/dDICeHrHloPhVg" target="_blank" rel="noopener">Оферта</a><a href="https://disk.yandex.ru/i/9h6tFPfLPvVYVg" target="_blank" rel="noopener">Политика конфиденциальности</a><a href="https://disk.yandex.ru/i/hX7w1Bgw--oBew" target="_blank" rel="noopener">Согласие на обработку данных</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+<script>document.documentElement.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});</script>
+</body>
+</html>
