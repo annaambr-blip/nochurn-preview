@@ -201,7 +201,29 @@ figure:has(.more[open]) blockquote{display:none}
 .tl-c li{display:flex;gap:10px;font-size:16px;line-height:1.5;color:#334155}
 .tl-c li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#06B6D4;margin-top:9px}
 @media(max-width:800px){.tl-g{grid-template-columns:1fr}.tl-c{padding:24px}}
-/*mob*/
+</style>
+<style>
+.ef-th{position:relative;border-radius:20px;height:104px;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;background:#ECFEFF}
+.ef-th .tag{align-self:flex-start;background:#FFFFFF;color:#0E7490;text-transform:none;letter-spacing:0;font-size:13px;border-radius:8px}
+.ef-th .tm{font:600 14px Inter,sans-serif;color:#334155}
+.ef-pl{position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.94);color:#0891B2;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+a:hover .ef-pl{background:#0891B2;color:#FFFFFF}
+.ef-tg{display:flex;gap:6px;flex-wrap:wrap}
+.ef-tg span{font:600 13px Inter,sans-serif;border-radius:8px;padding:6px 10px;background:#ECFEFF;color:#0E7490}
+.ef-tg span.n{background:#F1F5F9;color:#475569}
+.ef-feat{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding:24px;border-radius:28px;border:1.5px solid #E2E8F0;transition:border-color .2s}
+.ef-feat:hover{border-color:#A5F3FC}
+.ef-feat .ef-th{height:auto;min-height:220px;background:#A5F3FC;padding:28px;gap:24px}
+.ef-feat .ef-th .big{font:800 clamp(22px,2.2vw,28px)/1.15 Manrope,sans-serif;letter-spacing:-.03em;color:#0F172A;max-width:24ch}
+.ef-feat .ef-pl{width:56px;height:56px;right:28px;top:28px}
+.ef-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px}
+.ef-c{display:flex;flex-direction:column;gap:14px}
+.ef-c b{font:800 19px/1.25 Manrope,sans-serif;letter-spacing:-.02em;color:#0F172A}
+.ef-c p{margin:0;font-size:15px;line-height:1.55;color:#475569}
+.ef-c .d{font-size:14px;color:#64748B}
+.ef-c:hover b{color:#0E7490}
+@media(max-width:900px){.ef-feat{grid-template-columns:1fr;gap:20px;padding:16px}.ef-g{grid-template-columns:1fr}}
+@media(max-width:800px){.pc-x>div{padding:24px!important}}/*mob*/
 /* brand: less template */
 .lab{text-transform:none!important;letter-spacing:0!important;font-size:14px!important;font-weight:600!important;color:#0F172A!important;display:inline-flex;align-items:center}
 .lab .ldot,.lab .live{width:22px!important;height:2px!important;border-radius:0!important;margin-right:12px!important;box-shadow:none!important;animation:none!important}
@@ -239,31 +261,16 @@ html:has(.nav-t:checked),body:has(.nav-t:checked){overflow:hidden!important}
 .nav-t:checked ~ .nav .dd>a{font-weight:600;color:#0F172A}
 .nav-t:checked ~ .nav .dd-m{padding:0 0 4px 14px!important}
 .nav-t:checked ~ .nav .dd-m b{font-weight:500!important;color:#475569!important}
+header .nav .dd>a,header .nav>a{font-family:Inter,sans-serif!important;font-size:17px!important;font-weight:600!important;color:#0F172A!important}
+header .nav .dd-m{padding:2px 0 6px 14px!important;margin-left:2px;border-left:2px solid #E2E8F0!important;border-radius:0!important}
+header .nav .dd-m a{padding:7px 0 7px 12px!important;background:none!important;border-radius:0!important}
+header .nav .dd-m a b{font-family:Inter,sans-serif!important;font-size:16px!important;font-weight:500!important;color:#475569!important}
+header .nav .dd-m a:hover,header .nav .dd-m a:focus-visible{background:none!important}
+header .nav .dd-m a:hover b,header .nav .dd-m a:focus-visible b{color:#0E7490!important}
+header .nav>a.nav-conf{display:inline-flex!important;align-self:flex-start;width:auto!important;color:#0E7490!important;background:#ECFEFF!important;border-radius:999px!important;padding:9px 16px!important;margin-top:6px}
 }
 /*endmob*/
 </style>
-<style>
-.ef-th{position:relative;border-radius:20px;height:140px;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;background:#ECFEFF}
-.ef-th .tag{align-self:flex-start;background:#FFFFFF;color:#0E7490;text-transform:none;letter-spacing:0;font-size:13px;border-radius:8px}
-.ef-th .tm{font:600 14px Inter,sans-serif;color:#334155}
-.ef-pl{position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.94);color:#0891B2;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
-a:hover .ef-pl{background:#0891B2;color:#FFFFFF}
-.ef-tg{display:flex;gap:6px;flex-wrap:wrap}
-.ef-tg span{font:600 13px Inter,sans-serif;border-radius:8px;padding:6px 10px;background:#ECFEFF;color:#0E7490}
-.ef-tg span.n{background:#F1F5F9;color:#475569}
-.ef-feat{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding:24px;border-radius:28px;border:1.5px solid #E2E8F0;transition:border-color .2s}
-.ef-feat:hover{border-color:#A5F3FC}
-.ef-feat .ef-th{height:auto;min-height:260px;background:#A5F3FC;padding:28px}
-.ef-feat .ef-th .big{font:800 clamp(30px,3.4vw,44px)/1 Manrope,sans-serif;letter-spacing:-.04em;color:#0F172A}
-.ef-feat .ef-pl{width:56px;height:56px;right:28px;top:28px}
-.ef-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px}
-.ef-c{display:flex;flex-direction:column;gap:14px}
-.ef-c b{font:800 19px/1.25 Manrope,sans-serif;letter-spacing:-.02em;color:#0F172A}
-.ef-c p{margin:0;font-size:15px;line-height:1.55;color:#475569}
-.ef-c .d{font-size:14px;color:#64748B}
-.ef-c:hover b{color:#0E7490}
-@media(max-width:900px){.ef-feat{grid-template-columns:1fr;gap:20px;padding:16px}.ef-g{grid-template-columns:1fr}}
-@media(max-width:800px){.pc-x>div{padding:24px!important}}</style>
 
 </head>
 <body>
@@ -303,7 +310,7 @@ a:hover .ef-pl{background:#0891B2;color:#FFFFFF}
 </div>
 </section>
 
-<section class="w sec rv pc-x"><div style="border-radius: 24px; background: #F8FAFC; padding: 32px 36px"><div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; margin-bottom: 24px"><div><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Эфиры</div><div class="h" style="font-size: clamp(24px, 2.6vw, 30px); letter-spacing: -.03em; line-height: 1.1">Карьера в&nbsp;Customer Success</div></div><a href="efir.html" class="btn btn-s">Все эфиры <span class="ar">→</span></a></div><div style="display: flex; flex-wrap: wrap; gap: 20px"><a class="ef-c" href="https://www.youtube.com/watch?v=1d75ns5hjD4" target="_blank" rel="noopener" style="flex: 1 1 260px; min-width: 0"><div class="ef-th" style="background:#ECFEFF"><span class="tag">Карьера</span><span class="ef-pl" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="tm">Митап · 1 ч 50 мин</span></div><b>Customer Success Meetup #1: Карьера в&nbsp;CS</b><span class="d">10 сентября 2025</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=D22dumDcNE8" target="_blank" rel="noopener" style="flex: 1 1 260px; min-width: 0"><div class="ef-th" style="background:#F1F5F9"><span class="tag">Карьера</span><span class="ef-pl" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="tm">Эфир · 24 мин</span></div><b>Азы Customer Success: как&nbsp;войти в&nbsp;профессию CSM</b><span class="d">10 января 2025</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=58EFk0sQx3M" target="_blank" rel="noopener" style="flex: 1 1 260px; min-width: 0"><div class="ef-th" style="background:#F0FDFF"><span class="tag">Основы</span><span class="ef-pl" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="tm">Эфир · 1 ч 3 мин</span></div><b>Карьера в&nbsp;Customer Success: роли CSM, рынок и&nbsp;чем CS не&nbsp;поддержка</b><span class="d">5 сентября 2024</span></a></div></div></section>
+<section class="w sec rv pc-x"><div style="border-radius: 24px; background: #F8FAFC; padding: 32px 36px"><div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; margin-bottom: 24px"><div><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>Эфиры</div><div class="h" style="font-size: clamp(24px, 2.6vw, 30px); letter-spacing: -.03em; line-height: 1.1">Карьера в&nbsp;Customer Success</div></div><a href="efir.html" class="btn btn-s">Все эфиры <span class="ar">→</span></a></div><div style="display: flex; flex-wrap: wrap; gap: 20px"><a class="ef-c" href="https://www.youtube.com/watch?v=1d75ns5hjD4" target="_blank" rel="noopener" style="flex: 1 1 260px; min-width: 0"><div class="ef-th" style="background:#ECFEFF"><span class="tag">Карьера</span><span class="ef-pl" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></div><b>Customer Success Meetup #1: Карьера в&nbsp;CS</b><span class="d">Митап · 1 ч 50 мин · 10 сентября 2025</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=D22dumDcNE8" target="_blank" rel="noopener" style="flex: 1 1 260px; min-width: 0"><div class="ef-th" style="background:#F1F5F9"><span class="tag">Карьера</span><span class="ef-pl" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></div><b>Азы Customer Success: как&nbsp;войти в&nbsp;профессию CSM</b><span class="d">Эфир · 24 мин · 10 января 2025</span></a><a class="ef-c" href="https://www.youtube.com/watch?v=58EFk0sQx3M" target="_blank" rel="noopener" style="flex: 1 1 260px; min-width: 0"><div class="ef-th" style="background:#F0FDFF"><span class="tag">Основы</span><span class="ef-pl" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></div><b>Карьера в&nbsp;Customer Success: роли CSM, рынок и&nbsp;чем CS не&nbsp;поддержка</b><span class="d">Эфир · 1 ч 3 мин · 5 сентября 2024</span></a></div></div></section>
 <section class="w sec rv" style="padding-bottom: 80px">
 <div class="card" style="padding: 32px 36px; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between">
 <div style="flex: 1 1 420px; min-width: 0"><div class="h" style="font-size: clamp(24px, 2.6vw, 32px); letter-spacing: -.03em">Раздел скоро станет больше</div><div style="font-size: 16px; line-height: 1.55; color: #475569; margin-top: 8px">Пока все вакансии и новости — в канале. Подписывайтесь, чтобы не пропустить.</div></div>

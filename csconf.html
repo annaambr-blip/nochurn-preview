@@ -360,6 +360,16 @@ figure:has(.more[open]) blockquote{display:none}
 .tx-spark{font-size:24px;right:-30px;top:4px}
 .tx-caret{display:none}
 @media(max-width:800px){.tx-r{grid-template-columns:40px minmax(0,1fr)}.tx-win{padding:26px 16px 8px}}
+
+.ty{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ty-c{border-radius:28px;background:#F0FDFF;border:1.5px solid #CFFAFE;padding:28px;display:flex;flex-direction:column;min-height:340px;transition:transform .3s,box-shadow .3s}
+.ty-c:hover{transform:translateY(-4px);box-shadow:0 24px 44px -30px rgba(8,145,178,.55)}
+.ty-top{display:flex;justify-content:space-between;align-items:flex-start}
+.ty-n{font:800 14px 'Manrope',sans-serif;letter-spacing:.1em;color:#0891B2}
+.ty-ill{width:120px;height:104px}
+.ty-w{font-size:clamp(44px,4.4vw,60px);line-height:1;letter-spacing:-.045em;color:#0F172A;margin-top:auto;padding-top:28px}
+.ty-d{font-size:16px;line-height:1.5;color:#334155;margin-top:12px;max-width:30ch}
+@media(max-width:900px){.ty{grid-template-columns:1fr}.ty-c{min-height:0}.ty-ill{width:96px;height:84px}}
 /*mob*/
 /* brand: less template */
 .lab{text-transform:none!important;letter-spacing:0!important;font-size:14px!important;font-weight:600!important;color:#0F172A!important;display:inline-flex;align-items:center}
@@ -398,18 +408,15 @@ html:has(.nav-t:checked),body:has(.nav-t:checked){overflow:hidden!important}
 .nav-t:checked ~ .nav .dd>a{font-weight:600;color:#0F172A}
 .nav-t:checked ~ .nav .dd-m{padding:0 0 4px 14px!important}
 .nav-t:checked ~ .nav .dd-m b{font-weight:500!important;color:#475569!important}
+header .nav .dd>a,header .nav>a{font-family:Inter,sans-serif!important;font-size:17px!important;font-weight:600!important;color:#0F172A!important}
+header .nav .dd-m{padding:2px 0 6px 14px!important;margin-left:2px;border-left:2px solid #E2E8F0!important;border-radius:0!important}
+header .nav .dd-m a{padding:7px 0 7px 12px!important;background:none!important;border-radius:0!important}
+header .nav .dd-m a b{font-family:Inter,sans-serif!important;font-size:16px!important;font-weight:500!important;color:#475569!important}
+header .nav .dd-m a:hover,header .nav .dd-m a:focus-visible{background:none!important}
+header .nav .dd-m a:hover b,header .nav .dd-m a:focus-visible b{color:#0E7490!important}
+header .nav>a.nav-conf{display:inline-flex!important;align-self:flex-start;width:auto!important;color:#0E7490!important;background:#ECFEFF!important;border-radius:999px!important;padding:9px 16px!important;margin-top:6px}
 }
 /*endmob*/
-
-.ty{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ty-c{border-radius:28px;background:#F0FDFF;border:1.5px solid #CFFAFE;padding:28px;display:flex;flex-direction:column;min-height:340px;transition:transform .3s,box-shadow .3s}
-.ty-c:hover{transform:translateY(-4px);box-shadow:0 24px 44px -30px rgba(8,145,178,.55)}
-.ty-top{display:flex;justify-content:space-between;align-items:flex-start}
-.ty-n{font:800 14px 'Manrope',sans-serif;letter-spacing:.1em;color:#0891B2}
-.ty-ill{width:120px;height:104px}
-.ty-w{font-size:clamp(44px,4.4vw,60px);line-height:1;letter-spacing:-.045em;color:#0F172A;margin-top:auto;padding-top:28px}
-.ty-d{font-size:16px;line-height:1.5;color:#334155;margin-top:12px;max-width:30ch}
-@media(max-width:900px){.ty{grid-template-columns:1fr}.ty-c{min-height:0}.ty-ill{width:96px;height:84px}}
 </style>
 </head>
 <body>
