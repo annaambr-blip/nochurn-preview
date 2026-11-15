@@ -3,130 +3,210 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Customer Success Basics — email 1 template</title>
+<title>Customer Success Basics — lesson 1 of 8</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2314181D' stroke-width='13'/%3E%3Ccircle cx='61' cy='14' r='11' fill='%2306B6D4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#EDEAE1;color:#14181D;font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#D7D3C8;color:#14181D;font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#0890A8}a:hover{color:#14181D}
-.lab{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5A626C}
-.labc{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#0890A8}
+.tg{font:500 12px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;padding:10px 14px;border-radius:100px;border:1.5px solid #14181D;background:#F4F2EC;color:#14181D;cursor:pointer}
+.tg[aria-pressed="true"]{background:#14181D;color:#F4F2EC}
+.tg:focus-visible{outline:2px solid #06B6D4;outline-offset:3px}
 </style>
 <style>html{scroll-behavior:smooth}</style>
 </head>
 <body>
-<div style="max-width: 680px; margin: 0 auto; box-sizing: border-box; padding: 20px 12px; background: #EDEAE1; font-family: 'Space Grotesk', system-ui, sans-serif">
+<div style="width: 100%; padding: 24px 12px 48px; box-sizing: border-box; background: #D7D3C8">
+<div style="max-width: 640px; margin: 0 auto">
 
-<!-- inbox header -->
-<div style="background: #F4F2EC; border: 1px solid #D7D3C8; border-radius: 16px 16px 0 0; padding: 16px 22px; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; justify-content: space-between; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A626C"><span>from: nochurn</span><span>day 1 · 01 / 08</span></div>
-<div style="font-size: 15px; font-weight: 600; color: #14181D">Subject: What Customer Success is — and why it drives revenue</div>
+<!-- preview controls (not part of the email) -->
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #3A4047">PROTOTYPE · EMAIL 1</span>
+<button class="tg" type="button" id="imgToggle" aria-pressed="false">Images: on</button>
 </div>
 
-<!-- dark masthead -->
-<div style="background: #14181D; padding: 36px 40px 34px; display: flex; flex-direction: column; gap: 0">
-<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<!-- inbox line -->
+<div style="background: #F4F2EC; border-radius: 16px 16px 0 0; padding: 16px 20px; border-bottom: 1px solid #D7D3C8; display: flex; gap: 12px; align-items: center">
+<div style="width: 40px; height: 40px; border-radius: 50%; background: #14181D; display: grid; place-items: center; flex: none"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 24px; height: 24px; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#F4F2EC" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></div>
+<div style="min-width: 0">
+<div style="font-size: 15px; font-weight: 600">Customer Success Basics · 1/8 — What Customer Success is</div>
+<div style="font-size: 13.5px; color: #5A626C; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">nochurn · Your first lesson: why CS is a revenue engine, in 7 minutes.</div>
+</div>
+</div>
+
+<!-- EMAIL -->
+<div style="background: #F4F2EC; border-radius: 0 0 16px 16px; overflow: hidden">
+
+<!-- header -->
+<div style="background: #14181D; padding: 26px 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <div>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B7480">Customer Success Basics</div>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase; color: #06B6D4; margin-top: 4px">Email 01 / 08</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #9AA1A8">CUSTOMER SUCCESS BASICS</div>
+<div style="font-size: 22px; font-weight: 600; color: #F4F2EC; margin-top: 4px">Lesson 1 of 8</div>
 </div>
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: 22px; color: #F4F2EC; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span>
-</div>
-<h1 style="margin: 44px 0 0; font-size: 34px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.08; color: #F4F2EC">What Customer Success is — and why it <span style="color: #06B6D4">drives revenue.</span></h1>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #06B6D4; margin-top: 16px">learn · grab · do →</div>
+<div style="display: flex; align-items: center; gap: 10px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 44px; height: 44px; flex: none"><circle cx="50" cy="50" r="38" fill="none" stroke="#3A4047" stroke-width="12" pathLength="80" stroke-dasharray="9 1" transform="rotate(-88 50 50)"></circle><circle cx="50" cy="50" r="38" fill="none" stroke="#06B6D4" stroke-width="12" pathLength="80" stroke-dasharray="9 71" transform="rotate(-88 50 50)"></circle></svg><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9AA1A8; line-height: 1.3">1 / 8<br>to badge</span></div>
 </div>
 
-<!-- body -->
-<div style="background: #F4F2EC; border: 1px solid #D7D3C8; border-top: 0; border-radius: 0 0 16px 16px; padding: 36px 40px; display: flex; flex-direction: column; gap: 28px">
+<div style="padding: 32px 28px; display: flex; flex-direction: column; gap: 26px">
 
-<!-- welcome -->
-<div style="border: 1px solid #D7D3C8; border-radius: 14px; padding: 18px 20px; background: #EDEAE1">
-<div class="labc" style="margin-bottom: 8px">Welcome</div>
-<div style="font-size: 15px; line-height: 1.55; color: #3A4047">Over the next eight emails you will see Customer Success as a business system — from its definition to the customer lifecycle, churn and where the field is going. One email, one topic, one thing to apply in your company.</div>
+<h1 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1">What Customer Success is — and why it <span style="color: #0890A8">drives revenue</span></h1>
+
+<div class="img-on">
+<div role="img" aria-label="Diagram: Customer Success sits between the customer and the product. The customer gets a result; the company gets revenue." style="border-radius: 14px; overflow: hidden"><svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto">
+<rect width="600" height="260" fill="#EDEAE1"></rect>
+<line x1="150" y1="118" x2="250" y2="118" stroke="#9AA1A8" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"></line>
+<line x1="350" y1="118" x2="450" y2="118" stroke="#9AA1A8" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"></line>
+<circle cx="110" cy="118" r="40" fill="#F4F2EC" stroke="#14181D" stroke-width="2.5"></circle>
+<circle cx="110" cy="106" r="10" fill="none" stroke="#14181D" stroke-width="2.5"></circle><path d="M92 136a18 18 0 0 1 36 0" fill="none" stroke="#14181D" stroke-width="2.5"></path>
+<circle cx="300" cy="118" r="54" fill="#14181D"></circle>
+<text x="300" y="128" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="30" fill="#F4F2EC">CS</text>
+<circle cx="490" cy="118" r="40" fill="#F4F2EC" stroke="#14181D" stroke-width="2.5"></circle>
+<rect x="472" y="100" width="36" height="36" rx="6" fill="none" stroke="#14181D" stroke-width="2.5"></rect><line x1="472" y1="111" x2="508" y2="111" stroke="#14181D" stroke-width="2.5"></line>
+<circle cx="200" cy="118" r="6" fill="#06B6D4"></circle><circle cx="400" cy="118" r="6" fill="#06B6D4"></circle>
+<text x="110" y="186" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#14181D">Customer</text>
+<text x="300" y="200" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#0890A8">Customer Success</text>
+<text x="490" y="186" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#14181D">Product</text>
+<text x="110" y="226" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="17" fill="#0890A8">→ a result</text>
+<text x="490" y="226" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="17" fill="#14181D">→ revenue</text>
+</svg></div>
+</div>
+<div class="img-off" hidden>
+<div style="min-height: 140px; box-sizing: border-box; border: 1.5px dashed #9AA1A8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px; background: #EDEAE1">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">IMAGE BLOCKED · ALT TEXT SHOWN</div>
+<div style="font-size: 15px; line-height: 1.45; color: #14181D">Diagram: Customer Success sits between the customer and the product. The customer gets a result; the company gets revenue.</div>
+</div>
 </div>
 
-<!-- topic + learn -->
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div class="lab">You will learn</div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="width: 6px; height: 6px; border-radius: 50%; background: #06B6D4; flex: none; transform: translateY(-2px)"></span><span style="font-size: 15px; line-height: 1.5; color: #3A4047">A working definition of Customer Success</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="width: 6px; height: 6px; border-radius: 50%; background: #06B6D4; flex: none; transform: translateY(-2px)"></span><span style="font-size: 15px; line-height: 1.5; color: #3A4047">How CS evolved — from answering complaints to AI-first</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="width: 6px; height: 6px; border-radius: 50%; background: #06B6D4; flex: none; transform: translateY(-2px)"></span><span style="font-size: 15px; line-height: 1.5; color: #3A4047">The five goals CS is accountable for</span></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3A4047">Welcome to <b>Customer Success Basics</b> — 8 short lessons that show CS as one business system. Each lesson takes about 7 minutes: you <b>learn</b> one idea, <b>grab</b> a template and <b>do</b> one thing for your own work.</p>
+
+<!-- lesson map -->
+<div style="border: 1px solid #D7D3C8; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5A626C">TODAY</div>
+<div style="display: flex; gap: 10px; align-items: baseline"><b style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 52px; flex: none">LEARN</b><span style="font-size: 15px">What CS is, how it evolved, what it owns</span></div>
+<div style="display: flex; gap: 10px; align-items: baseline"><b style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 52px; flex: none">GRAB</b><span style="font-size: 15px">The one-page CS cheat sheet</span></div>
+<div style="display: flex; gap: 10px; align-items: baseline"><b style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 52px; flex: none">DO</b><span style="font-size: 15px">A 10-minute reflection</span></div>
 </div>
 
-<!-- grab / do summary -->
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
-<div style="border: 1px solid #D7D3C8; border-radius: 14px; padding: 16px 18px; background: #EDEAE1"><div class="labc">Grab</div><div style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-top: 6px">CS on one page</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5A626C; margin-top: 6px">PDF + editable copy</div></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 14px; padding: 16px 18px; background: #EDEAE1"><div class="labc">Do</div><div style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-top: 6px">Reflection</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5A626C; margin-top: 6px">~10 minutes</div></div>
+<!-- LEARN 1 -->
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #14181D; color: #F4F2EC; font: 600 13px/26px 'Space Grotesk', sans-serif; text-align: center">1</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #0890A8">LEARN · THE DEFINITION</span></div>
+<h2 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2">One sentence to remember</h2>
+<div style="background: #14181D; color: #F4F2EC; border-radius: 14px; padding: 22px 22px">
+<div style="font-size: 20px; font-weight: 600; line-height: 1.35">Customer Success is how a company grows revenue through the value customers get from its product.</div>
+<div style="font-size: 15px; color: #AEB4BA; margin-top: 10px">In simple words: the link between the customer and the product.</div>
 </div>
 
-<div style="height: 1px; background: #D7D3C8"></div>
-
-<!-- lesson -->
-<div style="display: flex; flex-direction: column; gap: 14px">
-<div class="lab">Lesson</div>
-<h2 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">A definition</h2>
-<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #3A4047">Customer Success is the systematic way a company grows revenue through the value customers get from the product.</p>
-<div style="border-left: 3px solid #06B6D4; padding: 4px 0 4px 16px; font-size: 17px; font-weight: 600; line-height: 1.4">In simple words: the link between the customer and the product. A guide — to the result for the customer, and to revenue for the company.</div>
-
-<h2 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">How it evolved</h2>
-<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #3A4047">It started with cloud and subscriptions. A customer can now leave any month — so keeping them became the whole company's job.</p>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<div style="display: flex; gap: 14px; align-items: baseline; padding: 12px 14px; border: 1px solid #D7D3C8; border-radius: 12px; background: transparent"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 52px; flex: none">CS 1.0</span><div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; color: #14181D">Reactive <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 400; color: #5A626C">· early 2000s</span></div><div style="font-size: 14px; color: #5A626C; margin-top: 2px">Answering complaints when they come</div></div></div>
-<div style="display: flex; gap: 14px; align-items: baseline; padding: 12px 14px; border: 1px solid #D7D3C8; border-radius: 12px; background: transparent"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 52px; flex: none">CS 2.0</span><div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; color: #14181D">Proactive <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 400; color: #5A626C">· late 2000s</span></div><div style="font-size: 14px; color: #5A626C; margin-top: 2px">Retention, renewals, working on churn</div></div></div>
-<div style="display: flex; gap: 14px; align-items: baseline; padding: 12px 14px; border: 1px solid #D7D3C8; border-radius: 12px; background: transparent"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 52px; flex: none">CS 3.0</span><div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; color: #14181D">Strategic <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 400; color: #5A626C">· 2010s</span></div><div style="font-size: 14px; color: #5A626C; margin-top: 2px">A strategic role in the company</div></div></div>
-<div style="display: flex; gap: 14px; align-items: baseline; padding: 12px 14px; border: 1px solid #D7D3C8; border-radius: 12px; background: transparent"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 52px; flex: none">CS 4.0</span><div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; color: #14181D">Digital <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 400; color: #5A626C">· early 2020s</span></div><div style="font-size: 14px; color: #5A626C; margin-top: 2px">Digital tools and analytics</div></div></div>
-<div style="display: flex; gap: 14px; align-items: baseline; padding: 12px 14px; border: 1px solid #14181D; border-radius: 12px; background: #14181D"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #06B6D4; width: 52px; flex: none">CS 5.0</span><div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; color: #F4F2EC">AI-first <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 400; color: #AEB4BA">· now</span></div><div style="font-size: 14px; color: #AEB4BA; margin-top: 2px">AI in every process — and the right balance of AI and people</div></div></div>
+<!-- LEARN 2 -->
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #14181D; color: #F4F2EC; font: 600 13px/26px 'Space Grotesk', sans-serif; text-align: center">2</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #0890A8">LEARN · HOW IT EVOLVED</span></div>
+<h2 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2">From answering complaints to AI-first</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3A4047">It started with cloud and subscriptions. A customer can now leave in any month — so keeping and growing them became the whole company's job.</p>
+<div class="img-on">
+<div role="img" aria-label="Staircase chart of five eras: CS 1.0 Reactive (early 2000s), 2.0 Proactive, 3.0 Strategic, 4.0 Digital, 5.0 AI-first (now)." style="border-radius: 14px; overflow: hidden"><svg viewBox="0 0 600 270" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto">
+<rect width="600" height="270" fill="#EDEAE1"></rect>
+<rect x="24" y="186" width="100" height="46" rx="8" fill="#F4F2EC" stroke="#14181D" stroke-width="2"></rect><text x="36" y="210" font-family="IBM Plex Mono, monospace" font-size="13" fill="#0890A8">CS 1.0</text><text x="36" y="174" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="15" fill="#14181D">Reactive</text><rect x="138" y="156" width="100" height="76" rx="8" fill="#F4F2EC" stroke="#14181D" stroke-width="2"></rect><text x="150" y="180" font-family="IBM Plex Mono, monospace" font-size="13" fill="#0890A8">CS 2.0</text><text x="150" y="144" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="15" fill="#14181D">Proactive</text><rect x="252" y="126" width="100" height="106" rx="8" fill="#F4F2EC" stroke="#14181D" stroke-width="2"></rect><text x="264" y="150" font-family="IBM Plex Mono, monospace" font-size="13" fill="#0890A8">CS 3.0</text><text x="264" y="114" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="15" fill="#14181D">Strategic</text><rect x="366" y="96" width="100" height="136" rx="8" fill="#F4F2EC" stroke="#14181D" stroke-width="2"></rect><text x="378" y="120" font-family="IBM Plex Mono, monospace" font-size="13" fill="#0890A8">CS 4.0</text><text x="378" y="84" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="15" fill="#14181D">Digital</text><rect x="480" y="66" width="100" height="166" rx="8" fill="#14181D" stroke="#14181D" stroke-width="2"></rect><text x="492" y="90" font-family="IBM Plex Mono, monospace" font-size="13" fill="#06B6D4">CS 5.0</text><text x="492" y="54" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="15" fill="#14181D">AI-first</text>
+<text x="24" y="258" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">early 2000s</text>
+<text x="576" y="258" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">now →</text>
+</svg></div>
+</div>
+<div class="img-off" hidden>
+<div style="min-height: 120px; box-sizing: border-box; border: 1.5px dashed #9AA1A8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px; background: #EDEAE1">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">IMAGE BLOCKED · ALT TEXT SHOWN</div>
+<div style="font-size: 15px; line-height: 1.45; color: #14181D">Staircase chart of five eras: CS 1.0 Reactive (early 2000s), 2.0 Proactive, 3.0 Strategic, 4.0 Digital, 5.0 AI-first (now).</div>
+</div>
 </div>
 
-<h2 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">What CS is accountable for</h2>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<div style="border: 1px solid #D7D3C8; border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8">01</span><span style="font-size: 15px; font-weight: 600">Lower churn</span></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8">02</span><span style="font-size: 15px; font-weight: 600">Deeper product usage</span></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8">03</span><span style="font-size: 15px; font-weight: 600">More renewals</span></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8">04</span><span style="font-size: 15px; font-weight: 600">Cross-sell &amp; upsell</span></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8">05</span><span style="font-size: 15px; font-weight: 600">Revenue per customer</span></div>
+<!-- LEARN 3 -->
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #14181D; color: #F4F2EC; font: 600 13px/26px 'Space Grotesk', sans-serif; text-align: center">3</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #0890A8">LEARN · WHAT IT OWNS</span></div>
+<h2 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2">Five goals CS is accountable for</h2>
+<div class="img-on">
+<div role="img" aria-label="Five goals of Customer Success: lower churn, deeper product usage, more renewals, cross-sell and upsell, higher revenue per customer." style="border-radius: 14px; overflow: hidden"><svg viewBox="0 0 600 164" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto"><rect width="600" height="164" fill="#EDEAE1"></rect><rect x="8" y="16" width="104" height="132" rx="12" fill="#F4F2EC" stroke="#D7D3C8" stroke-width="1.5"></rect><circle cx="60" cy="60" r="26" fill="#06B6D4"></circle><g transform="translate(60 60)" fill="none" stroke="#14181D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M-14 -8l10 10 6-6 12 12" /><path d="M14 0v8h-8" /></g><text x="60" y="112" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">01</text><text x="60" y="132" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="13" fill="#14181D">Lower churn</text><rect x="128" y="16" width="104" height="132" rx="12" fill="#F4F2EC" stroke="#D7D3C8" stroke-width="1.5"></rect><circle cx="180" cy="60" r="26" fill="#06B6D4"></circle><g transform="translate(180 60)" fill="none" stroke="#14181D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M-12 12v-8" /><path d="M0 12v-20" /><path d="M12 12v-14" /></g><text x="180" y="112" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">02</text><text x="180" y="132" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="13" fill="#14181D">Deeper usage</text><rect x="248" y="16" width="104" height="132" rx="12" fill="#F4F2EC" stroke="#D7D3C8" stroke-width="1.5"></rect><circle cx="300" cy="60" r="26" fill="#06B6D4"></circle><g transform="translate(300 60)" fill="none" stroke="#14181D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 -6a12 12 0 1 0 2 10" /><path d="M12 -12v8h-8" /></g><text x="300" y="112" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">03</text><text x="300" y="132" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="13" fill="#14181D">Renewals</text><rect x="368" y="16" width="104" height="132" rx="12" fill="#F4F2EC" stroke="#D7D3C8" stroke-width="1.5"></rect><circle cx="420" cy="60" r="26" fill="#06B6D4"></circle><g transform="translate(420 60)" fill="none" stroke="#14181D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -12v24" /><path d="M-12 0h24" /></g><text x="420" y="112" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">04</text><text x="420" y="132" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="13" fill="#14181D">Upsell</text><rect x="488" y="16" width="104" height="132" rx="12" fill="#F4F2EC" stroke="#D7D3C8" stroke-width="1.5"></rect><circle cx="540" cy="60" r="26" fill="#06B6D4"></circle><g transform="translate(540 60)" fill="none" stroke="#14181D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M-12 10h24" /><path d="M-8 10v-8" /><path d="M0 10v-16" /><path d="M8 10v-22" /></g><text x="540" y="112" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">05</text><text x="540" y="132" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="13" fill="#14181D">Revenue</text></svg></div>
 </div>
-<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #3A4047">Put together, that's the key idea of this lesson: <b style="color: #14181D">Customer Success is a revenue centre, not a cost.</b></p>
+<div class="img-off" hidden>
+<div style="min-height: 110px; box-sizing: border-box; border: 1.5px dashed #9AA1A8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px; background: #EDEAE1">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">IMAGE BLOCKED · ALT TEXT SHOWN</div>
+<div style="font-size: 15px; line-height: 1.45; color: #14181D">Five goals of Customer Success: lower churn, deeper product usage, more renewals, cross-sell and upsell, higher revenue per customer.</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3A4047">Lower churn · deeper product usage · more renewals · cross-sell and upsell · higher revenue per customer.</p>
+<div style="border-left: 4px solid #06B6D4; padding: 6px 0 6px 16px; font-size: 18px; font-weight: 600; line-height: 1.4">So Customer Success is a revenue centre — not a cost.</div>
+
+<!-- GRAB -->
+<div style="background: #14181D; border-radius: 16px; overflow: hidden">
+<div class="img-on">
+<div role="img" aria-label="Preview of the one-page PDF: the definition, an evolution timeline and the five goals of Customer Success." style="border-radius: 14px; overflow: hidden"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto">
+<rect width="600" height="300" fill="#22272E"></rect>
+<g transform="translate(190 24) rotate(-3 110 130)">
+<rect width="220" height="260" rx="8" fill="#F4F2EC"></rect>
+<rect x="18" y="18" width="70" height="8" rx="4" fill="#06B6D4"></rect>
+<rect x="18" y="36" width="150" height="14" rx="4" fill="#14181D"></rect>
+<rect x="18" y="62" width="184" height="6" rx="3" fill="#D7D3C8"></rect><rect x="18" y="74" width="160" height="6" rx="3" fill="#D7D3C8"></rect>
+<g fill="#F4F2EC" stroke="#14181D" stroke-width="1.5"><rect x="18" y="96" width="30" height="16" rx="3"></rect><rect x="54" y="90" width="30" height="22" rx="3"></rect><rect x="90" y="84" width="30" height="28" rx="3"></rect><rect x="126" y="78" width="30" height="34" rx="3"></rect></g><rect x="162" y="72" width="30" height="40" rx="3" fill="#14181D"></rect>
+<g fill="#EDEAE1" stroke="#D7D3C8"><rect x="18" y="128" width="88" height="40" rx="6"></rect><rect x="114" y="128" width="88" height="40" rx="6"></rect><rect x="18" y="176" width="88" height="40" rx="6"></rect><rect x="114" y="176" width="88" height="40" rx="6"></rect></g>
+<circle cx="32" cy="142" r="6" fill="#06B6D4"></circle><circle cx="128" cy="142" r="6" fill="#06B6D4"></circle><circle cx="32" cy="190" r="6" fill="#06B6D4"></circle><circle cx="128" cy="190" r="6" fill="#06B6D4"></circle>
+<rect x="18" y="232" width="60" height="6" rx="3" fill="#9AA1A8"></rect>
+</g>
+<text x="440" y="270" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9AA1A8">1 page · PDF</text>
+</svg></div>
+</div>
+<div class="img-off" hidden>
+<div style="min-height: 120px; box-sizing: border-box; border: 1.5px dashed #9AA1A8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px; background: #EDEAE1">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">IMAGE BLOCKED · ALT TEXT SHOWN</div>
+<div style="font-size: 15px; line-height: 1.45; color: #14181D">Preview of the one-page PDF: the definition, an evolution timeline and the five goals of Customer Success.</div>
+</div>
+</div>
+<div style="padding: 22px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #06B6D4">GRAB · YOUR TEMPLATE</div>
+<div style="font-size: 21px; font-weight: 600; color: #F4F2EC; margin-top: 6px">Customer Success on one page</div>
+<div style="font-size: 15px; line-height: 1.55; color: #AEB4BA; margin-top: 6px">Everything from this lesson on a single page. Use it to explain CS to your manager or your team.</div>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; margin-top: 16px; border-radius: 12px; background: #06B6D4; color: #14181D; font-size: 16px; font-weight: 600; text-decoration: none">Get the one-pager (PDF)</a>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9AA1A8; margin-top: 10px">Also in your Gumroad library, with an editable copy</div>
+</div>
 </div>
 
-<!-- grab block (dark) -->
-<div style="background: #14181D; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #06B6D4">Grab</div>
-<div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #F4F2EC">Customer Success on one page</div>
-<div style="font-size: 14px; line-height: 1.55; color: #AEB4BA">The definition, the evolution timeline, the five goals and the value for business and customer — on a single page. Use it to explain CS to your manager or team.</div>
-<a href="#" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 12px; background: #06B6D4; color: #14181D; font-size: 15px; font-weight: 600; text-decoration: none">Download from your library</a>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9AA1A8">PDF + editable copy · in your Gumroad library</div>
+<!-- DO -->
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #14181D; color: #F4F2EC; font: 600 13px/26px 'Space Grotesk', sans-serif; text-align: center">4</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #0890A8">DO · YOUR TASK, 10 MIN</span></div>
+<h2 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2">Mark your Point A</h2>
+<div class="img-on">
+<div role="img" aria-label="A dotted path from point A, today, to point B, at lesson 8." style="border-radius: 14px; overflow: hidden"><svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto">
+<rect width="600" height="150" fill="#EDEAE1"></rect>
+<path d="M90 92 C 200 20, 320 140, 500 70" fill="none" stroke="#14181D" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round"></path>
+<circle cx="90" cy="92" r="26" fill="#06B6D4"></circle><text x="90" y="100" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="22" fill="#14181D">A</text>
+<circle cx="510" cy="70" r="26" fill="none" stroke="#14181D" stroke-width="7"></circle><circle cx="518" cy="45" r="7" fill="#06B6D4"></circle>
+<text x="510" y="77" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="18" fill="#14181D">B</text>
+<text x="90" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">today</text>
+<text x="510" y="122" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5A626C">lesson 8</text>
+</svg></div>
 </div>
-
-<!-- do / reflection -->
-<div style="border: 1px solid #D7D3C8; border-radius: 16px; padding: 22px 24px; background: #EDEAE1; display: flex; flex-direction: column; gap: 10px">
-<div class="labc">Do · Reflection</div>
-<div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3">Your CS profile — Point A</div>
-<div style="font-size: 14.5px; line-height: 1.5; color: #3A4047">Answer five questions about where you are today. Be honest — nobody grades this.</div>
+<div class="img-off" hidden>
+<div style="min-height: 90px; box-sizing: border-box; border: 1.5px dashed #9AA1A8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px; background: #EDEAE1">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">IMAGE BLOCKED · ALT TEXT SHOWN</div>
+<div style="font-size: 15px; line-height: 1.45; color: #14181D">A dotted path from point A, today, to point B, at lesson 8.</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3A4047">Answer five questions about where you are today. Nobody grades this — it's your starting point.</p>
 <div>
-<div style="display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8; width: 18px; flex: none">1</span><span style="font-size: 15px; line-height: 1.45; color: #14181D">What role do I actually play — by tasks and metrics, not by job title?</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8; width: 18px; flex: none">2</span><span style="font-size: 15px; line-height: 1.45; color: #14181D">What do I apply in my work, and what do I only know in theory?</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8; width: 18px; flex: none">3</span><span style="font-size: 15px; line-height: 1.45; color: #14181D">Where am I strongest: people, commercial, product or strategy?</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8; width: 18px; flex: none">4</span><span style="font-size: 15px; line-height: 1.45; color: #14181D">Where do I learn, and who do I discuss my work with?</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #0890A8; width: 18px; flex: none">5</span><span style="font-size: 15px; line-height: 1.45; color: #14181D">What role do I want in 1–2 years?</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline; padding: 11px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 18px; flex: none">1</span><span style="font-size: 15.5px; line-height: 1.45">What role do I actually play — by tasks and metrics, not by job title?</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline; padding: 11px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 18px; flex: none">2</span><span style="font-size: 15.5px; line-height: 1.45">What do I apply in my work, and what do I only know in theory?</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline; padding: 11px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 18px; flex: none">3</span><span style="font-size: 15.5px; line-height: 1.45">Where am I strongest: people, commercial, product or strategy?</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline; padding: 11px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 18px; flex: none">4</span><span style="font-size: 15.5px; line-height: 1.45">Where do I learn, and who do I discuss my work with?</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline; padding: 11px 0; border-top: 1px solid #D7D3C8"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0890A8; width: 18px; flex: none">5</span><span style="font-size: 15.5px; line-height: 1.45">What role do I want in 1–2 years?</span></div>
 </div>
-<div style="font-size: 14px; line-height: 1.5; color: #5A626C">Keep your answers. In the last lesson you'll write Point B — and see how far you've moved.</div>
-</div>
-
-<!-- next -->
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 18px; border-top: 1px solid #D7D3C8">
-<div><div class="lab">Next · tomorrow</div><div style="font-size: 15px; font-weight: 600; margin-top: 4px">The value of CS — and what it is not</div></div>
-<div role="img" aria-label="Progress: lesson 1 of 8 toward your badge" style="display: flex; gap: 10px; align-items: center; flex: none">
-<svg viewBox="0 0 100 100" style="width: 40px; height: 40px"><circle cx="50" cy="50" r="38" fill="none" stroke="#D7D3C8" stroke-width="12" pathLength="80" stroke-dasharray="9 1" transform="rotate(-88 50 50)"></circle><circle cx="50" cy="50" r="38" fill="none" stroke="#06B6D4" stroke-width="12" pathLength="80" stroke-dasharray="9 71" transform="rotate(-88 50 50)"></circle></svg>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5A626C; line-height: 1.3">1 / 8<br>to badge</span>
-</div>
-</div>
-</div>
-
-<div style="padding: 22px 8px; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.6; color: #5A626C">you are receiving this because you joined the Customer Success Basics · <a href="#">unsubscribe</a></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3A4047">Save your answers. In lesson 8 you'll mark <b>Point B</b> — and see how far you've moved.</p>
 
 </div>
 
+<!-- footer -->
+<div style="background: #EDEAE1; border-top: 1px solid #D7D3C8; padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5A626C">TOMORROW · LESSON 2</div><div style="font-size: 16px; font-weight: 600; margin-top: 4px">The value of CS — and what it is not</div></div>
+<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 40px; height: 40px; flex: none"><circle cx="50" cy="50" r="38" fill="none" stroke="#D7D3C8" stroke-width="12" pathLength="80" stroke-dasharray="9 1" transform="rotate(-88 50 50)"></circle><circle cx="50" cy="50" r="38" fill="none" stroke="#06B6D4" stroke-width="12" pathLength="80" stroke-dasharray="9 71" transform="rotate(-88 50 50)"></circle></svg>
+</div>
+<div style="padding: 16px 28px 22px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.6; color: #5A626C; text-align: center">You joined Customer Success Basics by nochurn · <a href="#">Unsubscribe</a></div>
+</div>
+
+</div>
+</div>
+<script>
+(function(){var t=document.getElementById('imgToggle');t.addEventListener('click',function(){var off=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',String(off));t.textContent=off?'Images: off':'Images: on';
+document.querySelectorAll('.img-on').forEach(function(e){e.hidden=off});document.querySelectorAll('.img-off').forEach(function(e){e.hidden=!off});});})();
+</script>
 </body>
 </html>
