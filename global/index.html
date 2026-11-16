@@ -20,345 +20,118 @@ a{color:#0E7490}a:hover{color:#14181D}
 .btn-d{background:#14181D;color:#F4F2EC}.btn-d:hover{background:#06B6D4;color:#14181D}
 .btn-c{background:#06B6D4;color:#14181D}.btn-c:hover{background:#F4F2EC;color:#14181D}
 .btn-o{background:transparent;color:#14181D;box-shadow:inset 0 0 0 1.5px #14181D}.btn-o:hover{background:#14181D;color:#F4F2EC}
-.btn:focus-visible,.mbtn:focus-visible{outline:2px solid #06B6D4;outline-offset:3px}
-.mbtn{width:44px;height:44px;border-radius:12px;border:1.5px solid #14181D;background:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
-.menu a{display:block;padding:14px 0;border-bottom:1px solid #D7D3C8;font:500 18px/1.2 'Space Grotesk',sans-serif;color:#14181D;text-decoration:none}
-.menu a:hover{color:#0E7490}
-.wire{position:relative;flex:1;height:1.5px;background:#9AA1A8;min-width:20px;margin-bottom:24px}
-.wire i{position:absolute;top:-4px;left:0;width:9px;height:9px;border-radius:50%;background:#06B6D4;animation:run 2.6s cubic-bezier(.2,.7,.2,1) infinite}
-.wire.b i{animation-delay:1.3s}
-@keyframes run{0%{left:0;opacity:0}15%,85%{opacity:1}100%{left:calc(100% - 9px);opacity:0}}
-.rail{position:absolute;left:23px;top:28px;bottom:28px;width:2px;background:linear-gradient(#06B6D4 0 33%,#D7D3C8 33% 100%)}
+.btn:focus-visible{outline:2px solid #06B6D4;outline-offset:3px}
 .qa{padding:18px 0;border-bottom:1px solid #D7D3C8}
 .qa b{display:block;font-size:17px;font-weight:600;margin-bottom:4px}
 .qa span{font-size:15px;color:#5A626C}
 .hand{font-family:'Caveat',cursive;font-weight:600;font-size:24px;line-height:1.1;color:#0E7490;display:inline-flex;align-items:center;gap:6px;transform:rotate(-3deg);transform-origin:left center}
 .hand.on-dark{color:#06B6D4}
 .hand svg{width:34px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
-.seg{opacity:.15;animation:segon 7s cubic-bezier(.2,.7,.2,1) infinite}
-.sg5{animation-delay:.1s}.sg0{animation-delay:.7s}.sg1{animation-delay:1.2s}.sg2{animation-delay:1.7s}.sg3{animation-delay:2.2s}.sg4{animation-delay:2.7s}
-.flow{stroke-dasharray:3 7;animation:march 1.4s linear infinite}
-@keyframes march{to{stroke-dashoffset:-20}}
-@keyframes segon{0%{opacity:.15}8%,90%{opacity:1}100%{opacity:.15}}
-.slab{animation:drop 6s cubic-bezier(.2,.7,.2,1) infinite}
-.sl1{animation-delay:0s}.sl2{animation-delay:.5s}.sl3{animation-delay:1s}
-@keyframes drop{0%{opacity:0;transform:translateY(-18px)}12%,90%{opacity:1;transform:none}100%{opacity:1}}
-.hubtile{aspect-ratio:1;border-radius:16px;display:flex;flex-direction:column;justify-content:space-between;padding:12px;box-sizing:border-box;position:relative;z-index:1}
-.dnav{display:none;gap:28px;align-items:center;margin-right:16px}
-.dnav a{font:500 15px/1 'Space Grotesk',sans-serif;color:#14181D;text-decoration:none;white-space:nowrap}.dnav a:hover{color:#0E7490}
-@media(min-width:900px){.dnav{display:flex}.mbtn{display:none}}
 .vbtn{position:absolute;right:12px;bottom:12px;font:500 12px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;padding:9px 12px;border-radius:100px;border:0;background:#14181D;color:#F4F2EC;cursor:pointer;min-height:32px}
 .vbtn:focus-visible{outline:2px solid #06B6D4;outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.wire i,.seg,.slab,.flow{animation:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.hand{transform:none}}
 </style>
 <style>@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}</style>
 </head>
 <body>
 <div id="top" style="width: 100%; background: #F4F2EC">
 
-<!-- ANNOUNCEMENT -->
-<a href="#start" style="display: block; position: sticky; top: 0; z-index: 20; background: #EDEAE1; border-bottom: 1px solid #D7D3C8; text-decoration: none; color: #14181D">
-<div style="max-width: 1040px; margin: 0 auto; padding: 9px 20px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; text-align: center">
-<span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 6px; padding: 3px 7px">NEW</span>
-<span style="font-size: 13.5px; font-weight: 500">Free course: Customer Success Basics <span style="color: #0E7490">→</span></span>
-</div>
-</a>
-
-<!-- HEADER: logo · one CTA · menu -->
-<header style="border-bottom: 1px solid #D7D3C8; background: #F4F2EC">
-<div style="max-width: 1040px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px">
-<a href="#top" aria-label="nochurn — home" style="text-decoration: none"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: 24px; color: #14181D; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span></a>
-<div style="display: flex; gap: 12px; align-items: center">
-<nav class="dnav" aria-label="Main">
-<a href="#for">Who it's for</a>
-<a href="#inside">Basics</a>
-<a href="#kits">Mini Courses</a>
-<a href="#os">nochurn OS</a>
-</nav>
+<!-- HEADER: logo + one action -->
+<header style="border-bottom: 1px solid #D7D3C8">
+<div style="max-width: 1040px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center">
+<a href="#top" aria-label="nochurn — home" style="text-decoration: none"><span style="font-weight: 600; letter-spacing: -0.035em; font-size: 24px; color: #14181D; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span></a>
 <a class="btn btn-d" href="#start" style="min-height: 44px; padding: 0 16px; font-size: 14px">Start free</a>
-<button class="mbtn" type="button" aria-label="Menu" id="menuBtn" aria-controls="menu" aria-expanded="false">
-<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 20px; height: 20px; fill: none; stroke: #14181D; stroke-width: 2; stroke-linecap: round"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
-</button>
 </div>
-</div>
-<nav id="menu" hidden class="menu" aria-label="Main" style="max-width: 1040px; margin: 0 auto; padding: 0 20px 18px">
-<a href="#for">Who it's for</a>
-<a href="#path">Your learning path</a>
-<a href="#inside">Basics — free course</a>
-<a href="#kits">Mini Courses</a>
-<a href="#os">nochurn OS</a>
-<div class="mono" style="display: flex; gap: 18px; padding-top: 16px; font-size: 12px; color: #5A626C"><span>Contact:</span><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a><a href="https://gumroad.com/" style="color: #14181D">Gumroad</a><a href="mailto:hello@example.com" style="color: #14181D">Email</a></div>
-</nav>
 </header>
 <main>
 
-<!-- 1 · HERO: the offer + the product in motion -->
-<section id="start" style="max-width: 1100px; margin: 0 auto; padding: 48px 20px 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
-<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; gap: 10px; align-items: center"><span class="mono" style="font-size: 11px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 6px; padding: 4px 8px">FREE COURSE</span><span class="eb">Customer Success Basics</span></div>
+<!-- 1 · THE OFFER -->
+<section id="start" style="max-width: 1100px; margin: 0 auto; padding: 56px 20px 64px; display: flex; flex-wrap: wrap; gap: 44px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div class="eb">Customer Success Basics · free</div>
 <h1 style="margin: 0; font-size: clamp(34px, 5.4vw, 54px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05">Learn Customer Success as a <span style="color: #0E7490">system</span> — in 8 short emails.</h1>
-<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A4047; max-width: 42ch">Customer Success is a revenue engine. Get the foundations — one practical lesson and one template a day.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A4047; max-width: 40ch">No feeds. No 40-hour course. One lesson and one template a day — then you're done.</p>
 <form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
 <label style="flex: 1 1 220px; min-width: 0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</span><input type="email" required="" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #14181D; background: #FFFFFF; font: 400 16px 'Space Grotesk', sans-serif; color: #14181D"></label>
 <button class="btn btn-d" type="submit">Start free</button>
 </form>
-<div style="font-size: 12.5px; line-height: 1.5; color: #5A626C; max-width: 480px">By signing up you agree to receive emails from nochurn. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy policy</a></div>
-<span class="hand" style="margin-top: -2px">one email a day — that's it</span>
-<div class="mono" style="font-size: 12px; color: #5A626C; line-height: 1.6">8 days · ~7 min a day · badge at the end</div>
-<div style="display: flex; gap: 10px; align-items: center; padding-top: 6px; border-top: 1px solid #D7D3C8; padding-top: 14px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 22px; height: 22px; flex: none; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#14181D" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg><span style="font-size: 14px; color: #3A4047">Built by practitioners with <b>35+ years</b> in Customer Success and CX</span></div>
+<div style="font-size: 12.5px; line-height: 1.5; color: #5A626C; max-width: 480px">One email a day. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy</a></div>
+<span class="hand">7 minutes a day — that's it</span>
 </div>
 <div style="flex: 1 1 460px; min-width: 0">
 <div style="position: relative">
 <video id="demo" src="nochurn-email-assembly.mp4" poster="poster.jpg" width="1920" height="1080" preload="metadata" autoplay="" muted="" loop="" playsinline="" aria-label="Animation: lesson 1 assembling in an inbox — learn, grab a template, do a task" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 18px; border: 1px solid #D7D3C8; background: #F4F2EC"></video>
 <button id="demoBtn" class="vbtn" type="button" aria-pressed="false" aria-label="Pause animation">Pause</button>
 </div>
-<a href="email.html" class="mono" style="display: inline-block; margin-top: 12px; font-size: 13px; color: #0E7490">Read a sample lesson →</a>
+<a href="email.html" class="mono" style="display: inline-block; margin-top: 12px; font-size: 13px; color: #0E7490">Read lesson 1 →</a>
 </div>
 </section>
 
-<!-- 2 · WHAT'S INSIDE -->
-<section id="inside" style="background: #E3F6F9; color: #14181D">
+<!-- 2 · WHAT YOU GET -->
+<section id="inside" style="background: #E3F6F9">
 <div style="max-width: 1040px; margin: 0 auto; padding: 64px 20px; display: flex; flex-wrap: wrap; gap: 44px">
-<div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<div class="eb" style="color: #0E7490">What you get</div>
-<h2 style="margin: 0; font-size: clamp(28px, 4.4vw, 40px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">After 8 lessons, you can:</h2>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Explain what Customer Success is — and why it drives revenue</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Tell CS apart from support, account management and CX</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Map your customer lifecycle and see where churn starts</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Show the badge on your LinkedIn profile</span></div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: clamp(26px, 4.2vw, 36px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">In 8 days, you'll be able to:</h2>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 17px">
+<div style="display: flex; gap: 12px"><span style="color: #0E7490; font-weight: 600">✓</span><span>Explain why Customer Success drives revenue</span></div>
+<div style="display: flex; gap: 12px"><span style="color: #0E7490; font-weight: 600">✓</span><span>Map the customer lifecycle — and see where churn starts</span></div>
+<div style="display: flex; gap: 12px"><span style="color: #0E7490; font-weight: 600">✓</span><span>Show a badge on your LinkedIn profile</span></div>
 </div>
-<div class="mono" style="font-size: 12.5px; color: #0E7490">8 lessons · 8 templates · final quiz · badge</div>
-<div><a class="btn btn-d" href="#start">Start free</a></div>
+<div class="mono" style="font-size: 12.5px; color: #0E7490">8 lessons · 8 templates · 1 quiz · 1 badge</div>
 </div>
-<div style="flex: 1 1 300px; min-width: 0">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #14181D; margin-bottom: 10px">INSIDE · 8 EMAILS</div>
-<div style="border-top: 1px solid #BFE6EE">
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">01</span><span style="font-size: 15px">What Customer Success is</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">02</span><span style="font-size: 15px">Its value — vs support and sales</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">03</span><span style="font-size: 15px">How CS grows inside a company</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">04</span><span style="font-size: 15px">CS in the AI era</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">05</span><span style="font-size: 15px">The customer lifecycle</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">06</span><span style="font-size: 15px">Churn — and why it matters</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">07</span><span style="font-size: 15px">Where CS is heading</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">08</span><span style="font-size: 15px">Putting it together</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0"><span class="mono" style="font-size: 12px; width: 22px">★</span><span style="font-size: 15px"><b>Finish → earn a badge</b> for your LinkedIn profile</span></div>
-</div>
-</div>
+<ol style="flex: 1 1 300px; min-width: 0; list-style: none; margin: 0; padding: 0; border-top: 1px solid #D7D3C8"><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">01</span><span style="font-size: 15.5px">What Customer Success is</span></li><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">02</span><span style="font-size: 15.5px">Its value — vs support and sales</span></li><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">03</span><span style="font-size: 15.5px">How CS grows inside a company</span></li><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">04</span><span style="font-size: 15.5px">CS in the AI era</span></li><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">05</span><span style="font-size: 15.5px">The customer lifecycle</span></li><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">06</span><span style="font-size: 15.5px">Churn — and why it matters</span></li><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">07</span><span style="font-size: 15.5px">Where CS is heading</span></li><li style="display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #D7D3C8"><span class="mono" style="font-size: 12px; color: #5A626C; width: 22px; flex: none">08</span><span style="font-size: 15.5px">Putting it together</span></li></ol>
 </div>
 </section>
 
-<!-- 3 · WHO IT'S FOR -->
-<section id="for" style="max-width: 1040px; margin: 0 auto; padding: 64px 20px">
-<div class="eb" style="margin-bottom: 12px">Who it's for</div>
-<h2 style="margin: 0 0 24px; font-size: clamp(28px, 4.4vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">Made for people who build customer relationships</h2>
-<span class="hand" style="margin: -16px 0 22px">sound like you?</span>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
-<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><div style="width: 44px; height: 44px; border-radius: 12px; background: #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: #06B6D4; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M5 21V4"></path><path d="M5 4h11l-2.5 4L16 12H5"></path></svg></div><div style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em">New to Customer Success</div><div style="font-size: 15px; color: #5A626C; line-height: 1.5">You've just started in CS — or you're about to. Get the whole picture in one week.</div></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><div style="width: 44px; height: 44px; border-radius: 12px; background: #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: #06B6D4; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></div><div style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em">Moving into CS</div><div style="font-size: 15px; color: #5A626C; line-height: 1.5">Coming from support, account management or sales? See what changes — and what you already know.</div></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><div style="width: 44px; height: 44px; border-radius: 12px; background: #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: #06B6D4; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg></div><div style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em">Building CS from scratch</div><div style="font-size: 15px; color: #5A626C; line-height: 1.5">Founders and team leads at B2B and AI-native companies: start your CS function on a solid base.</div></div>
-</div>
-</section>
-
-<!-- 2 · THE JOURNEY -->
-<section id="path" style="background: #EDEAE1">
-<div style="max-width: 720px; margin: 0 auto; padding: 64px 20px">
-<div class="eb" style="margin-bottom: 12px">Your learning path</div>
-<h2 style="margin: 0 0 8px; font-size: clamp(28px, 4.6vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">From first steps to a full CS <span style="color: #0E7490">system</span></h2>
-<p style="margin: 0 0 36px; font-size: 16px; color: #5A626C">Three stages. Start free, go further when you're ready.</p>
-
-<div style="position: relative; display: flex; flex-direction: column; gap: 36px">
-<div class="rail" aria-hidden="true"></div>
-
-<!-- stop 1 -->
-<a href="#free" style="display: flex; gap: 18px; align-items: flex-start; position: relative; text-decoration: none; color: #14181D">
-<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 48px; height: 48px; flex: none; background: #F4F2EC; border-radius: 50%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg>
-<div style="flex: 1; min-width: 0">
-<div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><span class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #0E7490">01 · UNDERSTAND</span><span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 100px; padding: 4px 9px">FREE · NOW</span></div>
-<div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 4px"><span style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Customer Success Basics</span><span class="hand" style="transform: rotate(-4deg)">← you are here</span></div>
-<div style="font-size: 15px; color: #5A626C; margin-top: 2px">New to Customer Success? Learn what it is, why it pays off and how the customer lifecycle works.</div>
-</div>
-</a>
-
-<!-- stop 2 -->
-<a href="#kits" style="display: flex; gap: 18px; align-items: flex-start; position: relative; text-decoration: none; color: #14181D">
-<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 48px; height: 48px; flex: none; background: #F4F2EC; border-radius: 50%"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#14181D" stroke-width="13" pathLength="100" stroke-dasharray="18 2" transform="rotate(-90 50 50)"></circle></svg>
-<div style="flex: 1; min-width: 0">
-<div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><span class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #5A626C">02 · STRENGTHEN</span><span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; color: #5A626C; border: 1px solid #D7D3C8; border-radius: 100px; padding: 3px 9px">SOON</span></div>
-<div style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px">Mini Courses</div>
-<div style="font-size: 15px; color: #5A626C; margin-top: 2px">Building or scaling one area? Go deep with a focused mini course: strategy, metrics, processes, team or churn.</div>
-</div>
-</a>
-
-<!-- stop 3 -->
-<a href="#os" style="display: flex; gap: 18px; align-items: flex-start; position: relative; text-decoration: none; color: #14181D">
-<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 48px; height: 48px; flex: none; background: #F4F2EC; border-radius: 50%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#14181D" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg>
-<div style="flex: 1; min-width: 0">
-<div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><span class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #5A626C">03 · RUN THE SYSTEM</span><span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; color: #5A626C; border: 1px solid #D7D3C8; border-radius: 100px; padding: 3px 9px">SOON</span></div>
-<div style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px">nochurn OS</div>
-<div style="font-size: 15px; color: #5A626C; margin-top: 2px">Building CS end to end? The full operating system across the whole customer lifecycle.</div>
-</div>
-</a>
-</div>
-</div>
-</section>
-
-<!-- 4 · MINI KITS -->
-<section id="kits">
-<div style="max-width: 1040px; margin: 0 auto; padding: 64px 20px">
-<h2 style="margin: 0 0 10px; font-size: clamp(36px, 6vw, 52px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02">Mini Courses</h2>
-<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.55; color: #5A626C; max-width: 46ch">Short, focused courses for the part of Customer Success you're building or scaling. Each one is a piece of the system. Launching one by one.</p>
-
-<!-- featured: first paid kit -->
-<div style="border: 2px solid #06B6D4; background: #FFFFFF; border-radius: 20px; padding: 26px 22px; display: flex; flex-direction: column; gap: 14px; margin-bottom: 14px">
-<div style="display: flex; gap: 16px; align-items: center">
-<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 56px; height: 56px; flex: none"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-81" transform="rotate(-90 50 50)"></circle></svg>
-<div>
-<span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; background: #06B6D4; color: #14181D; border-radius: 100px; padding: 4px 10px">FIRST TO LAUNCH</span>
-<div style="font-size: clamp(24px, 4.4vw, 30px); font-weight: 600; letter-spacing: -0.025em; margin-top: 6px; line-height: 1.1">Churn Intelligence</div>
-</div>
-</div>
-<div style="font-size: 16px; color: #3A4047; line-height: 1.55; max-width: 52ch">Churn starts long before a customer cancels. Learn to read the early signals at every stage — and act before it's too late.</div>
-<div class="mono" style="font-size: 12px; color: #0E7490">Launching first · join the list below</div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
-<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 44px; height: 44px"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-1" transform="rotate(-90 50 50)"></circle></svg><div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em">Customer Success Strategy</div><div style="font-size: 14.5px; color: #5A626C">Goals, segments and a one-page CS strategy</div><span class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">SOON</span></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 44px; height: 44px"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-21" transform="rotate(-90 50 50)"></circle></svg><div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em">Metrics &amp; Analytics</div><div style="font-size: 14.5px; color: #5A626C">What to measure at every stage, with calculators</div><span class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">SOON</span></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 44px; height: 44px"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-41" transform="rotate(-90 50 50)"></circle></svg><div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em">Processes &amp; Tools</div><div style="font-size: 14.5px; color: #5A626C">Core CS playbooks and your tool stack</div><span class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">SOON</span></div>
-<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 44px; height: 44px"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-61" transform="rotate(-90 50 50)"></circle></svg><div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em">Team &amp; Operating Model</div><div style="font-size: 14.5px; color: #5A626C">Who owns what across the lifecycle</div><span class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #5A626C">SOON</span></div>
-</div>
-
-
-</div>
-</section>
-
-<!-- 5 · NOCHURN OS: the flagship, on black -->
+<!-- 3 · WHAT COMES NEXT -->
 <section id="os" style="background: #14181D; color: #F4F2EC">
 <div style="max-width: 1040px; margin: 0 auto; padding: 72px 20px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
-<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; gap: 20px; align-items: center">
-<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 72px; height: 72px; flex: none; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#F4F2EC" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg>
-<div>
-<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #06B6D4">FLAGSHIP · IN DEVELOPMENT</div>
-<h2 style="margin: 4px 0 0; font-size: clamp(36px, 6vw, 56px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02">nochurn OS</h2>
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 14px">
+<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 120px; height: 120px; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#F4F2EC" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg>
+<span class="hand on-dark">the full ring = no churn</span>
 </div>
-</div>
-<span class="hand on-dark"><svg viewBox="0 0 34 22" aria-hidden="true"><path d="M30 18c-8 1-18-3-22-14"></path><path d="M3 9l5-6 5 5"></path></svg>the full ring = no churn</span>
-<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #AEB4BA; max-width: 46ch">The complete Customer Success operating <span style="color: #06B6D4; font-weight: 600">system</span>: every method, process and tool you need to build and run CS — connected in one place.</p>
-
-<div>
-<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #9AA1A8; margin-bottom: 14px">BUILT ON THE CUSTOMER LIFECYCLE</div>
-<div role="img" aria-label="Customer lifecycle: Adoption, Retention, Expansion, Advocacy" style="position: relative">
-<div style="position: absolute; left: 5px; right: 5px; top: 5px; height: 1.5px; background: #3A4047"></div>
-<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); position: relative">
-<div><span style="display: block; width: 11px; height: 11px; border-radius: 50%; background: #06B6D4"></span><div class="mono" style="font-size: 11.5px; margin-top: 10px">Adoption</div></div>
-<div><span style="display: block; width: 11px; height: 11px; border-radius: 50%; background: #06B6D4"></span><div class="mono" style="font-size: 11.5px; margin-top: 10px">Retention</div></div>
-<div><span style="display: block; width: 11px; height: 11px; border-radius: 50%; background: #06B6D4"></span><div class="mono" style="font-size: 11.5px; margin-top: 10px">Expansion</div></div>
-<div><span style="display: block; width: 11px; height: 11px; border-radius: 50%; background: #06B6D4"></span><div class="mono" style="font-size: 11.5px; margin-top: 10px">Advocacy</div></div>
-</div>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 10px"><div style="font-size: 16px; font-weight: 600">Get notified when Mini Courses and nochurn OS launch</div><form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
+<div style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #06B6D4">NEXT · IN DEVELOPMENT</div>
+<h2 style="margin: 0; font-size: clamp(34px, 5.6vw, 52px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02">nochurn OS</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #AEB4BA; max-width: 44ch">The complete Customer Success operating system — built from focused Mini Courses. <span style="color: #F4F2EC">Churn Intelligence</span> launches first.</p>
+<form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
 <label style="flex: 1 1 220px; min-width: 0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</span><input type="email" required="" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #3A4047; background: #FFFFFF; font: 400 16px 'Space Grotesk', sans-serif; color: #14181D"></label>
 <button class="btn btn-c" type="submit">Notify me</button>
 </form>
-<div style="font-size: 12.5px; line-height: 1.5; color: #9AA1A8; max-width: 480px">By signing up you agree to receive emails from nochurn. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy policy</a></div></div>
-</div>
-<div style="flex: 1 1 380px; min-width: 0">
-<div>
-<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #9AA1A8; margin-bottom: 14px">EVERY COURSE PLUGS INTO ONE SYSTEM</div>
-<div role="img" aria-label="nochurn OS at the centre, connected to Basics and five Mini Courses: Churn Intelligence, Strategy, Metrics and Analytics, Processes and Tools, Team and Operating Model" style="position: relative; max-width: 480px; margin: 0 auto">
-<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><line class="flow" x1="16.7" y1="16.7" x2="50" y2="50" stroke="#06B6D4" stroke-width="1.6" vector-effect="non-scaling-stroke"></line><line class="flow" x1="50" y1="16.7" x2="50" y2="50" stroke="#06B6D4" stroke-width="1.6" vector-effect="non-scaling-stroke"></line><line class="flow" x1="83.3" y1="16.7" x2="50" y2="50" stroke="#06B6D4" stroke-width="1.6" vector-effect="non-scaling-stroke"></line><line class="flow" x1="16.7" y1="83.3" x2="50" y2="50" stroke="#06B6D4" stroke-width="1.6" vector-effect="non-scaling-stroke"></line><line class="flow" x1="50" y1="83.3" x2="50" y2="50" stroke="#06B6D4" stroke-width="1.6" vector-effect="non-scaling-stroke"></line><line class="flow" x1="83.3" y1="83.3" x2="50" y2="50" stroke="#06B6D4" stroke-width="1.6" vector-effect="non-scaling-stroke"></line></svg>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; position: relative">
-<div class="hubtile" style="background: #06B6D4"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 30px; height: 30px; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#14181D" stroke-opacity=".25" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#14181D"></circle></svg><div class="mono" style="font-size: 11px; line-height: 1.3; color: #14181D">Basics<br>free</div></div>
-<div class="hubtile" style="background: #1B2026; border: 1px solid #2C323A"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 30px; height: 30px"><circle cx="50" cy="50" r="40" fill="none" stroke="#3A4047" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-81" transform="rotate(-90 50 50)"></circle></svg><div class="mono" style="font-size: 11px; line-height: 1.3; color: #F4F2EC">Churn<br>Intelligence</div></div>
-<div class="hubtile" style="background: #1B2026; border: 1px solid #2C323A"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 30px; height: 30px"><circle cx="50" cy="50" r="40" fill="none" stroke="#3A4047" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-1" transform="rotate(-90 50 50)"></circle></svg><div class="mono" style="font-size: 11px; line-height: 1.3; color: #F4F2EC">Strategy</div></div>
-<div></div>
-<div class="hubtile" style="background: transparent; justify-content: center; align-items: center; gap: 8px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 64%; height: auto; overflow: visible; background: #14181D; border-radius: 50%"><circle cx="50" cy="50" r="40" fill="#14181D" stroke="#F4F2EC" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg><div class="mono" style="font-size: 11px; color: #06B6D4; background: #14181D; padding: 0 4px">nochurn OS</div></div>
-<div></div>
-<div class="hubtile" style="background: #1B2026; border: 1px solid #2C323A"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 30px; height: 30px"><circle cx="50" cy="50" r="40" fill="none" stroke="#3A4047" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-21" transform="rotate(-90 50 50)"></circle></svg><div class="mono" style="font-size: 11px; line-height: 1.3; color: #F4F2EC">Metrics &amp;<br>Analytics</div></div>
-<div class="hubtile" style="background: #1B2026; border: 1px solid #2C323A"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 30px; height: 30px"><circle cx="50" cy="50" r="40" fill="none" stroke="#3A4047" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-41" transform="rotate(-90 50 50)"></circle></svg><div class="mono" style="font-size: 11px; line-height: 1.3; color: #F4F2EC">Processes<br>&amp; Tools</div></div>
-<div class="hubtile" style="background: #1B2026; border: 1px solid #2C323A"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 30px; height: 30px"><circle cx="50" cy="50" r="40" fill="none" stroke="#3A4047" stroke-width="13"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="13" pathLength="100" stroke-dasharray="18 82" stroke-dashoffset="-61" transform="rotate(-90 50 50)"></circle></svg><div class="mono" style="font-size: 11px; line-height: 1.3; color: #F4F2EC">Team &amp;<br>Op. Model</div></div>
-</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px">
-<span class="mono" style="font-size: 12px; border: 1px solid #3A4047; border-radius: 100px; padding: 7px 12px">+ AI in Customer Success</span>
-<span class="mono" style="font-size: 12px; border: 1px solid #3A4047; border-radius: 100px; padding: 7px 12px">+ Templates &amp; calculators</span>
-<span class="mono" style="font-size: 12px; border: 1px solid #3A4047; border-radius: 100px; padding: 7px 12px">+ Customer lifecycle method</span>
-</div>
-</div>
-
+<div style="font-size: 12.5px; line-height: 1.5; color: #9AA1A8; max-width: 480px">One email a day. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy</a></div>
 </div>
 </div>
 </section>
 
-<!-- CREATED BY -->
-<section style="background: #EDEAE1">
-<div style="max-width: 1040px; margin: 0 auto; padding: 56px 20px">
-<h2 style="margin: 0 0 16px; font-size: clamp(26px, 4vw, 34px); font-weight: 600; letter-spacing: -0.02em">Created by practitioners</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
-<div style="background: #F4F2EC; border: 1px solid #D7D3C8; border-radius: 18px; padding: 20px; display: flex; gap: 16px; align-items: flex-start">
-<div aria-hidden="true" style="width: 60px; height: 60px; flex: none; border-radius: 50%; background: #14181D; color: #F4F2EC; display: grid; place-items: center; font: 600 20px/1 'Space Grotesk', sans-serif">AA</div>
-<div style="min-width: 0">
-<div style="font-size: 18px; font-weight: 600">Anna Ambrozevich</div>
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #0E7490; margin-top: 2px">CO-FOUNDER</div>
-<div style="font-size: 14px; color: #3A4047; line-height: 1.5; margin-top: 8px">15+ years in MarTech, CRM and Customer Success at PepsiCo, Alibaba Group, Otto Group and PMI. Former Chief Customer Officer at an IT consulting firm, implementing SaaS for 20+ enterprise clients globally.</div>
-</div>
-</div>
-<div style="background: #F4F2EC; border: 1px solid #D7D3C8; border-radius: 18px; padding: 20px; display: flex; gap: 16px; align-items: flex-start">
-<div aria-hidden="true" style="width: 60px; height: 60px; flex: none; border-radius: 50%; background: #06B6D4; color: #14181D; display: grid; place-items: center; font: 600 20px/1 'Space Grotesk', sans-serif">MV</div>
-<div style="min-width: 0">
-<div style="font-size: 18px; font-weight: 600">Marina Vostrikova</div>
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #0E7490; margin-top: 2px">CO-FOUNDER</div>
-<div style="font-size: 14px; color: #3A4047; line-height: 1.5; margin-top: 8px">20+ years in service, support and customer experience. Built international support in 7 languages with a team of 80+. ITIL 4 Strategic Leader.</div>
-</div>
-</div>
-</div>
-<div style="font-size: 14px; color: #5A626C; margin-top: 14px">35+ years of combined practice in Customer Success, CX and service — turned into one system.</div>
-</div>
-</section>
-
-<!-- 8 · FAQ -->
-<section style="max-width: 720px; margin: 0 auto; padding: 56px 20px">
-<h2 style="margin: 0 0 8px; font-size: clamp(26px, 4vw, 34px); font-weight: 600; letter-spacing: -0.02em">Questions</h2>
-<div class="qa"><b>Who is this for?</b><span>Anyone starting in Customer Success, and teams building CS in B2B and AI-native companies.</span></div>
-<div class="qa"><b>Is Customer Success Basics really free?</b><span>Yes. Eight lessons and templates, no payment.</span></div>
-<div class="qa"><b>How much time does it take?</b><span>About 7 minutes a day for 8 days — plus an optional 10-minute task.</span></div>
-<div class="qa"><b>What language is the course in?</b><span>English.</span></div>
-<div class="qa"><b>Do I keep the templates?</b><span>Yes. All templates stay in your Gumroad library after the course ends.</span></div>
-<div class="qa"><b>Do I get a certificate?</b><span>Yes — finish the lessons and the final quiz to earn a digital badge you can add to your LinkedIn profile.</span></div>
-<div class="qa"><b>Do I need experience?</b><span>No. Start with Customer Success Basics — it's the foundation for everything else.</span></div>
+<!-- 4 · WHO MADE IT + 3 ANSWERS -->
+<section style="max-width: 720px; margin: 0 auto; padding: 64px 20px">
+<div class="eb" style="margin-bottom: 10px">Made by practitioners</div>
+<p style="margin: 0 0 36px; font-size: 16px; line-height: 1.6; color: #3A4047"><b style="color: #14181D">Anna Ambrozevich</b> — 15+ years in MarTech, CRM and Customer Success at PepsiCo, Alibaba Group, Otto Group and PMI. <b style="color: #14181D">Marina Vostrikova</b> — 20+ years in service and CX, built international support in 7 languages. ITIL 4 Strategic Leader.</p>
+<h2 style="margin: 0; font-size: clamp(26px, 4.2vw, 36px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 8px">Questions</h2>
+<div class="qa"><b>Is it really free?</b><span>Yes. Lessons, templates and badge — no payment. Templates stay in your Gumroad library.</span></div>
+<div class="qa"><b>Do I need experience?</b><span>No. It's made for people new to Customer Success, or moving into it from support, sales or account management.</span></div>
+<div class="qa"><b>What language?</b><span>English.</span></div>
 </section>
 
 </main>
 <!-- FINAL CTA + FOOTER -->
-<section style="background: #E3F6F9; color: #14181D">
-<div style="max-width: 1040px; margin: 0 auto; padding: 56px 20px 40px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
-<h2 style="margin: 0; font-size: clamp(28px, 4.6vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">Start your path in Customer Success</h2>
+<section style="background: #E3F6F9">
+<div style="max-width: 1040px; margin: 0 auto; padding: 56px 20px 36px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
+<h2 style="margin: 0; font-size: clamp(26px, 4.2vw, 36px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">Start with lesson 1 tomorrow morning.</h2>
 <form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
 <label style="flex: 1 1 220px; min-width: 0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</span><input type="email" required="" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #14181D; background: #FFFFFF; font: 400 16px 'Space Grotesk', sans-serif; color: #14181D"></label>
 <button class="btn btn-d" type="submit">Start free</button>
 </form>
-<div style="font-size: 12.5px; line-height: 1.5; color: #5A626C; max-width: 480px">By signing up you agree to receive emails from nochurn. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy policy</a></div>
-
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; width: 100%; padding-top: 28px; margin-top: 12px; border-top: 1px solid #BFE6EE">
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: 22px; color: #14181D; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span>
-<div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
-<div><div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #0E7490; margin-bottom: 8px">LEARN</div><div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px"><a href="#free" style="color: #14181D">Basics — free</a></div></div>
-<div><div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #0E7490; margin-bottom: 8px">CONTACT</div><div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px"><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a><a href="https://gumroad.com/" style="color: #14181D">Our Gumroad store</a><a href="mailto:hello@example.com" style="color: #14181D">[CONTACT EMAIL]</a><a href="privacy.html" style="color: #14181D">Privacy policy</a></div></div>
-</div>
-</div>
+<div style="font-size: 12.5px; line-height: 1.5; color: #5A626C; max-width: 480px">One email a day. Unsubscribe anytime. <a href="privacy.html" style="color: inherit">Privacy</a></div>
+<footer style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; width: 100%; padding-top: 24px; margin-top: 16px; border-top: 1px solid #BFE6EE; font-size: 14px">
+<span style="font-weight: 600; letter-spacing: -0.035em; font-size: 20px; color: #14181D; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span>
+<nav aria-label="Contact" style="display: flex; flex-wrap: wrap; gap: 20px"><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a><a href="https://gumroad.com/" style="color: #14181D">Gumroad</a><a href="mailto:hello@example.com" style="color: #14181D">[CONTACT EMAIL]</a><a href="privacy.html" style="color: #14181D">Privacy</a></nav>
+</footer>
 </div>
 </section>
 
 </div>
 <script>
-(function(){var b=document.getElementById('menuBtn'),m=document.getElementById('menu');
-b.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));});
-m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.hidden=true;b.setAttribute('aria-expanded','false');}});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){m.hidden=true;b.setAttribute('aria-expanded','false');b.focus();}});})();
-</script><script>
 (function(){var v=document.getElementById('demo'),b=document.getElementById('demoBtn');if(!v||!b)return;
 function set(p){b.textContent=p?'Play':'Pause';b.setAttribute('aria-label',p?'Play animation':'Pause animation');b.setAttribute('aria-pressed',String(p));}
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();set(true);}
