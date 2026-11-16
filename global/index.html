@@ -51,7 +51,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 <div id="top" style="width: 100%; background: #F4F2EC">
 
 <!-- ANNOUNCEMENT -->
-<a href="#free" style="display: block; position: sticky; top: 0; z-index: 20; background: #EDEAE1; border-bottom: 1px solid #D7D3C8; text-decoration: none; color: #14181D">
+<a href="#start" style="display: block; position: sticky; top: 0; z-index: 20; background: #EDEAE1; border-bottom: 1px solid #D7D3C8; text-decoration: none; color: #14181D">
 <div style="max-width: 1040px; margin: 0 auto; padding: 9px 20px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; text-align: center">
 <span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 6px; padding: 3px 7px">NEW</span>
 <span style="font-size: 13.5px; font-weight: 500">Free course: Customer Success Basics <span style="color: #0890A8">→</span></span>
@@ -65,11 +65,11 @@ a{color:#0890A8}a:hover{color:#14181D}
 <div style="display: flex; gap: 12px; align-items: center">
 <nav class="dnav" aria-label="Main">
 <a href="what-is-cs.html">What is Customer Success</a>
-<a href="#free">Basics</a>
+<a href="#inside">Basics</a>
 <a href="#kits">Mini Courses</a>
 <a href="#os">nochurn OS</a>
 </nav>
-<a class="btn btn-d" href="#free" style="min-height: 44px; padding: 0 16px; font-size: 14px">Start free</a>
+<a class="btn btn-d" href="#start" style="min-height: 44px; padding: 0 16px; font-size: 14px">Start free</a>
 <button class="mbtn" type="button" aria-label="Menu" id="menuBtn" aria-controls="menu" aria-expanded="false">
 <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 20px; height: 20px; fill: none; stroke: #14181D; stroke-width: 2; stroke-linecap: round"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
 </button>
@@ -77,55 +77,78 @@ a{color:#0890A8}a:hover{color:#14181D}
 </div>
 <nav id="menu" hidden class="menu" aria-label="Main" style="max-width: 1040px; margin: 0 auto; padding: 0 20px 18px">
 <a href="what-is-cs.html">What is Customer Success</a>
+<a href="#for">Who it's for</a>
 <a href="#path">Your learning path</a>
-<a href="#free">Basics — free course</a>
+<a href="#inside">Basics — free course</a>
 <a href="#kits">Mini Courses</a>
 <a href="#os">nochurn OS</a>
 <div class="mono" style="display: flex; gap: 18px; padding-top: 16px; font-size: 12px; color: #5A626C"><span>Contact:</span><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a><a href="https://gumroad.com/" style="color: #14181D">Gumroad</a><a href="mailto:hello@example.com" style="color: #14181D">Email</a></div>
 </nav>
 </header>
 
-<!-- 1 · HERO: what CS is + the free offer -->
-<section style="max-width: 1040px; margin: 0 auto; padding: 56px 20px 48px; display: flex; flex-wrap: wrap; gap: 44px; align-items: center">
-<div style="flex: 999 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<div class="eb">Customer Success, made practical</div>
-<h1 style="margin: 0; font-size: clamp(34px, 6vw, 56px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.04">Customer Success is a <span style="color: #0890A8">revenue engine.</span></h1>
-<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A4047; max-width: 42ch">From onboarding to expansion, advocacy and scale, Customer Success turns product value into revenue — across the whole customer lifecycle. Learn it as a system, one practical email at a time.</p>
-<div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; padding-top: 4px">
-<a class="btn btn-d" href="#free">Start Customer Success Basics — free</a>
-<span class="mono" style="font-size: 12px; color: #5A626C">8 lessons · 8 templates · a badge · free</span>
+<!-- 1 · HERO: the offer + the product in motion -->
+<section id="start" style="max-width: 1100px; margin: 0 auto; padding: 48px 20px 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; gap: 10px; align-items: center"><span class="mono" style="font-size: 11px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 6px; padding: 4px 8px">FREE COURSE</span><span class="eb">Customer Success Basics</span></div>
+<h1 style="margin: 0; font-size: clamp(34px, 5.4vw, 54px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05">Learn Customer Success as a <span style="color: #0890A8">system</span> — in 8 short emails.</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A4047; max-width: 42ch">Customer Success is a revenue engine. Get the foundations — one practical lesson and one template a day.</p>
+<form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
+<label style="flex: 1 1 220px; min-width: 0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</span><input type="email" required="" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #14181D; background: #FFFFFF; font: 400 16px 'Space Grotesk', sans-serif; color: #14181D"></label>
+<button class="btn btn-d" type="submit">Start free</button>
+</form>
+<div class="mono" style="font-size: 12px; color: #5A626C; line-height: 1.6">8 days · ~7 min a day · badge at the end<br>Free on Gumroad · no spam · unsubscribe anytime</div>
+<div style="display: flex; gap: 10px; align-items: center; padding-top: 6px; border-top: 1px solid #D7D3C8; padding-top: 14px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 22px; height: 22px; flex: none; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#14181D" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg><span style="font-size: 14px; color: #3A4047">Built by practitioners with <b>35+ years</b> in Customer Success and CX</span></div>
 </div>
+<div style="flex: 1 1 460px; min-width: 0">
+<video src="nochurn-email-assembly.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Animation: lesson 1 assembling in an inbox — learn, grab a template, do a task" style="display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid #D7D3C8; background: #F4F2EC"></video>
 </div>
+</section>
 
-<div role="img" aria-label="Customer — Customer Success — Product. The customer gets a result, the company gets revenue." style="flex: 1 1 320px; min-width: 0; max-width: 440px; display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; align-items: center; gap: 10px">
-<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: none; stroke: #14181D; stroke-width: 1.8; stroke-linecap: round"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><span class="mono" style="font-size: 11px">Customer</span></div>
-<div class="wire"><i></i></div>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><div style="width: 76px; height: 76px; border-radius: 50%; background: #14181D; color: #F4F2EC; display: grid; place-items: center; font: 600 21px/1 'Space Grotesk', sans-serif">CS</div><span class="mono" style="font-size: 11px; color: #0890A8">Customer Success</span></div>
-<div class="wire b"><i></i></div>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: none; stroke: #14181D; stroke-width: 1.8; stroke-linejoin: round"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M4 9h16"></path></svg></div><span class="mono" style="font-size: 11px">Product</span></div>
+<!-- 2 · WHAT'S INSIDE -->
+<section id="inside" style="background: #E3F6F9; color: #14181D">
+<div style="max-width: 1040px; margin: 0 auto; padding: 64px 20px; display: flex; flex-wrap: wrap; gap: 44px">
+<div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div class="eb" style="color: #0E7490">What you get</div>
+<h2 style="margin: 0; font-size: clamp(28px, 4.4vw, 40px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">After 8 lessons, you can:</h2>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Explain what Customer Success is — and why it drives revenue</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Tell CS apart from support, account management and CX</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Map your customer lifecycle and see where churn starts</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Show the badge on your LinkedIn profile</span></div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
-<div style="border-top: 2px solid #06B6D4; padding-top: 10px"><div class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; color: #5A626C">CUSTOMER GETS</div><div style="font-size: 19px; font-weight: 600">A result</div></div>
-<div style="border-top: 2px solid #14181D; padding-top: 10px"><div class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; color: #5A626C">COMPANY GETS</div><div style="font-size: 19px; font-weight: 600">Revenue</div></div>
+<div class="mono" style="font-size: 12.5px; color: #0E7490">8 lessons · 8 templates · final quiz · badge</div>
+<div><a class="btn btn-d" href="#start">Start free</a></div>
+</div>
+<div style="flex: 1 1 300px; min-width: 0">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #14181D; margin-bottom: 10px">INSIDE · 8 EMAILS</div>
+<div style="border-top: 1px solid #BFE6EE">
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">01</span><span style="font-size: 15px">What Customer Success is</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">02</span><span style="font-size: 15px">Its value — vs support and sales</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">03</span><span style="font-size: 15px">How CS grows inside a company</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">04</span><span style="font-size: 15px">CS in the AI era</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">05</span><span style="font-size: 15px">The customer lifecycle</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">06</span><span style="font-size: 15px">Churn — and why it matters</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">07</span><span style="font-size: 15px">Where CS is heading</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">08</span><span style="font-size: 15px">Putting it together</span></div>
+<div style="display: flex; gap: 14px; padding: 11px 0"><span class="mono" style="font-size: 12px; width: 22px">★</span><span style="font-size: 15px"><b>Finish → earn a badge</b> for your LinkedIn profile</span></div>
+</div>
 </div>
 </div>
 </section>
 
-<!-- APPROACH: the system is the point -->
-<section style="background: #EDEAE1; color: #14181D">
-<div style="max-width: 1040px; margin: 0 auto; padding: 48px 20px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center">
-<svg viewBox="0 0 100 100" aria-hidden="true" style="width: 72px; height: 72px; flex: none; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#14181D" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg>
-<div style="flex: 1 1 300px; min-width: 0">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.16em; color: #5A626C; margin-bottom: 8px">OUR APPROACH</div>
-<div style="font-size: clamp(26px, 4.4vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.12">Customer Success works as a <span style="color: #0890A8">system.</span> So we teach it as one.</div>
-<div style="font-size: 15px; color: #3A4047; margin-top: 10px; max-width: 52ch">Built layer by layer: the basics first, then focused courses, then the full operating system. Every piece fits the next.</div>
-</div>
+<!-- 3 · WHO IT'S FOR -->
+<section id="for" style="max-width: 1040px; margin: 0 auto; padding: 64px 20px">
+<div class="eb" style="margin-bottom: 12px">Who it's for</div>
+<h2 style="margin: 0 0 28px; font-size: clamp(28px, 4.4vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">Made for people who build customer relationships</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><div style="width: 44px; height: 44px; border-radius: 12px; background: #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: #06B6D4; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M5 21V4"></path><path d="M5 4h11l-2.5 4L16 12H5"></path></svg></div><div style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em">New to Customer Success</div><div style="font-size: 15px; color: #5A626C; line-height: 1.5">You've just started in CS — or you're about to. Get the whole picture in one week.</div></div>
+<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><div style="width: 44px; height: 44px; border-radius: 12px; background: #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: #06B6D4; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></div><div style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em">Moving into CS</div><div style="font-size: 15px; color: #5A626C; line-height: 1.5">Coming from support, account management or sales? See what changes — and what you already know.</div></div>
+<div style="border: 1px solid #D7D3C8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><div style="width: 44px; height: 44px; border-radius: 12px; background: #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: #06B6D4; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg></div><div style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em">Building CS from scratch</div><div style="font-size: 15px; color: #5A626C; line-height: 1.5">Founders and team leads at B2B and AI-native companies: start your CS function on a solid base.</div></div>
 </div>
 </section>
 
 <!-- 2 · THE JOURNEY -->
-<section id="path">
+<section id="path" style="background: #EDEAE1">
 <div style="max-width: 720px; margin: 0 auto; padding: 64px 20px">
 <div class="eb" style="margin-bottom: 12px">Your learning path</div>
 <h2 style="margin: 0 0 8px; font-size: clamp(28px, 4.6vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">From first steps to a full CS <span style="color: #0890A8">system</span></h2>
@@ -168,58 +191,11 @@ a{color:#0890A8}a:hover{color:#14181D}
 </div>
 </section>
 
-<!-- 3 · FREE KIT: dark full-width band -->
-<section id="free" style="background: #E3F6F9; color: #14181D">
-<div style="max-width: 1040px; margin: 0 auto; padding: 64px 20px 56px">
-<div style="display: flex; flex-wrap: wrap; gap: 44px">
-<div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; gap: 14px; align-items: center">
-<div aria-hidden="true" style="width: 56px; height: 56px; flex: none; border-radius: 16px; background: #14181D; display: grid; place-items: center"><svg viewBox="0 0 24 24" style="width: 26px; height: 26px; fill: none; stroke: #06B6D4; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><path d="M5 21V4"></path><path d="M5 4h11l-2.5 4L16 12H5"></path></svg></div>
-<div style="display: flex; flex-direction: column; gap: 6px"><span class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #14181D; background: #06B6D4; border-radius: 100px; padding: 5px 11px; align-self: flex-start">FREE</span><span class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #14181D">START HERE · 8 LESSONS</span></div>
-</div>
-<h2 style="margin: 0; font-size: clamp(32px, 5vw, 46px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05">Customer Success Basics</h2>
-<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #14181D; max-width: 40ch">Eight short emails that give you the foundation of Customer Success — and a template with every lesson.</p>
-<div style="display: flex; flex-direction: column; gap: 12px; padding: 4px 0">
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #14181D">→</span><span style="font-size: 16px">Explain what CS is — and what it isn't</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #14181D">→</span><span style="font-size: 16px">Show why CS is revenue, not cost</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #14181D">→</span><span style="font-size: 16px">Map your customer lifecycle and see where churn starts</span></div>
-</div>
-<div class="mono" style="font-size: 12.5px; color: #0E7490">8 lessons · 8 templates · final quiz · badge</div>
-<div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; padding-top: 6px">
-<a class="btn btn-d" href="#">Get it free</a>
-<span class="mono" style="font-size: 12px; color: #14181D">Free on Gumroad · no card · delivered by email</span>
-</div>
-</div>
-
-<div style="flex: 1 1 300px; min-width: 0">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #14181D; margin-bottom: 10px">INSIDE · 8 EMAILS</div>
-<div style="border-top: 1px solid #BFE6EE">
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">01</span><span style="font-size: 15px">What Customer Success is</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">02</span><span style="font-size: 15px">Its value — vs support and sales</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">03</span><span style="font-size: 15px">How CS grows inside a company</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">04</span><span style="font-size: 15px">CS in the AI era</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">05</span><span style="font-size: 15px">The customer lifecycle</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">06</span><span style="font-size: 15px">Churn — and why it matters</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">07</span><span style="font-size: 15px">Where CS is heading</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid #BFE6EE"><span class="mono" style="font-size: 12px; color: #14181D; width: 22px">08</span><span style="font-size: 15px">Putting it together</span></div>
-<div style="display: flex; gap: 14px; padding: 11px 0"><span class="mono" style="font-size: 12px; width: 22px">★</span><span style="font-size: 15px"><b>Finish → earn a badge</b> for your LinkedIn profile</span></div>
-</div>
-</div>
-</div>
-
-<!-- every lesson: video -->
-<div style="margin-top: 36px">
-<div style="font-size: 15px; font-weight: 600; margin-bottom: 10px">See how a lesson comes together</div>
-<video src="nochurn-email-assembly.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Animation: lesson 1 assembling in an inbox — learn, grab a template, do a task" style="display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #BFE6EE; background: #F4F2EC"></video>
-</div>
-</div>
-</section>
-
 <!-- 4 · MINI KITS -->
 <section id="kits">
 <div style="max-width: 1040px; margin: 0 auto; padding: 64px 20px">
 <h2 style="margin: 0 0 10px; font-size: clamp(36px, 6vw, 52px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02">Mini Courses</h2>
-<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.55; color: #5A626C; max-width: 46ch">Short, focused courses for the part of Customer Success you're building or scaling. Each one is a piece of the system.</p>
+<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.55; color: #5A626C; max-width: 46ch">Short, focused courses for the part of Customer Success you're building or scaling. Each one is a piece of the system. Launching one by one.</p>
 
 <!-- featured: first paid kit -->
 <div style="border: 2px solid #06B6D4; background: #FFFFFF; border-radius: 20px; padding: 26px 22px; display: flex; flex-direction: column; gap: 14px; margin-bottom: 14px">
@@ -231,7 +207,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 </div>
 </div>
 <div style="font-size: 16px; color: #3A4047; line-height: 1.55; max-width: 52ch">Churn starts long before a customer cancels. Learn to read the early signals at every stage — and act before it's too late.</div>
-<div><a class="btn btn-c" href="#">Get notified at launch</a></div>
+<div class="mono" style="font-size: 12px; color: #0E7490">Launching first · join the list below</div>
 </div>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
@@ -271,7 +247,10 @@ a{color:#0890A8}a:hover{color:#14181D}
 </div>
 </div>
 </div>
-<div><a class="btn btn-c" href="#">Join the early access list</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="font-size: 16px; font-weight: 600">Get notified when Mini Courses and nochurn OS launch</div><form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
+<label style="flex: 1 1 220px; min-width: 0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</span><input type="email" required="" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #3A4047; background: #FFFFFF; font: 400 16px 'Space Grotesk', sans-serif; color: #14181D"></label>
+<button class="btn btn-c" type="submit">Notify me</button>
+</form></div>
 </div>
 <div style="flex: 1 1 380px; min-width: 0">
 <div>
@@ -301,18 +280,10 @@ a{color:#0890A8}a:hover{color:#14181D}
 </div>
 </section>
 
-<!-- 7 · PROOF (no names) -->
-<section style="border-top: 1px solid #D7D3C8; border-bottom: 1px solid #D7D3C8; background: #EDEAE1">
-<div style="max-width: 1040px; margin: 0 auto; padding: 40px 20px">
-<div class="eb" style="margin-bottom: 18px">Built by practitioners · tested in a live program</div>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
-<div><div class="mono" style="font-size: clamp(24px, 4vw, 32px); font-weight: 500">100+</div><div style="font-size: 13.5px; color: #5A626C">graduates</div></div>
-<div><div class="mono" style="font-size: clamp(24px, 4vw, 32px); font-weight: 500">20+</div><div style="font-size: 13.5px; color: #5A626C">companies trained their teams</div></div>
-<div><div class="mono" style="font-size: clamp(24px, 4vw, 32px); font-weight: 500">5</div><div style="font-size: 13.5px; color: #5A626C">cohorts since 2024</div></div>
-</div>
-
 <!-- CREATED BY -->
-<div class="eb" style="margin: 40px 0 16px">Created by</div>
+<section style="background: #EDEAE1">
+<div style="max-width: 1040px; margin: 0 auto; padding: 56px 20px">
+<div class="eb" style="margin: 0 0 16px">Created by practitioners</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
 <div style="background: #F4F2EC; border: 1px solid #D7D3C8; border-radius: 18px; padding: 20px; display: flex; gap: 16px; align-items: flex-start">
 <div aria-hidden="true" style="width: 60px; height: 60px; flex: none; border-radius: 50%; background: #14181D; color: #F4F2EC; display: grid; place-items: center; font: 600 20px/1 'Space Grotesk', sans-serif">AA</div>
@@ -331,7 +302,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 </div>
 </div>
 </div>
-<div style="font-size: 14px; color: #5A626C; margin-top: 14px">35+ years of combined practice — turned into one system.</div>
+<div style="font-size: 14px; color: #5A626C; margin-top: 14px">35+ years of combined practice in Customer Success, CX and service — turned into one system.</div>
 </div>
 </section>
 
@@ -340,6 +311,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 <div class="eb" style="margin-bottom: 8px">Questions</div>
 <div class="qa"><b>Who is this for?</b><span>Anyone starting in Customer Success, and teams building CS in B2B and AI-native companies.</span></div>
 <div class="qa"><b>Is Customer Success Basics really free?</b><span>Yes. Eight lessons and templates, no payment.</span></div>
+<div class="qa"><b>How much time does it take?</b><span>About 7 minutes a day for 8 days — plus an optional 10-minute task.</span></div>
 <div class="qa"><b>Do I get a certificate?</b><span>Yes — finish the lessons and the final quiz to earn a verified digital badge you can share on LinkedIn.</span></div>
 <div class="qa"><b>Do I need experience?</b><span>No. Start with Customer Success Basics — it's the foundation for everything else.</span></div>
 </section>
@@ -348,7 +320,11 @@ a{color:#0890A8}a:hover{color:#14181D}
 <section style="background: #E3F6F9; color: #14181D">
 <div style="max-width: 1040px; margin: 0 auto; padding: 56px 20px 40px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
 <h2 style="margin: 0; font-size: clamp(28px, 4.6vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">Start your path in Customer Success</h2>
-<a class="btn btn-d" href="#free">Start Customer Success Basics — free</a>
+<form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
+<label style="flex: 1 1 220px; min-width: 0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</span><input type="email" required="" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #14181D; background: #FFFFFF; font: 400 16px 'Space Grotesk', sans-serif; color: #14181D"></label>
+<button class="btn btn-d" type="submit">Start free</button>
+</form>
+<div class="mono" style="font-size: 12px; color: #0E7490">Free on Gumroad · no spam · unsubscribe anytime</div>
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; width: 100%; padding-top: 28px; margin-top: 12px; border-top: 1px solid #BFE6EE">
 <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: 22px; color: #14181D; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span>
 <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
