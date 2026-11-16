@@ -4,22 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nochurn — your path in Customer Success</title>
+<meta name="description" content="Customer Success Basics — a free course: learn Customer Success as a system in 8 short emails, with a template in every lesson.">
+<meta property="og:title" content="nochurn — your path in Customer Success">
+<meta property="og:description" content="Learn Customer Success as a system — free, in 8 short emails.">
+<meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2314181D' stroke-width='13'/%3E%3Ccircle cx='61' cy='14' r='11' fill='%2306B6D4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Caveat:wght@600&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#F4F2EC;color:#14181D;font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:#0890A8}a:hover{color:#14181D}
+a{color:#0E7490}a:hover{color:#14181D}
 .eb{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5A626C}
 .mono{font-family:'IBM Plex Mono',monospace}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:12px;font:600 16px/1 'Space Grotesk',sans-serif;text-decoration:none;white-space:nowrap;box-sizing:border-box;border:0;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:12px;font:600 16px/1.2 'Space Grotesk',sans-serif;text-decoration:none;white-space:normal;text-align:center;max-width:100%;box-sizing:border-box;border:0;cursor:pointer}
 .btn-d{background:#14181D;color:#F4F2EC}.btn-d:hover{background:#06B6D4;color:#14181D}
 .btn-c{background:#06B6D4;color:#14181D}.btn-c:hover{background:#F4F2EC;color:#14181D}
 .btn-o{background:transparent;color:#14181D;box-shadow:inset 0 0 0 1.5px #14181D}.btn-o:hover{background:#14181D;color:#F4F2EC}
 .btn:focus-visible,.mbtn:focus-visible{outline:2px solid #06B6D4;outline-offset:3px}
 .mbtn{width:44px;height:44px;border-radius:12px;border:1.5px solid #14181D;background:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
 .menu a{display:block;padding:14px 0;border-bottom:1px solid #D7D3C8;font:500 18px/1.2 'Space Grotesk',sans-serif;color:#14181D;text-decoration:none}
-.menu a:hover{color:#0890A8}
+.menu a:hover{color:#0E7490}
 .wire{position:relative;flex:1;height:1.5px;background:#9AA1A8;min-width:20px;margin-bottom:24px}
 .wire i{position:absolute;top:-4px;left:0;width:9px;height:9px;border-radius:50%;background:#06B6D4;animation:run 2.6s cubic-bezier(.2,.7,.2,1) infinite}
 .wire.b i{animation-delay:1.3s}
@@ -28,7 +32,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 .qa{padding:18px 0;border-bottom:1px solid #D7D3C8}
 .qa b{display:block;font-size:17px;font-weight:600;margin-bottom:4px}
 .qa span{font-size:15px;color:#5A626C}
-.hand{font-family:'Caveat',cursive;font-weight:600;font-size:24px;line-height:1.1;color:#0890A8;display:inline-flex;align-items:center;gap:6px;transform:rotate(-3deg);transform-origin:left center}
+.hand{font-family:'Caveat',cursive;font-weight:600;font-size:24px;line-height:1.1;color:#0E7490;display:inline-flex;align-items:center;gap:6px;transform:rotate(-3deg);transform-origin:left center}
 .hand.on-dark{color:#06B6D4}
 .hand svg{width:34px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .seg{opacity:.15;animation:segon 7s cubic-bezier(.2,.7,.2,1) infinite}
@@ -41,11 +45,13 @@ a{color:#0890A8}a:hover{color:#14181D}
 @keyframes drop{0%{opacity:0;transform:translateY(-18px)}12%,90%{opacity:1;transform:none}100%{opacity:1}}
 .hubtile{aspect-ratio:1;border-radius:16px;display:flex;flex-direction:column;justify-content:space-between;padding:12px;box-sizing:border-box;position:relative;z-index:1}
 .dnav{display:none;gap:28px;align-items:center;margin-right:16px}
-.dnav a{font:500 15px/1 'Space Grotesk',sans-serif;color:#14181D;text-decoration:none;white-space:nowrap}.dnav a:hover{color:#0890A8}
+.dnav a{font:500 15px/1 'Space Grotesk',sans-serif;color:#14181D;text-decoration:none;white-space:nowrap}.dnav a:hover{color:#0E7490}
 @media(min-width:900px){.dnav{display:flex}.mbtn{display:none}}
+.vbtn{position:absolute;right:12px;bottom:12px;font:500 12px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;padding:9px 12px;border-radius:100px;border:0;background:#14181D;color:#F4F2EC;cursor:pointer;min-height:32px}
+.vbtn:focus-visible{outline:2px solid #06B6D4;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.wire i,.seg,.slab,.flow{animation:none;opacity:1}}
 </style>
-<style>html{scroll-behavior:smooth}</style>
+<style>@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}</style>
 </head>
 <body>
 <div id="top" style="width: 100%; background: #F4F2EC">
@@ -54,7 +60,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 <a href="#start" style="display: block; position: sticky; top: 0; z-index: 20; background: #EDEAE1; border-bottom: 1px solid #D7D3C8; text-decoration: none; color: #14181D">
 <div style="max-width: 1040px; margin: 0 auto; padding: 9px 20px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; text-align: center">
 <span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 6px; padding: 3px 7px">NEW</span>
-<span style="font-size: 13.5px; font-weight: 500">Free course: Customer Success Basics <span style="color: #0890A8">→</span></span>
+<span style="font-size: 13.5px; font-weight: 500">Free course: Customer Success Basics <span style="color: #0E7490">→</span></span>
 </div>
 </a>
 
@@ -84,12 +90,13 @@ a{color:#0890A8}a:hover{color:#14181D}
 <div class="mono" style="display: flex; gap: 18px; padding-top: 16px; font-size: 12px; color: #5A626C"><span>Contact:</span><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a><a href="https://gumroad.com/" style="color: #14181D">Gumroad</a><a href="mailto:hello@example.com" style="color: #14181D">Email</a></div>
 </nav>
 </header>
+<main>
 
 <!-- 1 · HERO: the offer + the product in motion -->
 <section id="start" style="max-width: 1100px; margin: 0 auto; padding: 48px 20px 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; gap: 10px; align-items: center"><span class="mono" style="font-size: 11px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 6px; padding: 4px 8px">FREE COURSE</span><span class="eb">Customer Success Basics</span></div>
-<h1 style="margin: 0; font-size: clamp(34px, 5.4vw, 54px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05">Learn Customer Success as a <span style="color: #0890A8">system</span> — in 8 short emails.</h1>
+<h1 style="margin: 0; font-size: clamp(34px, 5.4vw, 54px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05">Learn Customer Success as a <span style="color: #0E7490">system</span> — in 8 short emails.</h1>
 <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A4047; max-width: 42ch">Customer Success is a revenue engine. Get the foundations — one practical lesson and one template a day.</p>
 <form action="#" onsubmit="return false" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px">
 <label style="flex: 1 1 220px; min-width: 0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your email</span><input type="email" required="" placeholder="you@company.com" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #14181D; background: #FFFFFF; font: 400 16px 'Space Grotesk', sans-serif; color: #14181D"></label>
@@ -101,7 +108,11 @@ a{color:#0890A8}a:hover{color:#14181D}
 <div style="display: flex; gap: 10px; align-items: center; padding-top: 6px; border-top: 1px solid #D7D3C8; padding-top: 14px"><svg viewBox="0 0 100 100" aria-hidden="true" style="width: 22px; height: 22px; flex: none; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#14181D" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg><span style="font-size: 14px; color: #3A4047">Built by practitioners with <b>35+ years</b> in Customer Success and CX</span></div>
 </div>
 <div style="flex: 1 1 460px; min-width: 0">
-<video src="nochurn-email-assembly.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Animation: lesson 1 assembling in an inbox — learn, grab a template, do a task" style="display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid #D7D3C8; background: #F4F2EC"></video>
+<div style="position: relative">
+<video id="demo" src="nochurn-email-assembly.mp4" poster="poster.jpg" width="1920" height="1080" preload="metadata" autoplay="" muted="" loop="" playsinline="" aria-label="Animation: lesson 1 assembling in an inbox — learn, grab a template, do a task" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 18px; border: 1px solid #D7D3C8; background: #F4F2EC"></video>
+<button id="demoBtn" class="vbtn" type="button" aria-pressed="false" aria-label="Pause animation">Pause</button>
+</div>
+<a href="email.html" class="mono" style="display: inline-block; margin-top: 12px; font-size: 13px; color: #0E7490">Read a sample lesson →</a>
 </div>
 </section>
 
@@ -112,10 +123,10 @@ a{color:#0890A8}a:hover{color:#14181D}
 <div class="eb" style="color: #0E7490">What you get</div>
 <h2 style="margin: 0; font-size: clamp(28px, 4.4vw, 40px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">After 8 lessons, you can:</h2>
 <div style="display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Explain what Customer Success is — and why it drives revenue</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Tell CS apart from support, account management and CX</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Map your customer lifecycle and see where churn starts</span></div>
-<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0890A8; font-weight: 600">✓</span><span style="font-size: 17px">Show the badge on your LinkedIn profile</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Explain what Customer Success is — and why it drives revenue</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Tell CS apart from support, account management and CX</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Map your customer lifecycle and see where churn starts</span></div>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="color: #0E7490; font-weight: 600">✓</span><span style="font-size: 17px">Show the badge on your LinkedIn profile</span></div>
 </div>
 <div class="mono" style="font-size: 12.5px; color: #0E7490">8 lessons · 8 templates · final quiz · badge</div>
 <div><a class="btn btn-d" href="#start">Start free</a></div>
@@ -153,7 +164,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 <section id="path" style="background: #EDEAE1">
 <div style="max-width: 720px; margin: 0 auto; padding: 64px 20px">
 <div class="eb" style="margin-bottom: 12px">Your learning path</div>
-<h2 style="margin: 0 0 8px; font-size: clamp(28px, 4.6vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">From first steps to a full CS <span style="color: #0890A8">system</span></h2>
+<h2 style="margin: 0 0 8px; font-size: clamp(28px, 4.6vw, 38px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1">From first steps to a full CS <span style="color: #0E7490">system</span></h2>
 <p style="margin: 0 0 36px; font-size: 16px; color: #5A626C">Three stages. Start free, go further when you're ready.</p>
 
 <div style="position: relative; display: flex; flex-direction: column; gap: 36px">
@@ -163,7 +174,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 <a href="#free" style="display: flex; gap: 18px; align-items: flex-start; position: relative; text-decoration: none; color: #14181D">
 <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 48px; height: 48px; flex: none; background: #F4F2EC; border-radius: 50%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4E0D6" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg>
 <div style="flex: 1; min-width: 0">
-<div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><span class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #0890A8">01 · UNDERSTAND</span><span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 100px; padding: 4px 9px">FREE · NOW</span></div>
+<div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><span class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #0E7490">01 · UNDERSTAND</span><span class="mono" style="font-size: 10.5px; letter-spacing: 0.12em; background: #06B6D4; border-radius: 100px; padding: 4px 9px">FREE · NOW</span></div>
 <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 4px"><span style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Customer Success Basics</span><span class="hand" style="transform: rotate(-4deg)">← you are here</span></div>
 <div style="font-size: 15px; color: #5A626C; margin-top: 2px">New to Customer Success? Learn what it is, why it pays off and how the customer lifecycle works.</div>
 </div>
@@ -285,13 +296,13 @@ a{color:#0890A8}a:hover{color:#14181D}
 <!-- CREATED BY -->
 <section style="background: #EDEAE1">
 <div style="max-width: 1040px; margin: 0 auto; padding: 56px 20px">
-<div class="eb" style="margin: 0 0 16px">Created by practitioners</div>
+<h2 style="margin: 0 0 16px; font-size: clamp(26px, 4vw, 34px); font-weight: 600; letter-spacing: -0.02em">Created by practitioners</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
 <div style="background: #F4F2EC; border: 1px solid #D7D3C8; border-radius: 18px; padding: 20px; display: flex; gap: 16px; align-items: flex-start">
 <div aria-hidden="true" style="width: 60px; height: 60px; flex: none; border-radius: 50%; background: #14181D; color: #F4F2EC; display: grid; place-items: center; font: 600 20px/1 'Space Grotesk', sans-serif">AA</div>
 <div style="min-width: 0">
 <div style="font-size: 18px; font-weight: 600">Anna Ambrozevich</div>
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #0890A8; margin-top: 2px">CO-FOUNDER</div>
+<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #0E7490; margin-top: 2px">CO-FOUNDER</div>
 <div style="font-size: 14px; color: #3A4047; line-height: 1.5; margin-top: 8px">15+ years in MarTech, CRM and Customer Success at PepsiCo, Alibaba Group, Otto Group and PMI. Former Chief Customer Officer at an IT consulting firm, implementing SaaS for 20+ enterprise clients globally.</div>
 </div>
 </div>
@@ -299,7 +310,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 <div aria-hidden="true" style="width: 60px; height: 60px; flex: none; border-radius: 50%; background: #06B6D4; color: #14181D; display: grid; place-items: center; font: 600 20px/1 'Space Grotesk', sans-serif">MV</div>
 <div style="min-width: 0">
 <div style="font-size: 18px; font-weight: 600">Marina Vostrikova</div>
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #0890A8; margin-top: 2px">CO-FOUNDER</div>
+<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #0E7490; margin-top: 2px">CO-FOUNDER</div>
 <div style="font-size: 14px; color: #3A4047; line-height: 1.5; margin-top: 8px">20+ years in service, support and customer experience. Built international support in 7 languages with a team of 80+. ITIL 4 Strategic Leader.</div>
 </div>
 </div>
@@ -310,14 +321,17 @@ a{color:#0890A8}a:hover{color:#14181D}
 
 <!-- 8 · FAQ -->
 <section style="max-width: 720px; margin: 0 auto; padding: 56px 20px">
-<div class="eb" style="margin-bottom: 8px">Questions</div>
+<h2 style="margin: 0 0 8px; font-size: clamp(26px, 4vw, 34px); font-weight: 600; letter-spacing: -0.02em">Questions</h2>
 <div class="qa"><b>Who is this for?</b><span>Anyone starting in Customer Success, and teams building CS in B2B and AI-native companies.</span></div>
 <div class="qa"><b>Is Customer Success Basics really free?</b><span>Yes. Eight lessons and templates, no payment.</span></div>
 <div class="qa"><b>How much time does it take?</b><span>About 7 minutes a day for 8 days — plus an optional 10-minute task.</span></div>
-<div class="qa"><b>Do I get a certificate?</b><span>Yes — finish the lessons and the final quiz to earn a verified digital badge you can share on LinkedIn.</span></div>
+<div class="qa"><b>What language is the course in?</b><span>English.</span></div>
+<div class="qa"><b>Do I keep the templates?</b><span>Yes. All templates stay in your Gumroad library after the course ends.</span></div>
+<div class="qa"><b>Do I get a certificate?</b><span>Yes — finish the lessons and the final quiz to earn a digital badge you can add to your LinkedIn profile.</span></div>
 <div class="qa"><b>Do I need experience?</b><span>No. Start with Customer Success Basics — it's the foundation for everything else.</span></div>
 </section>
 
+</main>
 <!-- FINAL CTA + FOOTER -->
 <section style="background: #E3F6F9; color: #14181D">
 <div style="max-width: 1040px; margin: 0 auto; padding: 56px 20px 40px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
@@ -342,7 +356,13 @@ a{color:#0890A8}a:hover{color:#14181D}
 <script>
 (function(){var b=document.getElementById('menuBtn'),m=document.getElementById('menu');
 b.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));});
-m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.hidden=true;b.setAttribute('aria-expanded','false');}});})();
+m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.hidden=true;b.setAttribute('aria-expanded','false');}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){m.hidden=true;b.setAttribute('aria-expanded','false');b.focus();}});})();
+</script><script>
+(function(){var v=document.getElementById('demo'),b=document.getElementById('demoBtn');if(!v||!b)return;
+function set(p){b.textContent=p?'Play':'Pause';b.setAttribute('aria-label',p?'Play animation':'Pause animation');b.setAttribute('aria-pressed',String(p));}
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();set(true);}
+b.addEventListener('click',function(){if(v.paused){v.play();set(false);}else{v.pause();set(true);}});})();
 </script>
 </body>
 </html>
