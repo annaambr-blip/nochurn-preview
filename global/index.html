@@ -40,7 +40,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 .sl1{animation-delay:0s}.sl2{animation-delay:.5s}.sl3{animation-delay:1s}
 @keyframes drop{0%{opacity:0;transform:translateY(-18px)}12%,90%{opacity:1;transform:none}100%{opacity:1}}
 .hubtile{aspect-ratio:1;border-radius:16px;display:flex;flex-direction:column;justify-content:space-between;padding:12px;box-sizing:border-box;position:relative;z-index:1}
-.dnav{display:none;gap:26px;align-items:center}
+.dnav{display:none;gap:28px;align-items:center;margin-right:16px}
 .dnav a{font:500 15px/1 'Space Grotesk',sans-serif;color:#14181D;text-decoration:none;white-space:nowrap}.dnav a:hover{color:#0890A8}
 @media(min-width:900px){.dnav{display:flex}.mbtn{display:none}}
 @media(prefers-reduced-motion:reduce){.wire i,.seg,.slab,.flow{animation:none;opacity:1}}
@@ -62,13 +62,12 @@ a{color:#0890A8}a:hover{color:#14181D}
 <header style="border-bottom: 1px solid #D7D3C8; background: #F4F2EC">
 <div style="max-width: 1040px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px">
 <a href="#top" aria-label="nochurn — home" style="text-decoration: none"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: 24px; color: #14181D; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span></a>
-<div style="display: flex; gap: 10px; align-items: center">
+<div style="display: flex; gap: 12px; align-items: center">
 <nav class="dnav" aria-label="Main">
 <a href="what-is-cs.html">What is Customer Success</a>
 <a href="#free">Basics</a>
 <a href="#kits">Mini Courses</a>
 <a href="#os">nochurn OS</a>
-<a href="https://www.linkedin.com/">LinkedIn</a>
 </nav>
 <a class="btn btn-d" href="#free" style="min-height: 44px; padding: 0 16px; font-size: 14px">Start free</a>
 <button class="mbtn" type="button" aria-label="Menu" id="menuBtn" aria-controls="menu" aria-expanded="false">
@@ -82,8 +81,7 @@ a{color:#0890A8}a:hover{color:#14181D}
 <a href="#free">Basics — free course</a>
 <a href="#kits">Mini Courses</a>
 <a href="#os">nochurn OS</a>
-<a href="https://gumroad.com/">Gumroad store</a>
-<a href="https://www.linkedin.com/">LinkedIn</a>
+<div class="mono" style="display: flex; gap: 18px; padding-top: 16px; font-size: 12px; color: #5A626C"><span>Contact:</span><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a><a href="https://gumroad.com/" style="color: #14181D">Gumroad</a><a href="mailto:hello@example.com" style="color: #14181D">Email</a></div>
 </nav>
 </header>
 
@@ -357,7 +355,10 @@ a{color:#0890A8}a:hover{color:#14181D}
 <a class="btn btn-d" href="#free">Start Customer Success Basics — free</a>
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; width: 100%; padding-top: 28px; margin-top: 12px; border-top: 1px solid #BFE6EE">
 <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: 22px; color: #14181D; line-height: 1; white-space: nowrap">n<span style="display: inline-block; width: 0.58em; height: 0.58em; vertical-align: -0.03em; margin: 0 0.02em; position: relative"><svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="13"></circle><circle cx="61" cy="14" r="11" fill="#06B6D4"></circle></svg></span>churn</span>
-<div class="mono" style="display: flex; gap: 18px; font-size: 12px"><a href="what-is-cs.html" style="color: #14181D">What is CS</a><a href="https://gumroad.com/" style="color: #14181D">Gumroad</a><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+<div><div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #0E7490; margin-bottom: 8px">LEARN</div><div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px"><a href="what-is-cs.html" style="color: #14181D">What is Customer Success</a><a href="#free" style="color: #14181D">Basics — free</a></div></div>
+<div><div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: #0E7490; margin-bottom: 8px">CONTACT</div><div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px"><a href="https://www.linkedin.com/" style="color: #14181D">LinkedIn</a><a href="https://gumroad.com/" style="color: #14181D">Our Gumroad store</a><a href="mailto:hello@example.com" style="color: #14181D">[CONTACT EMAIL]</a></div></div>
+</div>
 </div>
 </div>
 </section>
