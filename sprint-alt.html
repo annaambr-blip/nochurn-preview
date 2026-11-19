@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Спринт по Customer Success · альтернативная версия</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--c:#06B6D4;--c-btn:#0891B2;--c-dk:#0E7490;--c-t:#ECFEFF;--c-t2:#CFFAFE;--ink:#0F172A;--ink2:#334155;--mut:#64748B;--line:#E2E8F0;--soft:#F8FAFC;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:96px}
+html,body{overflow-x:clip}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.h{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.035em;margin:0;font-variant-numeric:tabular-nums}
+.h2{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.035em;margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.lab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.sec{padding-top:112px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.link{font-weight:600;color:var(--c-dk);display:inline-flex;align-items:center;gap:6px}
+.link .ar{transition:transform .3s var(--ease)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1;border:0;cursor:pointer;transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);white-space:nowrap}
+.btn .ar{display:inline-block;transition:transform .3s var(--ease)}
+.btn-p{background:var(--c-btn);color:#FFFFFF;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 6px 16px -8px rgba(8,145,178,.6)}
+.btn-s{background:#FFFFFF;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
+/* cards */
+.card{background:#FFFFFF;border:1.5px solid var(--line);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.card-c{background:var(--c-t);border:1.5px solid var(--c-t2);border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 12px;line-height:1}
+.tag-c{background:#FFFFFF;color:var(--c-dk);box-shadow:inset 0 0 0 1px var(--c-t2)}
+.tag-i{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c);display:inline-block}
+.btn-b{background:#F1E3CF;color:#5C4126;box-shadow:inset 0 0 0 1.5px #E6D2B4}
+.card-b{background:#FBF5EC;border:1.5px solid #EFE2CF;border-radius:24px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tag-b{background:#FFFFFF;color:#7A5A30;box-shadow:inset 0 0 0 1px #EFE2CF}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:1px}
+.live{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:10px;vertical-align:1px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);animation:pl 2s var(--ease) infinite}
+@keyframes pl{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.8);opacity:0}}
+.circ{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .25s var(--ease),color .25s var(--ease)}
+/* nav */
+.nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a{position:relative;padding:6px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--c);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav .nd{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;vertical-align:2px}
+.dd{position:relative}
+.nav .dd>a{display:inline-flex;align-items:center}
+.chev{margin-left:5px;opacity:.55;transition:transform .2s}
+.dd-m{position:absolute;top:100%;left:-18px;min-width:290px;padding:10px;background:#FFFFFF;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 40px -24px rgba(15,23,42,.3);display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:40}
+.dd:hover .dd-m,.dd:focus-within .dd-m{opacity:1;visibility:visible;transform:none}
+.dd:hover .chev{transform:rotate(180deg)}
+.nav .dd-m a{padding:10px 12px;border-radius:12px;display:flex;flex-direction:column;gap:2px}
+.nav .dd-m a::after{display:none}
+.nav .dd-m a:hover{background:#F0FDFF}
+.dd-m b{font-weight:600;color:var(--ink);font-size:15px}
+.dd-m span{font-size:13px;color:var(--mut)}
+@media(max-width:1000px){.nav-t:checked ~ .nav .dd{width:100%}.nav-t:checked ~ .nav .dd-m{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 6px 14px;min-width:0}.nav-t:checked ~ .nav .dd-m a{padding:8px 0}.nav-t:checked ~ .nav .dd-m b{font-size:16px}.chev{display:none}}
+.nav-t{position:absolute;opacity:0;pointer-events:none}
+.burger{display:none;width:46px;height:46px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);align-items:center;justify-content:center;cursor:pointer}
+/* hover only on real pointers */
+@media(hover:hover){
+.btn-p:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -10px rgba(8,145,178,.7)}
+.btn-b:hover{background:#E9D5B7;transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px #D6B48C,0 10px 20px -12px rgba(122,90,48,.5)}
+.card-b:hover{transform:translateY(-4px);border-color:#D6B48C;box-shadow:0 20px 40px -24px rgba(122,90,48,.35)}
+.card-b:hover .circ{transform:rotate(45deg);background:#D6B48C;color:#FFFFFF}
+.btn-s:hover{box-shadow:inset 0 0 0 1.5px var(--c);color:var(--c-dk);transform:translateY(-1px)}
+.btn:hover .ar,.link:hover .ar{transform:translateX(4px)}
+.card:hover,.card-c:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
+.card:hover .circ,.card-c:hover .circ{transform:rotate(45deg);background:var(--c);color:#FFFFFF}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.row:hover{background:var(--soft)}
+.row:hover .ar{transform:translateX(4px);color:var(--c-dk)}
+}
+.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-t{display:flex;gap:56px;width:max-content;animation:mq 32s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.js .rv{opacity:1;transform:none}}
+@media(max-width:1000px){
+.nav{display:none}.burger{display:flex}
+.nav-t:checked ~ .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#FFFFFF;padding:12px 20px 24px;border-bottom:1px solid var(--line);z-index:20;font-size:18px;box-shadow:0 20px 30px -20px rgba(15,23,42,.2)}
+.nav-t:checked ~ .nav a{padding:12px 0;width:100%}
+}
+@media(max-width:700px){
+.w{padding-left:20px;padding-right:20px}
+.sec{padding-top:72px}
+.hdr-cta{display:none !important}
+.g2{grid-template-columns:1fr !important}
+.ill{display:none}
+.hero-ring{display:none}
+.conf-ring{display:none}
+.stats{grid-template-columns:1fr 1fr !important;gap:0 20px !important}
+.mq{-webkit-mask-image:none;mask-image:none}.mq-t{animation:none;flex-wrap:wrap;width:auto;gap:14px 28px;font-size:20px !important}.mq-t .dup{display:none}
+.hero-cta .btn{flex:1 1 100%}
+.dir{min-height:0 !important}
+.hero-h{font-size:52px !important}
+.ev-date{font-size:28px !important}
+.biz{padding:24px !important}.conf{padding-top:48px !important;padding-bottom:48px !important}
+.conf-date{width:96px !important;height:96px !important}
+.conf-date b{font-size:42px !important}
+}
+</style>
+<style>
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;font-family:'Manrope',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pl{width:32px;height:32px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:none;transition:transform .3s var(--ease),background .25s}
+.faq details[open] summary .pl{transform:rotate(45deg);background:#CFFAFE}
+.faq .ans{padding:0 4px 22px;font-size:16px;line-height:1.6;color:#475569;max-width:70ch}
+@media(max-width:700px){.sp-ph{width:76px!important;height:76px!important}.sp-st{font-size:20px!important}}
+.cv-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px 56px;align-items:center}
+.cv-card{position:relative;border:1px solid #E2E8F0;border-radius:24px;padding:18px;background:#FFFFFF;box-shadow:0 30px 60px -40px rgba(15,23,42,.35);overflow:hidden}
+.cv-grid{display:grid;grid-template-columns:118px repeat(4,minmax(0,1fr));gap:3px}
+.cv-corner{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#94A3B8;align-self:center}
+.cv-h{border-radius:10px 10px 4px 4px;color:#FFFFFF;padding:9px 6px;text-align:center;display:flex;flex-direction:column;gap:1px}
+.cv-h b{font:700 13px 'Manrope',sans-serif}.cv-h span{font-size:10px;opacity:.85}
+.cv-l{padding:10px 8px 10px 0;border-top:1px solid #EEF2F6;display:flex;flex-direction:column;gap:2px}
+.cv-l b{font-size:12px;font-weight:600;color:#0F172A;line-height:1.25}.cv-l span{font-size:10px;color:#94A3B8;line-height:1.3}
+.cv-c{min-height:62px;border-radius:4px;padding:12px 8px;display:flex;flex-direction:column;gap:6px}
+.cv-c i{display:block;height:6px;border-radius:3px;background:#CBD5E1;opacity:.55}
+.cv-blur{filter:blur(2.5px);opacity:.7}
+.cv-fade{position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(transparent,#FFFFFF 70%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}
+.cv-lock{display:inline-flex;align-items:center;gap:8px;background:#0891B2;color:#FFFFFF;font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px}
+@media(max-width:900px){.cv-wrap{grid-template-columns:1fr}.cv-grid{grid-template-columns:76px repeat(4,minmax(0,1fr))}.cv-h span{display:none}.cv-h b{font-size:10px}.cv-l b{font-size:10px}.cv-l span{display:none}.cv-c{min-height:44px;padding:8px 5px}}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#334155}
+.chk::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:1px;background:#CFFAFE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%230E7490' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.inp{font-family:inherit;font-size:16px;height:52px;padding:0 16px;border:1.5px solid var(--line);border-radius:14px;background:#FFFFFF;width:100%;transition:border-color .2s}
+.inp:focus{outline:none;border-color:var(--c)}
+@media(max-width:700px){.tl-row{grid-template-columns:1fr !important;gap:8px !important}.price-hl{transform:none !important}}
+.mq{overflow:visible!important;-webkit-mask-image:none!important;mask-image:none!important}.mq-t{animation:none!important;width:auto!important;flex-wrap:wrap;gap:18px 44px}.mq-t .dup{display:none}
+/*gap*/.sec{padding-top:72px!important}@media(max-width:700px){.sec{padding-top:52px!important}}
+/*mob*/
+/* brand: less template */
+.lab{text-transform:none!important;letter-spacing:0!important;font-size:14px!important;font-weight:600!important;color:#0F172A!important;display:inline-flex;align-items:center}
+.lab .ldot,.lab .live{width:22px!important;height:2px!important;border-radius:0!important;margin-right:12px!important;box-shadow:none!important;animation:none!important}
+.lab .live::before,.lab .live::after{display:none!important}
+.tag{text-transform:none!important;letter-spacing:0!important;font-size:13px!important;border-radius:8px!important}
+.btn{border-radius:14px!important}
+.btn-p{box-shadow:none!important}
+.btn-p:hover{transform:translateY(-1px)}
+header{background:#FFFFFF!important}
+footer{position:relative;z-index:5}
+.nav-conf{display:inline-flex!important;align-items:center;gap:8px;background:#ECFEFF;color:#0E7490!important;border-radius:999px;padding:8px 14px!important;font-weight:600}
+.nav-conf:hover{background:#CFFAFE}
+.nav-live{position:relative;width:8px;height:8px;border-radius:50%;background:#06B6D4;flex:none}
+.nav-live::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:#06B6D4;opacity:.35;animation:navp 1.8s ease-out infinite}
+@keyframes navp{from{transform:scale(.6);opacity:.5}to{transform:scale(1.8);opacity:0}}
+@media(prefers-reduced-motion:reduce){.nav-live::after{animation:none}}
+@media(max-width:700px){
+.hero-h span,h1 span{white-space:normal!important}
+h1.h,.hero-h{font-size:clamp(34px,10vw,48px)!important}
+.prog-ic{display:none!important}
+.g2>.card>div:first-child[style*="height: 150px"]{height:auto!important;padding:20px!important}
+.g2>.card>div:first-child>div[style*="max-width: 70%"]{position:static!important;max-width:none!important}
+.co-near{display:block!important;line-height:1.5;border-radius:18px!important;padding:12px 16px!important}
+.co-near>*{display:inline!important}
+.co-roles{grid-template-columns:1fr!important}
+.co-facts>div{padding:14px 16px!important}
+.co-facts b{font-size:26px!important}
+.bl-g,.ar-cta,.tl-g{grid-template-columns:1fr!important}
+.ar-stats{grid-template-columns:1fr 1fr!important}
+}
+@media(min-width:701px) and (max-width:1000px){.co-roles{grid-template-columns:1fr 1fr!important}}
+@media(max-width:1000px){
+.nav-t:checked ~ .nav{position:fixed!important;top:76px!important;bottom:0;left:0;right:0;overflow-y:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;flex-wrap:nowrap!important;padding-bottom:40px!important}
+html:has(.nav-t:checked),body:has(.nav-t:checked){overflow:hidden!important}
+.nav-t:checked ~ .nav .dd>a{font-weight:600;color:#0F172A}
+.nav-t:checked ~ .nav .dd-m{padding:0 0 4px 14px!important}
+.nav-t:checked ~ .nav .dd-m b{font-weight:500!important;color:#475569!important}
+header .nav .dd>a,header .nav>a{font-family:Inter,sans-serif!important;font-size:17px!important;font-weight:600!important;color:#0F172A!important}
+header .nav .dd-m{padding:2px 0 6px 14px!important;margin-left:2px;border-left:2px solid #E2E8F0!important;border-radius:0!important}
+header .nav .dd-m a{padding:7px 0 7px 12px!important;background:none!important;border-radius:0!important}
+header .nav .dd-m a b{font-family:Inter,sans-serif!important;font-size:16px!important;font-weight:500!important;color:#475569!important}
+header .nav .dd-m a:hover,header .nav .dd-m a:focus-visible{background:none!important}
+header .nav .dd-m a:hover b,header .nav .dd-m a:focus-visible b{color:#0E7490!important}
+header .nav>a.nav-conf{display:inline-flex!important;align-self:flex-start;width:auto!important;color:#0E7490!important;background:#ECFEFF!important;border-radius:999px!important;padding:9px 16px!important;margin-top:6px}
+}
+/*endmob*/
+</style><style>@media(max-width:700px){.sp-hm{display:none!important}.tl-row>div:nth-child(2)>div:nth-child(2){display:none}.tl-row{padding-top:18px!important;padding-bottom:18px!important}.sp-rev>.card:nth-child(n+3){display:none!important}}</style>
+<style>.sp-stk{display:none}@media(max-width:700px){.sp-stk{display:flex;opacity:0;pointer-events:none;transform:translateY(20px);transition:.25s;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;align-items:center;gap:6px;height:52px;border-radius:14px;background:#0891B2;color:#FFFFFF;font:600 16px Inter,sans-serif;box-shadow:0 10px 30px -10px rgba(8,145,178,.6)}.sp-stk.on{opacity:1;pointer-events:auto;transform:none}footer{padding-bottom:76px}.sp-logos{padding-top:32px!important}}</style>
+<style>@media(max-width:700px){section.w:first-of-type{padding-top:8px!important}section.w:first-of-type>div:first-child{margin-top:8px!important}.sp-logos{padding-top:28px!important}.sp-logos .lab{margin:0 0 12px!important;font-size:13px!important;color:#64748B!important}.sp-logos .mq{overflow-x:auto!important;-webkit-overflow-scrolling:touch;scrollbar-width:none}.sp-logos .mq::-webkit-scrollbar{display:none}.sp-logos .mq-t{flex-wrap:nowrap!important;width:max-content!important;gap:28px!important;font-size:17px!important}.sp-who .h2{font-size:28px!important}}#program .lab{color:#0E7490!important;font-size:15px!important}</style>
+<style>@media(max-width:1100px){.pg-row{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-left:0!important;margin-right:-36px!important;padding:0 36px 4px 0}.pg-row::-webkit-scrollbar{display:none}.pg-c{flex:0 0 280px;scroll-snap-align:start}.pg-hint{display:block!important}}@media(max-width:700px){.pg-wrap{padding:28px 20px!important;border-radius:24px!important}.pg-row{margin-left:0!important;margin-right:-20px!important;padding:0 20px 4px 0}.pg-c{flex-basis:82%}}</style>
+
+</head>
+<body>
+
+<div>
+<!-- HEADER -->
+<header style="border-bottom: 1px solid #EEF2F6; background: rgba(255,255,255,.92); position: sticky; top: 0; z-index: 30">
+<div class="w" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px">
+<a href="index.html" aria-label="nochurn — на главную" class="h" style="font-size: 26px; letter-spacing: -.05em; display: flex; align-items: center"><svg role="img" aria-label="nochurn" style="height: .82em; width: auto; display: block; overflow: visible" xmlns="http://www.w3.org/2000/svg" viewBox="-4.00 -74.00 393.00 81.00"><path d="M7.300000000000001 0.0V-49.400000000000006H18.6V-42.5H20.3Q21.6 -45.300000000000004 25.0 -47.800000000000004Q28.400000000000002 -50.300000000000004 35.300000000000004 -50.300000000000004Q41.0 -50.300000000000004 45.400000000000006 -47.7Q49.800000000000004 -45.1 52.25 -40.5Q54.7 -35.9 54.7 -29.6V0.0H43.2V-28.700000000000003Q43.2 -34.7 40.25 -37.650000000000006Q37.300000000000004 -40.6 31.900000000000002 -40.6Q25.8 -40.6 22.3 -36.55Q18.8 -32.5 18.8 -25.0V0.0Z" fill="currentColor"/><circle cx="89.00" cy="-26.00" r="23.20" fill="none" stroke="currentColor" stroke-width="7.54"/><circle cx="95.38" cy="-46.88" r="6.38" fill="#06B6D4"/><path d="M146.9 1.4000000000000001Q139.7 1.4000000000000001 133.89999999999998 -1.6Q128.1 -4.6000000000000005 124.75 -10.3Q121.4 -16.0 121.4 -24.0V-25.400000000000002Q121.4 -33.4 124.75 -39.1Q128.1 -44.800000000000004 133.89999999999998 -47.800000000000004Q139.7 -50.800000000000004 146.9 -50.800000000000004Q154.0 -50.800000000000004 159.05 -48.300000000000004Q164.1 -45.800000000000004 167.2 -41.45Q170.3 -37.1 171.2 -31.700000000000003L160.1 -29.400000000000002Q159.7 -32.5 158.2 -35.05Q156.7 -37.6 153.95 -39.1Q151.2 -40.6 147.2 -40.6Q143.1 -40.6 139.85 -38.85Q136.6 -37.1 134.75 -33.6Q132.9 -30.1 132.9 -25.200000000000003V-24.200000000000003Q132.9 -19.3 134.75 -15.850000000000001Q136.6 -12.4 139.85 -10.600000000000001Q143.1 -8.8 147.2 -8.8Q153.3 -8.8 156.45 -11.950000000000001Q159.6 -15.100000000000001 160.4 -20.1L171.5 -17.5Q170.3 -12.3 167.2 -8.0Q164.1 -3.7 159.05 -1.15Q154.0 1.4000000000000001 146.9 1.4000000000000001Z" fill="currentColor"/><path d="M179.20000000000002 0.0V-70.0H190.70000000000002V-42.900000000000006H192.4Q193.20000000000002 -44.6 195.0 -46.3Q196.8 -48.0 199.75 -49.1Q202.70000000000002 -50.2 207.20000000000002 -50.2Q212.9 -50.2 217.3 -47.650000000000006Q221.70000000000002 -45.1 224.15000000000003 -40.5Q226.60000000000002 -35.9 226.60000000000002 -29.6V0.0H215.10000000000002V-28.700000000000003Q215.10000000000002 -34.7 212.15000000000003 -37.650000000000006Q209.20000000000002 -40.6 203.8 -40.6Q197.70000000000002 -40.6 194.20000000000002 -36.55Q190.70000000000002 -32.5 190.70000000000002 -25.0V0.0Z" fill="currentColor"/><path d="M256.1 0.8Q250.4 0.8 246.0 -1.75Q241.6 -4.3 239.2 -8.950000000000001Q236.8 -13.600000000000001 236.8 -19.8V-49.400000000000006H248.20000000000002V-20.700000000000003Q248.20000000000002 -14.700000000000001 251.15000000000003 -11.8Q254.10000000000002 -8.9 259.5 -8.9Q265.6 -8.9 269.15 -12.900000000000002Q272.7 -16.900000000000002 272.7 -24.400000000000002V-49.400000000000006H284.1V0.0H272.9V-6.9H271.2Q269.9 -4.2 266.45 -1.7000000000000002Q263.0 0.8 256.1 0.8Z" fill="currentColor"/><path d="M295.2 0.0V-49.400000000000006H306.5V-43.7H308.2Q309.29999999999995 -46.800000000000004 311.9 -48.2Q314.5 -49.6 318.09999999999997 -49.6H324.09999999999997V-39.400000000000006H317.9Q312.9 -39.400000000000006 309.79999999999995 -36.75Q306.7 -34.1 306.7 -28.6V0.0Z" fill="currentColor"/><path d="M330.8 0.0V-49.400000000000006H342.1V-42.5H343.8Q345.1 -45.300000000000004 348.5 -47.800000000000004Q351.9 -50.300000000000004 358.8 -50.300000000000004Q364.5 -50.300000000000004 368.9 -47.7Q373.3 -45.1 375.75 -40.5Q378.2 -35.9 378.2 -29.6V0.0H366.7V-28.700000000000003Q366.7 -34.7 363.75 -37.650000000000006Q360.8 -40.6 355.4 -40.6Q349.3 -40.6 345.8 -36.55Q342.3 -32.5 342.3 -25.0V0.0Z" fill="currentColor"/></svg></a>
+<input type="checkbox" id="nav-t" class="nav-t" aria-label="Открыть меню">
+<nav class="nav" aria-label="Основное меню">
+<div class="dd"><a href="about.html">О нас<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="about.html"><b>Кто мы</b></a><a href="reviews.html"><b>Отзывы</b></a></div></div>
+<div class="dd"><a href="cs.html">Знания<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="cs.html"><b>Что такое Customer Success</b></a><a href="blog.html"><b>Статьи</b></a><a href="podcast.html"><b>Подкаст</b></a><a href="efir.html"><b>Эфиры</b></a><a href="glossary.html"><b>Глоссарий</b></a></div></div>
+<div class="dd"><a href="index.html#edu"><span class="nd" style="background: #0891B2"></span>Обучение<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="dd-m"><a href="sprint.html"><b>Спринт</b></a><a href="course.html"><b>Полный курс</b></a></div></div>
+<a href="consulting.html"><span class="nd" style="background: #D6B48C"></span>Компаниям</a>
+<a href="talents.html">Таланты</a>
+<a href="csconf.html" class="nav-conf"><span class="nav-live"></span>Конференция</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm hdr-cta">Связаться <span class="ar">→</span></a>
+<label for="nav-t" class="burger" aria-label="Меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></label>
+</div>
+</div>
+</header>
+<section class="w" style="padding-top:40px">
+<div style="max-width:880px;margin-top:24px">
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px"><span class="tag tag-c"><span class="live" style="margin-right:6px"></span>идёт набор</span><span class="tag tag-i">онлайн-спринт · 2–16 февраля 2027</span></div>
+<h1 class="h hero-h" style="font-size:clamp(40px,5.4vw,80px);line-height:.94;letter-spacing:-.05em">Спринт<br>по <span style="background: linear-gradient(transparent 58%, #CFFAFE 58%, #CFFAFE 90%, transparent 90%); padding: 0 6px; margin-left: -6px; white-space: nowrap">Customer Success</span></h1>
+<p class="h" style="margin:26px 0 0;font-size:clamp(22px,2.2vw,30px);line-height:1.2;letter-spacing:-.03em;color:#0891B2">ИИ ускоряется. Customer Success пересобирается.</p>
+<p style="margin:16px 0 0;font-size:19px;line-height:1.55;color:#334155;max-width:52ch">две недели, чтобы пересобрать работу с&nbsp;клиентами под 2027 год: где нужен человек, где хватит агента и&nbsp;как&nbsp;показать вклад CS в&nbsp;выручку.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px 0;margin:26px 0 30px;font:600 15px Inter;color:#334155"><span>4 модуля</span><span style="color:#CBD5E1;margin:0 12px">·</span><span>1 практикум</span><span style="color:#CBD5E1;margin:0 12px">·</span><span>~8 часов эфиров</span><span style="color:#CBD5E1;margin:0 12px">·</span><span>1 Canvas на выходе</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><a href="#price" class="btn btn-p">Записаться на спринт <span class="ar">→</span></a><a href="#program" class="btn btn-s">Программа</a><span style="font-size:15px;color:#64748B;margin-left:8px">от <b class="h" style="font-size:20px;color:#0F172A">39 000 ₽</b></span></div>
+<div style="display:flex;align-items:center;gap:12px;margin-top:28px;font-size:14px;line-height:1.4;color:#475569"><span style="display:flex"><img src="img/anna.jpg" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff"><img src="img/marina.jpg" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff;margin-left:-10px"></span><span>Ведут <b style="color:#0F172A">Анна Амброзевич и Марина Вострикова</b><br>5 потоков полного курса с 2024 года</span></div>
+</div></section>
+
+<section class="w sec rv"><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>контекст 2027</div>
+<p style="font-size:17px;line-height:1.6;color:#475569;max-width:60ch;margin:0">мы прочитали больше десяти свежих исследований: Bain, Forrester, TSIA, ChurnZero, Gainsight. формулировки разные, вывод один.</p>
+<h2 class="h2" style="max-width:24ch;margin-top:18px">CS становится владельцем выручки от&nbsp;текущих клиентов</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:28px">
+<div class="card" style="padding:28px;display:flex;flex-direction:column;gap:14px"><div style="font:700 13px Inter;color:#94A3B8">сдвиг 1</div><div class="h" style="font-size:22px;line-height:1.2;letter-spacing:-.02em">от активности<br><span style="color:#0891B2">→ к результату клиента</span></div><div style="margin-top:auto;padding-top:14px;border-top:1px solid #E2E8F0;display:flex;gap:12px;align-items:baseline"><span class="h" style="font-size:30px;color:#0F172A">80%</span><span style="font-size:14px;line-height:1.4;color:#64748B">лидеров считают, что&nbsp;продавать нужно результат</span></div></div>
+<div class="card" style="padding:28px;display:flex;flex-direction:column;gap:14px"><div style="font:700 13px Inter;color:#94A3B8">сдвиг 2</div><div class="h" style="font-size:22px;line-height:1.2;letter-spacing:-.02em">от пилотов ИИ<br><span style="color:#0891B2">→ к перестроенным процессам</span></div><div style="margin-top:auto;padding-top:14px;border-top:1px solid #E2E8F0;display:flex;gap:12px;align-items:baseline"><span class="h" style="font-size:30px;color:#0F172A">65%</span><span style="font-size:14px;line-height:1.4;color:#64748B">команд, зрелых в&nbsp;ИИ, держат удержание выручки 100%+</span></div></div>
+<div class="card" style="padding:28px;display:flex;flex-direction:column;gap:14px"><div style="font:700 13px Inter;color:#94A3B8">сдвиг 3</div><div class="h" style="font-size:22px;line-height:1.2;letter-spacing:-.02em">от health score на&nbsp;ощущениях<br><span style="color:#0891B2">→ к сигналам из&nbsp;данных</span></div><div style="margin-top:auto;padding-top:14px;border-top:1px solid #E2E8F0;display:flex;gap:12px;align-items:baseline"><span class="h" style="font-size:30px;color:#0F172A">49%</span><span style="font-size:14px;line-height:1.4;color:#64748B">CS-специалистов говорят, что&nbsp;роль стала стратегичнее</span></div></div>
+</div><div style="font-size:13px;color:#94A3B8;margin-top:14px">Forrester, 2025 · ChurnZero, 2026 · Velaris, 2026</div>
+</section>
+
+<section id="program" class="w sec rv"><div style="background:#F0FDFF;border-radius:32px;padding:40px 36px">
+<div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>программа</div><h2 class="h2">цикл » сигналы » ценность » ИИ</h2>
+<p style="font-size:16px;color:#475569;margin:12px 0 0">вт и&nbsp;чт, 17:00 МСК. каждый модуль заканчивается артефактом, а&nbsp;не&nbsp;конспектом.</p>
+<div style="display:flex;flex-direction:column;gap:28px;margin-top:30px">
+<div><div style="display:flex;gap:10px;align-items:baseline;margin-bottom:14px"><span class="h" style="font-size:20px">неделя 1</span><span style="font:600 15px Inter;color:#0891B2">{основа}</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px"><div class="pg-c" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px"><div><div class="h" style="font-size:20px;color:#0891B2">2 февраля</div><div style="font-size:13px;color:#64748B;margin-top:2px">вторник</div></div><div style="font-size:13px;font-weight:700;color:#94A3B8">01</div><div class="h" style="font-size:20px;line-height:1.2;letter-spacing:-.02em;margin-top:-6px">Жизненный цикл: человек и&nbsp;агент</div><div style="font-size:15px;line-height:1.5;color:#475569">Этапы пути клиента, и&nbsp;на&nbsp;каждом решаем, что&nbsp;заберёт ИИ, а&nbsp;где нужен CSM.</div><div style="margin-top:auto;padding-top:12px;border-top:1px solid #E2E8F0;font-size:13px;color:#0E7490;font-weight:600">→ Этапы и&nbsp;роли в&nbsp;Canvas</div></div><div class="pg-c" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px"><div><div class="h" style="font-size:20px;color:#0891B2">4 февраля</div><div style="font-size:13px;color:#64748B;margin-top:2px">четверг</div></div><div style="font-size:13px;font-weight:700;color:#94A3B8">02</div><div class="h" style="font-size:20px;line-height:1.2;letter-spacing:-.02em;margin-top:-6px">Отток по&nbsp;данным</div><div style="font-size:15px;line-height:1.5;color:#475569">Сигналы ухода из&nbsp;CRM, поддержки и&nbsp;продукта вместо health score на&nbsp;ощущениях.</div><div style="margin-top:auto;padding-top:12px;border-top:1px solid #E2E8F0;font-size:13px;color:#0E7490;font-weight:600">→ Шаблон Churn notes</div></div></div></div>
+<div><div style="display:flex;gap:10px;align-items:baseline;margin-bottom:14px"><span class="h" style="font-size:20px">неделя 2</span><span style="font:600 15px Inter;color:#0891B2">{рост}</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px"><div class="pg-c" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px"><div><div class="h" style="font-size:20px;color:#0891B2">9 февраля</div><div style="font-size:13px;color:#64748B;margin-top:2px">вторник</div></div><div style="font-size:13px;font-weight:700;color:#94A3B8">03<span style="display:inline-block;font:700 11px Inter;color:#0E7490;background:#CFFAFE;border-radius:999px;padding:3px 9px;vertical-align:3px;margin-left:6px">новое</span></div><div class="h" style="font-size:20px;line-height:1.2;letter-spacing:-.02em;margin-top:-6px">Ценность в&nbsp;деньгах</div><div style="font-size:15px;line-height:1.5;color:#475569">NRR, стоимость обслуживания и&nbsp;как&nbsp;говорить о&nbsp;вкладе CS с&nbsp;финдиректором.</div><div style="margin-top:auto;padding-top:12px;border-top:1px solid #E2E8F0;font-size:13px;color:#0E7490;font-weight:600">→ Расчёт вклада CS</div></div><div class="pg-c" style="background:#fff;border:1.5px solid #E2E8F0;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px"><div><div class="h" style="font-size:20px;color:#0891B2">11 февраля</div><div style="font-size:13px;color:#64748B;margin-top:2px">четверг</div></div><div style="font-size:13px;font-weight:700;color:#94A3B8">04<span style="display:inline-block;font:700 11px Inter;color:#0E7490;background:#CFFAFE;border-radius:999px;padding:3px 9px;vertical-align:3px;margin-left:6px">новое</span></div><div class="h" style="font-size:20px;line-height:1.2;letter-spacing:-.02em;margin-top:-6px">ИИ: один процесс заново</div><div style="font-size:15px;line-height:1.5;color:#475569">Берём процесс с&nbsp;самым большим эффектом, перестраиваем с&nbsp;нуля и&nbsp;задаём метрику.</div><div style="margin-top:auto;padding-top:12px;border-top:1px solid #E2E8F0;font-size:13px;color:#0E7490;font-weight:600">→ План внедрения с&nbsp;метрикой</div></div><div class="pg-c" style="background:#ECFEFF;border:1.5px solid #A5F3FC;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px"><div><div class="h" style="font-size:20px;color:#0891B2">16 февраля</div><div style="font-size:13px;color:#64748B;margin-top:2px">вторник · 2 часа</div></div><div style="font-size:13px;font-weight:700;color:#94A3B8">05</div><div class="h" style="font-size:20px;line-height:1.2;letter-spacing:-.02em;margin-top:-6px">Практикум «Свой Canvas»</div><div style="font-size:15px;line-height:1.5;color:#475569">Защищаете свою систему удержания на&nbsp;языке выручки и&nbsp;получаете разбор.</div><div style="margin-top:auto;padding-top:12px;border-top:1px solid #E2E8F0;font-size:13px;color:#0E7490;font-weight:600">→ Готовый Canvas компании</div></div></div></div>
+</div></div></section>
+
+<section class="w sec rv"><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>артефакты</div><h2 class="h2">что останется у вас после спринта</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:26px">
+<div style="border:1.5px solid #E2E8F0;border-radius:20px;padding:22px;background:#fff"><div class="h" style="font-size:18px;letter-spacing:-.02em">Customer Success Canvas 2027</div><div style="font-size:14px;line-height:1.5;color:#64748B;margin-top:6px">карта работы с&nbsp;клиентами с&nbsp;новыми слоями: агент или человек, ценность в&nbsp;деньгах</div></div>
+<div style="border:1.5px solid #E2E8F0;border-radius:20px;padding:22px;background:#fff"><div class="h" style="font-size:18px;letter-spacing:-.02em">Churn notes</div><div style="font-size:14px;line-height:1.5;color:#64748B;margin-top:6px">шаблон разбора ушедших клиентов и&nbsp;сигналов риска</div></div>
+<div style="border:1.5px solid #E2E8F0;border-radius:20px;padding:22px;background:#fff"><div class="h" style="font-size:18px;letter-spacing:-.02em">Расчёт вклада CS</div><div style="font-size:14px;line-height:1.5;color:#64748B;margin-top:6px">как этапы жизненного цикла влияют на&nbsp;NRR</div></div>
+<div style="border:1.5px solid #E2E8F0;border-radius:20px;padding:22px;background:#fff"><div class="h" style="font-size:18px;letter-spacing:-.02em">План внедрения ИИ</div><div style="font-size:14px;line-height:1.5;color:#64748B;margin-top:6px">один процесс, перестроенный с&nbsp;нуля, и&nbsp;метрика эффекта</div></div>
+</div>
+<p style="margin:26px 0 0;font-size:15px;line-height:1.6;color:#64748B;max-width:62ch">наша внутренняя метрика спринта: сколько участников после второй недели переписали свой health score.</p>
+</section>
+
+<section class="w sec rv"><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>для кого</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:6px">
+<div style="border:1.5px solid #E2E8F0;border-radius:20px;padding:22px;background:#fff"><div class="h" style="font-size:18px;letter-spacing:-.02em">руководители CS</div><div style="font-size:14px;line-height:1.5;color:#64748B;margin-top:6px">перестроить модель команды и&nbsp;говорить с&nbsp;бизнесом на&nbsp;языке выручки</div></div>
+<div style="border:1.5px solid #E2E8F0;border-radius:20px;padding:22px;background:#fff"><div class="h" style="font-size:18px;letter-spacing:-.02em">CSM и&nbsp;старшие CSM</div><div style="font-size:14px;line-height:1.5;color:#64748B;margin-top:6px">понять, куда движется роль, и&nbsp;забрать себе работу, которую не&nbsp;сделает агент</div></div>
+<div style="border:1.5px solid #E2E8F0;border-radius:20px;padding:22px;background:#fff"><div class="h" style="font-size:18px;letter-spacing:-.02em">фаундеры и&nbsp;продакты</div><div style="font-size:14px;line-height:1.5;color:#64748B;margin-top:6px">увидеть, как&nbsp;CS влияет на&nbsp;рост из&nbsp;текущей базы</div></div>
+</div></section>
+
+<section id="price" class="w sec rv"><div class="lab" style="margin-bottom: 14px"><span class="ldot" style="background: #06B6D4"></span>участие</div><h2 class="h2">три формата</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:28px">
+<div class="card" style="padding:28px;display:flex;flex-direction:column;gap:16px"><div class="lab">спринт</div><span class="h" style="font-size:40px;letter-spacing:-.04em">39 000 ₽</span><div style="display:flex;flex-direction:column;gap:10px"><div class="chk">4 модуля в&nbsp;прямом эфире</div><div class="chk">все шаблоны и&nbsp;артефакты</div><div class="chk">записи на&nbsp;6 месяцев</div></div><a href="https://t.me/tigerms" class="btn btn-p" style="margin-top:auto">Записаться <span class="ar">→</span></a></div>
+<div class="card" style="padding:28px;display:flex;flex-direction:column;gap:16px;border:2px solid #06B6D4"><div class="lab">спринт + практикум</div><span class="h" style="font-size:40px;letter-spacing:-.04em">54 000 ₽</span><div style="display:flex;flex-direction:column;gap:10px"><div class="chk">всё из&nbsp;«Спринта»</div><div class="chk">защита и&nbsp;разбор вашего Canvas</div><div class="chk">записи на&nbsp;12 месяцев, сертификат</div></div><a href="https://t.me/tigerms" class="btn btn-p" style="margin-top:auto">Записаться с практикумом <span class="ar">→</span></a></div>
+<div class="card" style="padding:28px;display:flex;flex-direction:column;gap:16px"><div class="lab">команда</div><span class="h" style="font-size:40px;letter-spacing:-.04em">от 250 000 ₽</span><div style="display:flex;flex-direction:column;gap:10px"><div class="chk">спринт на&nbsp;кейсах одной компании</div><div class="chk">перестраиваем ваш процесс вместе</div><div class="chk">группа до&nbsp;10 человек</div></div><a href="https://t.me/tigerms" class="btn btn-s" style="margin-top:auto">Связаться <span class="ar">→</span></a></div>
+</div>
+<p class="h" style="margin:40px 0 0;font-size:24px;letter-spacing:-.03em">до встречи в феврале.</p>
+</section>
+
+<footer style="background: #F8FAFC; border-top: 1px solid #E2E8F0">
+<div class="w" style="padding-top: 64px; padding-bottom: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; margin-bottom: 48px">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<a href="index.html" aria-label="nochurn — на главную" class="h" style="font-size: 30px; letter-spacing: -.05em; display: flex; align-items: center"><svg role="img" aria-label="nochurn" style="height: .82em; width: auto; display: block; overflow: visible" xmlns="http://www.w3.org/2000/svg" viewBox="-4.00 -74.00 393.00 81.00"><path d="M7.300000000000001 0.0V-49.400000000000006H18.6V-42.5H20.3Q21.6 -45.300000000000004 25.0 -47.800000000000004Q28.400000000000002 -50.300000000000004 35.300000000000004 -50.300000000000004Q41.0 -50.300000000000004 45.400000000000006 -47.7Q49.800000000000004 -45.1 52.25 -40.5Q54.7 -35.9 54.7 -29.6V0.0H43.2V-28.700000000000003Q43.2 -34.7 40.25 -37.650000000000006Q37.300000000000004 -40.6 31.900000000000002 -40.6Q25.8 -40.6 22.3 -36.55Q18.8 -32.5 18.8 -25.0V0.0Z" fill="currentColor"/><circle cx="89.00" cy="-26.00" r="23.20" fill="none" stroke="currentColor" stroke-width="7.54"/><circle cx="95.38" cy="-46.88" r="6.38" fill="#06B6D4"/><path d="M146.9 1.4000000000000001Q139.7 1.4000000000000001 133.89999999999998 -1.6Q128.1 -4.6000000000000005 124.75 -10.3Q121.4 -16.0 121.4 -24.0V-25.400000000000002Q121.4 -33.4 124.75 -39.1Q128.1 -44.800000000000004 133.89999999999998 -47.800000000000004Q139.7 -50.800000000000004 146.9 -50.800000000000004Q154.0 -50.800000000000004 159.05 -48.300000000000004Q164.1 -45.800000000000004 167.2 -41.45Q170.3 -37.1 171.2 -31.700000000000003L160.1 -29.400000000000002Q159.7 -32.5 158.2 -35.05Q156.7 -37.6 153.95 -39.1Q151.2 -40.6 147.2 -40.6Q143.1 -40.6 139.85 -38.85Q136.6 -37.1 134.75 -33.6Q132.9 -30.1 132.9 -25.200000000000003V-24.200000000000003Q132.9 -19.3 134.75 -15.850000000000001Q136.6 -12.4 139.85 -10.600000000000001Q143.1 -8.8 147.2 -8.8Q153.3 -8.8 156.45 -11.950000000000001Q159.6 -15.100000000000001 160.4 -20.1L171.5 -17.5Q170.3 -12.3 167.2 -8.0Q164.1 -3.7 159.05 -1.15Q154.0 1.4000000000000001 146.9 1.4000000000000001Z" fill="currentColor"/><path d="M179.20000000000002 0.0V-70.0H190.70000000000002V-42.900000000000006H192.4Q193.20000000000002 -44.6 195.0 -46.3Q196.8 -48.0 199.75 -49.1Q202.70000000000002 -50.2 207.20000000000002 -50.2Q212.9 -50.2 217.3 -47.650000000000006Q221.70000000000002 -45.1 224.15000000000003 -40.5Q226.60000000000002 -35.9 226.60000000000002 -29.6V0.0H215.10000000000002V-28.700000000000003Q215.10000000000002 -34.7 212.15000000000003 -37.650000000000006Q209.20000000000002 -40.6 203.8 -40.6Q197.70000000000002 -40.6 194.20000000000002 -36.55Q190.70000000000002 -32.5 190.70000000000002 -25.0V0.0Z" fill="currentColor"/><path d="M256.1 0.8Q250.4 0.8 246.0 -1.75Q241.6 -4.3 239.2 -8.950000000000001Q236.8 -13.600000000000001 236.8 -19.8V-49.400000000000006H248.20000000000002V-20.700000000000003Q248.20000000000002 -14.700000000000001 251.15000000000003 -11.8Q254.10000000000002 -8.9 259.5 -8.9Q265.6 -8.9 269.15 -12.900000000000002Q272.7 -16.900000000000002 272.7 -24.400000000000002V-49.400000000000006H284.1V0.0H272.9V-6.9H271.2Q269.9 -4.2 266.45 -1.7000000000000002Q263.0 0.8 256.1 0.8Z" fill="currentColor"/><path d="M295.2 0.0V-49.400000000000006H306.5V-43.7H308.2Q309.29999999999995 -46.800000000000004 311.9 -48.2Q314.5 -49.6 318.09999999999997 -49.6H324.09999999999997V-39.400000000000006H317.9Q312.9 -39.400000000000006 309.79999999999995 -36.75Q306.7 -34.1 306.7 -28.6V0.0Z" fill="currentColor"/><path d="M330.8 0.0V-49.400000000000006H342.1V-42.5H343.8Q345.1 -45.300000000000004 348.5 -47.800000000000004Q351.9 -50.300000000000004 358.8 -50.300000000000004Q364.5 -50.300000000000004 368.9 -47.7Q373.3 -45.1 375.75 -40.5Q378.2 -35.9 378.2 -29.6V0.0H366.7V-28.700000000000003Q366.7 -34.7 363.75 -37.650000000000006Q360.8 -40.6 355.4 -40.6Q349.3 -40.6 345.8 -36.55Q342.3 -32.5 342.3 -25.0V0.0Z" fill="currentColor"/></svg></a>
+<div style="font-size: 15px; line-height: 1.5; color: #64748B; max-width: 30ch">Обучение и консалтинг по Customer Success</div>
+<a href="https://t.me/tigerms" target="_blank" rel="noopener" class="btn btn-p btn-sm" style="align-self: flex-start">Связаться <span class="ar">→</span></a>
+</div>
+<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 36px 28px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">О нас</span><a href="about.html" style="color: #64748B">Кто мы</a><a href="reviews.html" style="color: #64748B">Отзывы</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Знания</span><a href="cs.html" style="color: #64748B">Что такое Customer Success</a><a href="blog.html" style="color: #64748B">Статьи</a><a href="podcast.html" style="color: #64748B">Подкаст</a><a href="efir.html" style="color: #64748B">Эфиры</a><a href="glossary.html" style="color: #64748B">Глоссарий</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Обучение</span><a href="course.html" style="color: #64748B">Полный курс по Customer Success</a><a href="sprint.html" style="color: #64748B">Спринт по Customer Success</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Компаниям</span><a href="consulting.html#formats" style="color: #64748B">Консалтинг</a><a href="consulting.html#edu" style="color: #64748B">Корпоративное обучение</a><a href="consulting.html#strategy" style="color: #64748B">Стратегическая сессия</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Таланты и каналы</span><a href="talents.html" style="color: #64748B">Таланты Customer Success</a><a href="https://t.me/bizservis" target="_blank" rel="noopener" style="color: #64748B">Канал «Бизнес и сервис»</a><a href="https://t.me/customersuccessru" target="_blank" rel="noopener" style="color: #64748B">Канал «Customer Success»</a><a href="https://www.youtube.com/@vostrikova-service" target="_blank" rel="noopener" style="color: #64748B">YouTube «Бизнес и сервис»</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-weight: 600; color: #0F172A; margin-bottom: 4px">Конференция</span><a href="csconf.html" style="color: #64748B">CS Conf 2026</a><a href="csconf.html#archive" style="color: #64748B">Архив конференций</a></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 22px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #64748B">
+<span>© nochurn · ИП Лютова Дарья Викторовна · ИНН 645122866084</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 18px"><a href="https://nochurn.ru/sveden" target="_blank" rel="noopener">Сведения об образовательной организации</a><a href="https://nochurn.ru/reestr" target="_blank" rel="noopener">Документы</a><a href="https://disk.yandex.ru/i/dDICeHrHloPhVg" target="_blank" rel="noopener">Оферта</a><a href="https://disk.yandex.ru/i/9h6tFPfLPvVYVg" target="_blank" rel="noopener">Политика конфиденциальности</a><a href="https://disk.yandex.ru/i/hX7w1Bgw--oBew" target="_blank" rel="noopener">Согласие на обработку данных</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+<script>document.documentElement.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});</script>
+</body>
+</html>
